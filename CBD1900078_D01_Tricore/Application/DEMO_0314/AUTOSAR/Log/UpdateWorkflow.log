@@ -1,0 +1,83 @@
+2025-08-31 - 14:54:17
+Workflow 'Update workflow.' started.
+              Using DaVinci Configurator (beta) 5.18.42 SP2 (x86_64).
+ 14:54:17 - Action 'Validate workflow environment' started.
+ 14:54:17 - Action 'Validate dpa file' started.
+ 14:54:17 - Action 'Validate dpa file' successfully finished.
+ 14:54:17 - Action 'SLP conformance check' started.
+ 14:54:18 - Action 'SLP conformance check' successfully finished.
+ 14:54:18 - Action 'Validate workflow environment' successfully finished.
+ 14:54:18 - Action 'Create copy of the Project' started.
+              Copy project 'C:\Vector\CBD1900078_D01_Tricore\Application\DEMO_0314\AUTOSAR' to 'C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0'...
+              Adjusting DPA file of copied project...
+ 14:54:18 - Action 'Create copy of the Project' successfully finished.
+ 14:54:18 - Action 'Close Project' started.
+ 14:54:18 - Action 'Close Project' successfully finished.
+ 14:54:25 - Action 'Prepare DaVinci Developer update data' started.
+ 14:54:25 - Action 'Prepare DaVinci Developer update data' successfully finished.
+ 14:54:25 - Action 'Prepare System Extract' started.
+ 14:54:25 - Action 'Preprocessing System Extract' started.
+ 14:54:25 - Action 'Preprocessing System Extract' successfully finished.
+ 14:54:25 - Action 'Create OEM Communication Extract' started.
+ 14:54:25 - Action 'Create OEM Communication Extract' successfully finished.
+ 14:54:25 - Action 'Prepare System Extract' successfully finished.
+ 14:54:25 - Action 'Updating the project' started.
+ 14:54:27 - Action 'Create ECU configuration' started.
+ 14:54:29 - Action 'Create ECU configuration' successfully finished.
+ 14:54:29 - Action 'Update ECU configuration' started.
+ 14:54:29 - Action 'Update ECU configuration' started.
+ 14:54:33 - Action 'Update ECU configuration' successfully finished.
+ 14:54:33 - Action 'Update ECU configuration' successfully finished.
+ 14:54:33 - Action 'Updating the project' successfully finished.
+ 14:54:33 - Action 'Adapt project file' started.
+ 14:54:33 - Action 'Adapt project file' successfully finished.
+ 14:54:33 - Action 'Generate update report' started.
+ 14:54:38 - Action 'Generate update report' successfully finished.
+ 14:54:38 - Action 'Execute Solving Actions' started.
+              Executing Auto-Solving-Actions...
+              Auto-Solving-Actions done.
+              Executing update specific Preferred-Solving-Actions...
+              Update specific Preferred-Solving-Actions done.
+ 14:54:41 - Action 'Execute Solving Actions' successfully finished.
+ 14:54:41 - Action 'Update DaVinci Developer Workspace' started.
+              31 Aug 2025 14:54:46 - Opening workspace 'C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\Developer\TC397START.dcf'...
+              31 Aug 2025 14:54:48 - Loading file PlatformTypes_AR4.arxml (C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\AUTOSAR\PlatformTypes_AR4.arxml).
+              31 Aug 2025 14:54:48 - Loading file BswM_swc.arxml (C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\ServiceComponents\BswM_swc.arxml).
+              31 Aug 2025 14:54:48 - Loading file ComM_swc.arxml (C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\ServiceComponents\ComM_swc.arxml).
+              31 Aug 2025 14:54:48 - Loading file Dcm_swc.arxml (C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\ServiceComponents\Dcm_swc.arxml).
+              31 Aug 2025 14:54:48 - Loading file Dem_swc.arxml (C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\ServiceComponents\Dem_swc.arxml).
+              31 Aug 2025 14:54:48 - Loading file Det_swc.arxml (C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\ServiceComponents\Det_swc.arxml).
+              31 Aug 2025 14:54:48 - Loading file EcuM_swc.arxml (C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\ServiceComponents\EcuM_swc.arxml).
+              31 Aug 2025 14:54:48 - Loading file Os_swc.arxml (C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\ServiceComponents\Os_swc.arxml).
+              31 Aug 2025 14:54:48 - Loading file Communication.arxml (C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Update\DevData\Communication.arxml).
+              31 Aug 2025 14:54:48 - Loading file CpApMySwc.arxml (C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\Developer\CpApMySwc.arxml).
+              31 Aug 2025 14:54:48 - Loading file CpSaDoorFrontLeft.arxml (C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\Developer\CpSaDoorFrontLeft.arxml).
+              31 Aug 2025 14:54:48 - Loading file CpSaDoorFrontRight.arxml (C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\Developer\CpSaDoorFrontRight.arxml).
+              31 Aug 2025 14:54:48 - Loading file CpSaInteriorLightFront.arxml (C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\Developer\CpSaInteriorLightFront.arxml).
+              31 Aug 2025 14:54:48 - Loading file CtCddIoHwAb.arxml (C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\Developer\CtCddIoHwAb.arxml).
+              31 Aug 2025 14:54:48 - Loading file CtLed0Type.arxml (C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\Developer\CtLed0Type.arxml).
+              31 Aug 2025 14:54:48 - Loading file CtLed1Type.arxml (C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\Developer\CtLed1Type.arxml).
+              31 Aug 2025 14:54:48 - Loading file CtLed2Type.arxml (C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\Developer\CtLed2Type.arxml).
+              31 Aug 2025 14:54:48 - Loading file CtLed3Type.arxml (C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\Developer\CtLed3Type.arxml).
+              31 Aug 2025 14:54:48 - Loading file CtLed4Type.arxml (C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\Developer\CtLed4Type.arxml).
+              31 Aug 2025 14:54:48 - Loading file CtLed5Type.arxml (C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\Developer\CtLed5Type.arxml).
+              31 Aug 2025 14:54:48 - Loading file DataTypes.arxml (C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\Developer\DataTypes.arxml).
+              31 Aug 2025 14:54:48 - Loading file Packages.arxml (C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\Developer\Packages.arxml).
+              31 Aug 2025 14:54:48 - Loading file PortInterfaces.arxml (C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\Developer\PortInterfaces.arxml).
+              31 Aug 2025 14:54:48 - Loading file TC397START.arxml (C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\Developer\TC397START.arxml).
+              31 Aug 2025 14:54:48 - Opened workspace 'C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\Developer\TC397START.dcf' successfully.
+              31 Aug 2025 14:54:49 - Merging imported data.
+              31 Aug 2025 14:54:49 - Merging imported data completed.
+              31 Aug 2025 14:54:49 - Saving workspace 'C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\Developer\TC397START.dcf'...
+              31 Aug 2025 14:54:49 - Saved workspace 'C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\Developer\TC397START.dcf' successfully.
+              31 Aug 2025 14:54:49 - Closing workspace 'C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\Developer\TC397START.dcf'...
+              31 Aug 2025 14:54:49 - Closed workspace 'C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\Workflow\1756623258157-0\Config\Developer\TC397START.dcf' successfully.
+              OK.
+ 14:54:50 - Action 'Update DaVinci Developer Workspace' successfully finished.
+ 14:54:50 - Action 'Update RTE configuration' started.
+ 14:54:50 - Action 'Update RTE configuration' successfully finished.
+ 14:54:50 - Action 'Align differences after successful update' started.
+ 14:54:50 - Action 'Align differences after successful update' successfully finished.
+ 14:54:50 - Action 'Clean up update data' started.
+ 14:54:50 - Action 'Clean up update data' successfully finished.
+14:54:58 - Workflow 'Update workflow.' successfully finished.

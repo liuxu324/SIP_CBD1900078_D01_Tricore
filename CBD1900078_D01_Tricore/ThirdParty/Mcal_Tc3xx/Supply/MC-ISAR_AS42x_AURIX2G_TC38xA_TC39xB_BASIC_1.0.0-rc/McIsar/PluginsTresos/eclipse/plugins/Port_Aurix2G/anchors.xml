@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2018)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**  FILENAME  : anchors.xml                                                   **
+**                                                                            **
+**  VERSION   : 2.0.0                                                         **
+**                                                                            **
+**  DATE      : 2018-03-27                                                    **
+**                                                                            **
+**  VARIANT   : Variant PB                                                    **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX2G                                              **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY : [cover parentID= {4D7490C8-2285-4c73-AD5D-3B0E63D79D36},   **
+{98E9B02A-449D-4f6e-9354-22C8CE3D8CDD},{C2076769-5F10-4274-B6B4-9521A57FACFD}]**
+**                                                                            **
+**  DESCRIPTION  : Tresos anchors file for Port Driver                        **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) : Specification of Port Driver, AUTOSAR Release 4.2.2    **
+**                                                                            **
+**  MAY BE CHANGED BY USER : no                                               **
+**                                                                            **
+*******************************************************************************/
+-->
+<toc label="Port/TC3xx" link_to="../eb.tresos.doc.autocore.mcal.releasenotes/anchors.xml#EB_tresos_AutoCore_MCAL_releasenotes" topic="$nl$/index.html">
+ <topic label="Port" href="">
+   <topic label="Users Guide &quot; TC3xx_SW_MCAL_UM_BASIC.pdf  &quot; (.doc)" href="doc/TC3xx_SW_MCAL_UM_BASIC.pdf"/>
+ </topic>
+</toc>

@@ -1,0 +1,1185 @@
+<?xml version='1.0'?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2018)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**  FILENAME  : Pwm_17_GtmCcu6.xdm                                            **
+**                                                                            **
+**  VERSION   : 7.0.0                                                         **
+**                                                                            **
+**  DATE      : 2018-07-31                                                    **
+**                                                                            **
+**  VARIANT   : Variant PB                                                    **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX2G                                              **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY : [cover parentID={C0678AF5-5A9C-4691-9BEA-0393D04F9D97}]    **
+**                 Tresos format XML data model schema file. [/cover]         **
+**                                                                            **
+**  DESCRIPTION  : XML Data Model for Pwm driver                              **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) : Specification of Pwm Driver, AUTOSAR Release 4.2.2     **
+**                                                                            **
+**  MAY BE CHANGED BY USER : no                                               **
+**                                                                            **
+*******************************************************************************/
+-->
+<!-- [cover parentID={437254CD-C7D1-4376-A09B-2518F8EC0406}] AUTOSAR bmd file is generated from xdm file [/cover] -->
+<!-- [cover parentID={C0678AF5-5A9C-4691-9BEA-0393D04F9D97}] Tresos format XML data model schema file. [/cover] -->
+<datamodel version="5.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/12/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/12/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="AURIX2G" type="AR-PACKAGE">
+        <a:a name="UUID" value="ECUC:AUTOSAR"/>
+        <d:lst type="TOP-LEVEL-PACKAGES">
+          <d:ctr name="EcucDefs" type="AR-PACKAGE">
+            <a:a name="UUID" value="ECUC:ECUCDEFS"/>
+        <d:lst type="ELEMENTS">
+          <d:chc name="Pwm" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                <ad:ADMIN-DATA>
+                  <ad:DOC-REVISIONS>
+                    <ad:DOC-REVISION>
+                      <ad:REVISION-LABEL>4.2.2</ad:REVISION-LABEL>
+                      <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                      <ad:DATE>2014-10-31</ad:DATE>
+                    </ad:DOC-REVISION>
+                  </ad:DOC-REVISIONS>
+                </ad:ADMIN-DATA>
+              </a:a>
+              <a:a name="DESC" 
+                   value="EN: Configuration of Pwm (Pulse Width Modulation) module."/>
+              <a:a name="LOWER-MULTIPLICITY" value="0"/>
+                  <a:a name="POSTBUILDVARIANTSUPPORT" value="true"/>
+              <a:a name="RELEASE" value="asc:4.2.2"/>
+              <d:ref type="REFINED_MODULE_DEF" value="ASPath:/AUTOSAR/EcucDefs/Pwm"/>
+              <a:a name="UPPER-MULTIPLICITY" value="*"/>
+                  <a:a name="UUID" 
+                       value="ECUC:13aa2440-e790-4121-9e12-3a380efb0d6b"/>
+              <!-- [cover parentID={38B1896D-8F06-403c-8E70-0F72103A5215}] Config Variant [/cover] -->
+                  <v:var name="IMPLEMENTATION_CONFIG_VARIANT" 
+                         type="ENUMERATION">
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                     type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                </a:a>
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:da name="DEFAULT" value="VariantPostBuild"/>
+                <a:da name="RANGE">
+                  <a:v>VariantPostBuild</a:v>
+                </a:da>
+              </v:var>
+              <!-- [cover parentID={64BE7CD3-9CB3-4e87-B679-3A43AAF7F82C}] PwmChannelConfigSet [/cover] -->
+              <v:ctr name="PwmChannelConfigSet" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: This container contains the configuration parameters and sub containers of the AUTOSAR Pwm module."/>
+                <a:a name="UUID" 
+                     value="ECUC:64be7cd3-9cb3-4e87-b679-3a43aaf7f82c"/>
+                <v:lst name="PwmChannel" type="MAP">
+                  <a:da name="MIN" value="1"/>
+                  <!-- [cover parentID={C2253A76-E0D8-4a8f-B383-CE80FFC0E870}] PwmChannel [/cover] -->
+                  <v:ctr name="PwmChannel" type="IDENTIFIABLE">
+                    <a:a name="POSTBUILDVARIANTMULTIPLICITY" 
+                                 value="false"/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                    </a:a>
+                    <a:a name="DESC" 
+                         value="EN: Configuration of an individual PWM channel."/>
+                    <a:a name="UUID" 
+                         value="ECUC:c2253a76-e0d8-4a8f-b383-ce80ffc0e870"/>
+                    <v:lst name="PwmChannelClass">
+                      <a:da name="MAX" value="1"/>
+                    <!-- [cover parentID={31505ABB-2296-4c99-BDB7-D0909F0440F2}] PwmChannelClass [/cover] -->
+                    <v:var name="PwmChannelClass" type="ENUMERATION">
+                        <a:a name="DESC" 
+                             value="EN: Class of PWM Channel.  ImplementationType: Pwm_17_GtmCcu6_ChannelClassType."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v mclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                            <a:a name="POSTBUILDVARIANTMULTIPLICITY" 
+                                 value="true"/>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="ECUC:31505abb-2296-4c99-bdb7-d0909f0440f2"/>
+                      <a:da name="DEFAULT" value="PWM_FIXED_PERIOD"/>
+                      <a:da name="RANGE">
+                        <a:v>PWM_FIXED_PERIOD</a:v>
+                        <a:v>PWM_FIXED_PERIOD_SHIFTED</a:v>
+                        <a:v>PWM_VARIABLE_PERIOD</a:v>
+                        <a:v>PWM_FIXED_PERIOD_CENTER_ALIGNED</a:v>
+                      </a:da>
+                      <a:da name="INVALID" type="XPath">
+                        <a:tst expr="((.='PWM_FIXED_PERIOD_CENTER_ALIGNED') and node:value(../../PwmAssignedHwUnit) = 'CCU6')" true="PWM_FIXED_PERIOD_CENTER_ALIGNED is not supported for CCu6 channels "/>
+                      </a:da>
+                    </v:var>
+                    </v:lst>
+                    <!-- [cover parentID={3A0E3F14-A2B9-428e-9B76-6A361C8B2EA4}] PwmChannelId [/cover] -->
+                    <v:var name="PwmChannelId" type="INTEGER">
+                      <a:a name="DESC" 
+                           value="EN: Channel Id of the PWM channel. This value will be assigned to the symbolic name derived of the PwmChannel container short name."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                      <a:a name="UUID" 
+                           value="ECUC:3a0e3f14-a2b9-428e-9b76-6a361c8b2ea4"/>
+                      <a:da name="INVALID" type="Multi">
+                        <mt:xpath expr="text:uniq(../../*/PwmChannelId,.)" false="PwmChannelId should be unique.Enter diff Number"/> 
+                        <mt:xpath expr="node:isconsecutive(../../*/PwmChannelId,0)" false="PwmChannelId is not Consecutive"/>
+                        <mt:range>
+                        <mt:tst expr="&gt;=0"/>
+                        <mt:tst expr="&lt;=4294967295"/>
+                       </mt:range>
+                      </a:da>
+                      <a:da name="DEFAULT" type="XPath" expr="num:i((node:fallback((node:current()/../@index),0))+0)"/>
+                    </v:var>
+                    <!-- [cover parentID={A5BBD8C1-FB3D-4c12-A51F-33D2A60C5CA2}] PwmAssignedHwUnit [/cover] -->
+                    <v:var name="PwmAssignedHwUnit" type="ENUMERATION">
+                      <a:a name="DESC" value="EN: The HW resource used for PWM Generation."/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="ECUC:31505abb-2296-4c09-bdb7-d0909f0440c6"/>
+                      <a:da name="DEFAULT" value="GTM"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:da name="RANGE">
+                        <a:v>GTM</a:v>
+                        <a:v>CCU6</a:v>
+                      </a:da>
+                    </v:var>
+                    <!-- [cover parentID={DAA5C051-75D5-4a20-8B6A-CA34AFAB3DDD}] PwmDutycycleDefault [/cover] -->
+                    <v:var name="PwmDutycycleDefault" type="INTEGER">
+                      <a:a name="DESC">
+                      <a:v>EN: Value of duty cycle used for Initialization
+                           Depends on PwmDutyShiftInTicks parameter.
+                           When the PwmDutyShiftInTicks is OFF, the Dutycyle should be entered as percentage:
+                           0, represents 0% 
+                           0x8000 represents 100%
+                           When the PwmDutyShiftInTicks is ON, the Dutycyle should be entered as absolute ticks:
+                           0, represents 0% 
+                           Same value as Period value represents 100%</a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="ECUC:daa5c051-75d5-4a20-8b6a-ca34afab3ddd"/>
+                      <a:da name="DEFAULT" value="0"/>
+                      <a:da name="INVALID" type="Multi">
+                       <mt:xpath expr="(node:fallback(../../../../PwmGeneral/PwmDutyShiftInTicks,'false') = 'false') and (.&gt;32768)" true="Duty is in percentage; Maximum is 32768 (0x8000)"/>
+                       <mt:range>
+                       <mt:tst expr="&gt;=0"/>
+                       <mt:tst expr="&lt;=16777215"/>
+                       </mt:range>
+                      </a:da>
+                    </v:var>
+                    <!-- [cover parentID={7CC25F83-B89C-4ba0-8766-7BA087185C97}] PwmIdleState [/cover] -->
+                    <v:var name="PwmIdleState" type="ENUMERATION">
+                      <a:a name="DESC" 
+                           value="EN: The parameter PWM_IDLE_STATE represents the output state of the PWM after the signal is stopped (e.g. call of Pwm_SetOutputToIdle)."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="ECUC:7cc25f83-b89c-4ba0-8766-7ba087185c97"/>
+                      <a:da name="DEFAULT" value="PWM_LOW"/>
+                      <a:da name="RANGE">
+                        <a:v>PWM_HIGH</a:v>
+                        <a:v>PWM_LOW</a:v>
+                      </a:da>
+                    </v:var>
+                    <v:lst name="PwmNotification">
+                      <a:da name="MAX" value="1"/>
+                    <!-- [cover parentID={44BB38AC-D409-4b1d-96BE-EC84466C1019}] PwmNotification [/cover] -->
+                    <v:var name="PwmNotification" type="FUNCTION-NAME">
+                      <a:a name="DESC" 
+                           value="EN: Definition of the Callback function."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v mclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                            <a:a name="POSTBUILDVARIANTMULTIPLICITY" 
+                                 value="true"/>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="ECUC:44bb38ac-d409-4b1d-96be-ec84466c1019"/>
+                      <a:da name="DEFAULT" value="NULL_PTR"/>
+                    </v:var>
+                      <a:da name="EDITABLE" type="XPath">
+                        <a:tst expr="../../../../PwmGeneral/PwmNotificationSupported = 'true'"/>
+                      </a:da>
+                    </v:lst>
+                    <!-- [cover parentID={2E258B97-F1D8-4dc0-AD1A-DBDC0445568B}] PwmPeriodDefault [/cover] -->
+                    <v:var name="PwmPeriodDefault" type="INTEGER">
+                      <a:a name="DESC">
+                        <a:v>EN: Default Period of the channel. Input Value in absolute ticks.
+                          This parameter does not impact the channels of class PWM_FIXED_PERIOD_SHIFTED and PWM_FIXED_PERIOD_CENTER_ALIGNED.</a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="ECUC:2e258b97-f1d8-4dc0-ad1a-dbdc0445568b"/>
+                      <a:da name="DEFAULT" value="0"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&gt;=0"/>
+                        <a:tst expr="&lt;=16777215"/>
+                      </a:da>
+                      <a:da name="EDITABLE" type="XPath">
+                      <a:tst expr="(../PwmChannelClass/*[1] = 'PWM_FIXED_PERIOD' or ../PwmChannelClass/*[1] = 'PWM_VARIABLE_PERIOD')"/>
+                      </a:da>
+                    </v:var>
+                    <!-- [cover parentID={A31896F1-A4AB-4dc8-A116-AFF3DF41810F}] PwmPolarity [/cover] -->
+                    <v:var name="PwmPolarity" type="ENUMERATION">
+                      <a:a name="DESC" 
+                           value="EN: Defines the starting polarity of each PWM channel."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="ECUC:a31896f1-a4ab-4dc8-a116-aff3df41810f"/>
+                      <a:da name="DEFAULT" value="PWM_LOW"/>
+                      <a:da name="RANGE">
+                        <a:v>PWM_HIGH</a:v>
+                        <a:v>PWM_LOW</a:v>
+                      </a:da>
+                    </v:var>
+                    <!-- [cover parentID={C945DD5E-1A5B-4bcc-A8AB-0A4D19EC3585}] PwmMcuClockReferencePoint [/cover] -->
+                    <v:ref name="PwmMcuClockReferencePoint" type="REFERENCE">
+                      <a:a name="DESC" 
+                           value="EN: This parameter contains reference to the McuClockReferencePoint"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="SCOPE" value="ECU"/>
+                      <a:a name="UUID" 
+                           value="ECUC:c945dd5e-1a5b-4bcc-a8ab-0a4d19ec3585"/>
+                      <a:da name="REF" 
+                            value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Mcu/McuModuleConfiguration/McuClockSettingConfig/McuClockReferencePoint"/>
+                      <a:da name="EDITABLE" value="false"/>
+                    </v:ref>
+                    <!-- [cover parentID={827884EF-74EE-4b5d-80DE-F0BB02D15D6A}] PwmShiftValue [/cover] -->
+                    <v:var name="PwmShiftValue" type="INTEGER">
+                      <a:a name="DESC">
+                      <a:v>EN: Shift Value for PWM_FIXED_PERIOD_SHIFTED Signal.
+                           Valid only when PwmChannelClass is PWM_FIXED_PERIOD_SHIFTED.
+                           This depends on PwmDutyShiftInTicks parameter.
+                           When the PwmDutyShiftInTicks is OFF, the Shift value should be entered as percentage:
+                           0, represents 0% 
+                           0x8000 represents 100%
+                           When the PwmDutyShiftInTicks is ON, the Shift value should be entered as absolute ticks:
+                           0, represents 0% 
+                           Same value as Period value represents 100%</a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                       <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="ECUC:a44896f1-a4ab-4dc8-a116-aff3df41810f"/>
+                      <a:da name="DEFAULT" value="0"/>
+                      <a:da name="INVALID" type="Multi">
+                        <mt:xpath expr="(node:fallback(../../../../PwmGeneral/PwmDutyShiftInTicks,'false') = 'false') and (.&gt;32768)" true="Shift is in percentage; Maximum is 32768 (0x8000)"/> 
+                        <mt:range>
+                        <mt:tst expr="&gt;=0"/>
+                        <mt:tst expr="&lt;=16777215"/>
+                        </mt:range>
+                      </a:da>
+                      <a:da name="EDITABLE" type="XPath">
+                       <a:tst expr="(../PwmChannelClass/*[1] = 'PWM_FIXED_PERIOD_SHIFTED')"/>
+                      </a:da>
+                    </v:var>
+                    <!-- [cover parentID={6CFEC0BD-A33D-4981-83BF-F69CD0E10048}] PwmReferenceChannel [/cover] -->
+                    <v:ref name="PwmReferenceChannel" type="REFERENCE">
+                      <a:a name="DESC">
+                        <a:v>EN: Reference channel for PWM_FIXED_PERIOD_SHIFTED, and PWM_FIXED_PERIOD_CENTER_ALIGNED.
+                             Reference should be a channel of PWM_FIXED_PERIOD Only.</a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                       <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+		      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="UUID" 
+                           value="ECUC:ca45dd5e-1a5b-4bcc-a8ab-0a4d19ec3585"/>
+                      <a:da name="REF" 
+                            value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Pwm/PwmChannelConfigSet/PwmChannel"/>
+                      <a:da name="EDITABLE" type="XPath">
+                        <a:tst expr="(../PwmChannelClass/*[1] = 'PWM_FIXED_PERIOD_SHIFTED' or ../PwmChannelClass/*[1] = 'PWM_FIXED_PERIOD_CENTER_ALIGNED')"/>  
+                      </a:da> 
+                    </v:ref>
+                    <!-- [cover parentID={E5287CFD-DFA4-4687-9E51-DC503FFF8F02}] PwmCoherentUpdate [/cover] -->
+                    <v:var name="PwmCoherentUpdate" type="BOOLEAN">
+                      <a:a name="DESC">
+                        <a:v>EN: Setting this parameter to true determines channel is coherent ot not.
+                        </a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                       <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                       <icc:v mclass="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="ECUC:c987dd5e-1a5b-4bcc-a8ab-0a4d19ec3585"/>
+                      <a:da name="DEFAULT" value="false"/>
+                      <a:da name="ENABLE" type="XPath">
+                     <a:tst expr="../../../../PwmGeneral/PwmChannelCoherentSelection = 'true' and ../PwmAssignedHwUnit = 'GTM'"/>
+                      </a:da> 
+                    </v:var>
+                    <v:lst name="GtmTimerOutputModuleConfiguration" type="MAP">
+                      <a:da name="MIN" value="1"/>
+                      <a:da name="MAX" value="1"/>
+                      <a:da name="ENABLE" type="XPath">
+                      <a:tst expr="../PwmAssignedHwUnit = 'GTM'"/>
+                      </a:da> 
+                      <!-- [cover parentID={E0570B12-23E4-4b68-86BE-191B85D1933D}] GtmTimerOutputModuleConfiguration [/cover] -->
+                      <v:ctr name="GtmTimerOutputModuleConfiguration" type="IDENTIFIABLE">
+                        <a:a name="DESC" 
+                             value="EN: Choose GTM TOM/ATOM channel which will be used by this PWM Channel.
+                             Referred timer channel in MCU should have TomChannelUsage/ AtomChannelUsage as USED_BY_PWM_DRIVER"/>
+                        <a:a name="UUID" 
+                             value="ECUC:c2253a76-e0d8-4a8f-b303-ce80ffc0e870"/>
+                    <!-- [cover parentID={7E49DCEE-7380-405f-A8C1-E2073032136D}] GtmTimerUsed [/cover] -->
+                    <v:ref name="GtmTimerUsed" type="CHOICE-REFERENCE">
+                      <a:a name="DESC" 
+                           value="EN: This parameter lists all the GTM timer channels (TOM/ATOM)."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                       <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="ECU"/>
+                      <a:a name="UUID" 
+                           value="ECUC:c945dd5e-1l5b-4bcc-a8ab-0a4d19ec3585"/>
+                       <a:da name="REF">
+                        <a:v>ASPathDataOfSchema:/AURIX2G/EcucDefs/Mcu/McuHardwareResourceAllocationConf/McuGtmAllocationConf/McuGtmTomAllocationConf/McuGtmTomChannelAllocationConf</a:v>
+                        <a:v>ASPathDataOfSchema:/AURIX2G/EcucDefs/Mcu/McuHardwareResourceAllocationConf/McuGtmAllocationConf/McuGtmAtomAllocationConf/McuGtmAtomChannelAllocationConf</a:v>
+                      </a:da>
+                      <a:da name="INVALID" type="XPath">
+                         <a:tst expr="text:uniq(../../../../*/GtmTimerOutputModuleConfiguration/*[1]/GtmTimerUsed,.)" false="Gtm Timer selected should be unique.Enter different Timer"/>
+                         <a:tst expr="node:refvalid(.)"  false="The configured node does not exist or may not be referenced."/>
+                         <a:tst expr="(node:ref(.)/McuGtmAtomChannelAllocationConf = 'GTM_ATOM_CHANNEL_USED_BY_PWM') or (node:ref(.)/McuGtmTomChannelAllocationConf = 'GTM_TOM_CHANNEL_USED_BY_PWM')"  false="The configured TOM/ATOM channel is not allocted for PWM driver"/>
+                      </a:da>
+                    </v:ref>
+                    <!-- [cover parentID={14F872C0-404E-4d8b-BB92-3FA14690820F}] GtmTimerClockSelect [/cover] -->
+                    <v:var name="GtmTimerClockSelect" type="ENUMERATION">
+                      <a:a name="DESC" value="EN: This parameter decides the Clock Source for TOM/ATOM timer."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                       <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="ECUC:31505abb-3296-4c09-bdb7-d0909f1440f2"/>
+                      <a:da name="DEFAULT" value="GTM_FIXED_CLOCK_0"/>
+                      <a:da name="RANGE" type="XPath" expr="ecu:list(concat('Gtm.ClockSelect_',substring-before(substring-after(node:fallback(../GtmTimerUsed,'McuGtmAllocationConf_0/McuGtmBMDAll'),'McuGtmAllocationConf_0/McuGtm'),'All')))"/>
+                    </v:var>
+                    <!-- [cover parentID={773C76D6-1285-4e38-9D78-FB3A595E2C45}] GtmTimerPortPinSelect [/cover] -->
+                    <v:var name="GtmTimerPortPinSelect" type="ENUMERATION">
+                      <a:a name="DESC" value="EN: This parameter decides the output port and pin for the GTM timer."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                       <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="ECUC:31505abb-3296-4c09-bdb7-d0909f3440f2"/>
+                      <a:da name="DEFAULT" value="NONE"/>
+                      <a:da name="RANGE" type="XPath" expr="ecu:list(concat('Gtm.',substring-before(substring-after(node:fallback(../GtmTimerUsed,'McuGtmAllocationConf_0/McuGtmTOMATOMBMDAll'),'McuGtmAllocationConf_0/McuGtm'),'All'),substring-before(substring-after(node:fallback(../GtmTimerUsed,''),'omAllocationConf_'),'/'),'Channel',substring-after(node:fallback(../GtmTimerUsed,''),'ChannelAllocationConf_')))"/>
+                    </v:var>
+                      </v:ctr>
+                    </v:lst>
+                    <v:lst name="CCU6CC6Configuration" type="MAP">
+                      <a:da name="MIN" value="1"/>
+                      <a:da name="MAX" value="1"/>
+                      <a:da name="ENABLE" type="XPath">
+                      <a:tst expr="../PwmAssignedHwUnit = 'CCU6'"/>
+                      </a:da> 
+                      <!-- [cover parentID={6B6DBBF4-94EC-46a2-A4A3-249A18CB4669}] CCU6CC6Configuration [/cover] -->
+                      <v:ctr name="CCU6CC6Configuration" type="IDENTIFIABLE">
+                        <a:a name="DESC" 
+                             value="EN: Choose CCU6 T12/T13 channel which will be used by this PWM Channel.
+                             Referred timer channel in MCU should have CCU6ChannelUsage as USED_BY_PWM_DRIVER"/>
+                        <a:a name="UUID" 
+                             value="ECUC:c2253a76-e2d8-4a8f-b303-ce80ffc0e870"/>
+                        <!-- [cover parentID={9E91C6E8-4EF2-4fd8-9FE1-B2EDE00428C9}] CCU6KernelUsed [/cover] -->
+                        <v:ref name="CCU6KernelUsed" type="REFERENCE">
+                          <a:a name="DESC" 
+                            value="EN: This parameter lists all the CCU6 kernels.
+                            Note: CCU6 resource allocation is done at kernel level for each module.
+                            Once the kernel is allocated to the module,  T12 or T13 timer of the kernel can only be assigned to one of the channels within the module.
+                            "/>
+                           <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="SCOPE" value="ECU"/>
+                          <a:a name="UUID" 
+                               value="ECUC:c945dd5e-1l5b-4bcc-a8ab-0a4d19ec3589"/>
+                           <a:da name="REF">
+                           <a:v>ASPathDataOfSchema:/AURIX2G/EcucDefs/Mcu/McuHardwareResourceAllocationConf/McuCcu6ModuleAllocationConf</a:v>
+                          </a:da>
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst expr="(node:ref(.)/McuCcu6ModuleAllocationConf = 'CCU6_MODULE_USED_BY_PWM_DRIVER')"  false="The configured CCU6 Kernel is not allocated for PWM driver"/>
+                          </a:da>
+                        </v:ref>
+                        <!-- [cover parentID={30AF9FB9-7F1F-4645-8FC2-743DB2411197}] CCU6TimerUsed [/cover] -->
+                        <v:var name="CCU6TimerUsed" type="ENUMERATION">
+                          <a:a name="DESC" value="EN: Selects Timer T12/T13. 
+                           Note: Kernel selection is done in parameter CCU6KernelUsed.."/>
+                           <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="ECUC:31505abb-2296-4c09-bdb7-d0919f0440f2"/>
+                          <a:da name="DEFAULT" value="T12"/>
+                          <a:da name="RANGE">
+                            <a:v>T12</a:v>
+                            <a:v>T13</a:v>
+                          </a:da>
+                          <a:da name="INVALID" type="XPath">
+                          <a:tst expr="((.='T12') and node:value(../../../PwmChannelClass/*[1]) = 'PWM_FIXED_PERIOD_SHIFTED')" true="It is mandatory to configure T13 timer for channel type PWM_FIXED_PERIOD_SHIFTED"/>
+                          </a:da>
+                        </v:var>
+                        <!-- [cover parentID={DA5D4D50-06CE-4807-8EFD-E48DDDC8DE89}] Cc6xChannel [/cover] -->
+                        <v:var name="Cc6xChannel" type="ENUMERATION">
+                         <a:a name="DESC"
+                             value="EN: Cc6 channel selection from the selected kernel"/>
+                           <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                         <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                         <a:a name="SCOPE" value="LOCAL"/>
+                         <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                         <a:a name="UUID"
+                                  value="b209c80f-1111-422e-8f00-fa776e66e9fb"/>
+                         <a:da name="DEFAULT" value="Cc60"/>
+                         <a:da name="RANGE">
+                           <a:v>Cc60</a:v>    
+                           <a:v>Cc61</a:v> 
+                           <a:v>Cc62</a:v>
+                         </a:da>
+                         <a:da name="EDITABLE" type="XPath">
+                          <a:tst expr="../CCU6TimerUsed = 'T12'"/>
+                         </a:da>
+                        </v:var>
+                        <!-- [cover parentID={150D1DF2-6A01-4bf0-97C3-57E455E9F03E}] CCU6TimerClockSelect [/cover] -->
+                        <v:var name="CCU6TimerClockSelect" type="ENUMERATION">
+                          <a:a name="DESC" value="EN: This parameter decides the Clock Source for T12/T13 timer."/>
+                           <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="ECUC:31505abb-3296-4c09-bdb7-a0909f1440f2"/>
+                          <a:da name="DEFAULT" value="CCU6_CONFIGURABLE_CLOCK_0"/>
+                          <a:da name="RANGE" type="XPath" expr="ecu:list('Ccu6.ClockSelect')"/>
+                        </v:var>
+                        <!-- [cover parentID={E7954FD0-F09A-4bea-9FD2-FF6D78661783}] CCU6TimerPrescalarEnabled [/cover] -->
+                        <v:var name="CCU6TimerPrescalarEnabled" type="BOOLEAN">
+                          <a:a name="DESC" 
+                          value="EN: if CCU6TimerPrescalarEnabled is false then T12/T13 Clock = fcc6 divided by (2 power CCU6TimerClockSelect) 
+                                     if CCU6TimerPrescalarEnabled is false then T12/T13 Clock = fcc6 divided by (2 power (CCU6TimerClockSelect+8) ) "/>
+                           <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:da name="DEFAULT" value="false"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                           value="ECUC:2e3da645-2c56-4fd5-9fe6-2b2cf98ed6d8"/>
+                        </v:var>
+                      </v:ctr>
+                    </v:lst>
+                  </v:ctr>
+                </v:lst>
+              </v:ctr>
+              <!-- [cover parentID={946D9F33-9BB7-48d7-8278-0F6EFDACFAEB}] PwmConfigurationOfOptApiServices [/cover] -->
+              <v:ctr name="PwmConfigurationOfOptApiServices" 
+                     type="IDENTIFIABLE">
+                <a:a name="DESC">
+                  <a:v>EN: This container has global switches of PWM APIs.</a:v>
+                </a:a>
+                <a:a name="UUID" 
+                     value="ECUC:946d9f33-9bb7-48d7-8278-0f6efdacfaeb"/>
+                <!-- [cover parentID={3E3DA645-2C56-4fd5-9FE6-2B2CD88ED6D8}] PwmDeInitApi [/cover] -->
+                <v:var name="PwmDeInitApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Adds / removes the service Pwm_DeInit() from the code."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                     </a:a>
+                     <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" 
+                         value="ECUC:3e3da645-2c56-4fd5-9fe6-2b2cd88ed6d8"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>	
+                <!-- [cover parentID={8A7EB9E8-F5D3-4585-855B-72634C98DA24}] PwmGetOutputState [/cover] -->
+                <v:var name="PwmGetOutputState" type="BOOLEAN">
+                <a:a name="DESC" 
+                    value="EN: Adds / removes the service Pwm_GetOutputState() from the code."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                     </a:a>
+                     <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:8a7eb9e8-f5d3-4585-855b-72634c98da24"/>
+                <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <!-- [cover parentID={BF14870C-EF7A-4d27-A6C0-4EBD02C8FDFE}] PwmSetDutyCycle [/cover] -->
+                <v:var name="PwmSetDutyCycle" type="BOOLEAN">
+                <a:a name="DESC" 
+                     value="EN: Adds / removes the service Pwm_SetDutyCycle() from the code."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                     </a:a>
+                     <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:bf14870c-ef7a-4d27-a6c0-4ebd02c8fdfe"/>
+                <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <!-- [cover parentID={45D9CBCC-C5B7-4c76-8469-5B65F7E9D6CD}] PwmSetOutputToIdle [/cover] -->
+                <v:var name="PwmSetOutputToIdle" type="BOOLEAN">
+                <a:a name="DESC" 
+                       value="EN: Adds / removes the service Pwm_SetOutputToIdle() from the code."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                     </a:a>
+                     <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:45d9cbcc-c5b7-4c76-8469-5b65f7e9d6cd"/>
+              	  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <!-- [cover parentID={BBB4CF88-5A3A-4053-8EAE-023F3990279E}] PwmSetPeriodAndDuty [/cover] -->
+                <v:var name="PwmSetPeriodAndDuty" type="BOOLEAN">
+                <a:a name="DESC" 
+                       value="EN: Adds / removes the service Pwm_SetPeriodAndDuty() from the code."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                     </a:a>
+                     <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:bbb4cf88-5a3a-4053-8eae-023f3990279e"/>
+                <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <!-- [cover parentID={33BFC216-9D93-4694-90C5-39340E82C758}] PwmVersionInfoApi [/cover] -->
+                <v:var name="PwmVersionInfoApi" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Switch to indicate that the Pwm_ GetVersionInfo is supported"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                     </a:a>
+                     <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:33bfc216-9d93-4694-90c5-39340e82c758"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+              </v:ctr>
+              <!-- [cover parentID={9E045944-B70F-48ae-9745-0344FA64C653}] PwmGeneral [/cover] -->
+              <v:ctr name="PwmGeneral" type="IDENTIFIABLE">
+                <a:a name="DESC">
+                  <a:v>EN: General settings for the PWM driver.</a:v>
+                </a:a>
+                <a:a name="UUID" 
+                     value="ECUC:9e045944-b70f-48ae-9745-0344fa64c653"/>
+                <!-- [cover parentID={7EE4DBF7-92CA-43f8-BEDF-CD012B1D5F01}] PwmDevErrorDetect [/cover] -->
+                <v:var name="PwmDevErrorDetect" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Switches the Default Error Tracer (Det) detection and notification ON or OFF."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                     <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:7ee4dbf7-92ca-43f8-bedf-cd012b1d5f01"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <v:var name="PwmMultiCoreErrorDetect" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Switches the Multicore error detection and notification ON or OFF."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                     <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:7ee4dbf7-92ca-43f8-bedf-cd912b1d5f01"/>
+                  <a:da name="DEFAULT" value="true"/>
+                  <a:da name="INVALID" type="XPath">
+                   <a:tst expr="../PwmDevErrorDetect != 'true'  and .='true'" 
+                            true="DET should be ON when PwmMultiCoreErrorDetect is ON "/>
+                  </a:da>
+                </v:var>
+                
+                <!-- [cover parentID={873477B1-C07E-4208-B92E-4E1875570984}] PwmDutycycleUpdatedEndperiod [/cover] -->
+                <v:var name="PwmDutycycleUpdatedEndperiod" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Switch for enabling the update of the duty cycle parameter at the end of the current period.
+                       PWM_VARIABLE_PERIOD channel class will not get affected with this parameter setting."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                     </a:a>
+                     <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:873477b1-c07e-4208-b92e-4e1875570984"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="ENABLE" type="XPath">
+                  <a:tst expr="../PwmChannelCoherentSelection = 'false'"/>
+                  </a:da>
+                </v:var>
+                <!-- [cover parentID={1559F6DC-E859-4216-8C88-0F8836AE115E}] PwmIndex [/cover] -->
+                <v:var name="PwmIndex" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Specifies the InstanceId of this module instance. If only one instance is present it shall have the Id 0."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                     </a:a>
+                     <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:1559f6dc-e859-4216-8c88-0f8836ae115e"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=4294967295"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <v:var name="PwmLowPowerStatesSupport" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Adds / removes all power state management related APIs (PWM_SetPowerState, PWM_GetCurrentPowerState, PWM_GetTargetPowerState, PWM_PreparePowerState, PWM_Main_PowerTransitionManager), indicating if the HW offers low power state management."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                          <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="OPTIONAL" value="true"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:2abff61e-374e-4c26-bcc6-6486e894e765"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="EDITABLE" value="false"/>
+                </v:var>
+                <!-- [cover parentID={39804E4A-209D-4df8-ADE1-4E0CD88CC57D}] PwmNotificationSupported [/cover] -->
+                <v:var name="PwmNotificationSupported" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Switch to indicate that the notifications are supported"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:39804e4a-209d-4df8-ade1-4e0cd88cc57d"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <!-- [cover parentID={DA85E8D7-AF3C-4ad4-A700-43EA0462BEE4}] PwmPeriodUpdatedEndperiod [/cover] -->
+                <v:var name="PwmPeriodUpdatedEndperiod" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Switch for enabling the update of the period parameter at the end of the current period.
+                   PWM_FIXED_PERIOD, PWM_FIXED_PERIOD_SHIFTED and PWM_FIXED_PERIOD_CENTER_ALIGNED channel class will not get affected with this parameter setting."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:da85e8d7-af3c-4ad4-a700-43ea0462bee4"/>
+                <a:da name="DEFAULT" value="false"/>
+                <a:da name="ENABLE" type="XPath">
+                <a:tst expr="../PwmChannelCoherentSelection = 'false'"/>
+                </a:da>
+                </v:var>
+                <!-- [cover parentID={DB5F6FDF-4F1B-4399-B1CF-565964019484}] PwmChannelCoherentSelection [/cover] -->
+                <v:var name="PwmChannelCoherentSelection" type="BOOLEAN">
+                  <a:a name="DESC">
+                  <a:v>EN: Switch for enabling the update of the period / duty parameter at the end of the current period
+                     channel wise. Switching on this parameter obsoletes PwmDutycycleUpdatedEndperiod and
+                     PwmPeriodUpdatedEndperiod.</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:da85e6d7-af3c-4ad4-a700-43ea0462bee4"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <!-- [cover parentID={94B309C9-0065-411d-815E-4A85A899F1E8}] PwmHandleShiftByOffset [/cover] -->
+                <v:var name="PwmHandleShiftByOffset" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v>EN: Switch for enabling Speacial handling for shifted channels.</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:da85e8d7-af3c-4ad4-a710-43ea0462bee4"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <!-- [cover parentID={44ACD6CE-ACB5-4b7b-8677-77BC3780EEF8}] PwmDutyShiftInTicks [/cover] -->
+                <v:var name="PwmDutyShiftInTicks" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v>EN: Switch for Pwm Duty Cycle type:
+                     Disabled - Duty Cycle and Shift value in percentage.
+                     Enabled - Duty Cycle and Shift value in timer ticks. 
+                     User has to take care of entering the right values for PwmDutycycleDefault and PwmShiftValue based on this selection.</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:da85e8d7-af3c-4ad4-a700-43ea0562bee4"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <!-- [cover parentID={74738ADF-C97E-458e-B2C1-D433D560281C}] PwmEnable0Or100DutyNotification [/cover] -->
+                <v:var name="PwmEnable0Or100DutyNotification" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v>EN: Switch to enable notification for 0% and 100% duty for variable and fixed period channels.</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:da45e8d7-af3c-4ad4-a700-43ea0462bee4"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="EDITABLE" type="XPath">
+                  <a:tst expr="../PwmNotificationSupported = 'true'"/>
+                  </a:da>
+                </v:var>
+                <v:var name="PwmPowerStateAsynchTransitionMode" type="BOOLEAN">
+                  <a:a name="DESC" 
+                       value="EN: Enables / disables support of the PWM Driver to the asynchronous power state transition."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:a510f93f-3393-467e-8c07-090d589c89f6"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="EDITABLE" value="false"/>
+                </v:var>
+                <!-- [cover parentID={116E6B1C-59B4-49b3-BFAC-2E2ED1619727}] PwmSafetyEnable [/cover] -->
+                <v:var name="PwmSafetyEnable" type="BOOLEAN">
+                  <a:a name="DESC"
+                      value="EN: Enable/Disable the Safety check and all associated notifications."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:da name="DEFAULT" value="true"/>
+                  <a:a name="UUID" value="ECUC:412da385-6bf4-4819-87e4-8ec223fb5b17"/>
+                </v:var>
+                <v:var name="PwmInitCheckApi" type="BOOLEAN">
+                  <a:a name="DESC"
+                      value="EN: Adds / removes the service Pwm_17_GtmCcu6_InitCheck() from the code."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:da name="DEFAULT" value="true"/>
+                  <a:a name="UUID" value="ECUC:dbfab416-7231-4c9e-b7a2-2580d8484ecf"/>
+                </v:var>
+                <v:lst name="PwmPowerStateConfig" type="MAP">
+                  <v:ctr name="PwmPowerStateConfig" type="IDENTIFIABLE">
+                    <a:a name="DESC" 
+                         value="EN: Each instance of this parameter defines a power state and the callback to be called when this power state is reached."/>
+                    <a:a name="UUID" 
+                         value="ECUC:32734417-2e9b-48db-930e-3df1591c3887"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                        </a:a>
+                    <v:var name="PwmPowerState" type="INTEGER">
+                      <a:a name="DESC" 
+                           value="EN: Each instance of this parameter describes a different power state supported by the PWM HW. It should be defined by the HW supplier and used by the PWMDriver to reference specific HW configurations which set the PWM HW module in the referenced power state."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                      <a:a name="UUID" 
+                           value="ECUC:ee4c6090-0034-4736-bdd2-7ad86f21e9d3"/>
+                      <a:da name="DEFAULT" value="0"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=9223372036854775807"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                    </v:var>
+                    <v:var name="PwmPowerStateReadyCbkRef" type="FUNCTION-NAME">
+                      <a:a name="DESC" 
+                           value="EN: Each instance of this parameter contains a reference to a power mode callback defined in a CDD or IoHwAbs component."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="ECUC:6e8869ff-d465-40bf-9296-d75dce548e58"/>
+                      <a:da name="DEFAULT" value="PwmPowerStateCbk"/>
+                    </v:var>
+                  </v:ctr>
+                  <a:da name="EDITABLE" value="false"/>
+                </v:lst>
+              </v:ctr>
+              <!-- [cover parentID={4D3198CE-2E69-444f-A8D7-EA3A3D3F8F6F}] CommonPublishedInformation [/cover] -->
+              <v:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                <a:a name="DESC" value="EN: Common container, aggregated by all modules. It contains published information about vendor and versions."/>
+                <a:a name="UUID" value="492f8482-3e2c-4bf1-b27f-01fd7ac35788"/>
+                <!-- [cover parentID={18C2C34E-9E41-4b53-891F-AE5B43425FFE}] ArMajorVersion [/cover] -->
+                <v:var name="ArMajorVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Major version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-88fe-1166b258bb8a"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="4"/>
+                </v:var>
+                <!-- [cover parentID={EEB8A1C8-3E41-4a2a-97D3-AA2707C7E84D}] ArMinorVersion [/cover] -->
+                <v:var name="ArMinorVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Minor version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="73f87c7f-e230-4178-bff0-eb2704aae656"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="2"/>
+                </v:var>
+                <!-- [cover parentID={61E61268-72C4-4da0-B2FC-5C45D8FC47FC}] ArPatchVersion [/cover] -->
+                <v:var name="ArPatchVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Patch level version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="2380135d-6778-417a-a34b-e10017d4dd54"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="2"/>
+                </v:var>
+                <!-- [cover parentID={88FC11B7-391E-40ed-B9A9-987ED593CF27}] SwMajorVersion [/cover] -->
+                <v:var name="SwMajorVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Major version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="fca015e3-5f28-4cbe-8949-8f4b87d86827"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="4"/>
+                </v:var>
+                <!-- [cover parentID={87612579-384B-4394-A0AD-C8AD73495907}] SwMinorVersion [/cover] -->
+                <v:var name="SwMinorVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Minor version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="14ab81e0-3d80-43dc-8b92-247e5a542df9"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="0"/>
+                </v:var>
+                <!-- [cover parentID={97556593-25E5-4365-B9AA-DA3FDC595311}] SwPatchVersion [/cover] -->
+                <v:var name="SwPatchVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Patch level version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="32e37bfd-18b6-41d1-9248-a81dbe0fe4c5"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="0"/>
+                </v:var>
+                <!-- [cover parentID={AF1BC797-8510-4632-BB64-09D812A20848}] ModuleId [/cover] -->
+                <v:var name="ModuleId" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Module ID of this module from Module List"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="3b407478-6902-4f80-b7cf-f33b0854e638"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="121"/>
+                </v:var>
+                <!-- [cover parentID={ADEF0451-1C9B-43fe-AB77-131AC3FE7446}] VendorId [/cover] -->
+                <v:var name="VendorId" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Vendor ID of the dedicated implementation of this module according to the AUTOSAR vendor list"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="7d650b2d-4adb-41f0-a68e-5f0c416501d1"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="17"/>
+                </v:var>
+                <!-- [cover parentID={B5DE5BB8-44E5-43ab-8C57-90560895B5FF}] VendorApiInfix [/cover] -->
+                <v:var name="VendorApiInfix" type="STRING_LABEL">
+                  <a:a name="DESC">
+                  <a:v>EN: In driver modules which can be instantiated several times on a single ECU, BSW00347 requires that the name of APIs is extended by the VendorId and a vendor specific name. 
+                  This parameter is used to specify the vendor specific name. In total, the implementation specific name is generated as follows:
+                  &lt;ModuleName&gt;_&gt;VendorId&gt;_&lt;VendorApiInfix&gt;&lt;Api name from SWS&gt;.
+
+                  E.g.  assuming that the VendorId of the implementor is 123 and the implementer chose a VendorApiInfix of &quot;v11r456&quot; a api name Can_Write defined in the SWS will translate to Can_123_v11r456Write. 
+                  This parameter is mandatory for all modules with upper multiplicity &gt; 1. It shall not be used for modules with upper multiplicity =1.</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ad363b41-e945-4717-b12f-c2f800ef138e"/>
+                  <a:da name="ENABLE" value="true"/>
+                  <a:da name="DEFAULT" value="GtmCcu6"/>
+                </v:var>
+                <v:var name="Release" type="STRING">
+                <a:a name="DESC" value="EN: Aurix2G derivative used for the implementation"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                    type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v class="PublishedInformation">VariantPostBuild</icc:v>
+                </a:a>
+                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="3b407478-6902-4f40-b7cf-f33b0854e638"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('Rel.Derivate')"/>
+                </v:var>
+              </v:ctr>
+            </v:ctr>
+          </d:chc>
+            </d:lst>
+          </d:ctr>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+</datamodel>
+

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2018)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**  FILENAME  : plugin.xml                                                    **
+**                                                                            **
+**  VERSION   : 4.0.0                                                         **
+**                                                                            **
+**  DATE      : 2018-03-26                                                    **
+**                                                                            **
+**  VARIANT   : Variant PC                                                    **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX2G                                              **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY : [cover parentID ]                                          **
+**                                                                            **
+**  DESCRIPTION  : Tresos plugin for Resource                                 **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) : NA                                                     **
+**                                                                            **
+**  MAY BE CHANGED BY USER : no                                               **
+**                                                                            **
+*******************************************************************************/
+-->
+<!-- [cover parentID={571BAF34-077E-465b-91F3-F2CF7EDAD3B7}] Tresos plugin support file containing the meta-data.[/cover] -->
+<!-- [cover parentID={3E743FC1-B6B6-4948-98F6-1AC092F0DC86}] Tresos plugin support file Plugin properties.[/cover] -->
+<plugin>
+<extension point="dreisoft.tresos.launcher2.plugin.module"
+             id="ResourceM_Aurix2GAS422_ModuleExt"
+             name="Resource Manager Module for selecting sub-derivative and multicore configuration">
+
+    <module id="ResourceM_Aurix2GAS422"
+            label="%ModuleLabel"
+            mandatory="true"
+            allowMultiple="false"
+            description="%ModuleDesc"
+            copyright="(c) 2018 Infineon Technologies"
+            swVersionMajor="2"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            specVersionMajor="4"
+            specVersionMinor="2"
+            specVersionPatch="2"
+            relVersionMajor="4"
+            relVersionMinor="2"
+            relVersionPatch="2"
+            categoryType="%ModuleName"
+            categoryLayer="MCAL"
+            categoryCategory="ECU Firmware"
+            categoryComponent="ECUC">
+<!-- [cover parentID={5CA58BDD-0BE1-4869-BE44-333AD4E77E2F}] HW derivate selection [/cover] -->
+      <ecuType target="AURIX2G" derivate="TC387"/>
+      <ecuType target="AURIX2G" derivate="TC389"/>
+      <ecuType target="AURIX2G" derivate="TC397"/>
+      <ecuType target="AURIX2G" derivate="TC397_ADAS"/>
+      <ecuType target="AURIX2G" derivate="TC399"/>
+   </module>
+  </extension>
+
+    <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+             id="ResourceM_Aurix2GAS422_ConfigExt"
+             name="ResourceM_Aurix2G Configuration">
+    <configuration moduleId="ResourceM_Aurix2GAS422">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/ResourceM.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/AURIX2G/EcucDefs/ResourceM"/>
+      </data>
+
+      <editor id="ResourceM_Aurix2GAS422_Edit"
+              label="%ModuleName"
+              tooltip="%ModuleDesc">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/AURIX2G/EcucDefs/ResourceM"/>
+          <parameter name="title" value="ResourceM"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+  </extension>
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="ResourceM_Aurix2GAS422_GenExt"
+              name="ResourceM_Aurix2G Generator">
+    <generator moduleId="ResourceM_Aurix2GAS422"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+
+      <!-- common template path parameters -->
+      <parameter name="templates"
+                 mode="generate,verify" value="generate"/>
+      <!-- swcd modes and template path parameters -->
+      <parameter name="mode_type"
+                 mode="generate_swcd" value="generate"/>
+
+      <parameter name="mode_type"
+                 mode="verify_swcd" value="verify"/>
+
+      <parameter name="templates"
+                 mode="generate_swcd,verify_swcd" value="generate_swcd"/>
+    </generator>
+  </extension>
+<!-- [cover parentID={2BC41DF3-090A-4f07-87E8-CE6E2FCF8A40}] Tresos plugin file registers.ECU resource properties file [/cover] -->
+<!-- [cover parentID={0F9A5504-850A-4fdd-948C-E4D36D5E6708}] Include property file for HW derivate [/cover] -->
+<!-- [cover parentID={A2CC9C64-D590-471d-8621-997BA9197A6F}] Include Marking Option property file [/cover] -->
+<!-- /* Include for TC387 common property file */-->
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresource">
+    <ecuresource
+     target="AURIX2G"
+     derivate="TC387"
+     moduleId="ResourceM_Aurix2GAS422"
+     file="resources/TC38XA/AURIX2G_TC387.properties">
+    </ecuresource>
+  </extension>
+
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresource">
+    <ecuresource
+     target="AURIX2G"
+     derivate="TC387"
+     moduleId="ResourceM_Aurix2GAS422"
+     file="resources/TC38XA/AURIX2G_TC387x.properties">
+     <parameter name="subderivative" value="TC387x"/>
+    </ecuresource>
+  </extension>
+
+<!-- /* Include for TC389 common property file */-->
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresource">
+    <ecuresource
+     target="AURIX2G"
+     derivate="TC389"
+     moduleId="ResourceM_Aurix2GAS422"
+     file="resources/TC38XA/AURIX2G_TC389.properties">
+    </ecuresource>
+  </extension>
+
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresource">
+    <ecuresource
+     target="AURIX2G"
+     derivate="TC389"
+     moduleId="ResourceM_Aurix2GAS422"
+     file="resources/TC38XA/AURIX2G_TC389x.properties">
+     <parameter name="subderivative" value="TC389x"/>
+    </ecuresource>
+  </extension>
+
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresource">
+    <ecuresource
+     target="AURIX2G"
+     derivate="TC397"
+     moduleId="ResourceM_Aurix2GAS422"
+     file="resources/TC39XB/AURIX2G_TC397.properties">
+    </ecuresource>
+  </extension>
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresource">
+    <ecuresource
+     target="AURIX2G"
+     derivate="TC397"
+     moduleId="ResourceM_Aurix2GAS422"
+     file="resources/TC39XB/AURIX2G_TC397x.properties">
+     <parameter name="subderivative" value="TC397x"/>
+    </ecuresource>
+  </extension>
+
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresource">
+    <ecuresource
+     target="AURIX2G"
+     derivate="TC397_ADAS"
+     moduleId="ResourceM_Aurix2GAS422"
+     file="resources/TC39XB/AURIX2G_TC397_ADAS.properties">
+    </ecuresource>
+  </extension>
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresource">
+    <ecuresource
+     target="AURIX2G"
+     derivate="TC397_ADAS"
+     moduleId="ResourceM_Aurix2GAS422"
+     file="resources/TC39XB/AURIX2G_TC397x_ADAS.properties">
+     <parameter name="subderivative" value="TC397x_ADAS"/>
+    </ecuresource>
+  </extension>
+
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresource">
+    <ecuresource
+     target="AURIX2G"
+     derivate="TC399"
+     moduleId="ResourceM_Aurix2GAS422"
+     file="resources/TC39XB/AURIX2G_TC399.properties">
+    </ecuresource>
+  </extension>
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresource">
+    <ecuresource
+     target="AURIX2G"
+     derivate="TC399"
+     moduleId="ResourceM_Aurix2GAS422"
+     file="resources/TC39XB/AURIX2G_TC399x.properties">
+     <parameter name="subderivative" value="TC399x"/>
+    </ecuresource>
+  </extension>  
+  <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresourcefinder">
+    <ecuresourcefinder>
+      <finder class="dreisoft.tresos.autosar2.api.ecuresource.DefaultEcuResourceFinder">
+      </finder>
+    </ecuresourcefinder>
+  </extension>
+
+   <extension point="dreisoft.tresos.autosar2.api.plugin.ecuresourcefinder">
+    <ecuresourcefinder>
+      <finder class="dreisoft.tresos.autosar2.api.ecuresource.DefaultEcuResourceFinder">
+        <parameter name="name" value="subderivative"/>
+        <parameter name="path" value="/AUTOSAR/TOP-LEVEL-PACKAGES/AURIX2G/TOP-LEVEL-PACKAGES/EcucDefs/ELEMENTS/ResourceM/ResourceMGeneral/ResourceMSubDerivative"/>
+      </finder>
+    </ecuresourcefinder>
+  </extension>
+
+</plugin>
+

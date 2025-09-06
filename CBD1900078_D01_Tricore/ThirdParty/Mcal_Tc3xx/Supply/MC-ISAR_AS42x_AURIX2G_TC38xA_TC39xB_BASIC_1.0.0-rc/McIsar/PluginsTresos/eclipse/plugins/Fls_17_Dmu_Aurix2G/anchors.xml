@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<!--
+/******************************************************************************
+**                                                                           **
+** Copyright (C) Infineon Technologies (2016)                                **
+**                                                                           **
+** All rights reserved.                                                      **
+**                                                                           **
+** This document contains proprietary information belonging to Infineon      **
+** Technologies. Passing on and copying of this document, and communication  **
+** of its contents is not permitted without prior written authorization.     **
+**                                                                           **
+*******************************************************************************
+**                                                                           **
+**  FILENAME   : anchors.xml                                                 **
+**                                                                           **
+**  VERSION :  1.0.0                                                         **
+**                                                                           **
+**  DATE       :  2018-03-27                                                 **
+**                                                                           **
+**  VARIANT   : Variant PB                                                   **
+**                                                                           **
+**  PLATFORM  : Infineon AURIX2G                                             **
+**                                                                           **
+**  AUTHOR      : DL-AUTOSAR-Engineering                                     **
+**                                                                           **
+**  VENDOR      : Infineon Technologies                                      **
+**                                                                           **
+**  DESCRIPTION  : This file contains reference to User Manual               **
+**                                                                           **
+**  SPECIFICATION(S) : Specification of FLS Driver, AUTOSAR Release 4.2.2    **
+**                                                                           **
+**  MAY BE CHANGED BY USER [yes/no]: No                                      **
+**                                                                           **
+******************************************************************************/
+-->
+<!-- [cover parentID={D2975941-51DB-48cc-80B8-2ACFB425AF86}][/cover] -->
+
+<toc label="Fls_17_Dmu_Aurix2G/TC38x" link_to="../eb.tresos.doc.autocore.mcal.releasenotes/anchors.xml#EB_tresos_AutoCore_MCAL_releasenotes" topic="$nl$/index.html">
+ <topic label="Fls_17_Dmu" href="">
+   <topic label="Users Guide &quot; TC3xx_SW_MCAL_UM_BASIC.pdf  &quot; (.doc)" href="doc/TC3xx_SW_MCAL_UM_BASIC.pdf"/>
+ </topic>
+</toc>

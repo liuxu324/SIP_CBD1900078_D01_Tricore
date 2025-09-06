@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2017)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**  FILENAME  : Crc_Catalog.xml                                               **
+**                                                                            **
+**  VERSION   : 1.0.0                                                         **
+**                                                                            **
+**  DATE      : 2017-03-22                                                    **
+**                                                                            **
+**  VARIANT   : Variant PC                                                    **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX2G                                              **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY : [cover parentID]                                           **
+**                                                                            **
+**  DESCRIPTION  : Catalog file for Crc Driver                                **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) : Specification of Crc Driver, AUTOSAR Release 4.2.2     **
+**                                                                            **
+**  MAY BE CHANGED BY USER : no                                               **
+**                                                                            **
+*******************************************************************************/
+-->
+<!-- [cover parentID={BAA29F87-1B32-4e5c-B9A0-5C8AA561E153}]  [/cover] -->
+<CATALOG xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="catalog_V3_0_0.ml.xsd">
+    <SHORT-NAME>CrcCatalog</SHORT-NAME>
+    <ABLOCKS>
+        <ABLOCK>
+            <SHORT-NAME>crc::ssc::src::Crc.c</SHORT-NAME>
+            <CATEGORY>SWSRC</CATEGORY>
+            <FILES>
+                <FILE>crc/ssc/src/Crc.c</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK>
+            <SHORT-NAME>crc::ssc::inc::Crc.h</SHORT-NAME>
+            <CATEGORY>SWHDR</CATEGORY>
+            <FILES>
+                <FILE>crc/ssc/inc/Crc.h</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK>
+            <SHORT-NAME>plugins::Crc_Aurix2G::generate::template::inc::Crc_Cfg.h</SHORT-NAME>
+            <CATEGORY>SWHDR</CATEGORY>
+            <FILES>
+                <FILE>plugins/Crc_Aurix2G/generate/template/inc/Crc_Cfg.h</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK>
+            <SHORT-NAME>plugins::Crc_Aurix2G::config::Crc.xdm</SHORT-NAME>
+            <CATEGORY>SWTOOL</CATEGORY>
+            <FILES>
+                <FILE>plugins/Crc_Aurix2G/config/Crc.xdm</FILE>
+            </FILES>
+        </ABLOCK>
+    </ABLOCKS>
+</CATALOG>

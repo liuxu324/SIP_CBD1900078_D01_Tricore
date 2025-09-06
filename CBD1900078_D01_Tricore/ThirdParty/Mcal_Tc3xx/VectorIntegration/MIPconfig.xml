@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+============================================================================
+
+Copyright (c) 2018 by Vector Informatik GmbH. All rights reserved.
+
+This software is copyright protected and proprietary to Vector Informatik GmbH.
+Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+All other rights remain with Vector Informatik GmbH.
+
+============================================================================
+
+This file is needed for internal use.
+Please do not modify this file, otherwise the software may behave in
+unexpected way.
+
+============================================================================
+
+============================================================================
+                P R O J E C T
+============================================================================
+Module
+=======================
+Mcal_Tc3xxInf01Asr4Sub
+============================================================================
+                A U T H O R   I D E N T I T Y
+============================================================================
+Initials  Name				Company
+========  ===============	================================================
+virgaj	  Andrej Gazvoda	Vector Informatik GmbH
+virgki	  Kishore Gunda	    Vector Informatik GmbH
+============================================================================
+                R E V I S I O N   H I S T O R Y
+============================================================================
+Date		Version	 Author		Description
+========= 	=======	 =======	============================================
+2017-02-06	1.00.00	 virgaj	    Infineon Tc3xx SuperSet - Initial revision
+2017-03-15	1.00.01	 virgaj		Added Irq and resulting changes
+2017-04-11	1.01.00	 virgaj		Support of TC39x
+2018-07-24  1.02.02  virgki	    MIP Update with TC3xx ASR4 MCAL (Beta)  
+2018-09-06  1.02.04  virgki	    Replace the patch file Mcu_17_TimerIp.c with the patch file provided by the Mcal vendor.
+                                Rename the folder name in VectorIntegration from patch to patches
+2018-10-22  1.03.00   virgki    Integrate the latest Package. 
+                                MC-ISAR_AS42x_AURIX2G_TC38xA_TC39xB_BASIC_1.0.0-rc 
+                                MC-ISAR_AS42x_AURIX2G_TC38xA_TC39xB_CD_1.0.0-rc								
+****************************************************************************
+-->
+
+<MipConfig xmlns="http://www.vector.com/MIPv2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.vector.com/MIPv2 MIP2.0.7.xsd">
+	<!--
+  =====================================================================================================
+  Generic Informations
+  =====================================================================================================
+  This is the configuration file for the 3rdParty McalIntegartionHelper.
+  Please note: This file has been created and tested for a specific and agreed MCAL version.
+               As typically pattern based specificatons and actions are used this configuration
+               will be valid for other MCAL versions in most cases but this cannot be guaranteed.
+  All steps processed by the tool are logged during execution and can be retraced later on.
+  -->
+	<GeneralInformation>
+		<!-- Editing hint: No modifications should be necessary here. -->
+		<!-- Path to SIP base path relative to the location of this file. SIP base path is the \external 
+         folder 
+         ATTENTION: All other paths within this configuraton file are relative to the SIP Base path! -->
+		<SipBase_RelPath>..\\..\\..\\</SipBase_RelPath>
+		<!-- Path to the MCAL supply folder relative to the SIP Base path -->
+		<McalSupply_RelPath>ThirdParty\\Mcal_.*\\Supply</McalSupply_RelPath>
+	</GeneralInformation>
+	<!--
+  =====================================================================================================
+  Package definitions
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  Attributes:
+    - Summary:      Freetext to describe the package content in short
+    - Id:           Unique number to identify the package. This Id will be used by following commands.
+  Elements:
+    - NameExpected: This is the folder name of the package as specified by MCAL supplier.
+                    Typically this folder name contains informations about version and supported 
+                    controllers or families
+    - Description:  Free text to describe the contents of this package in detail
+    - Mandatory:    'true' if this package is mandatory, 'false' otherwise
+  =====================================================================================================
+  -->
+	<!--Tc38x-->
+	<!--A-Step-->
+	<Packages Summary="Tc3xx V100 RC">
+		<!-- Editing hint: Adapt these settings to the packages used -->
+		<Package Summary="MCAL/Base package" Id="1">
+			<NameExpected>MC-ISAR_AS42x_AURIX2G_TC38xA_TC39xB_BASIC_1.0.0-rc</NameExpected>
+			<Description>Base package containing the complete MCAL</Description>
+			<Mandatory>true</Mandatory>
+		</Package>
+		<Package Summary="Tresos tool" Id="2">
+			<NameExpected>Tresos</NameExpected>
+			<Description>Contains the 3rd party configuration and generation tool chain.</Description>
+			<Mandatory>true</Mandatory>
+		</Package>
+		<Package Summary="Complex Driver Package" Id="3">
+			<NameExpected>MC-ISAR_AS42x_AURIX2G_TC38xA_TC39xB_CD_1.0.0-rc</NameExpected>
+			<Description>Memory package including Fls and Fee.</Description>
+			<Mandatory>false</Mandatory>
+		</Package>
+	</Packages>
+	<!--
+  =====================================================================================================
+  Below all actions are described which are needed in order to install or remove the MCAL packages.
+  They are devided in the sections.
+  - Install:     With this step the MCAL is installed/copied into the SIP structure thus commonly only
+                 one action for each package is necessary namely copy the package.
+                 If package is already available in SIP (e.ghad been included in SIP) these steps will 
+                 be skipped.
+  - Prepare:     During this step some necessary operation within the MCAL packages and within the 
+                 Vector SIP are executed.
+  - UndoPrepare: With this actions the actions described within the Prepare section will be undone.
+  - Remove:      The actions described here will remove the MCAL packages!
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  For all 4 sections all available actions can be executed as often as needed.
+  Order of action in this file is equal to the order of execution.
+  =====================================================================================================
+  -->
+	<Install>
+		<!-- Editing hint: Adapt these settings to the number of used packages -->
+		<ActionCopyPackage Summary="Copy package" RelatedPackage="1"/>
+		<ActionCopyPackage Summary="Copy package" RelatedPackage="2"/>
+		<ActionCopyPackage Summary="Copy package" RelatedPackage="3"/>
+	</Install>
+	<Prepare>
+		<!-- Write path to MCAL package to *_rules.mak file -->
+		<ActionPatchFile Summary="Set path to MCAL package in make file" RelatedPackage="1" ExecuteAlways="true">
+			<PathRel>BSW\\Mcal_.*\\mak\\Mcal_.*_rules.mak</PathRel>
+			<Pattern>(MCAL_PATH_BASE.*=)(.*)</Pattern>
+			<ReplaceBOP>$1 ..\\?CONST.Package_PathRel_Id1?</ReplaceBOP>
+			<SkipPattern/>
+		</ActionPatchFile>
+		<!-- Write path to CD package to *_rules.mak file -->
+		<ActionPatchFile Summary="Set path to Complex Driver package in make file" RelatedPackage="3" ExecuteAlways="true">
+			<PathRel>BSW\\Mcal_.*\\mak\\Mcal_.*_rules.mak</PathRel>
+			<Pattern>(MCAL_PATH_CD.*=)(.*)</Pattern>
+			<ReplaceBOP>$1 ..\\?CONST.Package_PathRel_Id3?</ReplaceBOP>
+			<SkipPattern/>
+		</ActionPatchFile>
+
+		<ActionPatchFile Summary="Set path to 3rd party tool in DaVinciConfigurator configuration file" RelatedPackage="2" ExecuteAlways="true">
+			<PathRel>DaVinciConfigurator\\Generators\\Mcal_.*\\Settings_Tresos.xml</PathRel>
+			<Pattern><![CDATA[(.*<Setting Name="TresosFolder" Value=")(.*)(".*/>)]]></Pattern>
+			<ReplaceBOP><![CDATA[$1$(SipRootPath)\\?CONST.Package_PathRel_Id2?$3]]></ReplaceBOP>
+			<SkipPattern/>
+		</ActionPatchFile>
+		
+		<!-- Copy/Install MCAL plugins to Tresos -->
+		<!-- Editing hint: Adapt family name, e.g. Aurix, if necessary -->
+		<ActionCopyPattern Summary="Copy/Install MCAL plugins to Tresos" RelatedPackage="1" ExecuteAlways="true" ActionId="10">
+			<SourceRootRel>?CONST.Package_PathRel_Id1?\\McIsar\\PluginsTresos\\eclipse\\plugins</SourceRootRel>
+			<TargetRootRel>?CONST.Package_PathRel_Id2?\\plugins</TargetRootRel>
+			<SourcePattern>(.*_Aurix2G)</SourcePattern>
+			<TargetBOP>$1</TargetBOP>
+			<ExcludePattern/>
+		</ActionCopyPattern>
+
+		<!-- Copy/Install Complex Driver plugins to Tresos -->
+		<!-- Editing hint: Adapt family name, e.g. Aurix, if necessary -->
+		<ActionCopyPattern Summary="Copy/Install Complex driver plugins to Tresos" RelatedPackage="3" ExecuteAlways="true" ActionId="11">
+			<SourceRootRel>?CONST.Package_PathRel_Id3?\\McIsar\\PluginsTresos\\eclipse\\plugins</SourceRootRel>
+			<TargetRootRel>?CONST.Package_PathRel_Id2?\\plugins</TargetRootRel>
+			<SourcePattern>(.*_Aurix2G)</SourcePattern>
+			<TargetBOP>$1</TargetBOP>
+			<ExcludePattern>Fls.*|Smu.*</ExcludePattern>
+		</ActionCopyPattern>
+		
+		<ActionRenameFile Summary="Rename files in DemoWorkspace to avoid redefinitions" ExecuteAlways="true" RelatedPackage="1" ActionId="21" MultiFile="true">
+			<PathRel><![CDATA[?CONST.Package_PathRel_Id1?\\DemoWorkspace\\McalDemo\\TC3.*\\0_Src\\BaseSw\\Infra\\Autosar_Srv\\(?'name'[^_]\w*)(?'extension'\.\w*)]]></PathRel>
+			<NewName>_${name}${extension}</NewName>
+			<ExcludePattern>Mcal_SafetyError.*|QsM_Cbk.h</ExcludePattern>
+		</ActionRenameFile>		
+		
+		<ActionRenameFile Summary="Rename files in DemoWorkspace to avoid redefinitions" ExecuteAlways="true" RelatedPackage="1" ActionId="21" MultiFile="true">
+			<PathRel><![CDATA[?CONST.Package_PathRel_Id1?\\DemoWorkspace\\McalDemo\\TC3.*\\0_Src\\BaseSw\\Infra\\Integration\\(?'name'[^_]\w*)(?'extension'\.\w*)]]></PathRel>
+			<NewName>_${name}${extension}</NewName>
+			<ExcludePattern>IFX_Os.h</ExcludePattern>
+		</ActionRenameFile>					
+		
+	</Prepare>
+	<!-- Define actions to be undone when executing UndPrepare -->
+	<!-- Editing hint: Adapt the undo settings to the action settings above -->
+	<UndoPrepare>
+		<Undo ActionId="10" Summary="Remove Base plugins from Tresos"/>
+		<Undo ActionId="11" Summary="Remove Mem plugins from Tresos"/>
+		
+	</UndoPrepare>
+	<!-- Define actions to be undone when executing Remove -->
+	<!-- Editing hint: Adapt the remove settings to the install settings above -->
+	<Remove>
+		<ActionRemove Summary="Remove 3rd party packages" RelatedPackage="-1" MultiFile="true">
+			<!-- action removes supply folder, but only if all installed packages are removed at once (RelatedPackage="-1") -->
+			<PathRel>?CONST.Supply_PathRel?</PathRel>
+		</ActionRemove>
+	</Remove>
+	<!--
+  =====================================================================================================
+  As the last step the BSWMD files have to be copied from the MCAL packages to a SIP internal location.
+  Therefore the supported derivatives must be determined and a derivative must be choosen by customer.
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  In order to specify the supported derivates there are two possibilties:
+  1. Specify them explicitly
+     <Derivatives>
+       <Derivative DisplayName="R7F701002" IdentifyingFileFragment="02" />
+       <Derivative DisplayName="R7F701003" IdentifyingFileFragment="03" />
+       ...
+     </Derivatives>
+     The Attribute DisplayName specifies the name of the derivative which shall be shown within the tool.
+     The Attribute IdentifyingFileFragment defines the fragment of the filename which signalizes the 
+     compatibility to the derivative.
+  
+  2. Using a pattern to look for supported derivatives within the MCAL packages
+     <Derivatives>
+       <Pattern><![CDATA[?CONST.Package_PathRel_Id1?\\TC2.*\\Aurix_.*\\tools\\tresosECU\\bmd\\(?<derivative>TC.*)]]></Pattern>
+       <DisplayNameBOP>Aurix ${derivative}</DisplayNameBOP>
+       <IdentifyingFileFragmentBOP>${derivative}</IdentifyingFileFragmentBOP>
+     </Derivatives>
+     
+     The <Pattern> element is used to scan for derivatives. 
+     The <DisplayNameBOP> defines the name of the derivative to be displayed.
+     The <IdentifyingFileFragmentBOP> defines the fragment of the filename which signalizes the 
+     compatibility to the derivative.
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  After defining the derivatives as a second step the copy actions for each MCAL package have to be 
+  defined.
+  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  The action ActionDefVar may be defined in advance in order to set variables which may be used within 
+  the copy actions.
+  =====================================================================================================
+  -->
+	<Bswmd>
+		<ActionDefVar Summary="Define temporary variable" RelatedPackage="1" ExecuteAlways="true">
+			<Name>BswmdMcalFolder</Name>
+			<LookForPathPattern>BSWMD\\(Mcal_\w*)</LookForPathPattern>
+			<ValueBOP>$1</ValueBOP>
+		</ActionDefVar>
+		<!-- Identify available derivatives and packages subfolders in \tools\tresosECU\bmd -->
+		<!-- Editing hint: path to \tools\tresosECU\bmd may need to be adapted -->
+		<DerivativeScan>
+			<Pattern><![CDATA[?CONST.Package_PathRel_Id1?\\McIsar\\PluginsTresos\\eclipse\\plugins\\Adc_Aurix2G\\autosar\\TC3.*\\(?<derivative>TC.*)]]></Pattern>
+			<DisplayNameBOP>${derivative}</DisplayNameBOP>
+			<!--Results in e.g.: TC275TC_64F200N, ..-->
+			<IdentifyingFileFragmentBOP>${derivative}</IdentifyingFileFragmentBOP>
+		</DerivativeScan>
+		<ActionDefVar Summary="Define temporary variable" RelatedPackage="1" ExecuteAlways="true">
+			<Name>IdentifyingFileFragment_short</Name>
+			<BaseValue>?USR.IdentifyingFileFragment?</BaseValue>
+			<BasePattern>(TC...).*</BasePattern>
+			<ValueBOP>$1</ValueBOP>
+		</ActionDefVar>		
+		<!-- Copy BSWMDs of selected derivative to BSWMD forlder -->
+		<!-- Editing hint: Packages and plugin names may need to be adapted -->
+		<Copy RelatedPackage="1">
+			<Pattern><![CDATA[?CONST.Package_PathRel_Id1?\\McIsar\\PluginsTresos\\eclipse\\plugins\\(?<name>\w*)_Aurix2G\\autosar\\TC3.*\\?USR.IdentifyingFileFragment?\\.*]]></Pattern>
+			<TargetBOP>Bswmd\\?VAR.BswmdMcalFolder?\\Copy_${name}.arxml</TargetBOP>
+			<ExcludePattern>.*Can.bmd|.*EcuM.bmd|.*EcuC.bmd</ExcludePattern>
+			<RemovePattern>Bswmd\\?VAR.BswmdMcalFolder?\\Copy_</RemovePattern>
+		</Copy>
+		<Copy RelatedPackage="3">
+			<Pattern><![CDATA[?CONST.Package_PathRel_Id3?\\McIsar\\PluginsTresos\\eclipse\\plugins\\(?<name>\w*)_Aurix2G\\autosar\\TC3.*\\?USR.IdentifyingFileFragment?\\.*]]></Pattern>
+			<TargetBOP>Bswmd\\?VAR.BswmdMcalFolder?\\Copy_${name}.arxml</TargetBOP>
+			<ExcludePattern>.*Fls.*.bmd|.*Smu.*.bmd|.*EcuC.bmd</ExcludePattern>
+			<RemovePattern>Bswmd\\?VAR.BswmdMcalFolder?\\Copy_</RemovePattern>
+		</Copy>
+	</Bswmd>
+	<Finalize>
+		<!-- Patch all other xml setting files due to derivate entry -->
+		<ActionPatchFile Summary="Patch settings xml files and set derivative name" RelatedPackage="1" ExecuteAlways="true" MultiFile="true">
+			<PathRel>DaVinciConfigurator\\Generators\\Mcal_.*\\Settings_.*</PathRel>
+			<Pattern><![CDATA[(?<start>.*<Setting.*Name="Derivate".*Value=").*(?<end>".*)]]></Pattern>
+			<ReplaceBOP><![CDATA[${start}?VAR.IdentifyingFileFragment_short?${end}]]></ReplaceBOP>
+			<SkipPattern/>
+		</ActionPatchFile>
+		<ActionPatchFile Summary="Set variable 'SEL_DERIV' to 'TC38A' in make file depending on chosen derivative" RelatedPackage="1" ExecuteAlways="true">
+			<PathRel>BSW\\Mcal_.*\\mak\\Mcal_.*_rules.mak</PathRel>
+			<Pattern>(SEL_DERIV.*=)(.*)</Pattern>
+			<ReplaceBOP>$1 TC38A</ReplaceBOP>
+			<Condition Pattern="?VAR.IdentifyingFileFragment_short?" Match="TC38.*"/>
+			<SkipPattern/>
+		</ActionPatchFile>		
+		<ActionPatchFile Summary="Set variable 'SEL_DERIV' to 'TC39B' in make file depending on chosen derivative" RelatedPackage="1" ExecuteAlways="true">
+			<PathRel>BSW\\Mcal_.*\\mak\\Mcal_.*_rules.mak</PathRel>
+			<Pattern>(SEL_DERIV.*=)(.*)</Pattern>
+			<ReplaceBOP>$1 TC39B</ReplaceBOP>
+			<Condition Pattern="?VAR.IdentifyingFileFragment_short?" Match="TC39.*"/>
+			<SkipPattern/>
+		</ActionPatchFile>		
+	</Finalize>
+</MipConfig>

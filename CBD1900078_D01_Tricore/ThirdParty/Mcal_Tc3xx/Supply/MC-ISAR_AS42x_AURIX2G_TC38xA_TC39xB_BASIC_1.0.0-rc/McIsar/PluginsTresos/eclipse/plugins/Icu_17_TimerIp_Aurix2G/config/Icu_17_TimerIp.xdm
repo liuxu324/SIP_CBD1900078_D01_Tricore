@@ -1,0 +1,1848 @@
+<?xml version='1.0'?>
+
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2018)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**  FILENAME  : Icu_17_TimerIp.xdm                                            **
+**                                                                            **
+**  VERSION   : 19.0.0                                                        **
+**                                                                            **
+**  DATE      : 2018-09-21                                                    **
+**                                                                            **
+**  VARIANT   : Variant PB                                                    **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX2G                                              **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY : [cover parentID= {21C45018-3B62-4a6a-99FE-09BFAB16C6C3}]   **
+**                                                                            **
+**  DESCRIPTION  : XML data model for Icu driver                              **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) : Specification of Icu Driver, AUTOSAR Release 4.2.2     **
+**                                                                            **
+**  MAY BE CHANGED BY USER : no                                               **
+**                                                                            **
+*******************************************************************************/
+-->
+
+<datamodel version="5.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/12/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/12/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <!-- [cover parentID={BD607180-6DDB-4175-9E75-6DCCAEBFBD5C}] Icu Module Def [/cover] -->
+      <d:ctr name="AURIX2G" type="AR-PACKAGE">
+        <a:a name="UUID" value="ECUC:AUTOSAR"/>
+        <d:lst type="TOP-LEVEL-PACKAGES">
+          <d:ctr name="EcucDefs" type="AR-PACKAGE">
+            <a:a name="UUID" value="ECUC:ECUCDEFS"/>
+        <d:lst type="ELEMENTS">
+          <!-- [cover parentID={9D858769-7CC7-46c3-941E-129083AEF5CB}] Icu Module Def [/cover] -->
+          <d:chc name="Icu" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                <ad:ADMIN-DATA>
+                  <ad:DOC-REVISIONS>
+                    <ad:DOC-REVISION>
+                      <ad:REVISION-LABEL>4.2.2</ad:REVISION-LABEL>
+                      <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                      <ad:DATE>2014-10-31</ad:DATE>
+                    </ad:DOC-REVISION>
+                  </ad:DOC-REVISIONS>
+                </ad:ADMIN-DATA>
+              </a:a>
+              <a:a name="DESC" 
+                   value="EN: Configuration of the Icu (Input Capture Unit) module."/>
+              <a:a name="LOWER-MULTIPLICITY" value="0"/>
+                  <a:a name="POSTBUILDVARIANTSUPPORT" value="true"/>
+              <a:a name="RELEASE" value="asc:4.2.2"/>
+              <d:ref type="REFINED_MODULE_DEF" value="ASPath:/AUTOSAR/EcucDefs/Icu"/>
+              <a:a name="UPPER-MULTIPLICITY" value="*"/>
+              <a:a name="UUID" value="ECUC:9d858769-7cc7-46c3-941e-129083aef5cb"/>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                     type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                    </a:a>
+                <!-- [cover parentID={7387141F-08D0-4e02-A31B-76E65ED939E5}] Config Variant [/cover] -->
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:da name="DEFAULT" value="VariantPostBuild"/>
+                <a:da name="RANGE">
+                  <a:v>VariantPostBuild</a:v>
+                </a:da>
+              </v:var>
+              <!--**************************************************-->
+              <!--********ICU General Configuration - Start*********-->
+              <!--**************************************************-->  
+              <!-- [cover parentID={65E11074-8C5D-4fb7-B332-10E4889287F2}] IcuConfigSet [/cover] -->         
+                <v:ctr name="IcuConfigSet" 
+                       type="IDENTIFIABLE">
+                  <a:a name="DESC" 
+                       value="EN: This container is the base for a multiple configuration set"/>
+                  <a:a name="UUID" value="65a6f4ae-155b-4591-a60b-3f0347afebd1"/>
+                  <!-- [cover parentID={65E2F79C-922E-4180-90DC-0819FC20F890}] IcuMaxChannel [/cover] -->
+                <v:var name="IcuMaxChannel" type="INTEGER">
+                    <a:a name="CALCULATION-FORMULA" 
+                         value="number of configured icu channels"/>
+                    <a:a name="DERIVED" value="TRUE"/>
+                    <a:a name="DESC">
+                      <a:v>EN: This parameter contains the number of Channels configured. It will be gathered by tools during the configuration stage.
+                            calculation Formula = Number of configured Icu Channels Implementation Type: Icu_ChannelType. 
+                            This parameter doesn't have any influence on the generated
+                            code file</a:v>
+                    </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:65e2f79c-922e-4180-90dc-0819fc20f890"/>
+                    <a:da name="DEFAULT" type="XPath">
+                    <a:tst expr="num:i(count(node:fallback(../IcuChannel/*,0)))"/>
+                    </a:da>
+                    <a:a name="EDITABLE" value="false"/>
+                    <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <!-- [cover parentID={74F0CE69-2156-4784-BAE9-57EA4699E6E4}] IcuChannel [/cover] -->
+                <v:lst name="IcuChannel" type="MAP">
+                  <a:da name="MIN" value="1"/>
+                  <v:ctr name="IcuChannel" type="IDENTIFIABLE">
+                    <a:a name="DESC" 
+                         value="EN: Configuration of an individual ICU channel."/>
+                    <a:a name="UUID" 
+                         value="ECUC:74f0ce69-2156-4784-bae9-57ea4699e6e4"/>
+                    <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                    </a:a>
+                    <!-- [cover parentID={3E518668-F29A-463d-B183-D4B4D1C28766}] IcuChannelId [/cover] -->
+                    <v:var name="IcuChannelId" type="INTEGER">
+                      <a:a name="DESC" 
+                           value="EN: Channel Id of the ICU channel. This value will be assigned to the symbolic name derived of the IcuChannel container short name."/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="ECU"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                      <a:a name="UUID" 
+                           value="ECUC:3e518668-f29a-463d-b183-d4b4d1c28766"/>
+                        <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index,'0')"/>
+                            <a:da name="RANGE" type="XPath">
+                              <a:tst expr="(.&gt;= 0 ) and (.&lt; num:i(count(node:current()/../../*)))"
+                               false="Value out of range: must be in range 0 to N-1 (N is number of configured channels)."/>
+                              <a:tst expr="text:uniq(../../*/IcuChannelId,.)"  false="Duplicated value, IcuChannelId must be unique across all channels."/>
+                            </a:da>
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=65535"/>
+                            <a:tst expr="&gt;=0"/>
+                          </a:da>
+                    </v:var>
+                    <!-- [cover parentID={29F03C55-E634-4f63-90CF-2027F4CD10F1}] IcuDefaultStartEdge [/cover] -->
+                    <v:var name="IcuDefaultStartEdge" type="ENUMERATION">
+                        <a:a name="DESC">
+                          <a:v>EN: Configures the default-activation-edge which shall be used for this channel if there was no activation-edge configured by the call of service Icu_SetActivationCondition().For PERIOD signal measurement, the configured edge is the start of period. For DUTY measurement, the configured edge is the start of Active time and period. Both Edges can not be configured for PERIOD. For DUTY measurement, BOTH EDGES, First edge seen after call of Icu_StartSignalMeasurement is considered as the start of measurement. The parameter is un-editable for HIGH TIME and LOW TIME measurement. Implementation Type: Icu_ActivationType</a:v>
+                        </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="ECUC:29f03c55-e634-4f63-90cf-2027f4cd10f1"/>
+                      <a:da name="DEFAULT" value="ICU_RISING_EDGE"/>
+                      <a:da name="RANGE">
+                        <a:v>ICU_BOTH_EDGES</a:v>
+                        <a:v>ICU_FALLING_EDGE</a:v>
+                        <a:v>ICU_RISING_EDGE</a:v>
+                      </a:da>
+                      <a:da name="EDITABLE" type="XPath">
+                        <a:tst expr="(node:fallback(../IcuSignalMeasurement/*[1]/IcuSignalMeasurementProperty,'NONE') != 'ICU_HIGH_TIME') and (node:fallback(../IcuSignalMeasurement/*[1]/IcuSignalMeasurementProperty,'NONE') != 'ICU_LOW_TIME') " />
+                      </a:da>
+                    </v:var>
+                    <!-- [cover parentID={B9E816EA-2297-4329-8830-328CCDEABDA3}] IcuMeasurementMode [/cover] -->
+                    <v:var name="IcuMeasurementMode" type="ENUMERATION">
+                      <a:a name="DESC">
+                        <a:v>EN: Configures the measurement mode of this channel.
+                             Implementation Type: Icu_MeasurementModeType</a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                          type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                          value="ECUC:b9e816ea-2297-4329-8830-328ccdeabda3"/>
+                      <a:da name="DEFAULT" value="ICU_MODE_SIGNAL_EDGE_DETECT"/>
+                      <a:da name="RANGE">
+                        <a:v>ICU_MODE_EDGE_COUNTER</a:v>
+                        <a:v>ICU_MODE_SIGNAL_EDGE_DETECT</a:v>
+                        <a:v>ICU_MODE_SIGNAL_MEASUREMENT</a:v>
+                        <a:v>ICU_MODE_TIMESTAMP</a:v>
+                      </a:da>
+                    </v:var>
+                    <!-- [cover parentID={FC806D81-9561-454b-8C39-AED26D6E49BF}] IcuWakeupCapability [/cover] -->
+                    <v:var name="IcuWakeupCapability" type="BOOLEAN">
+                      <a:a name="DESC">
+                        <a:v>EN: Information about the wakeup-capability of this channel.
+                          true: Channel is wakeup capable.
+                          false: Channel is not wakeup capable.</a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                        value="3d13cb29-7981-4b70-b47a-e845a87a133e"/>
+                      <a:da name="DEFAULT" value="false"/>
+                      <a:da name="INVALID" type="XPath">
+                        <a:tst expr=". = 'true' and ../IcuMeasurementMode != 'ICU_MODE_SIGNAL_EDGE_DETECT'" true="Wake-up supported only for Edge Detect mode."/>
+                      </a:da>
+                    </v:var>
+                      <!-- [cover parentID={F71CD15D-868E-4c1a-9B69-99D5B76AC32D}] IcuAssignedHwUnit [/cover] -->
+                      <v:var name="IcuAssignedHwUnit" type="ENUMERATION">
+                        <a:a name="DESC">
+                          <a:v>EN: The HW resource required for the measurement.
+                                   TIM, ERU and CCU
+                          </a:v>
+                        </a:a>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                        <a:a name="UUID" 
+                             value="7e52945f-67bf-490d-9478-754ff8913bc0"/>
+                         <a:da name="RANGE">
+                                    <a:v>GTM</a:v>
+                                    <a:v>CCU6</a:v> 
+                                    <a:v>ERU</a:v>
+                                    <a:v>GPT12</a:v>
+                                  </a:da>
+                        <a:da name="DEFAULT" value="GTM"/>
+                          <a:da name="INVALID" type="XPath">
+                           <a:tst expr="((../IcuMeasurementMode = 'ICU_MODE_EDGE_COUNTER') and ((. != 'GTM') and (. != 'GPT12')) )" true="GTM and GPT12 supports the configured Mode in IcuMeasurementMode"/>
+                           <a:tst expr="((../IcuMeasurementMode = 'ICU_MODE_SIGNAL_MEASUREMENT') and (. != 'GTM') and (. != 'CCU6'))" true="GTM and CCu6 support the configured Mode in IcuMeasurementMode"/>
+                           <a:tst expr="((../IcuMeasurementMode = 'ICU_MODE_TIMESTAMP') and (. != 'GTM'))" true="Only GTM Support configured Mode "/>
+                          </a:da>
+                      </v:var>
+                      <v:lst name="IcuSignalEdgeDetection" type="MAP">
+                        <a:da name="MIN" value="0"/>
+                        <a:da name="MAX" type="XPath" expr="contains(node:fallback(../IcuMeasurementMode,'ICU_MODE_SIGNAL_EDGE_DETECT'),'ICU_MODE_SIGNAL_EDGE_DETECT') = 'true'" true="1" false="0"/> 
+                        <!-- [cover parentID={761A76F3-F5C6-4715-A916-9A077DB4A160}] IcuSignalEdgeDetection [/cover] -->
+                        <v:ctr name="IcuSignalEdgeDetection" 
+                                 type="IDENTIFIABLE">
+                        <a:a name="DESC" 
+                             value="EN: This container contains the configuration (parameters) in case the measurement mode is &quot;IcuSignalEdgeDetection&quot;"/>
+                        <a:a name="UUID" 
+                             value="ECUC:761a76f3-f5c6-4715-a916-9a077db4a160"/>
+                        <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                        </a:a>
+                        <v:lst name="IcuSignalNotification">
+                          <a:da name="MAX" value="1"/>
+                          <!-- [cover parentID={98319C3E-7A97-4edf-8EC1-9DA0994E2DB2}] IcuSignalNotification [/cover] -->
+                          <v:var name="IcuSignalNotification" 
+                                 type="FUNCTION-NAME">
+                            <a:a name="DESC" 
+                                 value="EN: Notification function for signal notification."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                                  <icc:v mclass="PostBuild">VariantPostBuild</icc:v>
+                                  <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                <a:a name="POSTBUILDVARIANTMULTIPLICITY" 
+                                     value="true"/>
+                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:a name="UUID" 
+                                     value="a2f4d444-95fa-48c1-b6de-ae42f4e51f0e"/>
+                            <a:da name="DEFAULT" value="NULL"/>
+                          </v:var>
+                        </v:lst>
+                      </v:ctr>
+                    </v:lst>
+                    <!-- [cover parentID={D5664952-203B-47c4-9C69-BC138C81857B}] IcuSignalMeasurement [/cover] -->
+                    <v:lst name="IcuSignalMeasurement" type="MAP">
+                        <a:da name="MAX" type="XPath" expr="contains(node:fallback(../IcuMeasurementMode,'ICU_MODE_SIGNAL_MEASUREMENT'),'ICU_MODE_SIGNAL_MEASUREMENT') = 'true'" true="1" false="0"/> 
+                        <a:da name="MIN" type="XPath" expr="contains(node:fallback(../IcuMeasurementMode,'NO_MODE'),'ICU_MODE_SIGNAL_MEASUREMENT') = 'true'" true="1" false="0"/>                         
+                      <v:ctr name="IcuSignalMeasurement" 
+                                 type="IDENTIFIABLE">
+                        <a:a name="DESC" 
+                             value="EN: This container contains the configuration (parameters) in case the measurement mode is &quot;IcuSignalMeasurement&quot;"/>
+                        <a:a name="UUID" 
+                             value="ECUC:d5664952-203b-47c4-9c69-bc138c81857b"/>
+                        <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                        </a:a>
+                        <!-- [cover parentID={DD5A6572-BC3A-4853-985D-753D3392A183}] IcuSignalMeasurementProperty [/cover] -->
+                        <v:var name="IcuSignalMeasurementProperty" 
+                               type="ENUMERATION">
+                            <a:a name="DESC">
+                              <a:v>EN: Configures the property that could be measured in case the mode is IcuSignalMeasurement.
+                                This property can not be changed during runtime.Implementation Type: Icu_SignalMeasurementPropertyType</a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                              <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                              <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="ECUC:dd5a6572-bc3a-4853-985d-753d3392a183"/>
+                          <a:da name="DEFAULT" value="ICU_LOW_TIME"/> 
+                          <a:da name="RANGE">
+                            <a:v>ICU_DUTY_CYCLE</a:v>
+                            <a:v>ICU_HIGH_TIME</a:v>
+                            <a:v>ICU_LOW_TIME</a:v>
+                            <a:v>ICU_PERIOD_TIME</a:v>
+                          </a:da>
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst expr="((. = 'ICU_PERIOD_TIME')) and (../../../IcuDefaultStartEdge = 'ICU_BOTH_EDGES')" true="DefaultStartEdge cannot be Both Edges for Period measurement"/> 
+                            <a:tst expr="(. = 'ICU_DUTY_CYCLE') and (../../../../../../IcuOptionalApis/IcuGetDutyCycleValuesApi = 'false')" true="DUTY_CYCLE is selected as measurement property but GetDutyCycleValuesApi is not available."/> 
+                            <a:tst expr="(. != 'ICU_DUTY_CYCLE') and (../../../../../../IcuOptionalApis/IcuGetTimeElapsedApi = 'false')" true="Non Duty Cycle measurement property is selected but GetTimeElapsedApi is not available."/> 
+                            </a:da>
+                          </v:var>            
+                      </v:ctr>
+                    </v:lst>
+                    <!-- [cover parentID={3BB68CD5-7DFC-43b4-B64F-F601CB9D99EA}] IcuTimestampMeasurement [/cover] -->
+                    <v:lst name="IcuTimestampMeasurement" type="MAP">
+                        <a:da name="MAX" type="XPath" expr="contains(node:fallback(../IcuMeasurementMode,'ICU_MODE_TIMESTAMP'),'ICU_MODE_TIMESTAMP') = 'true'" true="1" false="0"/>   
+                        <a:da name="MIN" type="XPath" expr="contains(node:fallback(../IcuMeasurementMode,'NO_MODE'),'ICU_MODE_TIMESTAMP') = 'true'" true="1" false="0"/>                          
+                      <v:ctr name="IcuTimestampMeasurement" type="IDENTIFIABLE">
+                        <a:a name="DESC" 
+                             value="EN: This container contains the configuration (parameters) in case the measurement mode is &quot;IcuTimestamp&quot;"/>
+                        <a:a name="UUID" 
+                             value="ECUC:3bb68cd5-7dfc-43b4-b64f-f601cb9d99ea"/>
+                            <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                            </a:a>
+                            <!-- [cover parentID={B13CCDE7-442B-4468-A875-28648408D95E}] IcuTimestampMeasurementProperty [/cover] -->
+                        <v:var name="IcuTimestampMeasurementProperty" 
+                               type="ENUMERATION">
+                          <a:a name="DESC">
+                              <a:v>EN: Configures the handling of the buffer in case the mode is Timestamp; Implementation Type: Icu_TimestampBufferType</a:v>
+                          </a:a>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                              <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                              <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                               value="ECUC:b13ccde7-442b-4468-a875-28648408d95e"/>
+                          <a:da name="DEFAULT" value="ICU_LINEAR_BUFFER"/>
+                          <a:da name="RANGE">
+                            <a:v>ICU_CIRCULAR_BUFFER</a:v>
+                            <a:v>ICU_LINEAR_BUFFER</a:v>
+                          </a:da>
+                        </v:var>
+                        <!-- [cover parentID={0A447661-94C2-4817-B14F-930EE4258F2F}] IcuTimestampNotification [/cover] -->
+                        <v:lst name="IcuTimestampNotification">
+                          <a:da name="MAX" value="1"/>
+                          <v:var name="IcuTimestampNotification" 
+                                 type="FUNCTION-NAME">
+                            <a:a name="DESC">
+                              <a:v>EN: Notification function if the number of requested timestamps (Notification interval is greater 0) are acquired.</a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                                  <icc:v mclass="PostBuild">VariantPostBuild</icc:v>
+                                  <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                <a:a name="POSTBUILDVARIANTMULTIPLICITY" 
+                                     value="true"/>
+                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" 
+                                     value="594bd914-d64a-476a-8b5e-b5ae10c32a35"/>
+                                <a:da name="DEFAULT" value="NULL"/>
+                          </v:var>
+                        </v:lst>
+                      </v:ctr>
+                    </v:lst>
+                    <!-- [cover parentID={1E4F92C1-8C4D-4ae4-8CC8-2EF213419E4F}] IcuWakeup [/cover] -->
+                    <v:lst name="IcuWakeup" type="MAP">
+                      <a:da name="MAX" value="1"/>
+                      <v:ctr name="IcuWakeup" type="IDENTIFIABLE">
+                        <a:a name="DESC" 
+                             value="EN: This container contains the configuration (parameters) needed to configure a wakeup capable channel"/>
+                        <a:a name="UUID" 
+                             value="ECUC:1e4f92c1-8c4d-4ae4-8cc8-2ef213419e4f"/>
+                        <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                        </a:a>
+                        <!-- [cover parentID={F78189C5-99AE-4266-BA74-122FB3CE7B26}] IcuChannelWakeupInfo [/cover] -->
+                        <v:lst name="IcuChannelWakeupInfo">
+                          <a:da name="MAX" value="1"/>
+                          <v:ref name="IcuChannelWakeupInfo" 
+                              type="SYMBOLIC-NAME-REFERENCE">
+                            <a:a name="DESC">
+                              <a:v>EN: If the wakeup-capability is true the wakeup source referenced  is transmitted to the ECU State Manager (EcuM).
+                              Implementation Type: reference to EcuM_WakeupSourceType</a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v mclass="PostBuild">VariantPostBuild</icc:v>
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                            <a:a name="POSTBUILDVARIANTMULTIPLICITY" 
+                                  value="true"/>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" 
+                                  value="ECUC:f78189c5-99ae-4266-ba74-122fb3ce7b26"/>
+                            <a:da name="REF" 
+                                  value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/EcuM/EcuMConfiguration/EcuMCommonConfiguration/EcuMWakeupSource"/>
+                            <a:da name="ENABLE" type="XPath">
+                              <a:tst expr="../../../../IcuWakeupCapability = 'true' and ../../../../../../../IcuGeneral/IcuReportWakeupSource = 'true' "/>     
+                            </a:da>
+                            <a:da name="INVALID" type="XPath">
+                              <a:tst expr="../../../../IcuWakeupCapability = 'true' and ../../../../../../../IcuGeneral/IcuReportWakeupSource = 'true' and string-length(.) = 0 " true="Wakeup reference not provided for a wakeup capable channel"/>     
+                            </a:da>
+                          </v:ref>
+                        </v:lst>
+                    </v:ctr>
+                    </v:lst> 
+                      <!-- [cover parentID={8332FE8A-FB07-4ca2-AE91-A0A4705FF6F4}] GtmTimerInputConfiguration [/cover] -->                   
+                     <v:lst name="GtmTimerInputConfiguration" type="MAP">
+                     <a:da name="MIN" value="0"/>
+                     <a:da name="MAX" value="1"/>
+                     <a:da name="INVALID" type="XPath">
+                      <a:tst expr="(../IcuAssignedHwUnit = 'GTM') and num:i(count(./*)) = num:i(0)" true="GTM container is empty. Add a GTM container as the channel HW used is confgured to GTM" />
+                      <a:tst expr="(../IcuAssignedHwUnit != 'GTM') and num:i(count(./*)) > num:i(0)" true="GTM container is not needed as IcuAssignedHwUnit is not GTM" />
+                     </a:da>
+                        <v:ctr name="GtmTimerInputConfiguration" type="IDENTIFIABLE">
+                          <a:a name="DESC"
+                               value="EN: This container contains the TIM Configuration for GTM"/>
+                          <a:a name="UUID"
+                               value="e150fb37-a6f3-4a0f-8b78-94523f8b76f9"/>
+                            <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                            </a:a>
+                            <!-- [cover parentID={14DCCE1D-7DAE-4d0c-A8B3-466C14659E46}] GtmTimerUsed [/cover] -->
+                            <v:ref name="GtmTimerUsed" type="REFERENCE">
+                            <a:a name="DESC" 
+                            value="EN: This parameter lists all the GTM timer channels (TOM/ATOM)."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" 
+                              value="ECUC:c945dd5e-1l5b-4bcc-a8ab-0a4d19ec3585"/>                          
+                            <a:da name="REF">
+                            <a:v>ASPathDataOfSchema:/AURIX2G/EcucDefs/Mcu/McuHardwareResourceAllocationConf/McuGtmAllocationConf/McuGtmTimAllocationConf/McuGtmTimChannelAllocationConf</a:v></a:da>                   
+                            <a:da name="INVALID" type="XPath">
+                              <a:tst expr="node:value(node:ref(.)/McuGtmTimChannelAllocationConf) != 'GTM_TIM_CHANNEL_USED_BY_ICU'" true="TIM channel not reserved in MCU for ICU" />
+                              <a:tst expr="text:uniq(/AUTOSAR/TOP-LEVEL-PACKAGES/Icu/ELEMENTS/Icu/IcuConfigSet/IcuChannel/*/GtmTimerInputConfiguration/*/GtmTimerUsed,.)" false="TIM channel selected is not unique" />
+                            </a:da>
+                            </v:ref>
+                            <!-- [cover parentID={7E5A552B-8840-46ac-A527-5307A863D0B2}] TimChannelGeneral [/cover] -->
+                            <v:ctr name="TimChannelGeneral"
+                                     type="IDENTIFIABLE">
+                                <a:a name="DESC"
+                                     value="EN: This container contains the TIM Channel General Configuration"/>
+                                <a:a name="UUID"
+                                     value="07f27c5d-7c2e-40d3-ae46-40ba97792032"/>
+                                <!-- [cover parentID={FC437914-1C3C-4458-A3B8-CCC01B03D471}] TimChannelInputSelect [/cover] -->
+                                <v:var name="TimChannelInputSelect"
+                                       type="ENUMERATION">
+                                  <a:a name="DESC">
+                                    <a:v>EN: This decides the Input for the channel
+                                    INPUT_OF_CURRENT_TIM_CHANNEL: Input to the current TIM Channel will be the input assigned to this channel.
+                                    INPUT_OF_PREVIOUS_TIM_CHANNEL: Input to the current TIM channel will be the input assigned to the previous channel. Please note, the Port and Pin number applicable in this case is
+                                    the configuration in TimChannelPortPinSelect for the previous channel and not the Port and Pin configured for this channel.
+                                    </a:v>
+                                  </a:a>
+                                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                       type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                  </a:a>
+                                  <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                  <a:a name="SCOPE" value="LOCAL"/>
+                                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                  <a:a name="UUID"
+                                       value="44b6b528-6240-4ba6-85c5-9cb69b213850"/>
+                                  <a:da name="DEFAULT"
+                                        value="INPUT_OF_CURRENT_TIM_CHANNEL"/>
+                                  <a:da name="RANGE">
+                                    <a:v>INPUT_OF_CURRENT_TIM_CHANNEL</a:v>
+                                    <a:v>INPUT_OF_PREVIOUS_TIM_CHANNEL</a:v>
+                                  </a:da>
+                                </v:var>
+                                <!-- [cover parentID={04865871-D763-483d-ADA0-80BE66E13622}] TimChannelPortPinSelect [/cover] -->
+                                <v:var name="TimChannelPortPinSelect"
+                                       type="ENUMERATION">
+                                  <a:a name="DESC"
+                                       value="EN: This decides the input port and pin of the TIM Channel. This value is applicable for this channel only if TimChannelInputSelect is configured as 'INPUT_OF_CURRENT_TIM_CHANNEL'"/>
+                                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                       type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                  </a:a>
+                                  <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                  <a:a name="SCOPE" value="LOCAL"/>
+                                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                  <a:a name="UUID"
+                                       value="e48606de-7745-414d-8cc2-cb606e877ec0"/>
+                                  <a:da name="DEFAULT" type="XPath">
+                                  <a:tst expr=
+                                      "ecu:list(concat('Gtm.Tim',substring-before(substring-after(( node:fallback(../../GtmTimerUsed,'TimAllocationConf_All/')),'TimAllocationConf_'),'/'),'Channel',substring-after((node:fallback(../../GtmTimerUsed,'ChannelAllocationConf_All')),'ChannelAllocationConf_')))[position()-1 = 0]"/>
+                                  </a:da>
+                                  <a:da name="RANGE" type="XPath" expr="ecu:list(concat('Gtm.Tim',substring-before(substring-after((node:fallback(../../GtmTimerUsed,'TimAllocationConf_All/')),'TimAllocationConf_'),'/'),'Channel',substring-after((node:fallback(../../GtmTimerUsed,'ChannelAllocationConf_All')),'ChannelAllocationConf_')))"/>
+                                   <a:da name="EDITABLE" type="XPath">
+                                    <a:tst expr="(../TimChannelInputSelect = 'INPUT_OF_CURRENT_TIM_CHANNEL')"/>
+                                  </a:da>
+                                </v:var>    
+                                <!-- [cover parentID={40AB5F33-2237-4f76-B740-1ACA27CDA220}] TimChannelClockSelect [/cover] -->                           
+                                <v:var name="TimChannelClockSelect"
+                                       type="ENUMERATION">
+                                  <a:a name="DESC">
+                                    <a:v>EN: This decides the Clock Source for TIM Channel</a:v>
+                                    <a:v>GTM_CONFIGURABLE_CLOCK_0: Configurable Clock 0 will be supplied to this channel</a:v>
+                                    <a:v>GTM_CONFIGURABLE_CLOCK_1: Configurable Clock 1 will be supplied to this channel</a:v>
+                                    <a:v>GTM_CONFIGURABLE_CLOCK_2: Configurable Clock 2 will be supplied to this channel</a:v>
+                                    <a:v>GTM_CONFIGURABLE_CLOCK_3: Configurable Clock 3 will be supplied to this channel</a:v>
+                                    <a:v>GTM_CONFIGURABLE_CLOCK_4: Configurable Clock 4 will be supplied to this channel</a:v>
+                                    <a:v>GTM_CONFIGURABLE_CLOCK_5: Configurable Clock 5 will be supplied to this channel</a:v>
+                                    <a:v>GTM_CONFIGURABLE_CLOCK_6: Configurable Clock 6 will be supplied to this channel</a:v>
+                                    <a:v>GTM_CONFIGURABLE_CLOCK_7: Configurable Clock 7 will be supplied to this channel</a:v>
+                                  </a:a>
+                                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                       type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                  </a:a>
+                                  <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                  <a:a name="SCOPE" value="LOCAL"/>
+                                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                  <a:a name="UUID"
+                                       value="e0e8a863-d29f-42c9-b32f-be917ae6b680"/>
+                                  <a:da name="DEFAULT"
+                                        value="GTM_CONFIGURABLE_CLOCK_0"/>
+                                  <a:da name="RANGE">
+                                    <a:v>GTM_CONFIGURABLE_CLOCK_0</a:v>
+                                    <a:v>GTM_CONFIGURABLE_CLOCK_1</a:v>
+                                    <a:v>GTM_CONFIGURABLE_CLOCK_2</a:v>
+                                    <a:v>GTM_CONFIGURABLE_CLOCK_3</a:v>
+                                    <a:v>GTM_CONFIGURABLE_CLOCK_4</a:v>
+                                    <a:v>GTM_CONFIGURABLE_CLOCK_5</a:v>
+                                    <a:v>GTM_CONFIGURABLE_CLOCK_6</a:v>
+                                    <a:v>GTM_CONFIGURABLE_CLOCK_7</a:v>
+                                  </a:da>
+                                </v:var>
+                                <!-- [cover parentID={5D0B123A-D568-451b-A7FC-0A815C1C96A9}] TimChannelGpr0InputSelect [/cover] -->
+                                <v:var name="TimChannelGpr0InputSelect"
+                                       type="ENUMERATION">
+                                  <a:a name="DESC">
+                                    <a:v>EN: This decides the value captured in GPR0 register of TIM Channel.</a:v>
+                                    <a:v>TIMEBASE_TBU_TS0: TBU_TS0 will be captured in GPR0</a:v>
+                                    <a:v>TIMEBASE_TBU_TS1: TBU_TS1 will be captured in GPR0</a:v>
+                                    <a:v>TIMEBASE_TBU_TS2: TBU_TS2 will be captured in GPR0</a:v>
+                                  </a:a>
+                                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                       type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                  </a:a>
+                                  <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                  <a:a name="SCOPE" value="LOCAL"/>
+                                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                  <a:a name="UUID"
+                                       value="f11c7a62-fff8-4374-8a96-ff336d21ecf8"/>
+                                  <a:da name="DEFAULT" value="TIMEBASE_TBU_TS0"/>
+                                  <a:da name="RANGE">
+                                    <a:v>TIMEBASE_TBU_TS0</a:v>
+                                    <a:v>TIMEBASE_TBU_TS1</a:v>
+                                    <a:v>TIMEBASE_TBU_TS2</a:v>
+                                  </a:da>
+                                  <!-- [cover parentID={B62ECA6C-A49E-44ba-83B5-2134B488669C}] Configuration check [/cover] -->
+                                  <a:da name="INVALID" type="XPath">
+                                    <a:tst expr="((../../../../IcuMeasurementMode = 'ICU_MODE_TIMESTAMP') and (. = 'TIMEBASE_TBU_TS0') and (../../../../../../../../../../Mcu/ELEMENTS/Mcu/McuModuleConfiguration/GtmGlobalConfiguration/GtmGlobalConfiguration_0/GtmTbuChannelConf/GtmTbuChannelConf_0/GtmTbuChannelEnable = 'false')) " true = " Enable Respective TBU Channel 0 GtmTbuChannelEnable in MCU.gtmglobalconfiguration "/>
+                                    <a:tst expr="((../../../../IcuMeasurementMode = 'ICU_MODE_TIMESTAMP') and (. = 'TIMEBASE_TBU_TS1') and (../../../../../../../../../../Mcu/ELEMENTS/Mcu/McuModuleConfiguration/GtmGlobalConfiguration/GtmGlobalConfiguration_0/GtmTbuChannelConf/GtmTbuChannelConf_1/GtmTbuChannelEnable = 'false')) " true = " Enable Respective TBU Channel 1 GtmTbuChannelEnable in MCU.gtmglobalconfiguration "/>
+                                    <a:tst expr="((../../../../IcuMeasurementMode = 'ICU_MODE_TIMESTAMP') and (. = 'TIMEBASE_TBU_TS2') and (../../../../../../../../../../Mcu/ELEMENTS/Mcu/McuModuleConfiguration/GtmGlobalConfiguration/GtmGlobalConfiguration_0/GtmTbuChannelConf/GtmTbuChannelConf_2/GtmTbuChannelEnable = 'false')) " true = " Enable Respective TBU Channel 2 GtmTbuChannelEnable in MCU.gtmglobalconfiguration "/>
+                                  </a:da>
+                                  <a:da name="EDITABLE" type="XPath">
+                                    <a:tst expr="(../../../../IcuMeasurementMode = 'ICU_MODE_TIMESTAMP') " />
+                                  </a:da>
+                                </v:var>
+                                <!-- [cover parentID={87B1C877-4F7F-4738-AB61-69A7C1905135}] TimInterruptMode [/cover] -->                           
+                                <v:var name="TimInterruptMode"
+                                       type="ENUMERATION">
+                                  <a:a name="DESC"
+                                       value="EN: This decides the Interrupt mode to use."/>
+                                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                       type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                  </a:a>
+                                  <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                  <a:a name="SCOPE" value="LOCAL"/>
+                                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                  <a:a name="UUID"
+                                       value="fb29b6d7-d3b5-4c88-bac8-b674b47368e0"/>
+                                  <a:da name="DEFAULT" value="GTM_INTERRUPT_LEVEL_MODE"/>
+                                  <a:da name="RANGE">
+                                    <a:v>GTM_INTERRUPT_LEVEL_MODE</a:v>
+                                    <a:v>GTM_INTERRUPT_PULSE_NOTIFY_MODE</a:v>
+                                    <a:v>GTM_INTERRUPT_SINGLE_PULSE_MODE</a:v>
+                                  </a:da>
+                                </v:var>                                                         
+                                <v:var name="OverflowISRThreshold"
+                                       type="INTEGER">
+                                  <a:a name="DESC"
+                                       value="The threshold denotes the maximum latency between the actual TIM counter overflow interrupt and execution flow entering ICU ISR. User must configure the threshold to contain the maximum latency and must be lesser than the actual measured time. The threshold will be in the ticks of the CMU_CLK selected for that TIM channel.
+                                              The threshold should consider interrupt latency, other high priority interrupts and the latency to reach the ICU ISR.
+                                              The threshold is applicable only for Signal measurement, HIGH TIME and LOW TIME."/>
+                                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                       type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                  </a:a>
+                                  <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                  <a:a name="SCOPE" value="LOCAL"/>
+                                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                  <a:a name="UUID"
+                                       value="fb29b6d7-d3b5-4c98-bac8-b674b47368e0"/>
+                                  <a:da name="DEFAULT" value="0"/>
+                                  <a:da name="INVALID" type="Multi">
+                                  <mt:range>
+                                  <mt:tst expr="&gt;=0" true="valid range is 0 to 16777215"/>
+                                  <mt:tst expr="&lt;=16777215" true="valid range is 0 to 16777215"/>
+                                  </mt:range>
+                                  </a:da> 
+                                  <a:da name="EDITABLE" type="XPath">
+                                    <a:tst expr="(node:fallback(../../../../IcuSignalMeasurement/*[1]/IcuSignalMeasurementProperty,'NONE') = 'ICU_HIGH_TIME') or (node:fallback(../../../../IcuSignalMeasurement/*[1]/IcuSignalMeasurementProperty,'NONE')  = 'ICU_LOW_TIME') " />
+                                  </a:da>
+                                </v:var>                                
+                              </v:ctr>  
+                              <!-- [cover parentID={EB86B956-410A-4500-BEBA-6B268EB72C56}] TimChannelFilterConfig [/cover] -->
+                              <v:ctr name="TimChannelFilterConfig"
+                                     type="IDENTIFIABLE">
+                                <a:a name="DESC"
+                                     value="EN: This holds the filter specific configurations for the channels."/>
+                                <a:a name="UUID"
+                                     value="216ef17c-7539-4d9d-845b-a170143c9466"/>
+                                <!-- [cover parentID={08DD558F-A985-425a-A003-2C028FFB66C1}] TimChannelFilterEnable [/cover] -->
+                                <v:var name="TimChannelFilterEnable"
+                                       type="BOOLEAN">
+                                  <a:a name="DESC"
+                                       value="EN: Enables Filter for the Channel. This sets FLT_EN for the channel"/>
+                                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                       type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                  </a:a>
+                                  <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                  <a:a name="SCOPE" value="LOCAL"/>
+                                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                  <a:a name="UUID"
+                                       value="202f45ca-cad5-4170-a515-56eb752ea787"/>
+                                  <a:da name="DEFAULT" value="false"/>
+                                </v:var>
+                                <!-- [cover parentID={9B3B8CB6-DAB1-432a-8D00-544274D3D61D}] TimChFilterCounterFreqSelect [/cover] -->
+                                <v:var name="TimChFilterCounterFreqSelect"
+                                       type="ENUMERATION">
+                                  <a:a name="DESC"
+                                       value="EN: This decides the Filter Counter frequency for the TIM Channel. This modifies the FLT_CNT_FRQ for the channel"/>
+                                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                       type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                  </a:a>
+                                  <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                  <a:a name="SCOPE" value="LOCAL"/>
+                                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                  <a:a name="UUID"
+                                       value="a4b65ef9-e5b3-4c4e-8001-b73efdfdd8ca"/>
+                                  <a:da name="DEFAULT"
+                                        value="GTM_CONFIGURABLE_CLOCK_0"/>
+                                  <a:da name="RANGE">
+                                    <a:v>GTM_CONFIGURABLE_CLOCK_0</a:v>
+                                    <a:v>GTM_CONFIGURABLE_CLOCK_1</a:v>
+                                    <a:v>GTM_CONFIGURABLE_CLOCK_6</a:v>
+                                    <a:v>GTM_CONFIGURABLE_CLOCK_7</a:v>
+                                  </a:da>
+                                </v:var>
+                                <!-- [cover parentID={0F2D75AE-A1B7-4b03-B79E-F512AF82B2C1}] TimChFilterModeForRisingEdge [/cover] -->
+                                <v:var name="TimChFilterModeForRisingEdge"
+                                       type="ENUMERATION">
+                                  <a:a name="DESC"
+                                       value="EN: This decides the Filter Mode for Rising Edge of the TIM Channel Input"/>
+                                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                       type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                  </a:a>
+                                  <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                  <a:a name="SCOPE" value="LOCAL"/>
+                                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                  <a:a name="UUID"
+                                       value="e6287088-6c79-45db-a7fb-06d1898fa79b"/>
+                                  <a:da name="DEFAULT"
+                                        value="IMMEDIATE_EDGE_PROPAGATION_MODE"/>
+                                  <a:da name="RANGE">
+                                    <a:v>IMMEDIATE_EDGE_PROPAGATION_MODE</a:v>
+                                    <a:v>DEGLITCH_WITH_UPDOWN_COUNTER</a:v>
+                                    <a:v>DEGLITCH_WITH_HOLD_COUNTER</a:v>
+                                  </a:da>
+                                </v:var>
+                                <!-- [cover parentID={DBE693E1-67C8-44d5-892C-3F3715909574}] TimChFilterModeForFallingEdge [/cover] -->
+                                <v:var name="TimChFilterModeForFallingEdge"
+                                       type="ENUMERATION">
+                                  <a:a name="DESC"
+                                       value="EN: This decides the Filter Mode for Falling Edge of the TIM Channel Input"/>
+                                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                       type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                  </a:a>
+                                  <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                  <a:a name="SCOPE" value="LOCAL"/>
+                                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                  <a:a name="UUID"
+                                       value="89102148-5155-4a8a-ae12-7862c001ded2"/>
+                                  <a:da name="DEFAULT"
+                                        value="IMMEDIATE_EDGE_PROPAGATION_MODE"/>
+                                  <a:da name="RANGE">
+                                    <a:v>IMMEDIATE_EDGE_PROPAGATION_MODE</a:v>
+                                    <a:v>DEGLITCH_WITH_UPDOWN_COUNTER</a:v>
+                                    <a:v>DEGLITCH_WITH_HOLD_COUNTER</a:v>
+                                  </a:da>
+                                </v:var>
+                                <!-- [cover parentID={28313A26-F528-4cea-9982-3AEDEFBBF6DF}] TimChFilterTimeForRisingEdge [/cover] -->
+                                <v:var name="TimChFilterTimeForRisingEdge"
+                                       type="INTEGER">
+                                  <a:a name="DESC"
+                                       value="EN: This parameter specifies the Filter Time for Rising Edge of the TIM Channel Input"/>
+                                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                       type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                  </a:a>
+                                  <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                  <a:a name="SCOPE" value="LOCAL"/>
+                                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                  <a:a name="UUID"
+                                       value="0a65f41c-4dc1-4a76-a655-00015d757948"/>
+                                  <a:da name="DEFAULT" value="0"/>
+                                <a:da name="INVALID" type="Multi">
+                                <mt:range>
+                                <mt:tst expr="&gt;=0" true="valid range is 0 to 16777215"/>
+                                <mt:tst expr="&lt;=16777215" true="valid range is 0 to 16777215"/>
+                                </mt:range>
+                                </a:da> 
+                                </v:var>
+                                <!-- [cover parentID={C40FE124-AE6D-43d4-A3BD-2DA0F8CEC7D4}] TimChFilterTimeForFallingEdge [/cover] -->
+                                <v:var name="TimChFilterTimeForFallingEdge"
+                                       type="INTEGER">
+                                  <a:a name="DESC"
+                                       value="EN: This parameter specifies the Filter Time for Falling Edge of the TIM Channel Input"/>
+                                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                       type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                  </a:a>
+                                  <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                  <a:a name="SCOPE" value="LOCAL"/>
+                                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                  <a:a name="UUID"
+                                       value="64bac732-bc38-4036-8f60-b61b2d3cc02c"/>
+                                  <a:da name="DEFAULT" value="0"/>
+                                <a:da name="INVALID" type="Multi">
+                                <mt:range>
+                                <mt:tst expr="&gt;=0" true="valid range is 0 to 16777215"/>
+                                <mt:tst expr="&lt;=16777215" true="valid range is 0 to 16777215"/>
+                                </mt:range>
+                                </a:da> 
+                                </v:var>
+                              </v:ctr>
+                              
+                      </v:ctr>
+                    </v:lst>
+                    <!-- [cover parentID={BCEA7790-A53A-4bee-9382-3FB086A15F80}] CCU6CC6Configuration [/cover] -->
+                    <v:lst name="CCU6CC6Configuration" type="MAP">
+                      <a:da name="MIN" value="0"/>
+                        <a:da name="MAX" value="1"/>
+                     <a:da name="INVALID" type="XPath">
+                      <a:tst expr="(../IcuAssignedHwUnit = 'CCU6') and num:i(count(./*)) = num:i(0)" true="CCU6 container is empty" />
+                       <a:tst expr="(../IcuAssignedHwUnit != 'CCU6') and num:i(count(./*)) > num:i(0)" true="CCU6 container is not needed as IcuAssignedHwUnit is not CCU6" />                      
+                     </a:da>
+                        <v:ctr name="CCU6CC6Configuration" type="IDENTIFIABLE">
+                          <a:a name="DESC"
+                               value="EN: This container contains the TIM Configuration for GTM"/>
+                          <a:a name="UUID"
+                               value="e150fb37-a611-4a0f-8b78-9451218b76f9"/>
+                            <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                 type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                            </a:a>   
+                            <!-- [cover parentID={78DDABBC-5D44-4a4e-9B32-0EDF78698AD2}] Ccu6KernelUsed [/cover] -->              
+                            <v:ref name="CCU6KernelUsed" type="REFERENCE">
+                              <a:a name="DESC" 
+                                value="EN: This parameter lists all the CCU6 kernels"/>
+                              <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              </a:a>
+                              <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                              <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                              <a:a name="SCOPE" value="LOCAL"/>
+                              <a:a name="UUID" 
+                                value="ECUC:c945dd5e-1l77-4bcc-a8ab-0a4d19ec3585"/>
+                              <a:da name="REF">
+                              <a:v>ASPathDataOfSchema:/AURIX2G/EcucDefs/Mcu/McuHardwareResourceAllocationConf/McuCcu6ModuleAllocationConf</a:v>
+                              </a:da>
+                              <a:da name="INVALID" type="XPath">
+                                <a:tst expr="node:value(node:ref(.)/McuCcu6ModuleAllocationConf) != 'CCU6_MODULE_USED_BY_ICU_DRIVER'" true="CCU6 kernal not reserved in MCU for ICU" />
+                              </a:da>
+                            </v:ref>    
+                            <!-- [cover parentID={B3AF7486-26B5-41b3-854A-116CB968F6B1}] Cc6xChannel [/cover] -->                               
+                            <v:var name="Cc6xChannel" type="ENUMERATION">
+                              <a:a name="DESC"
+                                  value="EN: Cc6 channel selection from the selected kernel"/>
+                              <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                   type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              </a:a>
+                              <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                              <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                              <a:a name="SCOPE" value="LOCAL"/>
+                              <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                              <a:a name="UUID"
+                                   value="b209c80f-1111-422e-8f00-fa776e66e9fb"/>
+                              <a:da name="DEFAULT" value="Cc60"/>
+                              <a:da name="RANGE">
+                                <a:v>Cc60</a:v>    
+                                <a:v>Cc61</a:v> 
+                                <a:v>Cc62</a:v>                                 
+                              </a:da>
+                            </v:var>
+                            <!-- [cover parentID={3FFE457F-0653-4d2d-8F86-ACD93DA69033}] Cc6xChannelInputSelection [/cover] -->
+                            <v:var name="CCChannelInputSelection" type="ENUMERATION">
+                              <a:a name="DESC"
+                                  value="EN: Input Selection for CCx channel."/>
+                              <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                  type="IMPLEMENTATIONCONFIGCLASS">
+                                  <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                              </a:a>
+                              <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                              <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                              <a:a name="SCOPE" value="LOCAL"/>
+                              <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                              <a:a name="UUID"
+                                     value="b209c80f-87bd-422e-8f00-fa776e66e9fb"/>
+                              <a:da name="DEFAULT" type="XPath"  expr="ecu:list(concat('Ccu6.Ccu6',(substring-after((node:fallback(../CCU6KernelUsed,'McuCcu6ModuleAllocationConf_All')),'McuCcu6ModuleAllocationConf_')),'Cc',substring-after((node:fallback(../Cc6xChannel,'Cc6All')),'Cc6'),'InputConnections'))[position()-1 = 0]"/>                                   
+                              <a:da name="RANGE" type="XPath" expr="ecu:list(concat('Ccu6.Ccu6',(substring-after((node:fallback(../CCU6KernelUsed,'McuCcu6ModuleAllocationConf_All')),'McuCcu6ModuleAllocationConf_')),'Cc',substring-after((node:fallback(../Cc6xChannel,'Cc6All')),'Cc6'),'InputConnections'))"/>                                                              
+                            </v:var>
+                            <!-- [cover parentID={28B1FBEC-E35B-428d-B3EB-F3E1BB40AA71}] CCU6xParamters [/cover] -->
+                            <v:ctr name="CCU6xParamters"
+                                type="IDENTIFIABLE">
+                              <a:a name="DESC"
+                                value="EN: This holds the filter specific configurations for the channels."/>
+                              <a:a name="UUID"
+                                value="216ef17c-7569-4d9d-845b-a170143c9466"/>
+                              <!-- [cover parentID={86ABB59B-C530-481f-A7A7-08F14A584281}] T12ClkSelection [/cover] -->
+                              <v:var name="T12ClkSelection" type="INTEGER">
+                                <a:a name="DESC">
+                                <a:v>EN: T12 configuration - clock selection
+                                    if T12PrescalerEnabled -false
+                                    ft12 = fcc6 divided by (2 power T12ClkSelection)
+                                    if T12PrescalerEnabled -true
+                                    ft12 = fcc6 divided by (2 power (T12ClkSelection + 8) )</a:v>
+                                    <a:v>FOR-ALL: Clock divider mode</a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                   type="IMPLEMENTATIONCONFIGCLASS">
+                                  <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                </a:a>
+                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                <a:a name="UUID"
+                                   value="DCE:981b87c5-759d-60cb-b3df-3af8acac9564"/>
+                                <a:da name="DEFAULT" value="0"/>
+                                <a:da name="INVALID" type="Range">
+                                  <a:tst expr="&lt;=7"/>
+                                  <a:tst expr="&gt;=0"/>
+                                </a:da>
+                              </v:var>
+                              <!-- [cover parentID={759C8A12-47E5-4aed-8B91-7E7E9BEC8CBF}] T12PrescalerEnabled [/cover] -->
+                              <v:var name="T12PrescalerEnabled" type="BOOLEAN">
+                                <a:a name="DESC">
+                                  <a:v>EN: if T12PrescalerEnabled -false
+                                    ft12 = fcc6 divided by (2 power T12ClkSelection)
+                                    if T12PrescalerEnabled -true
+                                    ft12 = fcc6 divided by (2 power (T12ClkSelection + 8) )</a:v>
+                                  <a:v>FOR-ALL: Prescaler enabling for finer clock resolution.</a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                   type="IMPLEMENTATIONCONFIGCLASS">
+                                  <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                </a:a>
+                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                <a:a name="UUID"
+                                   value="DCE:30a57b07-9296-6398-aa9a-1f0cd7ca53e2"/>
+                                <a:da name="DEFAULT" value="false"/>
+                              </v:var>
+                              <!-- [cover parentID={C44B9DD7-0ED9-4e3f-AE61-99282C343F9C}] CCU6InterruptNode [/cover] -->
+                              <v:var name="CCU6InterruptNode" type="ENUMERATION">
+                                <a:a name="DESC">
+                                  <a:v>EN: Interrupt node to be used for the kernel</a:v>
+                                </a:a>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                   type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                </a:a>
+                                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                <a:a name="SCOPE" value="LOCAL"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" 
+                                   value="ECUC:b9e816ea-2207-4329-8830-328ccdeabda3"/>
+                                <a:da name="DEFAULT" value="NODE_SR0"/>
+                                <a:da name="RANGE">
+                                <a:v>NODE_SR0</a:v>
+                                <a:v>NODE_SR1</a:v>
+                                <a:v>NODE_SR2</a:v>
+                                <a:v>NODE_SR3</a:v>
+                                </a:da>
+                              </v:var>
+                            </v:ctr>
+                          </v:ctr>
+                        </v:lst>
+                      <v:lst name="ERUInputConfiguration" type="MAP">
+                        <a:da name="MIN" value="0"/>
+                        <a:da name="MAX" value="1"/>
+                        <a:da name="INVALID" type="XPath">
+                          <a:tst expr="(../IcuAssignedHwUnit = 'ERU') and num:i(count(./*)) = num:i(0)" true="ERU container is empty" />
+                          <a:tst expr="(../IcuAssignedHwUnit != 'ERU') and num:i(count(./*)) > num:i(0)" true="ERU container is not needed as IcuAssignedHwUnit is not ERU" />
+                        </a:da>
+                        <!-- [cover parentID={16EF5CBA-7D4C-46b7-8514-870EFC876A27}] ERUInputConfiguration [/cover] -->
+                        <v:ctr name="ERUInputConfiguration" type="IDENTIFIABLE">
+                          <a:a name="DESC"
+                               value="EN: This container contains the ERS and OGU Configuration "/>
+                          <a:a name="UUID"
+                               value="e150fb37-a6f3-4a0f-8b78-91123f8b76f9"/>
+                          <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>     
+                          <!-- [cover parentID={B61B6411-8DFA-4216-8337-7A49F350BA62}] EruErsReference [/cover] -->     
+                          <v:ref name="EruErsReference" type="REFERENCE">
+                            <a:a name="DESC" 
+                              value="EN: This parameter lists all the ERU channels (ERS and OGU)."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" 
+                              value="ECUC:c945dd5e-1l5b-4bcc-a8ab-0a4d19ec1185"/>
+                            <a:da name="REF">                                       
+                              <a:v>ASPathDataOfSchema:/AURIX2G/EcucDefs/Mcu/McuHardwareResourceAllocationConf/McuEruAllocationConf/McuEruChannelInputLineConf</a:v>
+                            </a:da>
+                            <a:da name="INVALID" type="XPath">
+                              <a:tst expr="node:value(node:ref(.)/McuEruChannelInputLineConf) != 'ERU_CHANNEL_INP_USED_BY_ICU_DRIVER'" true="ERU INP is not reserved in MCU for ICU" />
+                              <a:tst expr="text:uniq(/AUTOSAR/TOP-LEVEL-PACKAGES/Icu/ELEMENTS/Icu/IcuConfigSet/IcuChannel/*/ERUInputConfiguration/*/EruErsReference,.)" false="ERU INP selected is not unique" />
+                            </a:da>
+                          </v:ref>
+                          <!-- [cover parentID={78410D63-E4E2-4136-BEE7-D66302FDBE14}] EruOguReference [/cover] -->
+                          <v:ref name="EruOguReference" type="REFERENCE">
+                            <a:a name="DESC" 
+                            value="EN: This parameter lists all the GTM timer channels (TOM/ATOM)."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" 
+                            value="ECUC:c945dd5e-1l78-4bcc-a8ab-0a4d19ec1185"/>                      
+                            <a:da name="REF">
+                              <a:v>ASPathDataOfSchema:/AURIX2G/EcucDefs/Mcu/McuHardwareResourceAllocationConf/McuEruAllocationConf/McuEruChannelOutputUnitConf</a:v>
+                            </a:da>
+                            <a:da name="INVALID" type="XPath">
+                              <a:tst expr="node:value(node:ref(.)/McuEruChannelOutputUnitConf) != 'ERU_CHANNEL_OUT_USED_BY_ICU_DRIVER'" true="ERU OGU is not reserved in MCU for ICU" />
+                              <a:tst expr="text:uniq(/AUTOSAR/TOP-LEVEL-PACKAGES/Icu/ELEMENTS/Icu/IcuConfigSet/IcuChannel/*/ERUInputConfiguration/*/EruOguReference,.)" false="ERU OGU selected is not unique" />
+                            </a:da>
+                          </v:ref>
+                          <!-- [cover parentID={013820F6-45D2-4c29-B9FC-A44C32F1FABC}] EruInputPin [/cover] -->
+                          <v:var name="EruInputPin" type="ENUMERATION">
+                            <a:a name="DESC"
+                                value="EN: Eru Input selection for the ERU unit"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID"
+                              value="20ee392a-1640-45fd-80f2-0c6bd7d1ef0d"/>
+                            <a:da name="DEFAULT" type="XPath" expr=
+                              "ecu:list(concat('Eru.EruInputConnectionErs_',substring-after((node:fallback(../EruErsReference,'McuEruChannelInputLineConf_All')),'McuEruChannelInputLineConf_')))[position()-1 = 0]"/>
+                            <a:da name="RANGE" type="XPath" expr="ecu:list(concat('Eru.EruInputConnectionErs_',substring-after((node:fallback(../EruErsReference,'McuEruChannelInputLineConf_All')),'McuEruChannelInputLineConf_')))"/>
+                          </v:var> 
+                        </v:ctr>
+                      </v:lst>
+                  <v:lst name="GPT12Configuration" type="MAP">
+                    <a:da name="MIN" value="0"/>
+                    <a:da name="MAX" value="1"/>
+                    <a:da name="INVALID" type="XPath">
+                      <a:tst expr="(../IcuAssignedHwUnit = 'GPT12') and num:i(count(./*)) = num:i(0)" true="GPT12 container is empty" />
+                      <a:tst expr="(../IcuAssignedHwUnit != 'GPT12') and num:i(count(./*)) > num:i(0)" true="GPT12 container is not needed as IcuAssignedHwUnit is not GPT12" />
+                    </a:da>
+                    <!-- [cover parentID={D2C7D43A-55D9-43a8-843F-8E3253A9E398}] GPT12Configuration [/cover] -->
+                    <v:ctr name="GPT12Configuration" type="IDENTIFIABLE">
+                      <a:a name="DESC"
+                        value="EN: This container contains the GPT12 Configuration for GPT12"/>
+                      <a:a name="UUID"
+                          value="e150fb37-a6f3-4a0f-8b78-9drt3f8b76f9"/>                  
+                      <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <!-- [cover parentID={56675DF8-8523-4636-BD93-935F5D6D16BB}] GPT12BlockReference [/cover] -->
+                      <v:ref name="GPT12BlockReference" type="REFERENCE">
+                        <a:a name="DESC" 
+                        value="EN: This parameter lists all the GPT12 timer channels Block."/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                        <a:a name="UUID" 
+                         value="ECUC:c945dd5e-1l5b-4bcc-a8ab-0a4sdeec1185"/>
+                        <a:da name="REF">       
+                        <a:v>ASPathDataOfSchema:/AURIX2G/EcucDefs/Mcu/McuHardwareResourceAllocationConf/McuGpt12ModuleAllocationConf</a:v>
+                        </a:da>
+                        <a:da name="INVALID" type="XPath">
+                         <a:tst expr="node:value(node:ref(.)/McuGpt12ModuleAllocationConf) != 'GPT_BLOCK_USED_BY_ICU_DRIVER'" true="GPT12 block not reserved in MCU for ICU" />
+                        </a:da>
+                      </v:ref>
+                      <!-- [cover parentID={CDFCC81F-3FFC-4857-BE0E-6361E0FD0025}] GPT12TimerSelection [/cover] -->
+                      <v:var name="GPT12TimerSelection" type="ENUMERATION">
+                        <a:a name="DESC"
+                          value="EN: TimerSelection for the GPT12 unit"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                         <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                        <a:a name="UUID" value="20ee392a-1640-45fc-80f2-0c6bd7d1ef0d"/>
+                        <a:da name="RANGE">
+                                  <a:v>T2</a:v>
+                                  <a:v>T3</a:v> 
+                                  <a:v>T4</a:v>
+                                  <a:v>T5</a:v>
+                                  <a:v>T6</a:v>
+                                </a:da>
+                        <a:da name="DEFAULT" value="T2"/>
+                        <a:da name="INVALID" type="XPath">
+                          <a:tst expr="(contains(../GPT12BlockReference,'McuGpt12ModuleAllocationConf_0') and (. = 'T5' or . = 'T6' ))"
+                          true= "GPT1 Timer block can have only T2, T3 or T4 "/>
+                          <a:tst expr="(contains(../GPT12BlockReference,'McuGpt12ModuleAllocationConf_1') and (. = 'T2' or . = 'T3' or . = 'T4' ))"
+                          true= "GPT2 Timer block can have only T5 or T6 "/>
+                          <a:tst expr="text:uniq(/AUTOSAR/TOP-LEVEL-PACKAGES/Icu/ELEMENTS/Icu/IcuConfigSet/IcuChannel/*/GPT12Configuration/*/GPT12TimerSelection,.)"
+                          false = "Timer is allocated multiple times "/>
+                        </a:da>
+                      </v:var>
+                      <!-- [cover parentID={27DD67DB-E075-41b8-BAEA-5E697F6BFB1F}] GPT12InputPortSelection [/cover] -->
+                      <v:var name="GPT12InputPortSelection" type="ENUMERATION">
+                        <a:a name="DESC"
+                            value="EN: GPT12 Input selection for the GPT12 unit"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                          type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                        <a:a name="UUID"
+                             value="20e392a-1640-45fd-80f2-0c6ghtd1ef0d"/>
+                        <a:da name="DEFAULT" type="XPath" expr=
+                          "ecu:list(concat('Gpt12.Gpt12InputConnection_',node:fallback(../GPT12TimerSelection,'All')))[position()-1 = 0]"/>
+                        <a:da name="RANGE" type="XPath" expr="ecu:list(concat('Gpt12.Gpt12InputConnection_',node:fallback(../GPT12TimerSelection,'All')))"/>
+                      </v:var>
+                      <!-- [cover parentID={4B51301F-BDAE-4f24-B571-2D5918BFEB46}] GPT12Config [/cover] -->
+                      <v:ctr name="GPT12Config" type="IDENTIFIABLE">
+                        <a:a name="UUID"
+                          value="216ef17c-7569-345d-845b-a178943c9466"/>
+                        <a:a name="DESC">
+                          <a:v>GPT12 block clock prescaler control</a:v>
+                        </a:a>
+                        <!-- [cover parentID={55036B3F-E6E5-4a4c-BCA6-D428CB6292BE}] GPTxPrescaler [/cover] -->
+                        <v:var name="GPTxPrescaler" type="ENUMERATION">
+                          <a:a name="DESC">
+                            <a:v>EN: GPT1 Block Prescaler Control</a:v>
+                          </a:a>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" 
+                            value="ECUC:b9e816ea-1237-4329-8830-328ccdeabda3"/>
+                            <a:da name="DEFAULT" value="FGPT_4"/>
+                          <a:da name="RANGE">
+                            <a:v>FGPT_2</a:v>
+                            <a:v>FGPT_4</a:v>
+                            <a:v>FGPT_8</a:v>
+                            <a:v>FGPT_16</a:v>
+                            <a:v>FGPT_32</a:v>
+                          </a:da>
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst expr="((../../GPT12TimerSelection = 'T2' or ../../GPT12TimerSelection = 'T3' or ../../GPT12TimerSelection = 'T4' ) and (. = 'FGPT_2' ))"
+                            true= "GPT1 Timer block can not have prescaler FGPT2" />
+                            <a:tst expr="((../../GPT12TimerSelection = 'T5' or ../../GPT12TimerSelection = 'T6') and (. = 'FGPT_32' ))"
+                            true= "GPT2 Timer block can not have prescaler FGPT32" />
+                          </a:da>
+                        </v:var>
+                      </v:ctr>
+                    </v:ctr>
+                  </v:lst>        
+                </v:ctr>              
+              </v:lst>
+            </v:ctr>
+            <!-- [cover parentID={1D7A6EE1-8BC5-4f5f-B509-C17E210792D6}] IcuGeneral [/cover] -->
+              <v:ctr name="IcuGeneral" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: Configuration of general ICU parameters."/>
+                <a:a name="UUID" 
+                     value="ECUC:1d7a6ee1-8bc5-4f5f-b509-c111110711"/>
+                <!-- [cover parentID={7224BF75-CDC8-408f-91FF-3A99E7A18F84}] IcuDevErrorDetect [/cover] -->
+                <v:var name="IcuDevErrorDetect" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v>EN: Switches the Development Error Detection on or off. true: Enabled. false: Disabled.</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:7224bf75-cdc8-408f-1111-9e7118f84"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <!-- [cover parentID={29EC649B-4BC1-41af-AD57-D5D26086948C}] IcuMultiCoreErrorDetect [/cover] -->
+                <v:var name="IcuMultiCoreErrorDetect" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v>EN: Switches the MultiCore Development Error Detection on or off. true: Enabled. false: Disabled.</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:7224bf75-cdc8-408f-1111-9e7118a84"/>
+                  <a:da name="DEFAULT" value="true"/>
+                  <a:da name="INVALID" type="XPath">
+                   <a:tst expr="../IcuDevErrorDetect != 'true'  and .='true'" 
+                            true="DET should be ON when IcuMultiCoreErrorDetect is ON "/>
+                  </a:da>
+                </v:var>
+                <!-- [cover parentID={D3FFE4E8-D2BC-40ad-BB95-F07834BE136A}] IcuIndex [/cover] -->
+                <v:var name="IcuIndex" type="INTEGER">
+                  <a:a name="DESC" 
+                       value="EN: Specifies the InstanceId of this module instance. If only one instance is present it shall have the Id 0."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:d3ffe4e8-d2bc-40ad-bb95-f0711111136a"/>
+                  <a:da name="DEFAULT" value="0"/>           
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <!-- [cover parentID={4F4C8D4B-1B31-4832-9593-481E273767FB}] IcuReportWakeupSource [/cover] -->
+                <v:var name="IcuReportWakeupSource" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v>EN: Switch for enabling Wakeup source reporting. true: Report Wakeup source. false: Do not report Wakeup source.</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="be837339-bdd5-4cda-9025-74e2011c110a"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="INVALID" type="XPath">
+                  <a:tst expr="(num:i(count(../../IcuConfigSet/IcuChannel/*[IcuWakeupCapability='true']))) = 0 and . = 'true'" 
+                   true="Wrong Configuration. You have not configured any channel for wakeup capability
+                   but IcuReportWakeupSource is set to true.Either configure a channel or switch off IcuReportWakeupSource"/>
+                  </a:da>
+                </v:var>
+                <!-- [cover parentID={02411FA5-58B9-4c6e-A6C5-9D7D84A4FFE4}] IcuSafetyEnable [/cover] -->
+                <v:var name="IcuSafetyEnable" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v>EN: Switch for enabling/Disabling IcuSafetyEnable</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="be837339-bdd5-4cda-123w-74e2011c110a"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <!-- [cover parentID={75D09603-A3C6-433e-AD75-76360DE73448}] IcuRuntimeApiMode [/cover] -->
+                <v:var name="IcuRuntimeApiMode" type="ENUMERATION">
+                  <a:a name="DESC">
+                    <a:v>EN: IcuRuntimeApiMode for ICU_MCAL_USER1, ICU_MCAL_SUPERVISOR</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                    type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:b9e816ea-3457-ght9-8830-328ccdeabda3"/>
+                  <a:da name="DEFAULT" value="ICU_MCAL_SUPERVISOR"/>
+                  <a:da name="RANGE">
+                    <a:v>ICU_MCAL_USER1</a:v>
+                    <a:v>ICU_MCAL_SUPERVISOR</a:v>
+                  </a:da>
+                </v:var>
+                <!-- [cover parentID={65E17532-5317-4c25-A0C7-CD0B5E281824}] IcuInitDeInitApiMode [/cover] -->
+                <v:var name="IcuInitDeInitApiMode" type="ENUMERATION">
+                  <a:a name="DESC">
+                    <a:v>EN: IcuInitDeInitApiMode for ICU_MCAL_USER1, ICU_MCAL_SUPERVISOR</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                    type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                    value="ECUC:b9e816ea-3457-dsc9-8830-328ccdeabda3"/>
+                  <a:da name="DEFAULT" value="ICU_MCAL_SUPERVISOR"/>
+                  <a:da name="RANGE">
+                    <a:v>ICU_MCAL_USER1</a:v>
+                    <a:v>ICU_MCAL_SUPERVISOR</a:v>
+                  </a:da>
+                  <a:da name="INVALID" type="XPath">
+                    <a:tst expr="node:value(../IcuRuntimeApiMode) = 'ICU_MCAL_SUPERVISOR' and node:value(.) = 'ICU_MCAL_USER1'"
+                    true="Wrong Configuration. Runtime api are in Supervisor and init/deinit are in user."/>          
+                  </a:da>
+                </v:var>    
+              </v:ctr>
+              <!-- [cover parentID={52E9680E-5F55-4fd1-B0BC-888491B8943F}] IcuOptionalApis [/cover] -->
+              <v:ctr name="IcuOptionalApis" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: This container contains all configuration switches for configuring optional API services of the ICU driver."/>
+                <a:a name="UUID" 
+                     value="ECUC:52e9680e-5f55-4fd1-b11c-888491b8943f"/>
+                <!-- [cover parentID={4D39CCAC-2595-4da7-A69E-66453109D78A}] IcuDeInitApi [/cover] -->
+                <v:var name="IcuDeInitApi" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v>EN: Adds / removes the service Icu_17_TimerIp_DeInit() from the code.
+                        true: Icu_17_TimerIp_DeInit() can be used.
+                        false: Icu_17_TimerIp_DeInit() can not be used.</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:4d3911ac-2595-4da6-a69e-66453109d78a"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <!-- [cover parentID={4FBED2E5-D65D-4561-8D01-C54065E1E4EB}] IcuInitCheckApi [/cover] -->
+                <v:var name="IcuInitCheckApi" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v>EN: Adds / removes the service Icu_17_TimerIp_InitCheck() from the code.
+                        true: Icu_17_TimerIp_InitCheck() can be used.
+                        false: Icu_17_TimerIp_InitCheck() can not be used.</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:4d3911ac-2595-4da7-a69e-66453109d78a"/>
+                  <a:da name="DEFAULT" value="true"/>
+                </v:var>
+                <!-- [cover parentID={6D684A90-4BD5-46f1-98C7-5EE0C87A4D3B}] IcuDisableWakeupApi [/cover] -->
+                <v:var name="IcuDisableWakeupApi" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v>EN: Adds / removes the service Icu_17_TimerIp_DisableWakeup() from the code.
+                        true: Icu_17_TimerIp_DisableWakeup() can be used.
+                        false: Icu_17_TimerIp_DisableWakeup() can not be used.</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="1c9d1a58-049f-4539-aed4-a74b83ecdac6"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="INVALID" type="XPath">
+                  <a:tst expr="../IcuEnableWakeupApi != 'true'  and .='true'" 
+                            true="Wrong Configuration. Setting IcuDisableWakeupApi to true without IcuEnableWakeupApi to true
+                            is invalid."/>
+                  </a:da>
+                </v:var>
+                <!-- [cover parentID={CDF40CA5-30D2-4ef5-AB1F-8718F7C34A1B}] IcuEdgeCountApi [/cover] -->
+                <v:var name="IcuEdgeCountApi" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v>EN: Adds / removes all services related to the edge counting functionality as listed below, from the code: Icu_17_TimerIp_ResetEdgeCount(), Icu_17_TimerIp_EnableEdgeCount(), Icu_17_TimerIp_DisableEdgeCount(), Icu_17_TimerIp_GetEdgeNumbers().
+                    true: The services listed above can be used.
+                    false: The services listed above can not be used.</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="f204ba98-1a51-4ea5-bc96-ee2f4fb47241"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="INVALID" type="XPath">
+                    <a:tst expr="(num:i(count(../../IcuConfigSet/IcuChannel/*[IcuMeasurementMode='ICU_MODE_EDGE_COUNTER']))) > 0  and .!='true'" 
+                            true="Wrong Configuration. You have configured atleast one channel in Edge count measurement 
+                            but IcuEdgeCountApi is set to false, set it to true"/> 
+                    <a:tst expr="((num:i(count(../../IcuConfigSet/IcuChannel/*[IcuAssignedHwUnit='GTM']))) = 0  and .='true') and (((num:i(count(../../IcuConfigSet/IcuChannel/*[IcuAssignedHwUnit='GPT12']))) = 0  and .='true'))" 
+                            true="Wrong Configuration. IcuEdgeCountApi is set to true, but none of the channels use GTM or GPT12, which support Edge counting. "/>  
+                  </a:da>
+                </v:var>
+                <!-- [cover parentID={C7120C6A-EC51-4ec8-AF9F-6FF680D2A9A8}] IcuEdgeDetectApi [/cover] -->
+                <v:var name="IcuEdgeDetectApi" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v>EN: Adds / removes all services related to the edge detection functionality as listed below from the code: Icu_17_TimerIp_EnableEdgeDetection(),Icu_17_TimerIp_DisableEdgeDetection().
+                    true: The services listed above can be used.
+                    false: The services listed above can not be used.</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="cc472968-f36b-4c51-83c2-5da51a119c20"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="INVALID" type="XPath">
+                  <a:tst expr="(num:i(count(../../IcuConfigSet/IcuChannel/*[IcuMeasurementMode='ICU_MODE_SIGNAL_EDGE_DETECT']))) > 0  and .!='true'" 
+                            true="Wrong Configuration. You have configured atleast one channel in Edge Detection 
+                            but IcuEdgeDetectApi is set to false, set it to true"/>      
+                  </a:da>
+                </v:var>
+                <!-- [cover parentID={C66B6658-F92B-44db-849D-D21FD3EC8BD7}] IcuEnableWakeupApi [/cover] -->
+                <v:var name="IcuEnableWakeupApi" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v>EN: Adds / removes the service Icu_17_TimerIp_EnableWakeup() from the code.
+                        true: Icu_17_TimerIp_EnableWakeup() can be used.
+                        false: Icu_17_TimerIp_EnableWakeup() can not be used.</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="958e3d82-c0a1-4892-1070-66dc62bed707"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="INVALID" type="XPath">
+                  <a:tst expr="(num:i(count(../../IcuConfigSet/IcuChannel/*[IcuWakeupCapability='true']))) > 0 and .!= 'true'" 
+                        true="Wrong Configuration. You have configured atleast one channel as wakeup capable 
+                        but IcuEnableWakeupApi is set to false, set it to true"/>
+                  </a:da>
+                </v:var>
+                <!-- [cover parentID={8C295FD4-29A0-4f33-8275-5E5885F0D0DA}] IcuGetDutyCycleValuesApi [/cover] -->
+                <v:var name="IcuGetDutyCycleValuesApi" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v>EN: Adds / removes the service Icu_17_TimerIp_GetDutyCycleValues() from the code.
+                    true: Icu_17_TimerIp_GetDutyCycleValues() can be used.
+                    false: Icu_17_TimerIp_GetDutyCycleValues() can not be used.</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="24520859-5d13-4c7e-be40-0d521f7deef8"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="INVALID" type="XPath">
+                  <a:tst expr="(num:i(count(../../IcuConfigSet/IcuChannel/*[IcuSignalMeasurement/*[1]/IcuSignalMeasurementProperty='ICU_DUTY_CYCLE']))) > 0 and .!='true'" 
+                            true="Wrong Configuration. You have configured atleast one channel for duty cycle measurement 
+                            but IcuGetDutyCycleValuesApi is set to false"/>           
+                  <a:tst expr="../IcuSignalMeasurementApi = 'false' and . = 'true'" 
+                            true="Wrong Configuration. Signal Measurement api are not available and hence GetDutyCylceApi should be off"/> 
+                  </a:da>
+                </v:var>
+                <!-- [cover parentID={45A58D33-058D-473d-BB4E-16E883293E42}] IcuGetInputStateApi [/cover] -->
+                <v:var name="IcuGetInputStateApi" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v>EN: Adds / removes the service Icu_17_TimerIp_GetInputState() from the code.
+                    true: Icu_17_TimerIp_GetInputState() can be used.
+                    false: Icu_17_TimerIp_GetInputState() can not be used.</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="c32d5ba1-ce39-4a79-a7b9-619d6fd2d9ce"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="INVALID" type="XPath">
+                  <a:tst expr="((num:i(count(../../IcuConfigSet/IcuChannel/*[IcuMeasurementMode='ICU_MODE_SIGNAL_MEASUREMENT']))) = 0  and (num:i(count(../../IcuConfigSet/IcuChannel/*[IcuMeasurementMode='ICU_MODE_SIGNAL_EDGE_DETECT']))) = 0) and .='true'" 
+                            true="Wrong Configuration. IcuGetInputStateApi is relevant only in case of Signal Measurement or Edge Detection channels. Make IcuGetInputStateApi to false"/>
+                  </a:da>
+                </v:var>
+                <!-- [cover parentID={A87B3E59-925B-48f0-9E65-7DD842060E1A}] IcuGetTimeElapsedApi [/cover] -->
+                <v:var name="IcuGetTimeElapsedApi" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v>EN: Adds / removes the service Icu_17_TimerIp_GetTimeElapsed() from the code.
+                    true: Icu_17_TimerIp_GetTimeElapsed() can be used.
+                    false: Icu_17_TimerIp_GetTimeElapsed() can not be used.</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="8e8c1887-31ee-46af-a84c-dd91dd9de7ae"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="INVALID" type="XPath">
+                  <a:tst expr="((num:i(count(../../IcuConfigSet/IcuChannel/*[IcuMeasurementMode ='ICU_MODE_SIGNAL_MEASUREMENT']))) - (num:i(count(../../IcuConfigSet/IcuChannel/*[IcuSignalMeasurement/*[1]/IcuSignalMeasurementProperty ='ICU_DUTY_CYCLE'])))) > 0 and .!='true'" 
+                            true="Wrong Configuration. You have configured atleast one channel for non duty cycle measurement 
+                            but IcuGetTimeElapsedApi is set to false"/>
+                  <a:tst expr="../IcuSignalMeasurementApi = 'false' and . = 'true'" 
+                            true="Wrong Configuration. Signal Measurement api are not available and hence GetTimeElapsed should be off"/> 
+                  </a:da>
+                </v:var>
+                <!-- [cover parentID={AB4FFF0D-BCF9-4cd4-8D5F-A8C599F9F4A6}] IcuGetVersionInfoApi [/cover] -->
+                <v:var name="IcuGetVersionInfoApi" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v>EN: Adds / removes the service Icu_17_TimerIp_GetVersionInfo() from the code.
+                    true: Icu_17_TimerIp_GetVersionInfo() can be used.
+                    false: Icu_17_TimerIp_GetVersionInfo() can not be used.</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:ab4fff0d-bcf9-4cd4-8d5f-a8c599f9f4a6"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <!-- [cover parentID={B06B2A5F-8D05-4cfc-819D-B2C1823F26C6}] IcuSetModeApi [/cover] -->
+                <v:var name="IcuSetModeApi" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v>EN: Adds / removes the service Icu_17_TimerIp_SetMode() from the code.
+                    true: Icu_17_TimerIp_SetMode() can be used.
+                    false: Icu_17_TimerIp_SetMode() can not be used.</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ef8081f4-2cba-4963-bb09-07cd437e9623"/>
+                  <a:da name="DEFAULT" value="false"/>
+                </v:var>
+                <!-- [cover parentID={E7F32D8D-D9D3-485b-AE88-CF3658BFBAF9}] IcuSignalMeasurementApi [/cover] -->
+                <v:var name="IcuSignalMeasurementApi" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v>EN: Adds / removes the services Icu_17_TimerIp_StartSignalMeasurement() and Icu_17_TimerIp_StopSignalMeasurement() from the code.
+                    true: Icu_17_TimerIp_StartSignalMeasurement() and Icu_17_TimerIp_StopSignalMeasurement() can be used.
+                    false: Icu_17_TimerIp_StartSignalMeasurement() and Icu_17_TimerIp_StopSignalMeasurement() can not be used.</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="8238ef5e-f421-4be4-9e5e-5c27f9f515d1"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="INVALID" type="XPath">
+                  <a:tst expr="(num:i(count(../../IcuConfigSet/IcuChannel/*[IcuMeasurementMode='ICU_MODE_SIGNAL_MEASUREMENT']))) > 0  and .!='true'" 
+                            true="Wrong Configuration. You have configured atleast one channel in Signal Measurement 
+                            but IcuSignalMeasurementApi is set to false, set it to true"/>   
+                  <a:tst expr="((num:i(count(../../IcuConfigSet/IcuChannel/*[IcuAssignedHwUnit='GTM']))) = 0  and .='true') and (((num:i(count(../../IcuConfigSet/IcuChannel/*[IcuAssignedHwUnit='CCU6']))) = 0  and .='true'))" 
+                          true="Wrong Configuration. IcuSignalMeasurementApi is set to true, but there is no GTM or CCU6 channel configured"/>      
+                  </a:da>
+                </v:var>
+                <!-- [cover parentID={B4D200CD-FEFE-4c78-8338-CCCEDB398EE1}] IcuTimestampApi [/cover] -->
+                <v:var name="IcuTimestampApi" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v>EN: Adds / removes all services related to the timestamping functionality as listed below from the code: Icu_17_TimerIp_StartTimestamp(), Icu_17_TimerIp_StopTimestamp(), Icu_17_TimerIp_GetTimestampIndex().
+                    true: The services listed above can be used.
+                    false: The services listed above can not be used.</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="5c4306bc-6934-4639-9830-e32bc2541fce"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="INVALID" type="XPath">
+                  <a:tst expr="(num:i(count(../../IcuConfigSet/IcuChannel/*[IcuMeasurementMode='ICU_MODE_TIMESTAMP']))) > 0 and .!= 'true'" 
+                        true="Wrong Configuration. You have configured atleast one channel in Time stamp measurement 
+                        but IcuTimestampApi is set to false, set it to true"/>
+                  <a:tst expr="((num:i(count(../../IcuConfigSet/IcuChannel/*[IcuAssignedHwUnit='GTM']))) = 0  and .='true') " 
+                          true="Wrong Configuration. IcuTimestampApi is set to true, but there is no GTM channel configured"/> 
+                  </a:da>
+                </v:var>
+                <!-- [cover parentID={AC569439-E703-4088-AC80-D9CCDEEBF2FC}] IcuWakeupFunctionalityApi [/cover] -->
+                <v:var name="IcuWakeupFunctionalityApi" type="BOOLEAN">
+                  <a:a name="DESC">
+                    <a:v>EN: Adds / removes the service Icu_17_TimerIp_CheckWakeup() from the code.
+                    true: Icu_17_TimerIp_CheckWakeup() can be used.
+                    false: Icu_17_TimerIp_CheckWakeup() can not be used.</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="958e3d82-c0a1-4892-a070-66dc62bed708"/>
+                  <a:da name="DEFAULT" value="false"/>
+                  <a:da name="INVALID" type="XPath">
+                  <a:tst expr="(num:i(count(../../IcuConfigSet/IcuChannel/*[IcuWakeupCapability='true']))) > 0 and .!= 'true'" 
+                        true="Wrong Configuration. You have configured atleast one channel as wakeup capable 
+                        but IcuWakeupFunctionalityApi is set to false, set it to true"/>
+                  </a:da>
+                </v:var>
+              </v:ctr>
+              <!-- [cover parentID={ED9ADBD9-EC87-40ed-86E7-42ABF8EB9C02}] CommonPublishedInformation [/cover] -->
+              <v:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                <a:a name="DESC" value="EN: Common container, aggregated by all modules. It contains published information about vendor and versions."/>
+                <a:a name="UUID" value="492f8482-3e2c-4bf1-b27f-01fd7ac35788"/>
+                <!-- [cover parentID={A8E19304-A6B3-4908-8184-3FDA1491D5FD}] ArMajorVersion [/cover] -->
+                <v:var name="ArMajorVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Major version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-88fe-1166b258bb8a"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="4"/>
+                </v:var>
+                <!-- [cover parentID={1BA242DD-8FE0-4d06-AD04-670C5CB65E6F}] ArMinorVersion [/cover] -->
+                <v:var name="ArMinorVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Minor version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="73f87c7f-e230-4178-bff0-eb2704aae656"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="2"/>
+                </v:var>
+                <!-- [cover parentID={4CE118FD-D88E-4312-9A0C-51722C51B077}] ArPatchVersion [/cover] -->
+                <v:var name="ArPatchVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Patch level version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="2380135d-6778-417a-a34b-e10017d4dd54"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="2"/>
+                </v:var>
+                <!-- [cover parentID={730419C2-7991-4c74-AED7-DA383FF15779}] SwMajorVersion [/cover] -->
+                <v:var name="SwMajorVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Major version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="fca015e3-5f28-4cbe-8949-8f4b87d86827"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="3"/>
+                </v:var>
+                <!-- [cover parentID={BBAED4C2-EF47-4189-A8F1-25BDEED8DCF8}] SwMinorVersion [/cover] -->
+                <v:var name="SwMinorVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Minor version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="14ab81e0-3d80-43dc-8b92-247e5a542df9"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="0"/>
+                </v:var>
+                <!-- [cover parentID={44EAABFB-4F02-425b-AF12-E92A2EF2E55D}] SwPatchVersion [/cover] -->
+                <v:var name="SwPatchVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Patch level version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="32e37bfd-18b6-41d1-9248-a81dbe0fe4c5"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="0"/>
+                </v:var>
+                <!-- [cover parentID={DCA44BD0-54EE-4f57-BE0B-DB57B4991C75}] ModuleId [/cover] -->
+                <v:var name="ModuleId" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Module ID of this module from Module List"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="UUID" value="3b407478-6902-4f80-b7cf-f33b0854e638"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="122"/>
+                </v:var>
+                <!-- [cover parentID={F0C6B4F4-0402-4c51-B4FE-05C499E81B56}] VendorId [/cover] -->
+                <v:var name="VendorId" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Vendor ID of the dedicated implementation of this module according to the AUTOSAR vendor list"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="7d650b2d-4adb-41f0-a68e-5f0c416501d1"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="17"/>
+                </v:var>
+                <!-- [cover parentID={28E7FA52-4898-4425-9DA9-6D592A5A8EBF}] VendorApiInfix [/cover] -->
+                <v:var name="VendorApiInfix" type="STRING_LABEL">
+                  <a:a name="DESC">
+                    <a:v>EN: In driver modules which can be instantiated several times on a single ECU, BSW00347 requires that the name of APIs is extended by the VendorId and a vendor specific name.
+              This parameter is used to specify the vendor specific name. In total, the implementation specific name is generated as follows:
+              &lt;ModuleName&gt;_&gt;VendorId&gt;_&lt;VendorApiInfix&gt;&lt;Api name from SWS&gt;.
+
+              E.g.  assuming that the VendorId of the implementor is 123 and the implementer chose a VendorApiInfix of &quot;v11r456&quot; a api name Can_Write defined in the SWS will translate to Can_123_v11r456Write.
+
+              This parameter is mandatory for all modules with upper multiplicity &gt; 1. It shall not be used for modules with upper multiplicity =1.</a:v>
+                  </a:a>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="ad363b41-e945-4717-b12f-c2f800ef138e"/>
+                  <a:da name="ENABLE" value="true"/>
+                  <a:da name="DEFAULT" value="TimerIp"/>
+                </v:var>
+                <!-- [cover parentID={F2CCEE50-630B-4580-BB46-32185F6D5EC5}] Release [/cover] -->
+                <v:var name="Release" type="STRING_LABEL">
+                  <a:a name="DESC" value="EN: Aurix derivative used for the implementation"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="3b407478-6902-4f40-b7cf-f33b0854e638"/>
+                  <a:da name="DEFAULT" type="XPath" expr="ecu:get('Rel.Derivate')"/>
+                </v:var>
+              </v:ctr>
+            </v:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+    </d:lst>
+  </d:ctr>
+</datamodel>

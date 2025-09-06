@@ -1,0 +1,118 @@
+<html>
+<body>
+<h2>Kind and Type information of a node</h2>
+<p>
+    Each node in the model is associated with <a href="#kind">kind</a> and with <a href="#type">type</a> information. </p>
+    
+<h3><a name="kind">Kind</a></h3>
+
+<p>
+    The kind information defines the
+    hard coded semantics of the node. Each kind is represented by kind specific class associated
+    with each <a href="../../model/DCtxt.html">DCtxt</a> accessible via a variable of that class. The following kinds
+    are provided:
+</p>
+
+<p>
+    <table border="1">
+        <tr>
+            <th>Type</th><th>XDM</th><th>Class</th><th>DCtxt variable</th>
+        </tr>
+        <tr>
+            <td>Variable</td>
+            <td>&lt;d:var ...&gt;</td>
+            <td><a href="../../model/Var.html">Var</a></td>
+            <td>DCtxt.var</td>
+        </tr>
+        <tr>
+            <td>Reference</td>
+            <td>&lt;d:ref ...&gt;</td>
+            <td><a href="../../model/Ref.html">Ref</a></td>
+            <td>DCtxt.ref</td>
+        </tr>
+        <tr>
+            <td>Container</td>
+            <td>&lt;d:ctr ...&gt;</td>
+            <td><a href="../../model/Ctr.html">Ctr</a></td>
+            <td>DCtxt.ctr</td>
+        </tr>
+        <tr>
+            <td>Choice</td>
+            <td>&lt;d:chc ...&gt;</td>
+            <td><a href="../../model/Chc.html">Chc</a></td>
+            <td>DCtxt.ctr</td>
+        </tr>
+    </table>
+</p>
+
+<p>
+    In addition to the kind specific classes the class <a href="../../model/Any.html">Any</a> provides access to
+    information that applies to any kind of node. All kind specific classes derive from <code>Any</code>.
+</p>
+
+<p>
+    In addition to the node kinds mentioned above also nodes of kind List do exist. These lists contain a list
+    of nodes of one of the other kinds. Lists are not explicitly modeled in the public API but special list
+    variants of all accessor methods are provided by the kind specific classes above. Therefore lists are never
+    accessed directly. Lists can only be directly accessed via the methods in <a href="../../model/DCtxt.html">
+    DCtxt</a> and via the transformation methods of the kind specific API (see: <a href="Transform.html">Transform</a>).
+</p>
+
+<p>
+    The kind of a node can be queried with:
+</p>
+
+<p>
+    <pre>
+        int kind = ctxt.getKind();     // returns Any.UNKNOWN|Any.VAR|Any.REF|Any.CTR|Any.CHC|Any.LST
+        int kind = ctxt.any.getKind(); // returns Any.UNKNOWN|Any.VAR|Any.REF|Any.CTR|Any.CHC
+    </pre>
+</p>
+
+<p>
+    The difference between the method in DCtxt and that one in Any is that the DCtxt class always accessed
+    the context node (or referenced node) whereas the kind specific classes (Any, Var...) skip all list nodes
+    and only access their children (see <a href="ListAndOptional.html">List Nodes and Optional Nodes</a>).
+</p>
+
+<p>
+    A better way to query the kind of a node is to use the <code>is&lt;Type&gt;()</code> methods
+    provided by the kind specific classes:
+</p>
+
+<p>
+    <code>
+        boolean isVar = ctxt.var.isVar();<br>
+        boolean isRef = ctxt.ref.isRef();<br>
+        boolean isCtr = ctxt.ctr.isCtr();<br>
+        boolean isChc = ctxt.chc.isChx();<br>
+    </code>
+</p>
+
+<h3><a name="type">Type</a></h3>
+
+<p>
+    In addition o the kind a class can be associated with a type which is represented as a String. The type alllows
+    to define domain specific sub-types to the more generic kind model (e.g.
+    <code>MULTIPLE-CONFIGURATION-CONTAINER</code> for AUTOSAR). The type may add additional semantics to a node but is
+    not explicitly modeled by the datamodel2 Public API (with the exception of the types <code>STRING</code>,
+    <code>INTEGER</code>, <code>FLOAT</code>, <code>BOOLEAN</code>) of the variable node kind).
+</p>
+
+<p>
+    The type of a node can be queried with:
+</p>
+
+<p>
+    <pre>
+        String type = ctxt.getType();     // Get the type of the context node
+        String type = ctxt.any.getType(); // Get the type of the non list context-node
+    </pre>
+</p>
+
+<p>
+    Again a DCtxt and a kind specific variant is supported.
+</p>
+
+</body>
+</html>

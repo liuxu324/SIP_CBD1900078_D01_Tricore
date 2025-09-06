@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="aquintos.mdf.consistencychecks.impl.CheckStructuredSync">
+   <implementation class="aquintos.mdf.consistencychecks.impl.CheckStructuredSync"/>
+   <service>
+      <provide interface="aquintos.mdf.consistencychecks.IModelConsistencyCheck"/>
+   </service>
+   <reference bind="bindCoreCheckers" cardinality="0..n" interface="ru.novosoft.mdf.ext.IMDFStructuredSyncChecker" name="CoreCheckers" policy="dynamic" unbind="unbindCoreCheckers"/>
+   <reference bind="bindIInfoModelFactory" cardinality="0..1" interface="vi.info.service.IInfoModelFactory" name="IInfoModelFactory" policy="dynamic" unbind="unbindIInfoModelFactory"/>
+   <reference bind="bindIInfoService" cardinality="0..1" interface="vi.info.service.IInfoService" name="IInfoService" policy="dynamic" unbind="unbindIInfoService"/>
+</scr:component>

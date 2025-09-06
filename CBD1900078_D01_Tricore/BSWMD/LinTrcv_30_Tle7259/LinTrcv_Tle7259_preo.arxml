@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-0-3.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://autosar.org/schema/r4.0">
+	<AR-PACKAGES>
+		<AR-PACKAGE UUID="8050f10e-020c-4bdb-a3c8-b2062a40c464">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<AR-PACKAGES>
+				<AR-PACKAGE UUID="db738279-6f5c-4e41-ac4e-53b933d8292a">
+					<SHORT-NAME>LinTrcv_30_Tle7259</SHORT-NAME>
+					<ELEMENTS>
+						<ECUC-MODULE-CONFIGURATION-VALUES UUID="da332da1-8ea9-48ed-b6e0-fe5d58fb18c9">
+							<SHORT-NAME>LinTrcv_Rec</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/LinTrcv_30_Tle7259/LinTrcv</DEFINITION-REF>
+							<IMPLEMENTATION-CONFIG-VARIANT>VARIANT-PRE-COMPILE</IMPLEMENTATION-CONFIG-VARIANT>
+						</ECUC-MODULE-CONFIGURATION-VALUES>
+					</ELEMENTS>
+				</AR-PACKAGE>
+			</AR-PACKAGES>
+		</AR-PACKAGE>
+	</AR-PACKAGES>
+</AUTOSAR>

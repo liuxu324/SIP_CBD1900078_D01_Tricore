@@ -1,0 +1,1240 @@
+<?xml version='1.0'?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2018)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**  FILENAME  : Dma.xdm                                                       **
+**                                                                            **
+**  VERSION   : 4.0.0                                                         **
+**                                                                            **
+**  DATE      : 2018-08-08                                                    **
+**                                                                            **
+**  VARIANT   : Variant PB                                                    **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX2G                                              **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY : [cover parentID={8E7C33F8-BE64-4bbe-A6A5-E1A66364A972}]    **
+**                                                                            **
+**  DESCRIPTION  : XML data model for Dma driver                              **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) : NA                                                     **
+**                                                                            **
+**  MAY BE CHANGED BY USER : no                                               **
+**                                                                            **
+*******************************************************************************/
+-->
+<datamodel version="5.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/12/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/12/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="AURIX2G" type="AR-PACKAGE">
+        <a:a name="UUID" value="ECUC:AUTOSAR"/>
+        <d:lst type="TOP-LEVEL-PACKAGES">
+          <d:ctr name="EcucDefs" type="AR-PACKAGE">
+            <a:a name="UUID" value="ECUC:ECUCDEFS"/>
+                <d:lst type="ELEMENTS">
+                    <d:chc name="Dma" type="AR-ELEMENT" value="MODULE-DEF">
+                        <v:ctr type="MODULE-DEF">
+                            <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                                <ad:ADMIN-DATA>
+                                <ad:DOC-REVISIONS>
+                                    <ad:DOC-REVISION>
+                                        <ad:REVISION-LABEL>4.2.2</ad:REVISION-LABEL>
+                                        <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                                        <ad:DATE>2017-10-31</ad:DATE>
+                                    </ad:DOC-REVISION>
+                                </ad:DOC-REVISIONS>
+                                </ad:ADMIN-DATA>
+                            </a:a>
+                            <a:a name="DESC" value="EN: Configuration of the Dma (Direct Memory Access) module."/>
+                            <a:a name="LOWER-MULTIPLICITY" value="0"/>
+                            <a:a name="UPPER-MULTIPLICITY" value="1"/>
+                            <a:a name="POSTBUILDVARIANTSUPPORT" value="true"/>
+                            <!-- [cover parentID={BD607180-6DDB-4175-9E75-6DCCAEBFBD5C}]Autosar 422 [/cover] -->
+                            <!-- [cover parentID={5E53D0E5-6EF6-4229-92DC-E934D72F2446}]Autosar 422 [/cover] -->
+                            <a:a name="RELEASE" value="asc:4.2.2"/>
+                            <a:a name="UUID" value="ECUC:c03229fe-3dca-435e-a47c-1ae11e6c1832"/>
+                            <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                </a:a>
+                                <a:a name="LABEL" value="Config Variant"/>
+                                <a:da name="DEFAULT" value="VariantPostBuild"/>
+                                <a:da name="RANGE">
+                                    <a:v>VariantPostBuild</a:v>
+                                </a:da>
+                            </v:var>
+                            <!--********************************************************-->
+                            <!--***************** DMA General Container ****************-->
+                            <!--********************************************************-->
+                            <v:ctr name="DmaGeneral" type="IDENTIFIABLE">
+                                <!-- [cover pparentID={76622332-BF2D-4d2b-AC0C-20FA9A049E07}] DmaGeneral [/cover] -->
+                                <a:a name="DESC" value="EN: General configuration "/>
+                                <a:a name="UUID" value="ECUC:c03229fe-4dca-416e-a47c-1ae11e6c1842"/>
+                                <v:var name="DmaDevErrorDetect" type="BOOLEAN">
+                                    <!-- [cover parentID={FF5660EB-3D7B-4dba-87D6-82D0D42AC135}] DmaDevErrorDetect [/cover] -->
+                                    <a:a name="DESC" value="EN: Enables/Disables the Development Error Detection in the DMA Driver"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    <a:a name="UUID" value="DCE:a4e850e4-be6b-4d72-b360-c13bb0bff7f6"/>
+                                    <a:da name="DEFAULT" value="true"/>
+                                </v:var>
+                                <v:var name="DmaMultiCoreErrorDetect" type="BOOLEAN">
+                                    <a:a name="DESC" value="If enabled, the multicore error detection will be enabled"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                      type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                    <a:a name="UUID" 
+                                       value="ECUC:348d2d10-2ba2-4a1e-aaa8-002da540f627"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                    <a:da name="INVALID" type="XPath">
+                                        <a:tst expr="(../DmaDevErrorDetect = 'false') and (. = 'true')" true="EN: DMA - Invalid Configuration, Multi-Core Error Detect must be enabled only when Dev Error Detect is enabled "/>
+                                    </a:da>
+                                </v:var>
+                                <v:var name="DmaSafetyEnable" type="BOOLEAN">
+                                    <!-- [cover pparentID={511F5A95-72D1-4ae4-AB40-BEB4AB28A462}] DmaSafetyEnable [/cover] -->
+                                    <a:a name="DESC" value="EN: Enables/Disables the Safety checks in the DMA Driver"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    <a:a name="UUID" value="DCE:a4e850e4-be6b-4d72-b360-c23bb0bff7f6"/>
+                                    <a:da name="DEFAULT" value="true"/>
+                                </v:var>
+                                <v:var name="DmaInitCheckApi" type="BOOLEAN">
+                                    <!-- [cover pparentID={55215552-0899-497b-AAF3-4596872154A7}] DmaInitCheckApi [/cover] -->
+                                    <a:a name="DESC" value="EN: This parameter decides the availability of the API Dma_InitCheck in the code"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    <a:a name="UUID" value="DCE:a4e850e4-be6b-4d72-b360-c24bb0bff7f6"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                    <a:da name="INVALID" type="XPath">
+                                        <a:tst expr="(../DmaSafetyEnable = 'true') and (. = 'false')" true="EN: DMA - Invalid Configuration, InitCheck API should be enabled when safety is enabled"/>
+                                    </a:da>
+                                </v:var>
+                                <v:var name="DmaDeinitApiConfiguration" type="BOOLEAN">
+                                    <!-- [cover pparentID={793D3FD9-3FEB-4d50-9868-55768DAB98EC}] DmaChDeInitApiConfiguration [/cover] -->
+                                    <a:a name="DESC" value="EN: This parameter decides the availability of the API Dma_ChDeinit in the code"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    <a:a name="UUID" value="ECUC:c03229fe-5dca-416e-a47c-1ae11e6c1852"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                </v:var>
+                                <v:var name="DmaSuspendApiConfiguration" type="BOOLEAN">
+                                    <!-- [cover pparentID={CB1DC16F-BF91-4a43-A943-ADC19F437FB4}] DmaSuspendApiConfiguration [/cover] -->
+                                    <a:a name="DESC" value="EN: This parameter decides the availability of the API Dma_TransferFreeze and Dma_TransferResume in the code"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    <a:a name="UUID" value="ECUC:c03229fe-6dca-416e-a47c-1aa11e6c1862"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                </v:var>
+                                <v:var name="DmaTriggerApiConfiguration" type="BOOLEAN">
+                                    <!-- [cover pparentID={54A2F336-B694-4e5f-BCC8-7E92D5C3A261}] DmaTriggerApiConfiguration [/cover] -->
+                                    <a:a name="DESC" value="EN: This parameter decides the availability of the API Dma_EnableHardwareTrigger and Dma_DisableHardwareTrigger in the code"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    <a:a name="UUID" value="ECUC:c03229fe-7dca-416e-a47c-1aa11e6c1972"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                </v:var>
+                                <v:var name="DmaDataPendingApiConfiguration" type="BOOLEAN">
+                                    <!-- [cover pparentID={1BEF3ECA-6890-4d35-B2DA-3359B76EDDE6}] DmaDataPendingApiConfiguration [/cover] -->
+                                    <a:a name="DESC" 
+                                        value="EN: This parameter decides the availability of the API API Dma_ChGetRemainingData in the code"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    <a:a name="UUID" value="ECUC:c03229fe-8dca-416e-a47c-1aa11e6c2082"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                </v:var>
+                                <v:var name="DmaBufferSwitchApiConfiguration" type="BOOLEAN">
+                                    <!-- [cover pparentID={48D2B287-76F4-43c4-B51C-D0845FFF82C1}] DmaBufferSwitchApiConfiguration [/cover] -->
+                                    <a:a name="DESC" 
+                                        value="EN: This parameter decides the availability of the API Dma_ChSwitchBuffer in the code"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    <a:a name="UUID" value="ECUC:c03229fe-9dca-416e-a47c-1aa11e6c2192"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                </v:var>
+                                <v:var name="DmaVersionInfoApi" type="BOOLEAN">
+                                    <!-- [cover parentID={4EBB01DF-10EB-46d3-9D30-37DBA42D9A3A}] DmaVersionInfoApi [/cover] -->
+                                    <a:a name="DESC" 
+                                        value="EN: This parameter decides the availability of the API Dma_GetVersionInfo in the code"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    <a:a name="UUID" value="ECUC:c03229fe-9dca-416e-a48c-1aa11e6c2192"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                </v:var>
+                                <v:var name="DmaMaxTransactionSetPerChannel" type="INTEGER">
+                                    <!-- [cover pparentID={4F81DE0E-DEBF-44f7-9B5C-5692E6646087}] DmaMaxTransactionSetPerChannel [/cover] -->
+                                    <a:a name="DESC" value="EN: Specifies how many transaction sets are allowed to be defined per channel"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    <a:a name="UUID" value="ECUC:c03229fe-1dca-417e-a47c-1aa11e6c2212"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&lt;=65535"/>
+                                        <a:tst expr="&gt;=1"/>
+                                    </a:da>
+                                    <a:da name="DEFAULT" value="1"/>
+                                </v:var>
+                                <v:var name="DmaInitApiMode" type="ENUMERATION">
+                                    <!-- [cover parentID={9D70805C-6D8C-47cb-BDD3-D3B8E46C0BF4}] DmaInitApiMode [/cover] -->
+                                    <!-- [cover parentID={1A65EADD-AFD0-4845-B2D2-8257E086DD67} ] User Mode [/cover] -->
+                                    <a:da name="DESC" value="This option specifies the mode in which the DMA init function operates"/>
+                                    <a:da name="RANGE">
+                                        <a:v>DMA_MCAL_USER1MODE</a:v>
+                                        <a:v>DMA_MCAL_SUPERVISORMODE</a:v>
+                                    </a:da>
+                                    <a:da name="DEFAULT" value="DMA_MCAL_SUPERVISORMODE"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:da name="INVALID" type="XPath">
+                                        <a:tst expr="((../DmaRuntimeApiMode = 'DMA_MCAL_SUPERVISORMODE') and (../DmaInitApiMode = 'DMA_MCAL_USER1MODE'))"
+                                        true="If Runtime APIs are configured for Supervisory mode, the Initialization and De-Initialization APIs should also be configured in Supervisory mode."/>
+                                    </a:da>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:c03229fe-6dca-425e-a47c-1ae21a6c2362"/>
+                                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                </v:var>
+                                <v:var name="DmaRuntimeApiMode" type="ENUMERATION">
+                                    <!-- [cover parentID={41F54C6A-2B06-41be-87E8-2B23AF914732}] DmaRuntimeApiMode [/cover] -->
+                                    <a:da name="DESC" value="This option specifies the mode in which the DMA runtime functions operate"/>
+                                    <a:da name="RANGE">
+                                        <a:v>DMA_MCAL_USER1MODE</a:v>
+                                        <a:v>DMA_MCAL_SUPERVISORMODE</a:v>
+                                    </a:da>
+                                    <a:da name="DEFAULT" value="DMA_MCAL_SUPERVISORMODE"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                    <a:a name="UUID" value="ECUC:c03229fe-6dca-425e-a47c-1ae31a6c2362"/>
+                                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                </v:var>
+                            </v:ctr>
+                            <!--********************************************************-->
+                            <!--************** DMA Channel configuration ***************-->
+                            <!--********************************************************-->
+                            <v:lst name="DmaChannelConfig" type="MAP">
+                                <!-- [cover parentID={2DB212AD-7305-4e35-9099-DAD4BCC247D6}] DmaChannelConfig [/cover] -->
+                                <a:da name="MIN" value="1"/>
+                                <a:da name="MAX" type="XPath" expr="ecu:get('Dma.MaxDmaChannel')"/>
+                                <v:ctr name="DmaChannelConfig" type="IDENTIFIABLE">
+                                    <a:a name="DESC" value="EN: DMA channel configuration for this channel"/>
+                                    <a:a name="UUID" value="ECUC:c03229fe-2dca-418e-a47c-1ab11e6c1922"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                         type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <v:var name="DmaChannelId" type="INTEGER">
+                                        <!-- [cover pparentID={64D4A862-CCDD-49de-B069-4E41993BD63E}] DmaChannelId [/cover] -->
+                                        <a:da name="DESC" value="EN: DMA channel number"/>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:da name="INVALID" type="Multi">
+                                            <mt:xpath expr="text:uniq(../../*/DmaChannelId,.)"  false="EN: DMA - Duplicated value, DmaChannelId must be unique across all channels."/>
+                                            <mt:range>
+                                                <!-- <mt:tst expr="&lt;=(ecu:get('Dma.MaxDmaChannel'))-1"/> -->
+                                                <mt:tst expr="&lt;=127"/>
+                                                <mt:tst expr="&gt;=0"/>
+                                            </mt:range>
+                                        </a:da>
+                                        <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index,'0')"/>
+                                        <a:a name="UUID" value="ECUC:c03229fe-3aca-418e-a47c-1ab11e6c2032"/>
+                                        <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    </v:var>
+                                    <v:var name="DmaChannelAssignedPartition" type="INTEGER">
+                                        <!-- [cover parentID={2A3A64E6-48BB-4f26-8F86-777B4B371E6D}] DmaChannelAssignedPartition [/cover] -->
+                                        <a:da name="DESC" value="EN: Hardware partition to which this channel is allocated to"/>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:da name="INVALID" type="Range">
+                                            <a:tst expr="&lt;=3"/>
+                                            <a:tst expr="&gt;=0"/>
+                                        </a:da>
+                                        <a:da name="DEFAULT" value="0"/>
+                                        <a:a name="UUID" value="ECUC:c03229fe-3dca-418e-a47c-1ab11e6c2032"/>
+                                        <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    </v:var>
+                                    <v:var name="DmaChannelNumTransactionSet" type="INTEGER">
+                                        <!-- [cover pparentID={054A6B78-9435-4770-ADA6-797E69D74F86}] DmaChannelNumTransactionSet [/cover] -->
+                                        <a:da name="DESC" value="EN: No of transaction set for this channel.">
+                                            <a:v> EN: Linked list feature is offered in Transaction set configuration only if this parameter were enabled. The number of transaction sets is capped at DmaMaxTransactionSetPerChannel </a:v>
+                                        </a:da>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:da name="DEFAULT" value="1"/>
+                                        <a:da name="INVALID" type="Multi">
+                                            <mt:range>
+                                                <mt:tst expr="&lt;=node:fallback(node:current()/../../../DmaGeneral/DmaMaxTransactionSetPerChannel,'65535')"/>
+                                                <mt:tst expr="&gt;=1"/>
+                                            </mt:range>
+                                        </a:da>
+                                        <a:a name="UUID" value="ECUC:c03229fe-4dca-418e-a47c-1ab11e6c2142"/>
+                                        <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    </v:var>
+                                    <v:var name="DmaTcsInterruptTransactionLoss" type="BOOLEAN">
+                                        <!-- [cover parentID={0D376D48-5C30-4a55-B513-E55C2F2E1F39}] DmaTcsInterruptTransactionLoss [/cover] -->
+                                        <a:da name="DESC" value="Enables/Disables the transaction request lost interrupt"/>
+                                        <a:da name="DEFAULT" value="false"/>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="UUID" value="ECUC:c03229fe-5dca-426e-a47c-1ae11a6c3152"/>
+                                        <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    </v:var>
+                                    <v:var name="DmaChannelNotification" type="FUNCTION-NAME">
+                                        <!-- [cover parentID={877896EE-4DF5-4b60-B68C-7CDB55010960}] DmaChannelNotification [/cover] -->
+                                        <a:da name="DESC" value="EN: User defined Notification Function Pointer of type void NotificationRoutine(uint32_t Channel, Dma_ChEventType_t Event)" >
+                                            <a:v>EN: This notification function will be called by the DMA Driver if there is a channel interrupt.</a:v>
+                                        </a:da>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:da name="INVALID" type="XPath">
+                                            <a:tst expr="(. = '')" true="EN: DMA - Invalid Configuration, Function pointer cannot be blank."/>
+                                            <a:tst expr= "text:grep(., ' +')" true="EN: DMA - Invalid Configuration, Spaces not expected in the function pointer"/>
+                                        </a:da>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:da name="DEFAULT" value="NULL_PTR" />
+                                        <a:a name="UUID" value="ECUC:c03229fe-5dca-418e-a47c-1ab11e6c2252"/>
+                                        <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    </v:var>
+                                    <!--********************************************************-->
+                                    <!--************ DMA Channel TCS configuration *************-->
+                                    <!--********************************************************-->
+                                    <v:lst name="DmaChannelTransactionSet" type="MAP">
+                                        <a:da name="MIN" value="1"/>
+                                        <a:da name="MAX" type="XPath" expr="node:fallback(node:current()/../DmaChannelNumTransactionSet,'65535')"/>
+                                        <v:ctr name="DmaChannelTransactionSet" type="IDENTIFIABLE">
+                                            <!-- [cover parentID={E70FDD74-A76B-4f18-8F91-C965E686621A}] DmaChannelTransactionSet [/cover] -->
+                                            <a:da name="DESC" value="EN: Transaction set setting for this DMA channel"/>
+                                            <a:a name="UUID" value="ECUC:c03229fe-8dca-418e-a47c-1ab11e6c2582"/>
+                                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                                 type="IMPLEMENTATIONCONFIGCLASS">
+                                                <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                                            </a:a>
+                                            <v:var name="DmaTcsIndex" type="INTEGER">
+                                                <!-- [cover pparentID={CF188D07-D448-4a91-B2C0-366CC9473BDD}] DmaTcsIndex [/cover] -->
+                                                <a:da name="DESC" value="EN: DMA Transaction set Index" />
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index,'0')"/>
+                                                <a:da name="INVALID" type="Multi">
+                                                    <mt:xpath expr="text:uniq(./../../*/DmaTcsIndex,.)" false="EN: TCS index of a DMA channel should be unique."/>
+                                                    <mt:xpath expr=".&lt;count(./../../*)" false="EN: Hole in TCS index"/>
+                                                    <mt:range>
+                                                        <mt:tst expr="&gt;=0"/>
+                                                        <mt:tst expr="&lt;=65535"/>
+                                                    </mt:range>
+                                                </a:da>
+                                                <a:a name="UUID" value="ECUC:c03229fe-9d4a-418e-a57c-1ab11e6c2692"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                            <v:var name="DmaTcsSourceAddress" type="INTEGER">
+                                                <!-- [cover parentID={7AD8A0DF-7666-4474-A6C8-5BAC7777E94D}] DmaTcsSourceAddress [/cover] -->
+                                                <a:da name="DESC" value="EN: start address of the source memory" />
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:da name="DEFAULT_RADIX" value="HEX"/>
+                                                <a:da name="DEFAULT" value="0"/>
+                                                <a:da name="INVALID" type="Range">
+                                                    <a:tst expr="&lt;=0xFFFFFFFF"/>
+                                                    <a:tst expr="&gt;=0x00"/>
+                                                </a:da>
+                                                <a:a name="UUID" value="ECUC:c03229fe-9dca-418e-a47c-1ab11e6c2692"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                            <v:var name="DmaTcsDestinationAddress" type="INTEGER">
+                                                <!-- [cover parentID={710820FA-F561-4357-B5B2-C058721EDA75}] DmaTcsDestinationAddress [/cover] -->
+                                                <a:da name="DESC" value="EN: Destination address of the source memory" />
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:da name="DEFAULT_RADIX" value="HEX"/>
+                                                <a:da name="DEFAULT" value="0"/>
+                                                <a:da name="INVALID" type="Range">
+                                                    <a:tst expr="&lt;=0xFFFFFFFF"/>
+                                                    <a:tst expr="&gt;=0x00"/>
+                                                </a:da>
+                                                <a:a name="UUID" value="ECUC:c03229fe-1dca-419e-a47c-1ab11e6c2712"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                            <v:var name="DmaTcsDoubleBuffer" type="INTEGER">
+                                                <!-- [cover parentID={43DA718A-5E72-4ac5-9532-093CF3E3C3BA}] DmaTcsDoubleBuffer [/cover] -->
+                                                <a:da name="DESC" value="EN: start address of the second buffer" />
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:da name="DEFAULT_RADIX" value="HEX"/>
+                                                <a:da name="DEFAULT" value="0"/>
+                                                <a:da name="INVALID" type="Range">
+                                                    <a:tst expr="&lt;=0xFFFFFFFF"/>
+                                                    <a:tst expr="&gt;=0x00"/>
+                                                </a:da>
+                                                <a:da name="EDITABLE" type="XPath">
+                                                <a:tst expr="(./../DmaTcsShadowRegisterConfiguration='DMA_SOURCE_DOUBLE_BUFFERING_SW_SWITCH')
+                                                        or   (./../DmaTcsShadowRegisterConfiguration='DMA_SOURCE_DOUBLE_BUFFERING_HW_SW_SWITCH')
+                                                        or   (./../DmaTcsShadowRegisterConfiguration='DMA_DEST_DOUBLE_BUFFERING_SW_SWITCH')
+                                                        or   (./../DmaTcsShadowRegisterConfiguration='DMA_DEST_DOUBLE_BUFFERING_HW_SW_SWITCH')"/>
+                                                </a:da>
+                                                <a:a name="UUID" value="ECUC:c03229fe-2dca-419e-a47c-1ab11e6c2822"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                            <v:var name="DmaTcsMoveLength" type="ENUMERATION">  
+                                                <!-- [cover parentID={B77CE8FD-3F95-4d18-B70A-83DCBE037AB6}] DmaTcsMoveLength [/cover] -->
+                                                <a:da name="DESC">
+                                                    <a:v>EN: DMA move consisting of one read and one write each) moves data of given number of bits from source to destination. This parameter defines number of bits for the DMA move
+                                                        DMA_WIDTH_8BITS: 8-bits per move.
+                                                        DMA_WIDTH_16BITS : 16-bits per move.
+                                                        DMA_WIDTH_32BITS : 32-bits per move.
+                                                        DMA_WIDTH_64BITS: 64-bits per move.
+                                                        DMA_WIDTH_128BITS: 128-bits per move.
+                                                        DMA_WIDTH_256BITS: 256-bits per move.
+                                                    </a:v>
+                                                </a:da>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:da name="RANGE">
+                                                    <a:v>DMA_WIDTH_8BITS</a:v>
+                                                    <a:v>DMA_WIDTH_16BITS</a:v>
+                                                    <a:v>DMA_WIDTH_32BITS</a:v>
+                                                    <a:v>DMA_WIDTH_64BITS</a:v>
+                                                    <a:v>DMA_WIDTH_128BITS</a:v>
+                                                    <a:v>DMA_WIDTH_256BITS</a:v>
+                                                </a:da>
+                                                <a:da name="DEFAULT" value="DMA_WIDTH_8BITS"/>
+                                                <a:a name="UUID" value="ECUC:c03229fe-3dca-419e-a47c-1ab11e6c2932"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                            <v:var name="DmaTcsTransferLength" type="ENUMERATION">
+                                                <!-- [cover pparentID={8A5B0DB9-088C-4f0b-9807-42C28CE14C4C}] DmaTcsTransferLength [/cover] -->
+                                                <a:da name="DESC">
+                                                    <a:v>EN:This parameter defines the number of moves composed for a DMA transfer.
+                                                        DMA_MOVES_1: 1 DMA move per transfer.
+                                                        DMA_MOVES_2: 2 DMA move per transfer.
+                                                        DMA_MOVES_3: 3 DMA move per transfer.
+                                                        DMA_MOVES_4: 4 DMA move per transfer.
+                                                        DMA_MOVES_5: 5 DMA move per transfer.
+                                                        DMA_MOVES_8: 8 DMA move per transfer.
+                                                        DMA_MOVES_9: 9 DMA move per transfer.
+                                                        DMA_MOVES_16: 16 DMA move per transfer.                                                    
+                                                    </a:v>
+                                                </a:da>
+                                                <a:da name="RANGE">
+                                                    <a:v>DMA_MOVES_1</a:v>
+                                                    <a:v>DMA_MOVES_2</a:v>
+                                                    <a:v>DMA_MOVES_3</a:v>
+                                                    <a:v>DMA_MOVES_4</a:v>
+                                                    <a:v>DMA_MOVES_5</a:v>
+                                                    <a:v>DMA_MOVES_8</a:v>
+                                                    <a:v>DMA_MOVES_9</a:v>
+                                                    <a:v>DMA_MOVES_16</a:v>
+                                                </a:da>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:da name="DEFAULT" value="DMA_MOVES_1"/>
+                                                <a:a name="UUID" value="ECUC:c03229fe-4dca-419e-a47c-1ab11e6c3042"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                            <v:var name="DmaTcsTransactionLength" type="INTEGER">
+                                                <!-- [cover parentID={22993C4F-4FC9-497f-A0F4-92AB173C7F3B}] DmaTcsTransactionLength [/cover] -->
+                                                <a:da name="DESC" value="EN:This parameter defines how many transfers are performed per DMA transaction"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:da name="INVALID" type="Range">
+                                                    <a:tst expr="&gt;=0"/>
+                                                    <a:tst expr="&lt;=16383"/>
+                                                </a:da>
+                                                <a:da name="DEFAULT" value="0"/>
+                                                <a:a name="UUID" value="ECUC:c03229fe-5dca-419e-a47c-1ab11e6c3152"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                            <v:var name="DmaTcsCircularBufferSourceEnable" type="BOOLEAN">
+                                                <!-- [cover parentID={8A1559EE-48D9-4211-8D18-0485DDCF8DA7}] DmaTcsCircularBufferSourceEnable [/cover] -->
+                                                <a:da name="DESC" value="EN: This parameter used to enable/disable the source circular buffer"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:da name="DEFAULT" value="false"/>
+                                                <a:a name="UUID" value="ECUC:c03229fe-6dca-419e-a47c-1ab11e6c3262"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                            <v:var name="DmaTcsCircularBufferDestinationEnable" type="BOOLEAN">
+                                                <!-- [cover parentID={5EC121B1-4C37-49d1-A24A-33040C82CB7C}] DmaTcsCircularBufferDestinationEnable [/cover] -->
+                                                <a:da name="DESC" value="EN: This parameter used to enable/disable the destination circular buffer"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:da name="DEFAULT" value="false"/>
+                                                <a:a name="UUID" value="ECUC:c03229fe-7dca-419e-a47c-1ab11e6c3372"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                            <v:var name="DmaTcsCircularBufferSourceLength" type="ENUMERATION">
+                                                <!-- [cover parentID={5AFACC93-9199-4051-917B-CFC6DC45E183}] DmaTcsCircularBufferSourceLength [/cover] -->
+                                                <a:da name="DESC">
+                                                    <a:v>EN: This parameter determines how many bits of the source address of a circular buffer.
+                                                        DMA_CIRCULAR_BUFFER_LENGTH_1BYTE: Source address SADR[31:0] is not updated.
+                                                        DMA_CIRCULAR_BUFFER_LENGTH_2BYTE: Source address SADR[31:1] is not updated.
+                                                        DMA_CIRCULAR_BUFFER_LENGTH_4BYTE: Source address SADR[31:2] is not updated
+                                                        .....
+                                                        DMA_CIRCULAR_BUFFER_LENGTH_16384BYTE: Source address SADR[31:14] is not updated
+                                                        DMA_CIRCULAR_BUFFER_LENGTH_32768BYTE: Source address SADR[31:15] is not updated
+                                                    </a:v>
+                                                </a:da>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:da name="DEFAULT" value="DMA_CIRCULAR_BUFFER_LENGTH_1BYTE" />
+                                                <a:a name="UUID" value="ECUC:c03229fe-8dca-419e-a47c-1ab11e6c3482"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                                <a:da name="EDITABLE" type="XPath">
+                                                    <a:tst expr="node:fallback(./../DmaTcsCircularBufferSourceEnable ='true', 'true')"/>
+                                                </a:da>
+                                                <a:da name="RANGE">
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_1BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_2BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_4BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_8BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_16BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_32BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_64BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_128BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_256BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_512BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_1024BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_2048BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_4096BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_8192BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_16384BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_32768BYTE</a:v>
+                                                </a:da>
+                                            </v:var>
+                                            <v:var name="DmaTcsCircularBufferDestinationLength" type="ENUMERATION">
+                                                <!-- [cover parentID={74E72405-C258-4b74-AC42-52A571DB845A}] DmaTcsCircularBufferDestinationLength [/cover] -->
+                                                <a:da name="DESC">
+                                                    <a:v>EN: This parameter determines how many bits of the source address of a circular buffer.
+                                                        DMA_CIRCULAR_BUFFER_LENGTH_1BYTE: Source address SADR[31:0] is not updated.
+                                                        DMA_CIRCULAR_BUFFER_LENGTH_2BYTE: Source address SADR[31:1] is not updated.
+                                                        DMA_CIRCULAR_BUFFER_LENGTH_4BYTE: Source address SADR[31:2] is not updated
+                                                        .....
+                                                        DMA_CIRCULAR_BUFFER_LENGTH_16384BYTE: Source address SADR[31:14] is not updated
+                                                        DMA_CIRCULAR_BUFFER_LENGTH_32768BYTE: Source address SADR[31:15] is not updated
+                                                    </a:v>
+                                                </a:da>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:da name="DEFAULT" value="DMA_CIRCULAR_BUFFER_LENGTH_1BYTE" />
+                                                <a:a name="UUID" value="ECUC:c03229fe-9dca-419e-a47c-1ab11e6c3592"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                                <a:da name="EDITABLE" type="XPath">
+                                                    <a:tst expr="node:fallback(./../DmaTcsCircularBufferDestinationEnable ='true','true')"/>
+                                                </a:da>
+                                                <a:da name="RANGE">
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_1BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_2BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_4BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_8BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_16BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_32BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_64BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_128BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_256BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_512BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_1024BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_2048BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_4096BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_8192BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_16384BYTE</a:v>
+                                                    <a:v>DMA_CIRCULAR_BUFFER_LENGTH_32768BYTE</a:v>
+                                                </a:da>
+                                            </v:var>
+                                            <v:var name="DmaTcsSourceAddressModificationFactor" type="ENUMERATION">
+                                                <!-- [cover parentID={89E7473C-0356-4bdc-A150-7C5158ADB880}] DmaTcsSourceAddressModificationFactor [/cover] -->
+                                                <a:da name="DESC" >
+                                                    <a:v>EN: This parameter defines how the source address changes after every move operation.
+                                                        DMA_FACTOR_1 : Address offset is 1 x DmaMoveLength.
+                                                        DMA_FACTOR_2 : Address offset is 2 x DmaMoveLength.
+                                                        DMA_FACTOR_4 : Address offset is 4 x DmaMoveLength.
+                                                        DMA_FACTOR_8 : Address offset is 8 x DmaMoveLength.
+                                                        DMA_FACTOR_16 : Address offset is 16 x DmaMoveLength.
+                                                        DMA_FACTOR_32 : Address offset is 32 x DmaMoveLength.
+                                                        DMA_FACTOR_64 : Address offset is 64 x DmaMoveLength.                                                        
+                                                        DMA_FACTOR_128 : Address offset is 128 x DmaMoveLength.
+                                                    </a:v>
+                                                </a:da>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:da name="DEFAULT" value="DMA_FACTOR_1"/>
+                                                <a:da name="RANGE">
+                                                    <a:v>DMA_FACTOR_1</a:v>
+                                                    <a:v>DMA_FACTOR_2</a:v>
+                                                    <a:v>DMA_FACTOR_4</a:v>
+                                                    <a:v>DMA_FACTOR_8</a:v>
+                                                    <a:v>DMA_FACTOR_16</a:v>
+                                                    <a:v>DMA_FACTOR_32</a:v>
+                                                    <a:v>DMA_FACTOR_64</a:v>
+                                                    <a:v>DMA_FACTOR_128</a:v>
+                                                </a:da>
+                                                <a:da name="EDITABLE" type="XPath">
+                                                    <a:tst expr="(node:fallback(./../DmaTcsCircularBufferSourceEnable,'false') = 'false')
+                                                             or ((node:fallback(./../DmaTcsCircularBufferSourceEnable,'false') = 'true') 
+                                                             and (node:fallback(./../DmaTcsCircularBufferSourceLength,'DMA_CIRCULAR_BUFFER_LENGTH_1BYTE') !='DMA_CIRCULAR_BUFFER_LENGTH_1BYTE'))" true="true" false="false"/>
+                                                </a:da>
+                                                <a:a name="UUID" value="ECUC:c03229fe-1dca-425e-a47c-1ae11a6c1812"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                            <v:var name="DmaTcsDestinationAddressModificationFactor" type="ENUMERATION">
+                                                <!-- [cover parentID={4E5AEB0B-9E9C-49fc-9436-D23D2B4541EF}] DmaTcsDestinationAddressModificationFactor [/cover] -->
+                                                <a:da name="DESC" >
+                                                    <a:v>EN: This parameter defines how the source address changes after every move operation.
+                                                        DMA_FACTOR_1 : Address offset is 1 x DmaMoveLength.
+                                                        DMA_FACTOR_2 : Address offset is 2 x DmaMoveLength.
+                                                        DMA_FACTOR_4 : Address offset is 4 x DmaMoveLength.
+                                                        DMA_FACTOR_8 : Address offset is 8 x DmaMoveLength.
+                                                        DMA_FACTOR_16 : Address offset is 16 x DmaMoveLength.
+                                                        DMA_FACTOR_32 : Address offset is 32 x DmaMoveLength.
+                                                        DMA_FACTOR_64 : Address offset is 64 x DmaMoveLength.                                                        
+                                                        DMA_FACTOR_128 : Address offset is 128 x DmaMoveLength.
+                                                    </a:v>
+                                                </a:da>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:da name="DEFAULT" value="DMA_FACTOR_1"/>
+                                                <a:da name="RANGE">
+                                                    <a:v>DMA_FACTOR_1</a:v>
+                                                    <a:v>DMA_FACTOR_2</a:v>
+                                                    <a:v>DMA_FACTOR_4</a:v>
+                                                    <a:v>DMA_FACTOR_8</a:v>
+                                                    <a:v>DMA_FACTOR_16</a:v>
+                                                    <a:v>DMA_FACTOR_32</a:v>
+                                                    <a:v>DMA_FACTOR_64</a:v>
+                                                    <a:v>DMA_FACTOR_128</a:v>
+                                                </a:da>
+                                                <a:da name="EDITABLE" type="XPath">
+                                                    <a:tst expr="(node:fallback(./../DmaTcsCircularBufferDestinationEnable,'false') = 'false')
+                                                             or ((node:fallback(./../DmaTcsCircularBufferDestinationEnable,'false') = 'true') 
+                                                             and (node:fallback(./../DmaTcsCircularBufferDestinationLength,'DMA_CIRCULAR_BUFFER_LENGTH_1BYTE') !='DMA_CIRCULAR_BUFFER_LENGTH_1BYTE'))" true="true" false="false"/>
+                                                </a:da>
+                                                <a:a name="UUID" value="ECUC:c03229fe-2dca-425e-a47c-1ae11a6c1922"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                            <v:var name="DmaTcsAppendTimeStamp" type="BOOLEAN">
+                                                <!-- [cover parentID={0873C260-2FF0-4a21-8CC8-6BEA543723FF}] DmaTcsAppendTimeStamp [/cover] -->
+                                                <a:da name="DESC" value="This parameter determines if time stamp is to be appended after the last DMA move of a transaction"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:da name="DEFAULT" value="false"/>
+                                                <a:a name="UUID" value="ECUC:c03229fe-3dca-425e-a47c-1ae11a6c2032"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                            <v:var name="DmaTcsSourceAddressMovement" type="ENUMERATION">
+                                                <!-- [cover parentID={AF2E9280-A981-4f9d-B361-D74965678C55}] DmaTcsSourceAddressMovement [/cover] -->
+                                                <a:da name="DESC" value="This parameter determines if the source address after every move operation is to be increased or decreased"/>
+                                                <a:da name="RANGE">
+                                                    <a:v>DMA_INCREASING</a:v>
+                                                    <a:v>DMA_DECREASING</a:v>
+                                                </a:da>
+                                                <a:da name="DEFAULT" value="DMA_INCREASING"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:a name="UUID" value="ECUC:c03229fe-4dca-425e-a47c-1ae11a6c2142"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                            <v:var name="DmaTcsDestinationAddressMovement" type="ENUMERATION">
+                                                <!-- [cover parentID={975346D7-DDC3-448c-BE3E-7767B6361EE8}] DmaTcsDestinationAddressMovement [/cover] -->
+                                                <a:da name="DESC" value="This parameter determines if the Destinaion address after every move operation is to be increased or decreased"/>
+                                                <a:da name="RANGE">
+                                                    <a:v>DMA_INCREASING</a:v>
+                                                    <a:v>DMA_DECREASING</a:v>
+                                                </a:da>
+                                                <a:da name="DEFAULT" value="DMA_INCREASING"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:a name="UUID" value="ECUC:c03229fe-5dca-425e-a47c-1ae11a6c2252"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                            <v:var name="DmaTcsShadowRegisterConfiguration" type="ENUMERATION">
+                                                <!-- [cover parentID={EF9598D6-6AF9-4a2c-A75D-FF26B87BF4D7}] DmaTcsShadowRegisterConfiguration [/cover] -->
+                                                <a:da name="DESC" value="This parameter determines how the shadow register is to be used"/>
+                                                <a:da name="RANGE">
+                                                    <a:v>DMA_SHADOWING_DISABLED</a:v>
+                                                    <a:v>DMA_SOURCE_ADDRESS_BUFFERING_RO</a:v>
+                                                    <a:v>DMA_DEST_ADDRESS_BUFFERING_RO</a:v>
+                                                    <a:v>DMA_SOURCE_ADDRESS_BUFFERING_RW</a:v>
+                                                    <a:v>DMA_DEST_ADDRESS_BUFFERING_RW</a:v>
+                                                    <a:v>DMA_SOURCE_DOUBLE_BUFFERING_SW_SWITCH</a:v>
+                                                    <a:v>DMA_SOURCE_DOUBLE_BUFFERING_HW_SW_SWITCH</a:v>
+                                                    <a:v>DMA_DEST_DOUBLE_BUFFERING_SW_SWITCH</a:v>
+                                                    <a:v>DMA_DEST_DOUBLE_BUFFERING_HW_SW_SWITCH</a:v>
+                                                    <a:v>DMA_LINKED_LIST</a:v>
+                                                    <a:v>DMA_ACCUMULATED_LINKED_LIST</a:v>
+                                                    <a:v>DMA_SAFE_LINKED_LIST</a:v>
+                                                    <a:v>DMA_CONDITIONAL_LINKED_LIST</a:v>
+                                                </a:da>
+                                                <a:da name="DEFAULT" value="DMA_SHADOWING_DISABLED"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                                <a:a name="UUID" value="ECUC:c03229fe-6dca-425e-a47c-1ae11a6c2362"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                            <v:var name="DmaNextTcsIndex" type="INTEGER">
+                                                <!-- [cover parentID={7D6D17D7-6122-479f-A9E6-901AA0A775E3}] DmaNextTcsIndex [/cover] -->
+                                                <a:da name="DESC" value="This parameter determines the next node of the TCS linked list"/>
+                                                <a:da name="EDITABLE" type="XPath">
+                                                    <a:tst expr="(./../DmaTcsShadowRegisterConfiguration='DMA_LINKED_LIST')
+                                                            or   (./../DmaTcsShadowRegisterConfiguration='DMA_ACCUMULATED_LINKED_LIST')
+                                                            or   (./../DmaTcsShadowRegisterConfiguration='DMA_SAFE_LINKED_LIST')
+                                                            or   (./../DmaTcsShadowRegisterConfiguration='DMA_CONDITIONAL_LINKED_LIST')"/>
+                                                </a:da>
+                                                <a:da name="INVALID" type="Multi">
+                                                    <mt:xpath expr="text:uniq(./../../*/DmaNextTcsIndex,.)" false="EN: DmaNextTcsIndex should be unique for each TCS."/>
+                                                    <mt:xpath expr=".&lt;count(./../../*)+1" false="EN: Ponting to non-existing node"/>
+                                                    <mt:range>
+                                                        <mt:tst expr="&gt;=0"/>
+                                                        <mt:tst expr="&lt;=65535"/>
+                                                    </mt:range>
+                                                </a:da>
+                                                <a:da name="DEFAULT" type="XPath" expr="num:i(node:fallback(node:current()/../DmaTcsIndex,num:i(-1)) + num:i(1))"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:a name="UUID" value="ECUC:c03229fe-6dca-425e-a47c-16e11a6c2362"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                            <v:var name="DmaTcsTriggerFrequency" type="ENUMERATION">
+                                                <!-- [cover parentID={00111750-E2E0-45e5-B3DC-427431EB50E6}] DmaTcsTriggerFrequency [/cover] -->
+                                                <a:da name="DESC">
+                                                    <a:v>EN:This parameter determines how much of data will the move engine move upon a trigger request [Either hardware or software].</a:v>
+                                                    <a:v>EN:The move engine upon receipt of a trigger request could effectuate a transfer or even a transaction based on the choice made.</a:v>
+                                                </a:da>
+                                                <a:da name="RANGE">
+                                                    <a:v>DMA_TRANSFER_PER_TRIGGER</a:v>
+                                                    <a:v>DMA_TRANSACTION_PER_TRIGGER</a:v>
+                                                </a:da>
+                                                <a:da name="DEFAULT" value="DMA_TRANSFER_PER_TRIGGER"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:a name="UUID" value="ECUC:c03229fe-7dca-425e-a47c-1ae11a6c2472"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                            <v:var name="DmaTcsHardwareTrigger" type="ENUMERATION">
+                                                <!-- [cover parentID={66F76E29-39D6-4f92-8678-5ED0BD572CA4}] DmaTcsHardwareTrigger [/cover] -->
+                                                <a:da name="DESC">
+                                                    <a:v>EN:This parameter defines the triggering mode for the hardware trigger.</a:v>
+                                                    <a:v>EN:DMA_NO_HARDWARE_TRIGGER- Hardware trigger is disabled</a:v>
+                                                    <a:v>EN:DMA_HARDWARE_TRIGGER_SINGLE_MODE- Hardware requests are disabled by hardware after a transaction</a:v>
+                                                    <a:v>EN:DMA_HARDWARE_TRIGGER_CONTINUOUS_MODE- Hardware requests are not disabled by hardware after a transaction</a:v>
+                                                </a:da>
+                                                <a:da name="RANGE">
+                                                    <a:v>DMA_NO_HARDWARE_TRIGGER</a:v>
+                                                    <a:v>DMA_HARDWARE_TRIGGER_SINGLE_MODE</a:v>
+                                                    <a:v>DMA_HARDWARE_TRIGGER_CONTINUOUS_MODE</a:v>
+                                                </a:da>
+                                                <a:da name="DEFAULT" value="DMA_NO_HARDWARE_TRIGGER"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:a name="UUID" value="ECUC:c03229fe-8dca-425e-a47c-1ae11a6c2582"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                            <v:var name="DmaTcsDaisyChaining" type="BOOLEAN">
+                                                <!-- [cover parentID={AA451390-8CCD-4c55-85E5-040BA4045FFC}] DmaTcsDaisyChaining [/cover] -->
+                                                <a:da name="DESC">
+                                                    <a:v>EN: This parameter determines whether the adjacent lower channel is daisy chained with this channel.</a:v>
+                                                    <a:v>EN: If so, after a "transaction" successfully completes on this channel, an internal hardware trigger is forwarded to the adjacent channel</a:v>
+                                                </a:da>
+                                                <a:da name="DEFAULT" value="false"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:a name="UUID" value="ECUC:c03229fe-9dca-425e-a47c-1ae11a6c2692"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                            <v:var name="DmaTcsInterruptSourceAddressWrap" type="BOOLEAN">
+                                                <!-- [cover parentID={B3FA5C37-D543-4992-BC22-9FA5470477EE}] DmaTcsInterruptSourceAddressWrap [/cover] -->
+                                                <a:da name="DESC" value="EN: Enables/Disables the wrap source interrupt"/>
+                                                <a:da name="DEFAULT" value="false"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:a name="UUID" value="ECUC:c03229fe-3dca-426e-a47c-1ae11a6c2932"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                            <v:var name="DmaTcsInterruptDestinationAddressWrap" type="BOOLEAN">
+                                                <!-- [cover parentID={B36DBC9D-5F6A-408a-BA33-F690BD33CCFC}] DmaTcsInterruptDestAddressWrap [/cover] -->
+                                                <a:da name="DESC" value="EN: Enables/Disables the wrap destination interrupt"/>
+                                                <a:da name="DEFAULT" value="false"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:a name="UUID" value="ECUC:c03229fe-4dca-426e-a47c-1ae11a6c3042"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                            <v:var name="DmaTcsDataTransferInterrupt" type="BOOLEAN">
+                                                <!-- [cover parentID={B36DBC9D-5F6A-408a-BA33-F690BD33CCFC}] DmaTcsDataTransferInterrupt [/cover] -->
+                                                <a:da name="DESC" value="EN: Enables/Disables the data transfer or transaction interrupt"/>
+                                                <a:da name="DEFAULT" value="false"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:a name="UUID" value="ECUC:c03229fe-4dca-416e-a47c-1ae11a6c3042"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                            <v:var name="DmaTcsInterruptDataTransfer" type="ENUMERATION">
+                                                <!-- [cover parentID={6C72F66E-977A-4678-9C57-E32107BA8E2B}] DmaTcsInterruptDataTransfer [/cover] -->
+                                                <a:da name="DESC">
+                                                    <a:v>EN: Interrupts can be generated either for every transfer or even transaction.</a:v>
+                                                    <a:v>EN: Additionally, an interrupt can be generated after a certain number of transfers equaling a threshold have been completed</a:v>
+                                                </a:da>
+                                                <a:da name="RANGE">
+                                                    <a:v>DMA_INTERRUPT_PER_TRANSFER</a:v>
+                                                    <a:v>DMA_INTERRUPT_PER_TRANSACTION</a:v>
+                                                    <a:v>DMA_INTERRUPT_AFTER_THRESHOLD</a:v>
+                                                </a:da>
+                                                <a:da name="DEFAULT" value="DMA_INTERRUPT_PER_TRANSACTION"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:a name="UUID" value="ECUC:c03229fe-1dca-426e-a47c-1ae11a6c2712"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                                <a:da name="EDITABLE" type="XPath">
+                                                    <a:tst expr="node:fallback(./../DmaTcsDataTransferInterrupt ='true','true')"/>
+                                                </a:da>
+                                            </v:var>
+                                            <v:var name="DmaTcsInterruptDataTransferThreshold" type="INTEGER">
+                                                <!-- [cover pparentID={9288F0FE-490F-4281-B089-3334211F9B72}] DmaTcsInterruptDataTransferThreshold [/cover] -->
+                                                <a:da name="DESC" value="An interrupt can be generated after a certain number of transfers equaling a threshold have been completed."/>
+                                                <a:da name="DEFAULT" value="0"/>
+                                                <a:da name="INVALID" type="Range">
+                                                    <a:tst expr="&lt;=15"/>
+                                                    <a:tst expr="&gt;=0"/>
+                                                </a:da>
+                                                <a:da name="INVALID" type="XPath">
+                                                    <a:tst expr="(../DmaTcsInterruptDataTransfer = 'DMA_INTERRUPT_PER_TRANSACTION') and (.&gt;=1)" true="EN: DMA - Invalid Configuration, The threshold value should be zero "/>
+                                                    <a:tst expr="(../DmaTcsInterruptDataTransfer = 'DMA_INTERRUPT_PER_TRANSFER') and (.&gt;=1)" true="EN: DMA - Invalid Configuration, The threshold value should be zero"/>
+                                                </a:da>
+                                                <a:da name="EDITABLE" type="XPath">
+                                                    <a:tst expr="node:fallback(./../DmaTcsInterruptDataTransfer ='DMA_INTERRUPT_AFTER_THRESHOLD','false')"/>
+                                                </a:da>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:a name="UUID" value="ECUC:c03229fe-2dca-426e-a47c-1ae11a6c2822"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                            <v:var name="DmaTcsSwapDataCRCByteOrder" type="BOOLEAN">
+                                                <a:da name="DESC" value="Swaps the Data CRC byte order"/>
+                                                <a:da name="DEFAULT" value="false"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:a name="UUID" value="ECUC:c03229fe-5dca-426e-a47c-1ae12a6c3152"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                            <v:var name="DmaTcsAutoStartEnable" type="BOOLEAN">
+                                                <a:da name="DESC" value="Enables the autostart feature for linked lists"/>
+                                                <a:da name="DEFAULT" value="false"/>
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:a name="UUID" value="ECUC:c03259fe-5dca-426e-a47c-1ae12a6c3152"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                            <v:var name="DmaTcsReferenceAddressCrc" type="INTEGER">
+                                                <a:da name="DESC" value="EN: Reference CRC value for address CRC" />
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:da name="DEFAULT_RADIX" value="HEX"/>
+                                                <a:da name="DEFAULT" value="0"/>
+                                                <a:da name="INVALID" type="Range">
+                                                    <a:tst expr="&lt;=0xFFFFFFFF"/>
+                                                    <a:tst expr="&gt;=0x00"/>
+                                                </a:da>
+                                                <a:a name="UUID" value="ECUC:c03929fe-9dca-418e-a47c-1ab11e6c2692"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                            <v:var name="DmaTcsReferenceDataCrc" type="INTEGER">
+                                                <a:da name="DESC" value="EN: Reference CRC value for data CRC" />
+                                                <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                                    <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                                </a:a>
+                                                <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                                <a:da name="DEFAULT_RADIX" value="HEX"/>
+                                                <a:da name="DEFAULT" value="0"/>
+                                                <a:da name="INVALID" type="Range">
+                                                    <a:tst expr="&lt;=0xFFFFFFFF"/>
+                                                    <a:tst expr="&gt;=0x00"/>
+                                                </a:da>
+                                                <a:a name="UUID" value="ECUC:c03279fe-9dca-418e-a47c-1ab11e6c2692"/>
+                                                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                            </v:var>
+                                        </v:ctr>
+                                    </v:lst>
+                                </v:ctr>
+                            </v:lst>
+                            <!--********************************************************-->
+                            <!--************ DMA Move engine configuration *************-->
+                            <!--********************************************************-->
+                            <v:ctr name="DmaMoveEngineConfig" type="IDENTIFIABLE">
+                                <!-- [cover pparentID={117822F3-5EFF-4e66-88CB-C23BD7AE39CC}] DmaMoveEngineConfig [/cover] -->
+                                <a:a name="DESC" value="EN: DMA move engine configuration"/>
+                                <a:a name="UUID" value="ECUC:c03229fe-2dca-417e-a47c-1aa11e6c2322"/>
+                                <v:var name="DmaMESourceErrorInterrupt" type="BOOLEAN">
+                                    <!-- [cover parentID={858F15DB-0E4E-4953-99DA-8D47D648F5DC}] DmaMESourceErrorInterrupt [/cover] -->
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                    <a:da name="DESC" value="Enables/Disables the Source error interrupt of a move engine"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                    <a:a name="UUID" value="ECUC:c03229fe-3dca-417e-a47c-1aa11e6c2432"/>
+                                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                </v:var>
+                                <v:var name="DmaMEDestinationErrorInterrupt" type="BOOLEAN">
+                                    <!-- [cover parentID={8D242FBB-DC38-42c8-A9E2-A092280C7A66}] DmaMEDestinationErrorInterrupt [/cover] -->
+                                    <a:da name="DESC" value="Enables/Disables the Destination error interrupt of a move engine"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    <a:a name="UUID" value="ECUC:c03229fe-4dca-417e-a47c-1aa11e6c2542"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                </v:var>
+                                <v:var name="DmaMELinkedListErrorInterrupt" type="BOOLEAN">
+                                    <!-- [cover parentID={452A460B-0ACC-4f80-B847-DAFE183CAEF5}] DmaMELinkedListErrorInterrupt [/cover] -->
+                                    <a:da name="DESC" value="Enables/Disables the Linked List error interrupt of a move engine"/>
+                                    <a:da name="DEFAULT" value="false"/>
+                                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    <a:a name="UUID" value="ECUC:c03229fe-6dca-417e-a47c-1aa11e6c2762"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                </v:var>
+                            </v:ctr>
+                            <!--***********************************************************-->
+                            <!--************ DMA Common published information *************-->
+                            <!--***********************************************************-->
+                            <v:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                                <!-- [cover parentID={1AA35C9C-61B5-4f34-AEF6-1AA4A13627E5}] CommonPublishedInformation [/cover] -->
+                                <!-- [cover parentID={9247B820-C771-4b06-983C-D7D944C0304C}] Vendor ID [/cover] -->
+                                <a:a name="DESC" value="EN: Common container, aggregated by all modules. It contains published information about vendor and versions."/>
+                                <a:a name="UUID" value="ECUC:c03229fe-3dca-416e-a47c-1ae11e6c1832"/>
+                                <v:var name="VendorId" type="INTEGER_LABEL">
+                                    <!-- [cover parentID={BE0F5C93-7E4D-4d62-A059-A12579EC76B5}] VendorId [/cover] -->
+                                    <a:a name="DESC" value="EN: DMA Vendor ID"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS"    type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    <a:a name="UUID" value="ECUC:c03229fe-4dca-445e-a47c-1ae11e6c1842"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&lt;=65535"/>
+                                        <a:tst expr="&gt;=0"/>
+                                    </a:da>
+                                    <a:da name="DEFAULT" value="17"/>
+                                </v:var>
+                                <v:var name="ModuleId" type="INTEGER_LABEL">
+                                    <!-- [cover parentID={6612C658-BD7F-4435-B2B3-3EECE726DFD5}] ModuleId [/cover] -->
+                                    <!-- [cover parentID={9247B820-C771-4b06-983C-D7D944C0304C}] Vendor ID [/cover] -->
+                                    <a:a name="DESC" value="EN: DMA Module ID"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS"    type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    <a:a name="UUID" value="ECUC:c03229fe-5dca-455e-a47c-1ae11e6c1852"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&lt;=65535"/>
+                                        <a:tst expr="&gt;=0"/>
+                                    </a:da>
+                                    <a:da name="DEFAULT" value="255"/>
+                                </v:var>
+                                <v:var name="ArMajorVersion" type="INTEGER_LABEL">
+                                    <!-- [cover parentID={988BAC20-5752-4a4c-91BE-87BCB160787F}] ArMajorVersion [/cover] -->
+                                    <a:a name="DESC" value="EN: DMA Autosar major version"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS"    type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    <a:a name="UUID" value="ECUC:c03229fe-6dca-465e-a47c-1ae11e6c1862"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&lt;=255"/>
+                                        <a:tst expr="&gt;=0"/>
+                                    </a:da>
+                                    <a:da name="DEFAULT" value="4"/>
+                                </v:var>
+                                <v:var name="ArMinorVersion" type="INTEGER_LABEL">
+                                    <!-- [cover parentID={3AD6EE13-84A9-456b-836E-6A815F430D4C}] ArMinorVersion [/cover] -->
+                                    <a:a name="DESC" value="EN: DMA Autosar mivor version"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    <a:a name="UUID" value="ECUC:c03229fe-7dca-475e-a47c-1ae11e6c1872"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&lt;=255"/>
+                                        <a:tst expr="&gt;=0"/>
+                                    </a:da>
+                                    <a:da name="DEFAULT" value="2"/>
+                                </v:var>
+                                <v:var name="ArPatchVersion" type="INTEGER_LABEL">
+                                    <!-- [cover parentID={B9818C59-656D-46b8-A4B7-AA7C6E00C6F0}] ArPatchVersion [/cover] -->
+                                    <a:a name="DESC" value="EN: DMA Autosar major version"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    <a:a name="UUID" value="ECUC:c03229fe-8dca-485e-a47c-1ae11e6c1882"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&lt;=255"/>
+                                        <a:tst expr="&gt;=0"/>
+                                    </a:da>
+                                    <a:da name="DEFAULT" value="2"/>
+                                </v:var>
+                                <v:var name="SwMajorVersion" type="INTEGER_LABEL">
+                                    <!-- [cover parentID={BBBD3C9D-B3D9-4acb-8F69-BE421808D6EF}] SwMajorVersion [/cover] -->
+                                    <a:a name="DESC" value="EN: Major version number of the vendor specific implementation of the module. The numbering is vendor specific"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    <a:a name="UUID" value="ECUC:c03229fe-9dca-495e-a47c-1ae11e6c1892"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&lt;=255"/>
+                                        <a:tst expr="&gt;=0"/>
+                                    </a:da>
+                                    <a:da name="DEFAULT" value="2"/>
+                                </v:var>
+                                <v:var name="SwMinorVersion" type="INTEGER_LABEL">
+                                    <!-- [cover parentID={719794C7-0092-49dc-9B71-901C6032E1BB}] SwMinorVersion [/cover] -->
+                                    <a:a name="DESC" value="EN: Minor version number of the vendor specific implementation of the module. The numbering is vendor specific"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    <a:a name="UUID" value="ECUC:c03229fe-1dca-415e-a47c-1ae11e6c1812"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&lt;=255"/>
+                                        <a:tst expr="&gt;=0"/>
+                                    </a:da>
+                                    <a:da name="DEFAULT" value="1"/>
+                                </v:var>
+                                <v:var name="SwPatchVersion" type="INTEGER_LABEL">
+                                    <!-- [cover parentID={C94DE6A7-B96C-4570-A623-ACF3EF52D9FE}] SwPatchVersion [/cover] -->
+                                    <a:a name="DESC" value="EN: Patch level version number of the vendor specific implementation of the module. The numbering is vendor specific"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                    </a:a>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    <a:a name="UUID" value="ECUC:c03229fe-2dca-425e-a47c-1ae11e6c1822"/>
+                                    <a:da name="INVALID" type="Range">
+                                        <a:tst expr="&lt;=255"/>
+                                        <a:tst expr="&gt;=0"/>
+                                    </a:da>
+                                    <a:da name="DEFAULT" value="0"/>
+                                </v:var>
+                                <v:var name="Release" type="STRING_LABEL">
+                                    <a:a name="DESC" value="AURIX2G derivative used for the implementation"/>
+                                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                           type="IMPLEMENTATIONCONFIGCLASS">
+                                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                                      </a:a>
+                                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                    <a:a name="UUID" value="3b407478-6777-4f40-b7cf-f33b0854e638"/>
+                                    <a:da name="DEFAULT" type="XPath" expr="ecu:get('Rel.Derivate')"/>
+                                </v:var>     
+                            </v:ctr>
+                            <!--***************************************************************-->
+                            <!--************ DMA Resource Partition configuration *************-->
+                            <!--***************************************************************-->
+                            <v:lst name="DmaResourcePartition" type="MAP">
+                                <!-- [cover pparentID={20A7D745-2B27-4371-B03A-4311486C8413}] DmaResourcePartition [/cover] -->
+                                <a:da name="MIN" value="4"/>
+                                <a:da name="MAX" value="4"/>
+                                <v:ctr name="DmaResourcePartition" type="IDENTIFIABLE">
+                                    <a:a name="DESC" value="EN: Dma hardware access protection configuration."/>
+                                    <a:a name="UUID" value="ECUC:c03229fe-8dca-417e-a47c-1aa11e6c2982"/>
+                                    <!-- The resource partition bus mode: supervisor or user mode -->
+                                    <v:var name="DmaResourcePartitionBusMode" type="ENUMERATION">
+                                        <!-- [cover parentID={62516BBC-0AD5-451d-B28D-F465759BDF35}] DmaResourcePartitionBusMode [/cover] -->
+                                        <a:a name="DESC" value="EN: This parameter controls whether hardware resources access the on chip buses in supervisor mode or user mode."/>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                        <a:a name="SCOPE" value="LOCAL"/>
+                                        <a:a name="UUID" value="ECUC:c03229fe-9dca-417e-a47c-1aa11e6c3092"/>
+                                        <a:da name="DEFAULT" value="DMA_RP_SUPERVISOR_MODE"/>
+                                        <a:da name="RANGE">
+                                        <a:v>DMA_RP_USER_MODE</a:v>
+                                        <a:v>DMA_RP_SUPERVISOR_MODE</a:v>
+                                        </a:da>
+                                    </v:var>
+                                    <!--Bus Master configuration -->
+                                    <v:var name="DmaPermittedBusMaster" type="INTEGER">
+                                        <!-- [cover parentID={2F19DC3D-3B29-4696-B88B-CCC74DAFBBCD}] DmaPermitedBusMaster [/cover] -->
+                                        <a:da name="DESC" value="EN: permitted bus masters to access this hardware resource. each 32 bit belongs to one master"/>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:a name="UUID" value="ECUC:c03229fe-1dca-418e-a47c-1ab11e6c1812"/>
+                                        <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                        <a:da name="DEFAULT" value="4294967295"/>
+                                        <a:a name="DEFAULT_RADIX" value="HEX" />
+                                        <a:da name="INVALID" type="Range">
+                                            <a:tst expr="&lt;=0xFFFFFFFF"/>
+                                            <a:tst expr="&gt;=0"/>
+                                        </a:da>
+                                    </v:var>
+                                    <!-- Notification function for the resource partition interrupt -->
+                                    <v:var name="DmaMoveEngineErrorNotifRoutine" type="FUNCTION-NAME">
+                                        <!-- [cover parentID={EA99547C-783B-464d-81D9-4F86F5087C51}] DmaResourcePartitionErrorNotifRoutine [/cover] -->
+                                        <a:da name="DESC" value="EN: User defined Notification Function Pointer of type void NotificationRoutine(uint32_t Channel, Dma_MoveEngineEventType_t Event)" >
+                                            <a:v>EN: This notification function will be called by the DMA Driver if there is a move engine error.</a:v>
+                                        </a:da>
+                                        <a:da name="DEFAULT" value="NULL_PTR" />
+                                        <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                        <a:a name="UUID" value="ECUC:c03229fe-7dca-417e-a47c-1aa11e6c2872"/>
+                                        <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                                            <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                        </a:a>
+                                        <a:da name="INVALID" type="XPath">
+                                            <a:tst expr="(. = '')" true="EN: DMA - Invalid Configuration, Function pointer cannot be blank."/>
+                                            <a:tst expr= "text:grep(., ' +')" true="EN: DMA - Invalid Configuration, Spaces not expected in the function pointer"/>
+                                        </a:da>
+                                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                        <a:da name="EDITABLE" type="XPath">
+                                        <a:tst expr="(./../../../DmaMoveEngineConfig/DmaMESourceErrorInterrupt='true')
+                                                or   (./../../../DmaMoveEngineConfig/DmaMEDestinationErrorInterrupt='true')
+                                                or   (./../../../DmaMoveEngineConfig/DmaMELinkedListErrorInterrupt='true')"/>
+                                        </a:da>
+                                    </v:var>
+                                </v:ctr>
+                            </v:lst>
+                        </v:ctr>
+                    </d:chc>
+                </d:lst>
+          </d:ctr>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

@@ -1,0 +1,970 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- [cover parentID={0652E03E-A361-41b3-9081-A57B460A623B}][/cover] -->
+<!-- [cover parentID={EB1B7BF4-A9A2-4746-AE7F-6DC08F8CA8D0}][/cover] -->
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2018)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**  FILENAME  : Wdg_17_Scu_Bswmd.arxml                                        **
+**                                                                            **
+**  VERSION   : 12.0.0                                                        **
+**                                                                            **
+**  DATE      : 2018-09-07                                                    **
+**                                                                            **
+**  VARIANT   : Variant PB                                                    **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX2G                                              **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY : NA                                                         **
+**                                                                            **
+**  DESCRIPTION  : Basic Software Module Description for Fr driver            **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) : Specification of Watchdog Driver, AUTOSAR Release 4.2.2**
+**                                                                            **
+**  MAY BE CHANGED BY USER : no                                               **
+**                                                                            **
+*******************************************************************************/
+-->
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-2-2.xsd">
+[!AUTOSPACING!][!//
+[!NOCODE!][!//
+[!IF "ecu:has('Tasking.Version') and ecu:has('Tasking.Compiler.Options') and ecu:has('Tasking.Linker.Options')"!][!//
+  [!VAR "TaskingCompilerOption" = "ecu:get('Tasking.Compiler.Options')"!][!//
+  [!VAR "TaskingLinkerOption"   = "ecu:get('Tasking.Linker.Options')"!][!//
+  [!VAR "TaskingVersion"        = "ecu:get('Tasking.Version')"!][!//
+[!ELSE!]
+  [!ERROR!] Tasking Options not available in Property File[!ENDERROR!][!//
+[!ENDIF!]
+
+[!IF "ecu:has('Gnuc.Version') and ecu:has('Gnuc.Compiler.Options') and ecu:has('Gnuc.Linker.Options')"!][!//
+[!VAR "GnucCompilerOption" = "ecu:get('Gnuc.Compiler.Options')"!][!//
+[!VAR "GnucLinkerOption"   = "ecu:get('Gnuc.Linker.Options')"!][!//
+[!VAR "GnucVersion"        = "ecu:get('Gnuc.Version')"!][!//
+[!ELSE!]
+  [!ERROR!] GNUC Options not available in Property File[!ENDERROR!][!//
+[!ENDIF!]
+
+[!IF "ecu:has('Ghs.Version') and ecu:has('Ghs.Compiler.Options') and ecu:has('Ghs.Linker.Options')"!][!//
+[!VAR "GhsCompilerOption" = "ecu:get('Ghs.Compiler.Options')"!][!//
+[!VAR "GhsLinkerOption"   = "ecu:get('Ghs.Linker.Options')"!][!//
+[!VAR "GhsVersion"        = "ecu:get('Ghs.Version')"!][!//
+[!ELSE!]
+  [!ERROR!] GHS Options not available in Property File[!ENDERROR!][!//
+[!ENDIF!]
+
+[!IF "ecu:has('Dcc.Version') and ecu:has('Dcc.Compiler.Options') and ecu:has('Dcc.Linker.Options')"!][!//
+[!VAR "DccCompilerOption" = "ecu:get('Dcc.Compiler.Options')"!][!//
+[!VAR "DccLinkerOption"   = "ecu:get('Dcc.Linker.Options')"!][!//
+[!VAR "DccVersion"        = "ecu:get('Dcc.Version')"!][!//
+[!ELSE!]
+  [!ERROR!] DCC Options not available in Property File[!ENDERROR!][!//
+[!ENDIF!]
+
+[!SELECT "as:modconf('Wdg')[1]"!][!//
+[!VAR "Wdg_17_Scu_GetVersionInfo_Support"="WdgGeneral/WdgVersionInfoApi"!][!//
+[!VAR "WdgSafetyEnable_Support"= "WdgGeneral/WdgSafetyEnable"!]
+[!VAR "WdgDevErrorDetect_Support"= "WdgGeneral/WdgDevErrorDetect"!]
+
+[!VAR "WdgDem_Support" = "'false'"!]
+[!IF "(node:exists(WdgDemEventParameterRefs/*[1]) = 'true')"!]
+[!IF "((node:exists(WdgDemEventParameterRefs/*[1]/WDG_E_DISABLE_REJECTED/*[1]) = 'true') or (node:exists(WdgDemEventParameterRefs/*[1]/WDG_E_MODE_FAILED/*[1]) = 'true'))"!]
+[!VAR "WdgDem_Support" = "'true'"!]
+[!ELSE!]
+[!VAR "WdgDem_Support" = "'false'"!]
+[!ENDIF!]
+[!ENDIF!]
+[!VAR "WdgInitCheckApi_Support"="WdgGeneral/WdgInitCheckApi"!][!//
+[!VAR "Wdg_TimerUsed"= "WdgGeneral/WdgTriggerTimerSelection"!]
+
+[!VAR "Wdg_Core0_Configured"="'FALSE'"!]
+[!VAR "Wdg_Core1_Configured"="'FALSE'"!]
+[!VAR "Wdg_Core2_Configured"="'FALSE'"!]
+[!VAR "Wdg_Core3_Configured"="'FALSE'"!]
+[!VAR "Wdg_Core4_Configured"="'FALSE'"!]
+[!VAR "Wdg_Core5_Configured"="'FALSE'"!]
+[!VAR "No0fWdgModuleConfig" = "num:i(count(WdgSettingsConfig/*))"!][!//
+[!FOR "Index" = "num:i(0)" TO "num:i($No0fWdgModuleConfig - num:i(1))"!][!//
+[!VAR "WdgCoreID" = "num:i(WdgSettingsConfig/*[@index = $Index]/WdgCoreId)"!]
+[!IF "$WdgCoreID =num:i(0)"!]
+[!VAR "Wdg_Core0_Configured"="'TRUE'"!]
+[!ELSEIF "$WdgCoreID =num:i(1)"!]
+[!VAR "Wdg_Core1_Configured"="'TRUE'"!]
+[!ELSEIF "$WdgCoreID =num:i(2)"!]
+[!VAR "Wdg_Core2_Configured"="'TRUE'"!]
+[!ELSEIF "$WdgCoreID =num:i(3)"!]
+[!VAR "Wdg_Core3_Configured"="'TRUE'"!]
+[!ELSEIF "$WdgCoreID =num:i(4)"!]
+[!VAR "Wdg_Core4_Configured"="'TRUE'"!]
+[!ELSEIF "$WdgCoreID =num:i(5)"!]
+[!VAR "Wdg_Core5_Configured"="'TRUE'"!]
+[!ENDIF!]
+[!ENDFOR!]
+[!ENDSELECT!][!//
+[!ENDNOCODE!][!//
+<AR-PACKAGES>
+    <AR-PACKAGE>
+        <SHORT-NAME>AUTOSAR_Wdg</SHORT-NAME>
+        <AR-PACKAGES>
+            <AR-PACKAGE>
+                <SHORT-NAME>BswModuleDescriptions</SHORT-NAME>
+                <CATEGORY>STANDARD</CATEGORY>
+                <ELEMENTS>
+                    <BSW-MODULE-DESCRIPTION>
+                        <SHORT-NAME>Wdg</SHORT-NAME>
+                        <LONG-NAME>
+                            <L-4 L="EN">WDG Driver</L-4>
+                        </LONG-NAME>
+                        <CATEGORY>BSW_MODULE</CATEGORY>
+                        <MODULE-ID>102</MODULE-ID>
+                        <PROVIDED-ENTRYS>
+                            <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Wdg/BswModuleEntrys/Wdg_17_Scu_Init</BSW-MODULE-ENTRY-REF>
+                            </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+[!IF "$WdgInitCheckApi_Support = 'true'"!][!//
+                            <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Wdg/BswModuleEntrys/Wdg_17_Scu_InitCheck</BSW-MODULE-ENTRY-REF>
+                            </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+[!ENDIF!][!//
+                            <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Wdg/BswModuleEntrys/Wdg_17_Scu_SetMode</BSW-MODULE-ENTRY-REF>
+                            </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+[!IF "$Wdg_17_Scu_GetVersionInfo_Support = 'true'"!]
+                            <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Wdg/BswModuleEntrys/Wdg_17_Scu_GetVersionInfo</BSW-MODULE-ENTRY-REF>
+                            </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+[!ENDIF!][!//
+                            <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Wdg/BswModuleEntrys/Wdg_17_Scu_SetTriggerCondition</BSW-MODULE-ENTRY-REF>
+                            </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                            <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Wdg/BswModuleEntrys/Wdg_17_Scu_Isr</BSW-MODULE-ENTRY-REF>
+                            </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                        </PROVIDED-ENTRYS>
+                        <BSW-MODULE-DEPENDENCYS>
+[!IF "$WdgDevErrorDetect_Support = 'true'"!]
+                            <BSW-MODULE-DEPENDENCY>
+                                <SHORT-NAME>DetDependency</SHORT-NAME>
+                                <TARGET-MODULE-ID>15</TARGET-MODULE-ID>
+                                <REQUIRED-ENTRYS>
+                                    <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                        <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Det/BswModuleEntrys/Det_ReportError</BSW-MODULE-ENTRY-REF>
+                                    </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                </REQUIRED-ENTRYS>
+                            </BSW-MODULE-DEPENDENCY>
+[!ENDIF!][!//
+[!IF "$WdgDem_Support = 'true'"!]
+                            <BSW-MODULE-DEPENDENCY>
+                                <SHORT-NAME>DemDependency</SHORT-NAME>
+                                <TARGET-MODULE-ID>54</TARGET-MODULE-ID>
+                                <REQUIRED-ENTRYS>
+                                    <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                        <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Dem/BswModuleEntrys/Dem_ReportErrorStatus</BSW-MODULE-ENTRY-REF>
+                                    </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                </REQUIRED-ENTRYS>
+                            </BSW-MODULE-DEPENDENCY>
+[!ENDIF!][!//
+
+                            <BSW-MODULE-DEPENDENCY>
+                                <SHORT-NAME>McuDependency</SHORT-NAME>
+                                <TARGET-MODULE-ID>101</TARGET-MODULE-ID>
+                                <REQUIRED-ENTRYS>
+[!IF "$Wdg_TimerUsed = 'GTM_TIMER'"!]
+                                    <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                        <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_17_Gtm_TomChannelInit</BSW-MODULE-ENTRY-REF>
+                                    </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                    <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                        <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_17_Gtm_TomChannelShadowTransfer</BSW-MODULE-ENTRY-REF>
+                                    </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                    <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                        <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_17_Gtm_TomChannelEnable</BSW-MODULE-ENTRY-REF>
+                                    </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                    <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                        <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_17_Gtm_TomChannelDeInit</BSW-MODULE-ENTRY-REF>
+                                    </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                    <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                        <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_17_Gtm_AtomChannelInit</BSW-MODULE-ENTRY-REF>
+                                    </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                    <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                        <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_17_Gtm_AtomChannelShadowTransfer</BSW-MODULE-ENTRY-REF>
+                                    </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                    <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                        <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_17_Gtm_AtomChannelEnable</BSW-MODULE-ENTRY-REF>
+                                    </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                    <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                        <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_17_Gtm_TomChannelDeInit</BSW-MODULE-ENTRY-REF>
+                                    </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                    <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                        <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_17_Gtm_TomChInitCheck</BSW-MODULE-ENTRY-REF>
+                                    </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                    <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                        <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_17_Gtm_AtomChInitCheck</BSW-MODULE-ENTRY-REF>
+                                    </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+[!ENDIF!][!//
+[!IF "$Wdg_TimerUsed = 'STM_TIMER'"!]
+                                    <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                        <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_17_Stm_SetupComparator</BSW-MODULE-ENTRY-REF>
+                                    </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                    <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                        <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_17_Stm_ComparatorIntDisable</BSW-MODULE-ENTRY-REF>
+                                    </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                    <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                        <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Mcu/BswModuleEntrys/Mcu_17_Stm_CheckComparator</BSW-MODULE-ENTRY-REF>
+                                    </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+[!ENDIF!][!//
+                                </REQUIRED-ENTRYS>
+                            </BSW-MODULE-DEPENDENCY>
+                            <BSW-MODULE-DEPENDENCY>
+                                <SHORT-NAME>McalLibDependency</SHORT-NAME>
+                                <TARGET-MODULE-ID>255</TARGET-MODULE-ID>
+                                <REQUIRED-ENTRYS>
+                                   <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                       <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AURIX2G_McalLib/BswModuleEntrys/Mcal_GetCpuIndex</BSW-MODULE-ENTRY-REF>
+                                   </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                   <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                       <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AURIX2G_McalLib/BswModuleEntrys/Mcal_WriteCpuEndInitProtReg</BSW-MODULE-ENTRY-REF>
+                                   </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                </REQUIRED-ENTRYS>
+                            </BSW-MODULE-DEPENDENCY>
+[!IF "$WdgSafetyEnable_Support = 'true'"!][!//
+                            <BSW-MODULE-DEPENDENCY>
+                              <SHORT-NAME>McalSafetyErrorDependency</SHORT-NAME>
+                              <TARGET-MODULE-ID>255</TARGET-MODULE-ID>
+                              <REQUIRED-ENTRYS>
+                                <BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                                  <BSW-MODULE-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_SafetyError/BswModuleEntrys/Mcal_ReportSafetyError</BSW-MODULE-ENTRY-REF>
+                                </BSW-MODULE-ENTRY-REF-CONDITIONAL>
+                              </REQUIRED-ENTRYS>
+                            </BSW-MODULE-DEPENDENCY>
+[!ENDIF!][!//
+                        </BSW-MODULE-DEPENDENCYS>
+                        <INTERNAL-BEHAVIORS>
+                          <BSW-INTERNAL-BEHAVIOR>
+                            <SHORT-NAME>WdgBehavior</SHORT-NAME>
+                            <EXCLUSIVE-AREAS>
+                              <EXCLUSIVE-AREA>
+                                <SHORT-NAME>TimerHandling</SHORT-NAME>
+                                <INTRODUCTION>
+                                <NOTE SI="All timer related APIs or Local functions use this exclusive area to ensure consistency of the timer used. Timers used are GTM or STM to service the watchdog hardware. User shall ensure that interrupts are disabled in this critical section."
+                                NOTE-TYPE="HINT"/>
+                                </INTRODUCTION>
+                              </EXCLUSIVE-AREA>
+                              <EXCLUSIVE-AREA>
+                                <SHORT-NAME>ChangeMode</SHORT-NAME>
+                                <INTRODUCTION>
+                                <NOTE SI="This exclusive area is used by Wdg driver in order to protect the program flow during changing the mode when Wdg_17_Scu_init and Wdg_17_Scu_SetMode are called by the user. User shall ensure that interrupts are disabled in this critical section."
+                                NOTE-TYPE="HINT"/>
+                                </INTRODUCTION>
+                              </EXCLUSIVE-AREA>
+                              <EXCLUSIVE-AREA>
+                                <SHORT-NAME>CpuEndInit</SHORT-NAME>
+                                <INTRODUCTION>
+                                <NOTE SI="This exclusive area is used by Wdg driver to protect access to SCU_WDTCPUxCON0 registers. User shall ensure that core specific interrupts are disabled in the critical sections SchM_Enter_Wdg_17_Scu_CpuEndInit and SchM_Enter_McalLib_CpuEndInit since CON0 register is updated inside these critical sections by both the modules. User shall ensure that the software on each core accesses only the core specific WDG registers."
+                                NOTE-TYPE="HINT"/>
+                                </INTRODUCTION>
+                              </EXCLUSIVE-AREA>
+                            </EXCLUSIVE-AREAS>
+                            <ENTITYS>
+[!IF "$Wdg_17_Scu_GetVersionInfo_Support = 'true'"!]
+                              <BSW-CALLED-ENTITY>
+                                <SHORT-NAME>Wdg_17_Scu_GetVersionInfo</SHORT-NAME>
+                                <REENTRANCY-LEVEL>MULTICORE-REENTRANT</REENTRANCY-LEVEL>
+                                <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Wdg/BswModuleEntrys/Wdg_17_Scu_GetVersionInfo</IMPLEMENTED-ENTRY-REF>
+                              </BSW-CALLED-ENTITY>
+[!ENDIF!][!//
+[!IF "$WdgInitCheckApi_Support = 'true'"!]
+                              <BSW-CALLED-ENTITY>
+                                <SHORT-NAME>Wdg_17_Scu_InitCheck</SHORT-NAME>
+                                <REENTRANCY-LEVEL>MULTICORE-REENTRANT</REENTRANCY-LEVEL>
+                                <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Wdg/BswModuleEntrys/Wdg_17_Scu_InitCheck</IMPLEMENTED-ENTRY-REF>
+                              </BSW-CALLED-ENTITY>
+[!ENDIF!][!//
+                                <BSW-CALLED-ENTITY>
+                                <SHORT-NAME>Wdg_17_Scu_Init</SHORT-NAME>
+                               <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                 <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/AUTOSAR_Wdg/BswModuleDescriptions/Wdg/WdgBehavior/TimerHandling</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                                 <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/AUTOSAR_Wdg/BswModuleDescriptions/Wdg/WdgBehavior/CpuEndInit</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                                 <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/AUTOSAR_Wdg/BswModuleDescriptions/Wdg/WdgBehavior/ChangeMode</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                               </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                               <REENTRANCY-LEVEL>MULTICORE-REENTRANT</REENTRANCY-LEVEL>
+                                <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Wdg/BswModuleEntrys/Wdg_17_Scu_Init</IMPLEMENTED-ENTRY-REF>
+                              </BSW-CALLED-ENTITY>
+                              <BSW-CALLED-ENTITY>
+                                <SHORT-NAME>Wdg_17_Scu_SetMode</SHORT-NAME>
+                               <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                 <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/AUTOSAR_Wdg/BswModuleDescriptions/Wdg/WdgBehavior/TimerHandling</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                                 <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/AUTOSAR_Wdg/BswModuleDescriptions/Wdg/WdgBehavior/CpuEndInit</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                                 <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/AUTOSAR_Wdg/BswModuleDescriptions/Wdg/WdgBehavior/ChangeMode</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                               </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                               <REENTRANCY-LEVEL>MULTICORE-REENTRANT</REENTRANCY-LEVEL>
+                                <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Wdg/BswModuleEntrys/Wdg_17_Scu_SetMode</IMPLEMENTED-ENTRY-REF>
+                              </BSW-CALLED-ENTITY>
+                              <BSW-CALLED-ENTITY>
+                                <SHORT-NAME>Wdg_17_Scu_SetTriggerCondition</SHORT-NAME>
+                               <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                 <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/AUTOSAR_Wdg/BswModuleDescriptions/Wdg/WdgBehavior/TimerHandling</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                                 <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/AUTOSAR_Wdg/BswModuleDescriptions/Wdg/WdgBehavior/CpuEndInit</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                               </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                               <REENTRANCY-LEVEL>MULTICORE-REENTRANT</REENTRANCY-LEVEL>
+                                <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Wdg/BswModuleEntrys/Wdg_17_Scu_SetTriggerCondition</IMPLEMENTED-ENTRY-REF>
+                              </BSW-CALLED-ENTITY>
+                              <BSW-INTERRUPT-ENTITY>
+                                <SHORT-NAME>Wdg_17_Scu_Isr</SHORT-NAME>
+                                <CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                  <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/AUTOSAR_Wdg/BswModuleDescriptions/Wdg/WdgBehavior/TimerHandling</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                                  <CAN-ENTER-EXCLUSIVE-AREA-REF DEST="EXCLUSIVE-AREA">/AUTOSAR_Wdg/BswModuleDescriptions/Wdg/WdgBehavior/CpuEndInit</CAN-ENTER-EXCLUSIVE-AREA-REF>
+                                </CAN-ENTER-EXCLUSIVE-AREA-REFS>
+                                <REENTRANCY-LEVEL>MULTICORE-REENTRANT</REENTRANCY-LEVEL>
+                                <IMPLEMENTED-ENTRY-REF DEST="BSW-MODULE-ENTRY">/AUTOSAR_Wdg/BswModuleEntrys/Wdg_17_Scu_Isr</IMPLEMENTED-ENTRY-REF>
+                              </BSW-INTERRUPT-ENTITY>
+                            </ENTITYS>
+                          </BSW-INTERNAL-BEHAVIOR>
+                        </INTERNAL-BEHAVIORS>
+                    </BSW-MODULE-DESCRIPTION>
+                </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+                <SHORT-NAME>BswModuleEntrys</SHORT-NAME>
+                <CATEGORY>STANDARD</CATEGORY>
+                <ELEMENTS>
+                    <BSW-MODULE-ENTRY>
+                        <SHORT-NAME>Wdg_17_Scu_Init</SHORT-NAME>
+                        <INTRODUCTION>
+                         <NOTE SI="Wdg_17_Scu_Init is Non Reentrant for the same core but is Reentrant when called in different cores." NOTE-TYPE="HINT"/>
+                        </INTRODUCTION>
+                        <SERVICE-ID>0</SERVICE-ID>
+                        <IS-REENTRANT>true</IS-REENTRANT>
+                        <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                        <CALL-TYPE>REGULAR</CALL-TYPE>
+                        <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                        <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                        <ARGUMENTS>
+                          <SW-SERVICE-ARG>
+                            <SHORT-NAME>ConfigPtr</SHORT-NAME>
+                            <CATEGORY>DATA_REFERENCE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                              <SW-DATA-DEF-PROPS-VARIANTS>
+                                <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-POINTER-TARGET-PROPS>
+                                <TARGET-CATEGORY>TYPE_REFERENCE</TARGET-CATEGORY>
+                                <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <IMPLEMENTATION-DATA-TYPE-REF DEST = "IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Wdg/ImplementationDataTypes/Wdg_17_Scu_ConfigType</IMPLEMENTATION-DATA-TYPE-REF>
+                                </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                                </SW-DATA-DEF-PROPS>
+                                </SW-POINTER-TARGET-PROPS>
+                                </SW-DATA-DEF-PROPS-CONDITIONAL>
+                              </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                          </SW-SERVICE-ARG>
+                        </ARGUMENTS>
+                    </BSW-MODULE-ENTRY>
+[!IF "$WdgInitCheckApi_Support = 'true'"!]
+                    <BSW-MODULE-ENTRY>
+                        <SHORT-NAME>Wdg_17_Scu_InitCheck</SHORT-NAME>
+                        <INTRODUCTION>
+                         <NOTE SI="Wdg_17_Scu_InitCheck is Non Reentrant for the same core but is Reentrant when called in different cores." NOTE-TYPE="HINT"/>
+                        </INTRODUCTION>
+                        <SERVICE-ID>0</SERVICE-ID>
+                        <IS-REENTRANT>true</IS-REENTRANT>
+                        <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                        <CALL-TYPE>REGULAR</CALL-TYPE>
+                        <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                        <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                        <ARGUMENTS>
+                          <SW-SERVICE-ARG>
+                            <SHORT-NAME>ConfigPtr</SHORT-NAME>
+                            <CATEGORY>DATA_REFERENCE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                              <SW-DATA-DEF-PROPS-VARIANTS>
+                                <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-POINTER-TARGET-PROPS>
+                                <TARGET-CATEGORY>TYPE_REFERENCE</TARGET-CATEGORY>
+                                <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <IMPLEMENTATION-DATA-TYPE-REF DEST = "IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Wdg/ImplementationDataTypes/Wdg_17_Scu_ConfigType</IMPLEMENTATION-DATA-TYPE-REF>
+                                </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                                </SW-DATA-DEF-PROPS>
+                                </SW-POINTER-TARGET-PROPS>
+                                </SW-DATA-DEF-PROPS-CONDITIONAL>
+                              </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                          </SW-SERVICE-ARG>
+                        </ARGUMENTS>
+                    </BSW-MODULE-ENTRY>
+[!ENDIF!][!//
+                    <BSW-MODULE-ENTRY>
+                        <SHORT-NAME>Wdg_17_Scu_SetMode</SHORT-NAME>
+                        <INTRODUCTION>
+                         <NOTE SI="Wdg_17_Scu_SetMode is Non Reentrant for the same core but is Reentrant when called in different cores." NOTE-TYPE="HINT"/>
+                        </INTRODUCTION>
+                        <SERVICE-ID>1</SERVICE-ID>
+                        <IS-REENTRANT>true</IS-REENTRANT>
+                        <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                        <CALL-TYPE>REGULAR</CALL-TYPE>
+                        <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                        <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                        <RETURN-TYPE>
+                          <SHORT-NAME>Return</SHORT-NAME>
+                          <SW-DATA-DEF-PROPS>
+                            <SW-DATA-DEF-PROPS-VARIANTS>
+                              <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <IMPLEMENTATION-DATA-TYPE-REF DEST = "IMPLEMENTATION-DATA-TYPE">/AUTOSAR_StdTypes/ImplementationDataTypes/Std_ReturnType</IMPLEMENTATION-DATA-TYPE-REF>
+                              </SW-DATA-DEF-PROPS-CONDITIONAL>
+                            </SW-DATA-DEF-PROPS-VARIANTS>
+                          </SW-DATA-DEF-PROPS>
+                        </RETURN-TYPE>
+                        <ARGUMENTS>
+                          <SW-SERVICE-ARG>
+                            <SHORT-NAME>Mode</SHORT-NAME>
+                            <SW-DATA-DEF-PROPS>
+                              <SW-DATA-DEF-PROPS-VARIANTS>
+                                <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <IMPLEMENTATION-DATA-TYPE-REF DEST = "IMPLEMENTATION-DATA-TYPE">/AUTOSAR_WdgIf/ImplementationDataTypes/WdgIf_ModeType</IMPLEMENTATION-DATA-TYPE-REF>
+                                </SW-DATA-DEF-PROPS-CONDITIONAL>
+                              </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                          </SW-SERVICE-ARG>
+                        </ARGUMENTS>
+                    </BSW-MODULE-ENTRY>
+[!IF "$Wdg_17_Scu_GetVersionInfo_Support = 'true'"!]
+                    <BSW-MODULE-ENTRY>
+                        <SHORT-NAME>Wdg_17_Scu_GetVersionInfo</SHORT-NAME>
+                        <INTRODUCTION>
+                         <NOTE SI="Wdg_17_Scu_GetVersionInfo is a Reentrant API." NOTE-TYPE="HINT"/>
+                        </INTRODUCTION>
+                        <SERVICE-ID>4</SERVICE-ID>
+                        <IS-REENTRANT>true</IS-REENTRANT>
+                        <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                        <CALL-TYPE>REGULAR</CALL-TYPE>
+                        <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                        <SW-SERVICE-IMPL-POLICY>MACRO</SW-SERVICE-IMPL-POLICY>
+                        <ARGUMENTS>
+                          <SW-SERVICE-ARG>
+                            <SHORT-NAME>versioninfo</SHORT-NAME>
+                            <CATEGORY>DATA_REFERENCE</CATEGORY>
+                            <SW-DATA-DEF-PROPS>
+                              <SW-DATA-DEF-PROPS-VARIANTS>
+                                <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <SW-POINTER-TARGET-PROPS>
+                                <TARGET-CATEGORY>TYPE_REFERENCE</TARGET-CATEGORY>
+                                <SW-DATA-DEF-PROPS>
+                                <SW-DATA-DEF-PROPS-VARIANTS>
+                                <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <IMPLEMENTATION-DATA-TYPE-REF DEST = "IMPLEMENTATION-DATA-TYPE">/AUTOSAR_StdTypes/ImplementationDataTypes/Std_VersionInfoType</IMPLEMENTATION-DATA-TYPE-REF>
+                                </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                </SW-DATA-DEF-PROPS-VARIANTS>
+                                </SW-DATA-DEF-PROPS>
+                                </SW-POINTER-TARGET-PROPS>
+                                </SW-DATA-DEF-PROPS-CONDITIONAL>
+                              </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                          </SW-SERVICE-ARG>
+                        </ARGUMENTS>
+                    </BSW-MODULE-ENTRY>
+[!ENDIF!][!//
+                    <BSW-MODULE-ENTRY>
+                        <SHORT-NAME>Wdg_17_Scu_SetTriggerCondition</SHORT-NAME>
+                        <INTRODUCTION>
+                         <NOTE SI="Wdg_17_Scu_SetTriggerCondition is Non Reentrant for the same core but is Reentrant when called in different cores." NOTE-TYPE="HINT"/>
+                        </INTRODUCTION>
+                        <SERVICE-ID>3</SERVICE-ID>
+                        <IS-REENTRANT>true</IS-REENTRANT>
+                        <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                        <CALL-TYPE>REGULAR</CALL-TYPE>
+                        <EXECUTION-CONTEXT>TASK</EXECUTION-CONTEXT>
+                        <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                        <ARGUMENTS>
+                          <SW-SERVICE-ARG>
+                            <SHORT-NAME>timeout</SHORT-NAME>
+                            <SW-DATA-DEF-PROPS>
+                              <SW-DATA-DEF-PROPS-VARIANTS>
+                                <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <IMPLEMENTATION-DATA-TYPE-REF DEST = "IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</IMPLEMENTATION-DATA-TYPE-REF>
+                                </SW-DATA-DEF-PROPS-CONDITIONAL>
+                              </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                          </SW-SERVICE-ARG>
+                        </ARGUMENTS>
+                    </BSW-MODULE-ENTRY>
+                    <BSW-MODULE-ENTRY>
+                        <SHORT-NAME>Wdg_17_Scu_Isr</SHORT-NAME>
+                        <INTRODUCTION>
+                         <NOTE SI="Wdg_17_Scu_Isr is Non Reentrant for the same core but is Reentrant when called in different cores." NOTE-TYPE="HINT"/>
+                        </INTRODUCTION>
+                        <SERVICE-ID>5</SERVICE-ID>
+                        <IS-REENTRANT>true</IS-REENTRANT>
+                        <IS-SYNCHRONOUS>true</IS-SYNCHRONOUS>
+                        <CALL-TYPE>INTERRUPT</CALL-TYPE>
+                        <EXECUTION-CONTEXT>INTERRUPT-CAT-1</EXECUTION-CONTEXT>
+                        <SW-SERVICE-IMPL-POLICY>STANDARD</SW-SERVICE-IMPL-POLICY>
+                        <ARGUMENTS>
+                          <SW-SERVICE-ARG>
+                            <SHORT-NAME>LogicalChId</SHORT-NAME>
+                            <SW-DATA-DEF-PROPS>
+                              <SW-DATA-DEF-PROPS-VARIANTS>
+                                <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <IMPLEMENTATION-DATA-TYPE-REF DEST = "IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint8</IMPLEMENTATION-DATA-TYPE-REF>
+                                </SW-DATA-DEF-PROPS-CONDITIONAL>
+                              </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                          </SW-SERVICE-ARG>
+                          <SW-SERVICE-ARG>
+                            <SHORT-NAME>IsrStatus</SHORT-NAME>
+                            <SW-DATA-DEF-PROPS>
+                              <SW-DATA-DEF-PROPS-VARIANTS>
+                                <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                <IMPLEMENTATION-DATA-TYPE-REF DEST = "IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</IMPLEMENTATION-DATA-TYPE-REF>
+                                </SW-DATA-DEF-PROPS-CONDITIONAL>
+                              </SW-DATA-DEF-PROPS-VARIANTS>
+                            </SW-DATA-DEF-PROPS>
+                          </SW-SERVICE-ARG>
+                        </ARGUMENTS>
+                    </BSW-MODULE-ENTRY>
+                </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+                <SHORT-NAME>Implementations</SHORT-NAME>
+                <ELEMENTS>
+                    <BSW-IMPLEMENTATION>
+                        <SHORT-NAME>Wdg</SHORT-NAME>
+                        <CODE-DESCRIPTORS>
+                            <CODE>
+                                <SHORT-NAME>Files</SHORT-NAME>
+                                <ARTIFACT-DESCRIPTORS>
+                                    <AUTOSAR-ENGINEERING-OBJECT>
+                                        <SHORT-LABEL>ssc::src::Wdg_17_Scu.c</SHORT-LABEL>
+                                        <CATEGORY>SWSRC</CATEGORY>
+                                    </AUTOSAR-ENGINEERING-OBJECT>
+                                    <AUTOSAR-ENGINEERING-OBJECT>
+                                        <SHORT-LABEL>ssc::inc::Wdg_17_Scu.h</SHORT-LABEL>
+                                        <CATEGORY>SWHDR</CATEGORY>
+                                    </AUTOSAR-ENGINEERING-OBJECT>
+                                  </ARTIFACT-DESCRIPTORS>
+                            </CODE>
+                        </CODE-DESCRIPTORS>
+                          <COMPILERS>
+                            <COMPILER>
+                              <SHORT-NAME>TASKING_COMPILE</SHORT-NAME>
+                              <NAME>TASKING</NAME>
+                              <OPTIONS>"[!"$TaskingCompilerOption"!]"</OPTIONS>
+                              <VENDOR>Altium</VENDOR>
+                              <VERSION>[!"$TaskingVersion"!]</VERSION>
+                            </COMPILER>
+                            <COMPILER>
+                              <SHORT-NAME>GNU_COMPILE</SHORT-NAME>
+                              <NAME>GNU</NAME>
+                              <OPTIONS>"[!"$GnucCompilerOption"!]"</OPTIONS>
+                              <VENDOR>Hightec</VENDOR>
+                              <VERSION>[!"$GnucVersion"!]</VERSION>
+                            </COMPILER>
+                            <COMPILER>
+                              <SHORT-NAME>DIAB_COMPILE</SHORT-NAME>
+                              <NAME>DIAB</NAME>
+                              <OPTIONS>"[!"$DccCompilerOption"!]"</OPTIONS>
+                              <VENDOR>Windriver</VENDOR>
+                              <VERSION>[!"$DccVersion"!]</VERSION>
+                            </COMPILER>
+                            <COMPILER>
+                              <SHORT-NAME>GHS_COMPILE</SHORT-NAME>
+                              <NAME>GHS</NAME>
+                              <OPTIONS>"[!"$GhsCompilerOption"!]"</OPTIONS>
+                              <VENDOR>GreenHills</VENDOR>
+                              <VERSION>[!"$GhsVersion"!]</VERSION>
+                            </COMPILER>
+                          </COMPILERS>
+                        <GENERATED-ARTIFACTS>
+                            <DEPENDENCY-ON-ARTIFACT>
+                                <SHORT-NAME>Wdg_17_Scu_PBcfg_c</SHORT-NAME>
+                                <ARTIFACT-DESCRIPTOR>
+                                    <SHORT-LABEL>src::Wdg_17_Scu_PBCfg.c</SHORT-LABEL>
+                                    <CATEGORY>SWTEMPLATE</CATEGORY>
+                                </ARTIFACT-DESCRIPTOR>
+                                <USAGES>
+                                    <USAGE>EXECUTE</USAGE>
+                                </USAGES>
+                            </DEPENDENCY-ON-ARTIFACT>
+                            <DEPENDENCY-ON-ARTIFACT>
+                                <SHORT-NAME>Wdg_17_Scu_Cfg_h</SHORT-NAME>
+                                <ARTIFACT-DESCRIPTOR>
+                                    <SHORT-LABEL>inc::Wdg_17_Scu_Cfg.h</SHORT-LABEL>
+                                    <CATEGORY>SWTEMPLATE</CATEGORY>
+                                </ARTIFACT-DESCRIPTOR>
+                                <USAGES>
+                                    <USAGE>COMPILE</USAGE>
+                                </USAGES>
+                            </DEPENDENCY-ON-ARTIFACT>
+                            <DEPENDENCY-ON-ARTIFACT>
+                                <SHORT-NAME>Wdg_17_Scu_PBcfg_h</SHORT-NAME>
+                                <ARTIFACT-DESCRIPTOR>
+                                    <SHORT-LABEL>inc::Wdg_17_Scu_PBcfg.h</SHORT-LABEL>
+                                    <CATEGORY>SWTEMPLATE</CATEGORY>
+                                </ARTIFACT-DESCRIPTOR>
+                                <USAGES>
+                                    <USAGE>EXECUTE</USAGE>
+                                </USAGES>
+                            </DEPENDENCY-ON-ARTIFACT>
+                            <DEPENDENCY-ON-ARTIFACT>
+                                <SHORT-NAME>Wdg_17_Scu_xdm</SHORT-NAME>
+                                <ARTIFACT-DESCRIPTOR>
+                                    <SHORT-LABEL>config::Wdg_17_Scu.xdm</SHORT-LABEL>
+                                    <CATEGORY>SWTOOL</CATEGORY>
+                                </ARTIFACT-DESCRIPTOR>
+                                <USAGES>
+                                    <USAGE>CODEGENERATION</USAGE>
+                                </USAGES>
+                            </DEPENDENCY-ON-ARTIFACT>
+                            <!--[cover parentID={2B1CF8FD-0DCA-4905-8AB3-DEA1A076E13A}][/cover]-->
+                            <DEPENDENCY-ON-ARTIFACT>
+                                <SHORT-NAME>Wdg_bmd</SHORT-NAME>
+                                <ARTIFACT-DESCRIPTOR>
+                                    <SHORT-LABEL>autosar::[!"concat(substring(ecu:get('Rel.SubDerivate'),1,4),'x')"!]::[!"ecu:get('Rel.SubDerivate')"!]::Wdg_17_Scu.bmd</SHORT-LABEL>
+                                    <CATEGORY>SWTOOL</CATEGORY>
+                                </ARTIFACT-DESCRIPTOR>
+                                <USAGES>
+                                    <USAGE>CODEGENERATION</USAGE>
+                                </USAGES>
+                            </DEPENDENCY-ON-ARTIFACT>
+                        </GENERATED-ARTIFACTS>
+                        <LINKERS>
+                        <LINKER>
+                              <SHORT-NAME>TASKING_LINK</SHORT-NAME>
+                              <NAME>TASKING</NAME>
+                              <OPTIONS>"[!"$TaskingLinkerOption"!]"</OPTIONS>
+                              <VENDOR>Altium</VENDOR>
+                              <VERSION>[!"$TaskingVersion"!]</VERSION>
+                        </LINKER>
+                        <LINKER>
+                              <SHORT-NAME>GNU_LINK</SHORT-NAME>
+                              <NAME>GNU</NAME>
+                              <OPTIONS>"[!"$GnucLinkerOption"!]"</OPTIONS>
+                              <VENDOR>Hightec</VENDOR>
+                              <VERSION>[!"$GnucVersion"!]</VERSION>
+                        </LINKER>
+                        <LINKER>
+                             <SHORT-NAME>DIAB_LINK</SHORT-NAME>
+                             <NAME>DIAB</NAME>
+                             <OPTIONS>"[!"$DccLinkerOption"!]"</OPTIONS>
+                             <VENDOR>Windriver</VENDOR>
+                             <VERSION>[!"$DccVersion"!]</VERSION>
+                        </LINKER>
+                        <LINKER>
+                             <SHORT-NAME>GHS_LINK</SHORT-NAME>
+                             <NAME>GHS</NAME>
+                             <OPTIONS>"[!"$GhsLinkerOption"!]"</OPTIONS>
+                             <VENDOR>GreenHills</VENDOR>
+                             <VERSION>[!"$GhsVersion"!]</VERSION>
+                         </LINKER>
+                         </LINKERS>
+                        <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+                        <RESOURCE-CONSUMPTION>
+                            <SHORT-NAME>ResourceConsumption</SHORT-NAME>
+                            <MEMORY-SECTIONS>
+                                <MEMORY-SECTION>
+                                    <SHORT-NAME>VAR_CLEARED_ASIL_B_GLOBAL_32</SHORT-NAME>
+                                    <ALIGNMENT>32</ALIGNMENT>
+                                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR</SW-ADDRMETHOD-REF>
+                                </MEMORY-SECTION>
+                                <MEMORY-SECTION>
+                                    <SHORT-NAME>CONST_ASIL_B_GLOBAL_UNSPECIFIED</SHORT-NAME>
+                                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR</SW-ADDRMETHOD-REF>
+                                </MEMORY-SECTION>
+[!IF "$Wdg_Core0_Configured = 'TRUE'"!]
+                                <MEMORY-SECTION>
+                                    <SHORT-NAME>CONFIG_DATA_ASIL_B_CORE0_UNSPECIFIED</SHORT-NAME>
+                                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CONFIG_DATA</SW-ADDRMETHOD-REF>
+                                </MEMORY-SECTION>
+[!ENDIF!][!//
+[!IF "$Wdg_Core1_Configured = 'TRUE'"!]
+                                <MEMORY-SECTION>
+                                    <SHORT-NAME>CONFIG_DATA_ASIL_B_CORE1_UNSPECIFIED</SHORT-NAME>
+                                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CONFIG_DATA</SW-ADDRMETHOD-REF>
+                                </MEMORY-SECTION>
+[!ENDIF!][!//
+[!IF "$Wdg_Core2_Configured = 'TRUE'"!]
+                                <MEMORY-SECTION>
+                                    <SHORT-NAME>CONFIG_DATA_ASIL_B_CORE2_UNSPECIFIED</SHORT-NAME>
+                                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CONFIG_DATA</SW-ADDRMETHOD-REF>
+                                </MEMORY-SECTION>
+[!ENDIF!][!//
+[!IF "$Wdg_Core3_Configured = 'TRUE'"!]
+                                <MEMORY-SECTION>
+                                    <SHORT-NAME>CONFIG_DATA_ASIL_B_CORE3_UNSPECIFIED</SHORT-NAME>
+                                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CONFIG_DATA</SW-ADDRMETHOD-REF>
+                                </MEMORY-SECTION>
+[!ENDIF!][!//
+[!IF "$Wdg_Core4_Configured = 'TRUE'"!]
+                                <MEMORY-SECTION>
+                                    <SHORT-NAME>CONFIG_DATA_ASIL_B_CORE4_UNSPECIFIED</SHORT-NAME>
+                                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CONFIG_DATA</SW-ADDRMETHOD-REF>
+                                </MEMORY-SECTION>
+[!ENDIF!][!//
+[!IF "$Wdg_Core5_Configured = 'TRUE'"!]
+                                <MEMORY-SECTION>
+                                    <SHORT-NAME>CONFIG_DATA_ASIL_B_CORE5_UNSPECIFIED</SHORT-NAME>
+                                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CONFIG_DATA</SW-ADDRMETHOD-REF>
+                                </MEMORY-SECTION>
+[!ENDIF!][!//
+[!IF "$Wdg_Core0_Configured = 'TRUE'"!]
+                                <MEMORY-SECTION>
+                                    <SHORT-NAME>VAR_CLEARED_ASIL_B_CORE0_UNSPECIFIED</SHORT-NAME>
+                                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR</SW-ADDRMETHOD-REF>
+                                </MEMORY-SECTION>
+[!ENDIF!][!//
+[!IF "$Wdg_Core1_Configured = 'TRUE'"!]
+                                <MEMORY-SECTION>
+                                    <SHORT-NAME>VAR_CLEARED_ASIL_B_CORE1_UNSPECIFIED</SHORT-NAME>
+                                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR</SW-ADDRMETHOD-REF>
+                                </MEMORY-SECTION>
+[!ENDIF!][!//
+[!IF "$Wdg_Core2_Configured = 'TRUE'"!]
+                                <MEMORY-SECTION>
+                                    <SHORT-NAME>VAR_CLEARED_ASIL_B_CORE2_UNSPECIFIED</SHORT-NAME>
+                                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR</SW-ADDRMETHOD-REF>
+                                </MEMORY-SECTION>
+[!ENDIF!][!//
+[!IF "$Wdg_Core3_Configured = 'TRUE'"!]
+                                <MEMORY-SECTION>
+                                    <SHORT-NAME>VAR_CLEARED_ASIL_B_CORE3_UNSPECIFIED</SHORT-NAME>
+                                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR</SW-ADDRMETHOD-REF>
+                                </MEMORY-SECTION>
+[!ENDIF!][!//
+[!IF "$Wdg_Core4_Configured = 'TRUE'"!]
+                                <MEMORY-SECTION>
+                                    <SHORT-NAME>VAR_CLEARED_ASIL_B_CORE4_UNSPECIFIED</SHORT-NAME>
+                                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR</SW-ADDRMETHOD-REF>
+                                </MEMORY-SECTION>
+[!ENDIF!][!//
+[!IF "$Wdg_Core5_Configured = 'TRUE'"!]
+                                <MEMORY-SECTION>
+                                    <SHORT-NAME>VAR_CLEARED_ASIL_B_CORE5_UNSPECIFIED</SHORT-NAME>
+                                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/VAR</SW-ADDRMETHOD-REF>
+                                </MEMORY-SECTION>
+[!ENDIF!][!//
+
+                                <MEMORY-SECTION>
+                                    <SHORT-NAME>CODE_ASIL_B_GLOBAL</SHORT-NAME>
+                                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CODE</SW-ADDRMETHOD-REF>
+                                </MEMORY-SECTION>
+                                <MEMORY-SECTION>
+                                    <SHORT-NAME>CODE_FAST_ASIL_B_GLOBAL</SHORT-NAME>
+                                    <ALIGNMENT>UNSPECIFIED</ALIGNMENT>
+                                    <SW-ADDRMETHOD-REF DEST="SW-ADDR-METHOD">/AUTOSAR_MemMap/SwAddrMethods/CODE_FAST</SW-ADDRMETHOD-REF>
+                                </MEMORY-SECTION>
+                            </MEMORY-SECTIONS>
+                            <SECTION-NAME-PREFIXS>
+                                <SECTION-NAME-PREFIX>
+                                    <SHORT-NAME>WDG_17_SCU</SHORT-NAME>
+                                    <SYMBOL>WDG_17_SCU</SYMBOL>
+                                </SECTION-NAME-PREFIX>
+                            </SECTION-NAME-PREFIXS>
+                        </RESOURCE-CONSUMPTION>
+                        <SW-VERSION>4.0.0</SW-VERSION>
+                        <VENDOR-ID>17</VENDOR-ID>
+                        <AR-RELEASE-VERSION>4.2.2</AR-RELEASE-VERSION>
+                        <BEHAVIOR-REF DEST="BSW-INTERNAL-BEHAVIOR">/AUTOSAR_Wdg/BswModuleDescriptions/Wdg/WdgBehavior</BEHAVIOR-REF>
+                        <VENDOR-API-INFIX>Scu</VENDOR-API-INFIX>
+                        <VENDOR-SPECIFIC-MODULE-DEF-REFS>
+                                <VENDOR-SPECIFIC-MODULE-DEF-REF DEST="ECUC-MODULE-DEF">/AURIX2G/EcucDefs/Wdg</VENDOR-SPECIFIC-MODULE-DEF-REF>
+                        </VENDOR-SPECIFIC-MODULE-DEF-REFS>
+                    </BSW-IMPLEMENTATION>
+                </ELEMENTS>
+            </AR-PACKAGE>
+            <AR-PACKAGE>
+                <SHORT-NAME>ImplementationDataTypes</SHORT-NAME>
+                <CATEGORY>STANDARD</CATEGORY>
+                <ELEMENTS>
+                    <IMPLEMENTATION-DATA-TYPE>
+                        <SHORT-NAME>Wdg_17_Scu_ConfigType</SHORT-NAME>
+                        <CATEGORY>STRUCTURE</CATEGORY>
+                        <SUB-ELEMENTS>
+                            <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                                <SHORT-NAME>DefaultMode</SHORT-NAME>
+                                <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                                <SW-DATA-DEF-PROPS>
+                                    <SW-DATA-DEF-PROPS-VARIANTS>
+                                        <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_WdgIf/ImplementationDataTypes/WdgIf_ModeType</IMPLEMENTATION-DATA-TYPE-REF>
+                                        </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    </SW-DATA-DEF-PROPS-VARIANTS>
+                                </SW-DATA-DEF-PROPS>
+                            </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                            <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                                <SHORT-NAME>FastModeRefreshTime</SHORT-NAME>
+                                <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                                <SW-DATA-DEF-PROPS>
+                                    <SW-DATA-DEF-PROPS-VARIANTS>
+                                        <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</IMPLEMENTATION-DATA-TYPE-REF>
+                                        </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    </SW-DATA-DEF-PROPS-VARIANTS>
+                                </SW-DATA-DEF-PROPS>
+                            </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                            <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                                <SHORT-NAME>FastModeReloadValue</SHORT-NAME>
+                                <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                                <SW-DATA-DEF-PROPS>
+                                    <SW-DATA-DEF-PROPS-VARIANTS>
+                                        <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</IMPLEMENTATION-DATA-TYPE-REF>
+                                        </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    </SW-DATA-DEF-PROPS-VARIANTS>
+                                </SW-DATA-DEF-PROPS>
+                            </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                            <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                                <SHORT-NAME>InitialRefreshTime</SHORT-NAME>
+                                <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                                <SW-DATA-DEF-PROPS>
+                                    <SW-DATA-DEF-PROPS-VARIANTS>
+                                        <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</IMPLEMENTATION-DATA-TYPE-REF>
+                                        </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    </SW-DATA-DEF-PROPS-VARIANTS>
+                                </SW-DATA-DEF-PROPS>
+                            </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                            <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                                <SHORT-NAME>MaxTimeOutTime</SHORT-NAME>
+                                <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                                <SW-DATA-DEF-PROPS>
+                                    <SW-DATA-DEF-PROPS-VARIANTS>
+                                        <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</IMPLEMENTATION-DATA-TYPE-REF>
+                                        </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    </SW-DATA-DEF-PROPS-VARIANTS>
+                                </SW-DATA-DEF-PROPS>
+                            </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                            <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                                <SHORT-NAME>SlowModeRefreshTime</SHORT-NAME>
+                                <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                                <SW-DATA-DEF-PROPS>
+                                    <SW-DATA-DEF-PROPS-VARIANTS>
+                                        <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</IMPLEMENTATION-DATA-TYPE-REF>
+                                        </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    </SW-DATA-DEF-PROPS-VARIANTS>
+                                </SW-DATA-DEF-PROPS>
+                            </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                            <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                                <SHORT-NAME>SlowModeRelodValue</SHORT-NAME>
+                                <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                                <SW-DATA-DEF-PROPS>
+                                    <SW-DATA-DEF-PROPS-VARIANTS>
+                                        <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint16</IMPLEMENTATION-DATA-TYPE-REF>
+                                        </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    </SW-DATA-DEF-PROPS-VARIANTS>
+                                </SW-DATA-DEF-PROPS>
+                            </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                            <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                                <SHORT-NAME>WdgCoreID</SHORT-NAME>
+                                <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                                <SW-DATA-DEF-PROPS>
+                                    <SW-DATA-DEF-PROPS-VARIANTS>
+                                        <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</IMPLEMENTATION-DATA-TYPE-REF>
+                                        </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    </SW-DATA-DEF-PROPS-VARIANTS>
+                                </SW-DATA-DEF-PROPS>
+                            </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                            <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                                <SHORT-NAME>WdgDisableAllowed</SHORT-NAME>
+                                <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                                <SW-DATA-DEF-PROPS>
+                                    <SW-DATA-DEF-PROPS-VARIANTS>
+                                        <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/boolean</IMPLEMENTATION-DATA-TYPE-REF>
+                                        </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    </SW-DATA-DEF-PROPS-VARIANTS>
+                                </SW-DATA-DEF-PROPS>
+                            </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                            <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                                <SHORT-NAME>WdgStmConfig</SHORT-NAME>
+                                <CATEGORY>DATA_REFERENCE</CATEGORY>
+                                <SW-DATA-DEF-PROPS>
+                                    <SW-DATA-DEF-PROPS-VARIANTS>
+                                        <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                            <SW-POINTER-TARGET-PROPS>
+                                                <TARGET-CATEGORY>TYPE_REFERENCE</TARGET-CATEGORY>
+                                                <SW-DATA-DEF-PROPS>
+                                                    <SW-DATA-DEF-PROPS-VARIANTS>
+                                                        <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Mcu/ImplementationDataTypes/Mcu_17_Stm_StmIdentifierType</IMPLEMENTATION-DATA-TYPE-REF>
+                                                        </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                                    </SW-DATA-DEF-PROPS-VARIANTS>
+                                                </SW-DATA-DEF-PROPS>
+                                            </SW-POINTER-TARGET-PROPS>
+                                        </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    </SW-DATA-DEF-PROPS-VARIANTS>
+                                </SW-DATA-DEF-PROPS>
+                            </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                            <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                                <SHORT-NAME>WdgGtmTimerInfo</SHORT-NAME>
+                                <CATEGORY>DATA_REFERENCE</CATEGORY>
+                                <SW-DATA-DEF-PROPS>
+                                    <SW-DATA-DEF-PROPS-VARIANTS>
+                                        <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                            <SW-POINTER-TARGET-PROPS>
+                                                <TARGET-CATEGORY>TYPE_REFERENCE</TARGET-CATEGORY>
+                                                <SW-DATA-DEF-PROPS>
+                                                    <SW-DATA-DEF-PROPS-VARIANTS>
+                                                        <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Mcu/ImplementationDataTypes/Mcu_17_Gtm_TomAtomChConfigType</IMPLEMENTATION-DATA-TYPE-REF>
+                                                        </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                                    </SW-DATA-DEF-PROPS-VARIANTS>
+                                                </SW-DATA-DEF-PROPS>
+                                            </SW-POINTER-TARGET-PROPS>
+                                        </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    </SW-DATA-DEF-PROPS-VARIANTS>
+                                </SW-DATA-DEF-PROPS>
+                            </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                            <IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                                <SHORT-NAME>WdgPassword</SHORT-NAME>
+                                <CATEGORY>TYPE_REFERENCE</CATEGORY>
+                                <SW-DATA-DEF-PROPS>
+                                    <SW-DATA-DEF-PROPS-VARIANTS>
+                                        <SW-DATA-DEF-PROPS-CONDITIONAL>
+                                            <IMPLEMENTATION-DATA-TYPE-REF DEST="IMPLEMENTATION-DATA-TYPE">/AUTOSAR_Platform/ImplementationDataTypes/uint32</IMPLEMENTATION-DATA-TYPE-REF>
+                                        </SW-DATA-DEF-PROPS-CONDITIONAL>
+                                    </SW-DATA-DEF-PROPS-VARIANTS>
+                                </SW-DATA-DEF-PROPS>
+                            </IMPLEMENTATION-DATA-TYPE-ELEMENT>
+                        </SUB-ELEMENTS>
+                    </IMPLEMENTATION-DATA-TYPE>
+                </ELEMENTS>
+            </AR-PACKAGE>
+        </AR-PACKAGES>
+    </AR-PACKAGE>
+</AR-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DVCfgAutomationBswmdModelGenerationResult>
+    <Hashvalue>vsEMSHRts9EUUX4kw5RIBQ==</Hashvalue>
+    <BswmdModelGeneratorVersion>1.6.1</BswmdModelGeneratorVersion>
+    <ECoreFeatureVersion>5.14.0</ECoreFeatureVersion>
+    <Generation>
+        <State>SUCCESSFUL</State>
+        <Retries>0</Retries>
+    </Generation>
+    <ModuleBlackList/>
+</DVCfgAutomationBswmdModelGenerationResult>

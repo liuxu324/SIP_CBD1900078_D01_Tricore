@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MssvFile>
+  <MssvBlackList>
+    <AddFileToBlacklist file="tcb.c"/>
+    <AddFileToBlacklist file="msg.c"/>
+    <AddFileToBlacklist file="trustfct.c"/>
+  </MssvBlackList>
+</MssvFile>

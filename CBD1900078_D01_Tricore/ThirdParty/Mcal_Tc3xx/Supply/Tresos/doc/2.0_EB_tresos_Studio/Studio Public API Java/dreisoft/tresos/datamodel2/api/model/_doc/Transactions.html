@@ -1,0 +1,59 @@
+<html>
+<body>
+<h2>Transactions</h2>
+
+<p>
+    The datamodel2 Public API allows to run multiple changes to the configuration model as an atomic operation.
+    This means that the operations can undone und redone with a single click in the GUI. Furthermore running
+    multiple changes as a transaction greatly improves performance of the changes.
+</p>
+
+<p>
+    Transactions are scheduled via the <a href="../../model/DCtxt.html">DCtxt</a> class:
+</p>
+
+<p>
+    <ul>
+        <li><b>DCtxt.startTransaction( &lt;label&gt; )</b>: Begin a transaction
+        </li>
+        <li><b>DCtxt.finishTransaction()</b>: Finish a transaction (commit).
+        </li>
+        <li><b>DCtxt.rollbackTransaction()</b>: Instead of calling finishTransaction() to commit a transaction
+            rollbackTransaction() can be called to rollback the changes made sind startTransaction.
+        </li>
+        <li><b>DCtxt.isTransactionRunning()</b>: Query if changes are currently scheduled to a transactions.
+        </li>
+        <li><b>DCtxt.getTransactionLabel()</b>: Get the label of the current running transaction.
+        </li>
+    </ul>
+</p>
+
+<p>
+    The following code snippet runs multiple changes in one transaction:
+</p>
+
+<p>
+    <pre>
+        ctxt.startTransaction( "Test Transaction" );
+        try {
+            DCtxt ctr = ctxt.ctr.addCtr( "TestCtr" );
+            ctr.var.setInt( "TestInt", 5 );
+        } finally {
+            ctxt.finishTransaction();
+        }
+    </pre>
+</p>
+
+<p>
+    Transactions only make sense when running on a loaded configuration (not in transformation model) and therefore Option
+    <code>useNodeOperations</code> is enabled (see: <a href="../../../model/Opt.html#setUseNodeOperations">
+    setUseNodeOperations( true )</a>) else changes cannot be undone anyway.
+</p>
+
+<p>
+    Only one transaction can be scheduled per thread. Transactions currently cannot be nested.
+    Transactions are thread local. Thus any operation called from the same thread, that started a transaction, will be included in the transaction. 
+    This also holds true if different contexts were used to start the transaction and to execute the operation.
+</p>
+</body>
+</html>

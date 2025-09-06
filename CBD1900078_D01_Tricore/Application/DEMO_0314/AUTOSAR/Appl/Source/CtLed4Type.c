@@ -1,0 +1,139 @@
+/**********************************************************************************************************************
+ *  FILE DESCRIPTION
+ *  -------------------------------------------------------------------------------------------------------------------
+ *          File:  CtLed4Type.c
+ *        Config:  E:/1.MCU_Prj/1.AURIX_TC3X7/TC397_Vector_Prj/DEMO_0314/AUTOSAR/TC397START.dpa
+ *     SW-C Type:  CtLed4Type
+ *  Generated at:  Tue Nov  5 20:09:35 2024
+ *
+ *     Generator:  MICROSAR RTE Generator Version 4.19.0
+ *                 RTE Core Version 1.19.0
+ *       License:  CBD1900078
+ *
+ *   Description:  C-Code implementation template for SW-C <CtLed4Type>
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << Start of version logging area >>                DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
+
+/* PRQA S 0777, 0779 EOF */ /* MD_MSR_5.1_777, MD_MSR_5.1_779 */
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << End of version logging area >>                  DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
+
+#include "Rte_CtLed4Type.h" /* PRQA S 0857 */ /* MD_MSR_1.1_857 */
+
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << Start of include and declaration area >>        DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
+#include "Dio.h"
+#include "Com.h"
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << End of include and declaration area >>          DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ *
+ * Used AUTOSAR Data Types
+ *
+ **********************************************************************************************************************
+ *
+ * Primitive Types:
+ * ================
+ * boolean: Boolean (standard type)
+ *
+ *********************************************************************************************************************/
+
+
+#define CtLed4Type_START_SEC_CODE
+#include "CtLed4Type_MemMap.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+/**********************************************************************************************************************
+ *
+ * Runnable Entity Name: Led4BlinkRunnable
+ *
+ *---------------------------------------------------------------------------------------------------------------------
+ *
+ * Executed if at least one of the following trigger conditions occurred:
+ *   - triggered on TimingEvent every 500ms
+ *
+ **********************************************************************************************************************
+ *
+ * Input Interfaces:
+ * =================
+ *   Explicit S/R API:
+ *   -----------------
+ *   Std_ReturnType Rte_Read_sig_State_RearInteriorLight_State_RearInteriorLight(boolean *data)
+ *
+ * Output Interfaces:
+ * ==================
+ *   Explicit S/R API:
+ *   -----------------
+ *   Std_ReturnType Rte_Write_sig_RearInteriorLight_RearInteriorLight(boolean data)
+ *
+ *********************************************************************************************************************/
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << Start of documentation area >>                  DO NOT CHANGE THIS COMMENT!
+ * Symbol: Led4BlinkRunnable_doc
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << End of documentation area >>                    DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
+
+FUNC(void, CtLed4Type_CODE) Led4BlinkRunnable(void) /* PRQA S 0850 */ /* MD_MSR_19.8 */
+{
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << Start of runnable implementation >>             DO NOT CHANGE THIS COMMENT!
+ * Symbol: Led4BlinkRunnable
+ *********************************************************************************************************************/
+	static unsigned char  LedState=0;
+    static int  LedCnt = 0;
+    static unsigned char sig_value = 0;
+
+	LedCnt++;
+
+    LedState ^= 0x01;
+
+    // Com_ReceiveSignal(ComConf_ComSignal_sig_State_RearInteriorLight_omsg_Receive_oCAN00_63323183_Rx, &sig_value);
+    // Com_SendSignal(ComConf_ComSignal_sig_RearInteriorLight_omsg_Transmit_oCAN00_49a633c1_Tx, &sig_value);
+
+    boolean data_value;
+    Rte_Read_sig_State_RearInteriorLight_State_RearInteriorLight(&data_value);
+    Rte_Write_sig_RearInteriorLight_RearInteriorLight(data_value);
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << End of runnable implementation >>               DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
+}
+
+
+#define CtLed4Type_STOP_SEC_CODE
+#include "CtLed4Type_MemMap.h" /* PRQA S 5087 */ /* MD_MSR_19.1 */
+
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << Start of function definition area >>            DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << End of function definition area >>              DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << Start of removed code area >>                   DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/
+
+
+/**********************************************************************************************************************
+ * DO NOT CHANGE THIS COMMENT!           << End of removed code area >>                     DO NOT CHANGE THIS COMMENT!
+ *********************************************************************************************************************/

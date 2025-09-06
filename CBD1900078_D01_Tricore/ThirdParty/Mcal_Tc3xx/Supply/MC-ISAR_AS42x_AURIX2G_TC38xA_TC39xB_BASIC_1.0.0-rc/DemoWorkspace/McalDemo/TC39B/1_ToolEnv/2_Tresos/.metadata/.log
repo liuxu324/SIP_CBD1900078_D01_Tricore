@@ -1,0 +1,30 @@
+!SESSION 2016-08-30 15:17:10.490 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -clean
+
+!ENTRY org.eclipse.osgi 4 0 2016-08-30 15:17:11.020
+!MESSAGE The -clean (osgi.clean) option was not successful. Unable to clean the storage area: C:\sofit\aurix2g_sw_mcal\tresos\tresos\configuration\org.eclipse.osgi
+!SESSION 2016-09-16 11:48:48.508 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -clean
+
+!ENTRY org.eclipse.osgi 4 0 2016-09-16 11:48:49.238
+!MESSAGE The -clean (osgi.clean) option was not successful. Unable to clean the storage area: C:\sofit\aurix2g_sw_mcal\tresos\tresos\configuration\org.eclipse.osgi
+!SESSION 2018-01-20 14:28:14.277 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.ui 1 1 2018-01-20 14:28:19.560
+!MESSAGE Workbench migration started
+
+!ENTRY org.eclipse.ui 1 1 2018-01-20 14:28:20.282
+!MESSAGE Workbench migration finished

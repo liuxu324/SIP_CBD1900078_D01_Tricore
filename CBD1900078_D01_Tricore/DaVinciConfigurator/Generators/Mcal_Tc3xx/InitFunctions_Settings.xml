@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+============================================================================
+
+Copyright (c) 2018 by Vector Informatik GmbH. All rights reserved.
+
+This software is copyright protected and proprietary to Vector Informatik GmbH.
+Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+All other rights remain with Vector Informatik GmbH.
+
+============================================================================
+
+This file is needed for internal use.
+Please do not modify this file, otherwise the software may behave in
+unexpected way.
+
+============================================================================
+
+============================================================================
+                P R O J E C T
+============================================================================
+Module
+=======================
+
+============================================================================
+                A U T H O R   I D E N T I T Y
+============================================================================
+Initials	Name			Company
+=====		===============	==================================================
+Refer to Settings_TC3xx.xml
+============================================================================
+                R E V I S I O N   H I S T O R Y
+============================================================================
+Date		Version	Author	Description
+=========	=======	=======	=================================================
+Refer to Settings_TC3xx.xml
+*****************************************************************************
+-->
+
+<ExtModuleInitialization xmlns="InitService" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="InitService .\InitService.xsd">
+
+<!--Adc_Init-->
+<InitModule>
+  <ModuleRef>/AURIX2G/EcucDefs/Adc</ModuleRef> 
+<ModuleInitFunction>
+  <InitFunctionName>Adc_Init</InitFunctionName> 
+  <InitFunctionHeader>Adc.h</InitFunctionHeader> 
+  <InitPhase>INIT_ONE_LATE</InitPhase> 
+<InitFunctionData>
+<ConfigPtrData>
+  <ConfigPtrName>&amp;Adc_Config</ConfigPtrName> 
+  <ConfigPtrClass>const</ConfigPtrClass> 
+  <ConfigPtrType>Adc_ConfigType</ConfigPtrType>
+  </ConfigPtrData>
+  </InitFunctionData>
+  </ModuleInitFunction>
+  </InitModule>
+<!--End of Adc_Init-->
+
+<!--Dio_Init-->
+<!--<InitModule>
+  <ModuleRef>/AURIX2G/EcucDefs/Dio</ModuleRef> 
+<ModuleInitFunction>
+  <InitFunctionName>Dio_Init</InitFunctionName> 
+  <InitFunctionHeader>Dio.h</InitFunctionHeader> 
+  <InitPhase>INIT_ONE</InitPhase> 
+<InitFunctionData>
+<ConfigPtrData>
+  <ConfigPtrName>&amp;Dio_Config</ConfigPtrName> 
+  <ConfigPtrClass>const</ConfigPtrClass> 
+  <ConfigPtrType>Dio_ConfigType</ConfigPtrType> 
+  </ConfigPtrData>
+  </InitFunctionData>
+  </ModuleInitFunction>
+  </InitModule>-->
+<!--End of Dio_Init-->
+
+<!--Fee_Init-->
+<InitModule>
+  <ModuleRef>/AURIX2G/EcucDefs/Fee</ModuleRef> 
+<ModuleInitFunction>
+  <InitFunctionName>Fee_Init</InitFunctionName> 
+  <InitFunctionHeader>Fee.h</InitFunctionHeader> 
+  <InitPhase>INIT_ONE</InitPhase> 
+<InitFunctionData>
+<ConfigPtrData>
+  <ConfigPtrName>&amp;Fee_Config</ConfigPtrName> 
+  <ConfigPtrClass>const</ConfigPtrClass> 
+  <ConfigPtrType>Fee_ConfigType</ConfigPtrType> 
+  </ConfigPtrData>
+  </InitFunctionData>
+  </ModuleInitFunction>
+  </InitModule>  
+<!--End of Fee_Init-->
+
+<!--Fls_Init-->   
+<InitModule>
+  <ModuleRef>/AURIX2G/EcucDefs/Fls</ModuleRef> 
+<ModuleInitFunction>
+  <InitFunctionName>Fls_17_Dmu_Init</InitFunctionName> 
+  <InitFunctionHeader>Fls_17_Dmu.h</InitFunctionHeader> 
+  <InitPhase>INIT_ONE</InitPhase> 
+<InitFunctionData>
+<ConfigPtrData>
+  <ConfigPtrName>&amp;Fls_17_Dmu_Config</ConfigPtrName> 
+  <ConfigPtrClass>const</ConfigPtrClass> 
+  <ConfigPtrType>Fls_17_Dmu_ConfigType</ConfigPtrType> 
+  </ConfigPtrData>
+  </InitFunctionData>
+  </ModuleInitFunction>
+  </InitModule>
+<!--End of Fls_Init-->
+  
+<!--Gpt_Init-->  
+<InitModule>
+  <ModuleRef>/AURIX2G/EcucDefs/Gpt</ModuleRef> 
+<ModuleInitFunction>
+  <InitFunctionName>Gpt_Init</InitFunctionName> 
+  <InitFunctionHeader>Gpt.h</InitFunctionHeader> 
+  <InitPhase>INIT_ONE</InitPhase> 
+<InitFunctionData>
+<ConfigPtrData>
+  <ConfigPtrName>&amp;Gpt_Config</ConfigPtrName> 
+  <ConfigPtrClass>const</ConfigPtrClass> 
+  <ConfigPtrType>Gpt_ConfigType</ConfigPtrType> 
+  </ConfigPtrData>
+  </InitFunctionData>
+  </ModuleInitFunction>
+  </InitModule>
+<!--End of Gpt_Init-->  
+
+<!--Icu_Init-->  
+<InitModule>
+  <ModuleRef>/AURIX2G/EcucDefs/Icu</ModuleRef> 
+<ModuleInitFunction>
+  <InitFunctionName>Icu_17_TimerIp_Init</InitFunctionName> 
+  <InitFunctionHeader>Icu_17_TimerIp.h</InitFunctionHeader> 
+  <InitPhase>INIT_ONE_LATE</InitPhase> 
+<InitFunctionData>
+<ConfigPtrData>
+  <ConfigPtrName>&amp;Icu_17_TimerIp_Config</ConfigPtrName> 
+  <ConfigPtrClass>const</ConfigPtrClass> 
+  <ConfigPtrType>Icu_17_TimerIp_ConfigType</ConfigPtrType> 
+  </ConfigPtrData>
+  </InitFunctionData>
+  </ModuleInitFunction>
+</InitModule>
+<!--End of Icu_Init-->  
+
+<!--Mcu_Init-->
+<InitModule>
+  <ModuleRef>/AURIX2G/EcucDefs/Mcu</ModuleRef> 
+<ModuleInitFunction>
+  <InitFunctionName>Mcu_Init</InitFunctionName>
+  <InitFunctionCall>Mcu_InitClock(0);
+  while (MCU_PLL_LOCKED != Mcu_GetPllStatus());
+  Mcu_DistributePllClock();</InitFunctionCall>   
+  <InitFunctionHeader>Mcu.h</InitFunctionHeader> 
+  <InitPhase>INIT_ONE_EARLY</InitPhase> 
+<InitFunctionData>
+<ConfigPtrData>
+  <ConfigPtrName>&amp;Mcu_Config</ConfigPtrName> 
+  <ConfigPtrClass>const</ConfigPtrClass> 
+  <ConfigPtrType>Mcu_ConfigType</ConfigPtrType> 
+  </ConfigPtrData>
+  </InitFunctionData>
+  </ModuleInitFunction>					
+</InitModule>
+<!--End of Mcu_Init-->
+  
+<!--Port_Init-->  
+<InitModule>
+  <ModuleRef>/AURIX2G/EcucDefs/Port</ModuleRef> 
+<ModuleInitFunction>
+  <InitFunctionName>Port_Init</InitFunctionName> 
+  <InitFunctionHeader>Port.h</InitFunctionHeader> 
+  <InitPhase>INIT_ONE_EARLY</InitPhase> 
+<InitFunctionData>
+<ConfigPtrData>
+  <ConfigPtrName>&amp;Port_Config</ConfigPtrName> 
+  <ConfigPtrClass>const</ConfigPtrClass> 
+  <ConfigPtrType>Port_ConfigType</ConfigPtrType> 
+  </ConfigPtrData>
+  </InitFunctionData>
+  </ModuleInitFunction>
+  </InitModule>
+<!--End of Port_Init-->  
+
+<!--Pwm_Init-->
+<InitModule>
+  <ModuleRef>/AURIX2G/EcucDefs/Pwm</ModuleRef> 
+<ModuleInitFunction>
+  <InitFunctionName>Pwm_17_GtmCcu6_Init</InitFunctionName> 
+  <InitFunctionHeader>Pwm_17_GtmCcu6.h</InitFunctionHeader> 
+  <InitPhase>INIT_ONE</InitPhase> 
+<InitFunctionData>
+<ConfigPtrData>
+  <ConfigPtrName>&amp;Pwm_17_GtmCcu6_Config</ConfigPtrName> 
+  <ConfigPtrClass>const</ConfigPtrClass> 
+  <ConfigPtrType>Pwm_17_GtmCcu6_ConfigType</ConfigPtrType> 
+  </ConfigPtrData>
+  </InitFunctionData>
+  </ModuleInitFunction>
+  </InitModule>
+<!--End of Pwm_Init-->
+
+<!--Spi_Init-->
+<InitModule>
+  <ModuleRef>/AURIX2G/EcucDefs/Spi</ModuleRef> 
+<ModuleInitFunction>
+  <InitFunctionName>Spi_Init</InitFunctionName> 
+  <InitFunctionHeader>Spi.h</InitFunctionHeader> 
+  <InitPhase>INIT_ONE</InitPhase> 
+<InitFunctionData>
+<ConfigPtrData>
+  <ConfigPtrName>&amp;Spi_Config</ConfigPtrName> 
+  <ConfigPtrClass>const</ConfigPtrClass> 
+  <ConfigPtrType>Spi_ConfigType</ConfigPtrType> 
+  </ConfigPtrData>
+  </InitFunctionData>
+  </ModuleInitFunction>
+  </InitModule>
+<!--End of Spi_Init-->
+
+<!--Wdg_Init-->
+<InitModule>
+  <ModuleRef>/AURIX2G/EcucDefs/Wdg</ModuleRef> 
+<ModuleInitFunction>
+  <InitFunctionName>Wdg_17_Scu_Init</InitFunctionName> 
+  <InitFunctionHeader>Wdg_17_Scu.h</InitFunctionHeader> 
+  <InitPhase>INIT_ONE</InitPhase> 
+<InitFunctionData>
+<ConfigPtrData>
+  <ConfigPtrName>&amp;Wdg_17_Scu_Config_0</ConfigPtrName> 
+  <ConfigPtrClass>const</ConfigPtrClass> 
+  <ConfigPtrType>Wdg_17_Scu_ConfigType</ConfigPtrType> 
+  </ConfigPtrData>
+  </InitFunctionData>
+  </ModuleInitFunction>
+  </InitModule>
+<!--End of Wdg_Init-->
+  </ExtModuleInitialization>

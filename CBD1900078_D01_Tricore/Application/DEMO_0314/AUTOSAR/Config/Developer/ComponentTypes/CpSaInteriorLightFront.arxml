@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--This file was saved with a tool from Vector Informatik GmbH-->
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00044.xsd" xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="9DE8001E-4903-416A-9AE0-A7CEBF640A73">
+      <SHORT-NAME>ComponentTypes</SHORT-NAME>
+      <ELEMENTS>
+        <APPLICATION-SW-COMPONENT-TYPE UUID="5A8E6AC9-3222-4938-B338-0E0FFC2C3B79">
+          <SHORT-NAME>CpSaInteriorLightFront</SHORT-NAME>
+          <INTERNAL-BEHAVIORS>
+            <SWC-INTERNAL-BEHAVIOR UUID="DEC6831E-7F86-460E-A627-8BA50F03F6AB">
+              <SHORT-NAME>CpSaInteriorLightFront_InternalBehavior</SHORT-NAME>
+              <RUNNABLES>
+                <RUNNABLE-ENTITY UUID="A14249D4-DD92-47B9-A9A2-93AB0BE96FE3">
+                  <SHORT-NAME>RCtSaInteriorLightSwitchLight</SHORT-NAME>
+                </RUNNABLE-ENTITY>
+              </RUNNABLES>
+              <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+            </SWC-INTERNAL-BEHAVIOR>
+          </INTERNAL-BEHAVIORS>
+        </APPLICATION-SW-COMPONENT-TYPE>
+        <SWC-IMPLEMENTATION UUID="B55FDD12-D3F9-4654-997E-55AFA7BAA1B8">
+          <SHORT-NAME>CpSaInteriorLightFront_Implementation</SHORT-NAME>
+          <BEHAVIOR-REF DEST="SWC-INTERNAL-BEHAVIOR">/ComponentTypes/CpSaInteriorLightFront/CpSaInteriorLightFront_InternalBehavior</BEHAVIOR-REF>
+        </SWC-IMPLEMENTATION>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

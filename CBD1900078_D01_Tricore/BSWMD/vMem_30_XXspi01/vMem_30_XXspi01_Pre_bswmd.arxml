@@ -1,0 +1,1950 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+***********************************************************************************************************************
+COPYRIGHT
+===============================================================================
+Copyright (c) 2019 by Vector Informatik GmbH.                                         All rights reserved.
+
+    This software is copyright protected and proprietary to Vector Informatik GmbH.
+    Vector Informatik GmbH grants to you only those rights as set out in the license conditions.
+    All other rights remain with Vector Informatik GmbH.
+===============================================================================
+FILE DESCRIPTION
+===============================================================================
+File:           vMem_30_XXspi01_bswmd.arxml
+Component:      DrvMem_vMem_30_XXspi01
+Module:         vMem
+Generator:      DaVinci Configurator
+Description:    -
+*********************************************************************************************************************** 
+-->
+<AUTOSAR xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_4-0-3.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://autosar.org/schema/r4.0">
+	<AR-PACKAGES>
+		<AR-PACKAGE UUID="ff55d029-386d-43a2-b3c2-dfef4c7a5e36">
+			<SHORT-NAME>MICROSAR</SHORT-NAME>
+			<AR-PACKAGES>
+				<AR-PACKAGE UUID="e352fcf3-a8d2-4192-aea4-04c922edaa5b">
+					<SHORT-NAME>vMem_30_XXspi01</SHORT-NAME>
+					<ELEMENTS>
+						<ECUC-MODULE-CONFIGURATION-VALUES UUID="bb389734-e005-422d-a8e6-1868afee6c09">
+							<SHORT-NAME>vMem_Pre</SHORT-NAME>
+							<DEFINITION-REF DEST="ECUC-MODULE-DEF">/MICROSAR/vMem_30_XXspi01/vMem</DEFINITION-REF>
+							<CONTAINERS>
+								<ECUC-CONTAINER-VALUE UUID="4881a7de-c8ca-4f68-af74-767e5a7ea7ef">
+									<SHORT-NAME>Cypress_S25FL064</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Cypress/Spansion S25FL064</L-4>
+									</LONG-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemSize</DEFINITION-REF>
+											<VALUE>8388608</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultCheck</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterLength</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultRegisterEraseErrorBitMask</DEFINITION-REF>
+											<VALUE>64</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterBusyFlagBitMask</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultRegisterProgramErrorBitMask</DEFINITION-REF>
+											<VALUE>32</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="effee2f3-55ab-4b56-8fab-b7756052ceae">
+											<SHORT-NAME>vMemFlashCommandList</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList</DEFINITION-REF>
+											<SUB-CONTAINERS>
+												<ECUC-CONTAINER-VALUE UUID="4e5fe32f-bcd7-4575-97bb-a0e9c7ad90bb">
+													<SHORT-NAME>ClearResultRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_CLEAR_RESULT</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>48</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="747f0cd3-7017-4d72-be20-da99e309eae3">
+													<SHORT-NAME>Erase</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_ERASE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>32</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="cd5da49f-52ac-4dba-ba53-908f853c336d">
+													<SHORT-NAME>Read</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>3</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="c193a46e-b5f2-41d0-9f09-c26a03b74625">
+													<SHORT-NAME>ReadResultRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ_RESULT</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>7</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="19c48fdc-cbb1-46fb-8af8-a05cd7e292f1">
+													<SHORT-NAME>ReadStatusRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ_STATUS</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>5</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="54b0ba6d-f2d2-48ad-ba0e-48a35a04c196">
+													<SHORT-NAME>Write</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>2</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="d792a08f-c220-4b86-b27e-0f4e17a9c7e9">
+													<SHORT-NAME>WriteEnable</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE_ENABLE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>6</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+											</SUB-CONTAINERS>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="f32f670e-8558-430a-988b-f92d0dea145b">
+									<SHORT-NAME>Cypress_S25FL256</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Cypress/Spansion S25FL256</L-4>
+									</LONG-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemSize</DEFINITION-REF>
+											<VALUE>33554432</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultCheck</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterLength</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultRegisterEraseErrorBitMask</DEFINITION-REF>
+											<VALUE>32</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterBusyFlagBitMask</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultRegisterProgramErrorBitMask</DEFINITION-REF>
+											<VALUE>64</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="f0225f11-7a93-44f1-8d66-56a13fb2f63b">
+											<SHORT-NAME>vMemFlashCommandList</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList</DEFINITION-REF>
+											<SUB-CONTAINERS>
+												<ECUC-CONTAINER-VALUE UUID="53befed6-5b01-44f3-b582-76dc81972191">
+													<SHORT-NAME>ClearResultRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_CLEAR_RESULT</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>48</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="c8679c8f-537f-45aa-89a7-e9bc1c280d4c">
+													<SHORT-NAME>Erase</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_ERASE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>220</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="4b92f623-7893-4205-94cd-042916767f71">
+													<SHORT-NAME>Read</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>19</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="4871038c-3a85-4ac4-99fb-bed811f7531d">
+													<SHORT-NAME>ReadResultRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ_RESULT</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>5</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="dae3f980-1280-4a05-bfa0-a2955df2126e">
+													<SHORT-NAME>ReadStatusRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ_STATUS</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>5</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="5d78441c-129b-4a4d-971a-c02442a562f4">
+													<SHORT-NAME>Write</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>18</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="aa9a5634-0a09-4ecd-a66c-38abc6480305">
+													<SHORT-NAME>WriteEnable</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE_ENABLE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>6</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+											</SUB-CONTAINERS>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="7239ba3b-f2ab-47c6-ae17-ec2c0af196b7">
+									<SHORT-NAME>Cypress_S25FL512</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Cypress/Spansion S25FL512</L-4>
+									</LONG-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemSize</DEFINITION-REF>
+											<VALUE>67108864</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultCheck</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterLength</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultRegisterEraseErrorBitMask</DEFINITION-REF>
+											<VALUE>32</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterBusyFlagBitMask</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultRegisterProgramErrorBitMask</DEFINITION-REF>
+											<VALUE>64</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="f294322d-4bc3-467d-90d0-84ffeb84aae1">
+											<SHORT-NAME>vMemFlashCommandList</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList</DEFINITION-REF>
+											<SUB-CONTAINERS>
+												<ECUC-CONTAINER-VALUE UUID="1f290765-d002-49a6-8623-beab04ab4d36">
+													<SHORT-NAME>ClearResultRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_CLEAR_RESULT</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>48</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="6d7cf372-54b0-49a0-ae5a-1d43c7bec588">
+													<SHORT-NAME>Erase</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_ERASE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>220</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="9766a39d-9ae5-49ee-ba36-d289fdc2ee69">
+													<SHORT-NAME>Read</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>19</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="8bc583f8-907a-4a14-b7ba-486c59f94cab">
+													<SHORT-NAME>ReadResultRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ_RESULT</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>5</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="b4518b5b-dbda-4b88-9292-ecd55dab8517">
+													<SHORT-NAME>ReadStatusRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ_STATUS</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>5</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="f30f18e8-17ae-4eab-a989-e278c6d093c2">
+													<SHORT-NAME>Write</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>18</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="5817598e-d2f3-40ec-b1aa-d624bfb99b21">
+													<SHORT-NAME>WriteEnable</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE_ENABLE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>6</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+											</SUB-CONTAINERS>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="a9ffa238-8d7c-4806-b87c-971a0fcad25d">
+									<SHORT-NAME>Cypress_S25FS512</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Cypress/Spansion S25FS512</L-4>
+									</LONG-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemSize</DEFINITION-REF>
+											<VALUE>67108864</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultCheck</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterLength</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultRegisterEraseErrorBitMask</DEFINITION-REF>
+											<VALUE>32</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterBusyFlagBitMask</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultRegisterProgramErrorBitMask</DEFINITION-REF>
+											<VALUE>64</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="5749d3f3-b7b6-456c-a4c7-95599600a40b">
+											<SHORT-NAME>vMemFlashCommandList</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList</DEFINITION-REF>
+											<SUB-CONTAINERS>
+												<ECUC-CONTAINER-VALUE UUID="ca192a09-49b3-4c49-be9b-25a919c60afc">
+													<SHORT-NAME>ClearResultRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_CLEAR_RESULT</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>48</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="02d9c637-e65a-4c44-ac3b-fb24c0678afe">
+													<SHORT-NAME>Erase</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_ERASE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>220</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="7a3309be-1ea9-4c64-a581-8cfed574eb48">
+													<SHORT-NAME>Read</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>19</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="fc6eb091-af07-4b32-921f-544a870f1cbc">
+													<SHORT-NAME>ReadResultRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ_RESULT</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>5</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="54f773eb-6186-4b92-9e09-ccca63d237a0">
+													<SHORT-NAME>ReadStatusRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ_STATUS</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>5</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="7de7f975-5f18-46e0-ae77-4e5e2f3ebd27">
+													<SHORT-NAME>Write</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>18</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="b23003b6-ecb5-4e8a-9aad-1ad4bb315f3f">
+													<SHORT-NAME>WriteEnable</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE_ENABLE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>6</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+											</SUB-CONTAINERS>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="ad0b030a-2256-4190-8e06-0457126c4d94">
+									<SHORT-NAME>Issi_IS25LP016D</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Issi IS25LP016D</L-4>
+									</LONG-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemSize</DEFINITION-REF>
+											<VALUE>2097152</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultCheck</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterLength</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultRegisterEraseErrorBitMask</DEFINITION-REF>
+											<VALUE>8</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterBusyFlagBitMask</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultRegisterProgramErrorBitMask</DEFINITION-REF>
+											<VALUE>4</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemExtendedProgressCheckFlagBitMask</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="b3ac388e-ec6e-469f-bfc5-47d09ac47c9d">
+											<SHORT-NAME>vMemFlashCommandList</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList</DEFINITION-REF>
+											<SUB-CONTAINERS>
+												<ECUC-CONTAINER-VALUE UUID="5c2baad1-04a2-4739-bd0c-67a3d6cce1dc">
+													<SHORT-NAME>ClearResultRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_CLEAR_RESULT</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>130</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="c7e06d52-a3ec-41f2-a908-72c76d45ae2b">
+													<SHORT-NAME>Erase</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_ERASE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>215</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="ada7eecd-3118-4c1a-bc35-9ba97549b721">
+													<SHORT-NAME>Read</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>3</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="20c0b263-4445-4bdc-8990-8eb1b609d760">
+													<SHORT-NAME>ReadResultRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ_RESULT</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>129</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="74d48a48-8683-4d88-8d61-97e1423e8078">
+													<SHORT-NAME>ReadStatusRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ_STATUS</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>5</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="451b6ddb-b9c8-4386-824e-c6b70f60daa8">
+													<SHORT-NAME>Write</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>2</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="df212959-8012-44fb-adf9-48e0a8ee7682">
+													<SHORT-NAME>WriteEnable</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE_ENABLE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>6</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="410a681d-167e-46f8-9b31-cad265074c2f">
+													<SHORT-NAME>ExtendedProgressCheck</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_EXTENDED_PROGRESS_CHECK</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>129</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+											</SUB-CONTAINERS>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="4e13eec5-f809-45a8-805b-d47b5c5f81a5">
+									<SHORT-NAME>Issi_IS25LP032D</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Issi IS25LP032D</L-4>
+									</LONG-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemSize</DEFINITION-REF>
+											<VALUE>4194304</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultCheck</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterLength</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultRegisterEraseErrorBitMask</DEFINITION-REF>
+											<VALUE>8</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterBusyFlagBitMask</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultRegisterProgramErrorBitMask</DEFINITION-REF>
+											<VALUE>4</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemExtendedProgressCheckFlagBitMask</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="e8781460-034f-4f95-842f-c82afc0812b0">
+											<SHORT-NAME>vMemFlashCommandList</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList</DEFINITION-REF>
+											<SUB-CONTAINERS>
+												<ECUC-CONTAINER-VALUE UUID="974877e7-804f-4080-a21b-5d2a9060d89d">
+													<SHORT-NAME>ClearResultRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_CLEAR_RESULT</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>130</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="fe9f8593-9cd3-43b7-a505-6670ccf717d1">
+													<SHORT-NAME>Erase</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_ERASE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>215</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="a92ea121-099b-4a67-865e-a8751cf52a9d">
+													<SHORT-NAME>Read</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>3</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="71c555ba-aa12-42fb-b932-46c12a78b14f">
+													<SHORT-NAME>ReadResultRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ_RESULT</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>129</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="12cc01ce-1008-4e84-b4fd-a29b26ca8d91">
+													<SHORT-NAME>ReadStatusRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ_STATUS</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>5</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="459fcc3c-e956-49cd-86de-9de83a82eea5">
+													<SHORT-NAME>Write</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>2</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="5ee1b094-95ec-4153-96b7-216900e4a721">
+													<SHORT-NAME>WriteEnable</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE_ENABLE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>6</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="1e1e3956-1ebc-4a81-8844-c69fd0b007c0">
+													<SHORT-NAME>ExtendedProgressCheck</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_EXTENDED_PROGRESS_CHECK</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>129</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+											</SUB-CONTAINERS>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="ae61d1b0-f5b1-4d93-b3f7-3a71192f9360">
+									<SHORT-NAME>Macronix_MX25L64</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Macronix MX25L64</L-4>
+									</LONG-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemSize</DEFINITION-REF>
+											<VALUE>8388608</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultCheck</DEFINITION-REF>
+											<VALUE>0</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterLength</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterBusyFlagBitMask</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="ad4a6b3b-e89c-4afc-afd9-e7b502dfd390">
+											<SHORT-NAME>vMemFlashCommandList</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList</DEFINITION-REF>
+											<SUB-CONTAINERS>
+												<ECUC-CONTAINER-VALUE UUID="185b5889-3311-489c-ad2d-81dc3c4dcbe8">
+													<SHORT-NAME>Erase</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_ERASE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>32</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="8af58cec-72bd-4bd7-aaac-7da54cd3aa40">
+													<SHORT-NAME>Read</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>3</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="be03d4e4-5e78-4bcf-8d25-5d94f4da4f18">
+													<SHORT-NAME>Write</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>2</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="2652ff1c-5a50-4aa9-b146-a03474bfaa35">
+													<SHORT-NAME>WriteEnable</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE_ENABLE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>6</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="c542e84d-ec32-450b-ab4f-f0e8b089ca08">
+													<SHORT-NAME>ReadStatusRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ_STATUS</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>5</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+											</SUB-CONTAINERS>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="e5751f61-5623-47e6-a8d1-a46f3e2edb96">
+									<SHORT-NAME>Micron_MT25QL256</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Micron MT25QL256</L-4>
+									</LONG-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemSize</DEFINITION-REF>
+											<VALUE>33554432</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultCheck</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterLength</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultRegisterEraseErrorBitMask</DEFINITION-REF>
+											<VALUE>32</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterBusyFlagBitMask</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultRegisterProgramErrorBitMask</DEFINITION-REF>
+											<VALUE>16</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemExtendedProgressCheckFlagBitMask</DEFINITION-REF>
+											<VALUE>128</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="8d11031a-cebb-49f8-99e9-fa5f21633048">
+											<SHORT-NAME>vMemFlashCommandList</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList</DEFINITION-REF>
+											<SUB-CONTAINERS>
+												<ECUC-CONTAINER-VALUE UUID="e8efd7f3-37f4-4863-84a3-9af5f3ad8991">
+													<SHORT-NAME>ClearResultRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_CLEAR_RESULT</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>80</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="14e69998-0fdd-4e40-8416-e19b5ffaba01">
+													<SHORT-NAME>Erase</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_ERASE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>220</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="afd4b24a-b6a2-4391-9d81-3704b32c75b6">
+													<SHORT-NAME>Read</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>19</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="05384a2d-919f-4fe3-aecb-741fb060a314">
+													<SHORT-NAME>ReadResultRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ_RESULT</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>112</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="a6edeb4d-bccf-4ce8-875a-63cedfcdbdb1">
+													<SHORT-NAME>ReadStatusRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ_STATUS</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>5</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="49c9ba7a-11e3-4668-9ea8-9de1b72d5456">
+													<SHORT-NAME>Write</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>18</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="584f25ed-be5b-428e-a5d3-0a87897a8bae">
+													<SHORT-NAME>WriteEnable</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE_ENABLE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>6</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="5953de6b-2c4f-46b2-8353-e4e5ddd77faa">
+													<SHORT-NAME>ExtendedProgressCheck</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_EXTENDED_PROGRESS_CHECK</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>112</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+											</SUB-CONTAINERS>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="91e985ed-2ebe-44a4-bc59-b9d112a620dc">
+									<SHORT-NAME>Micron_MT25QL01G</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Micron MT25QL01G</L-4>
+									</LONG-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemSize</DEFINITION-REF>
+											<VALUE>134217728</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultCheck</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterLength</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultRegisterEraseErrorBitMask</DEFINITION-REF>
+											<VALUE>32</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterBusyFlagBitMask</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultRegisterProgramErrorBitMask</DEFINITION-REF>
+											<VALUE>16</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemExtendedProgressCheckFlagBitMask</DEFINITION-REF>
+											<VALUE>128</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="eb2eda69-9021-4094-931c-af052da5c719">
+											<SHORT-NAME>vMemFlashCommandList</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList</DEFINITION-REF>
+											<SUB-CONTAINERS>
+												<ECUC-CONTAINER-VALUE UUID="ff83dabe-ee77-49b6-a140-ebf05bcd6861">
+													<SHORT-NAME>ClearResultRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_CLEAR_RESULT</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>80</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="af0e12d7-b355-4fdd-9385-006931a9ad52">
+													<SHORT-NAME>Erase</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_ERASE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>220</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="253d6b93-26f5-47c7-9f43-2a79480f12a9">
+													<SHORT-NAME>Read</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>19</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="6f6997ea-b5ee-4f68-8ade-96bdbffc806c">
+													<SHORT-NAME>ReadResultRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ_RESULT</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>112</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="13444a4d-4b95-4916-be55-a5e4f979c199">
+													<SHORT-NAME>ReadStatusRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ_STATUS</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>5</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="5c3da98f-c459-464f-bde7-47f2fdbb9277">
+													<SHORT-NAME>Write</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>18</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="d58e3dd3-b1a6-4da0-8352-bc4b202adcb8">
+													<SHORT-NAME>WriteEnable</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE_ENABLE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>6</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="e9b9c66f-cd38-421a-a24f-6f16bb01b9d2">
+													<SHORT-NAME>ExtendedProgressCheck</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_EXTENDED_PROGRESS_CHECK</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>112</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+											</SUB-CONTAINERS>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="dda04a51-f2b5-459e-8a53-6837f9fa9a69">
+									<SHORT-NAME>Micron_MT25QU256</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Micron MT25QU256</L-4>
+									</LONG-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemSize</DEFINITION-REF>
+											<VALUE>33554432</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultCheck</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterLength</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultRegisterEraseErrorBitMask</DEFINITION-REF>
+											<VALUE>32</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterBusyFlagBitMask</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultRegisterProgramErrorBitMask</DEFINITION-REF>
+											<VALUE>16</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemExtendedProgressCheckFlagBitMask</DEFINITION-REF>
+											<VALUE>128</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="1e20a0d6-c394-4576-b9a6-46372ef1ce10">
+											<SHORT-NAME>vMemFlashCommandList</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList</DEFINITION-REF>
+											<SUB-CONTAINERS>
+												<ECUC-CONTAINER-VALUE UUID="0b02c8f3-31ee-43dd-888f-0fb18f63e509">
+													<SHORT-NAME>ClearResultRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_CLEAR_RESULT</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>80</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="82b9d58b-58be-42b6-8884-307069f79443">
+													<SHORT-NAME>Erase</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_ERASE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>220</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="7edca736-3d5e-4dcf-bcd6-132fe316d327">
+													<SHORT-NAME>Read</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>19</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="54e7cfd1-bff0-4d8c-a672-c0b3726e8f6a">
+													<SHORT-NAME>ReadResultRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ_RESULT</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>112</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="9a2bc33f-74f6-4114-87bc-805ea4a179f9">
+													<SHORT-NAME>ReadStatusRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ_STATUS</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>5</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="c4936cbc-91df-49f8-9689-8977d67c953c">
+													<SHORT-NAME>Write</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>18</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="acc5dc9c-c434-4525-a0f5-a2af68dabc3b">
+													<SHORT-NAME>WriteEnable</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE_ENABLE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>6</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="5c1ebee9-64fb-4f58-8ea8-769de9d4b0e9">
+													<SHORT-NAME>ExtendedProgressCheck</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_EXTENDED_PROGRESS_CHECK</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>112</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+											</SUB-CONTAINERS>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="b0e2579a-5d8f-4e02-8cfa-23749bd9d7a3">
+									<SHORT-NAME>Micron_N25Q128A</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Micron N25Q128A</L-4>
+									</LONG-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemSize</DEFINITION-REF>
+											<VALUE>16777216</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultCheck</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterLength</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultRegisterEraseErrorBitMask</DEFINITION-REF>
+											<VALUE>32</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterBusyFlagBitMask</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultRegisterProgramErrorBitMask</DEFINITION-REF>
+											<VALUE>16</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemExtendedProgressCheckFlagBitMask</DEFINITION-REF>
+											<VALUE>128</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="658aa95d-f259-40ff-9e09-6882e4b7a824">
+											<SHORT-NAME>vMemFlashCommandList</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList</DEFINITION-REF>
+											<SUB-CONTAINERS>
+												<ECUC-CONTAINER-VALUE UUID="4ece354a-ebf6-435c-ac8a-8493c606a194">
+													<SHORT-NAME>ClearResultRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_CLEAR_RESULT</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>80</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="6cfdfd6f-6974-46e7-a69b-b4183abbc425">
+													<SHORT-NAME>Erase</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_ERASE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>216</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="3ebdf93b-23ff-441e-88a2-42782aa60761">
+													<SHORT-NAME>Read</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>3</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="43106d7c-f382-408e-bfb1-7534a368baa4">
+													<SHORT-NAME>ReadResultRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ_RESULT</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>112</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="5658057a-1e3d-4157-b593-200b518192fe">
+													<SHORT-NAME>ReadStatusRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ_STATUS</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>5</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="e7157bf2-5af7-4822-bc9f-a46dc1dffc02">
+													<SHORT-NAME>Write</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>2</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="6aca0f80-15fd-42bd-800c-14c31007b320">
+													<SHORT-NAME>WriteEnable</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE_ENABLE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>6</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="5d005150-c0a5-4c9a-8a81-8077271b134b">
+													<SHORT-NAME>ExtendedProgressCheck</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_EXTENDED_PROGRESS_CHECK</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>112</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+											</SUB-CONTAINERS>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="0f2a6ed4-f408-4a2b-913b-fefb7c860c09">
+									<SHORT-NAME>Winbond_W25Q32J</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Winbond W25Q32J</L-4>
+									</LONG-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemSize</DEFINITION-REF>
+											<VALUE>4194304</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultCheck</DEFINITION-REF>
+											<VALUE>0</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterLength</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterBusyFlagBitMask</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="f3faea85-0881-4c57-893e-02bf55d46b43">
+											<SHORT-NAME>vMemFlashCommandList</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList</DEFINITION-REF>
+											<SUB-CONTAINERS>
+												<ECUC-CONTAINER-VALUE UUID="18857677-2d71-46e7-a566-8ed8bfc6e6d8">
+													<SHORT-NAME>Erase</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_ERASE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>32</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="dbbc9662-12d6-4dcc-9bb0-83a1e89441e2">
+													<SHORT-NAME>Read</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>3</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="f65ab091-9e42-4e82-92fb-0b819b5202dc">
+													<SHORT-NAME>ReadStatusRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ_STATUS</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>5</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="f50d442f-6eee-4c9d-b7f7-5161cd91ab2b">
+													<SHORT-NAME>Write</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>2</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="7280c99a-d05b-4681-a813-8e1fbcc35773">
+													<SHORT-NAME>WriteEnable</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE_ENABLE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>6</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+											</SUB-CONTAINERS>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="62a1fba8-b37b-4276-bfb4-2123ead2cfcf">
+									<SHORT-NAME>Winbond_W25Q64J</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Winbond W25Q64J</L-4>
+									</LONG-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemSize</DEFINITION-REF>
+											<VALUE>8388608</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultCheck</DEFINITION-REF>
+											<VALUE>0</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterLength</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterBusyFlagBitMask</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="68c01c87-6576-425d-9098-8829f3185a57">
+											<SHORT-NAME>vMemFlashCommandList</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList</DEFINITION-REF>
+											<SUB-CONTAINERS>
+												<ECUC-CONTAINER-VALUE UUID="4a0feb3c-733e-4704-bbf8-11e65eba1ef9">
+													<SHORT-NAME>Erase</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_ERASE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>32</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="d6605127-43ac-4e8f-9b80-cf7f7e32933c">
+													<SHORT-NAME>Read</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>3</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="c841d907-ca88-4722-b958-cb2eff7b10e4">
+													<SHORT-NAME>ReadStatusRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ_STATUS</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>5</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="642c4a98-5a71-4d1d-ac91-100e0a2021f3">
+													<SHORT-NAME>Write</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>2</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="c8f47812-8830-4285-adc0-3e358cd31af5">
+													<SHORT-NAME>WriteEnable</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE_ENABLE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>6</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+											</SUB-CONTAINERS>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+								<ECUC-CONTAINER-VALUE UUID="30109d79-3c6b-4d9c-9477-b8e47066a864">
+									<SHORT-NAME>Winbond_W25Q64F</SHORT-NAME>
+									<LONG-NAME>
+										<L-4 L="EN">Winbond W25Q64F</L-4>
+									</LONG-NAME>
+									<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation</DEFINITION-REF>
+									<PARAMETER-VALUES>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemSize</DEFINITION-REF>
+											<VALUE>8388608</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-BOOLEAN-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemResultCheck</DEFINITION-REF>
+											<VALUE>0</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterLength</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+										<ECUC-NUMERICAL-PARAM-VALUE>
+											<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemStatusRegisterBusyFlagBitMask</DEFINITION-REF>
+											<VALUE>1</VALUE>
+										</ECUC-NUMERICAL-PARAM-VALUE>
+									</PARAMETER-VALUES>
+									<SUB-CONTAINERS>
+										<ECUC-CONTAINER-VALUE UUID="bc917a37-6d04-4e34-8426-bdbaec5286ad">
+											<SHORT-NAME>vMemFlashCommandList</SHORT-NAME>
+											<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList</DEFINITION-REF>
+											<SUB-CONTAINERS>
+												<ECUC-CONTAINER-VALUE UUID="c5ebc532-e1ac-4556-ae6e-5b26180da53b">
+													<SHORT-NAME>Erase</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_ERASE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>32</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="bc195343-3332-4096-9793-9305ef2a3de4">
+													<SHORT-NAME>Read</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>3</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="8c6e6b83-cf73-4222-ab29-0367bdb271f4">
+													<SHORT-NAME>ReadStatusRegister</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_READ_STATUS</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>5</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="42a53649-cb94-4434-82fd-14d56c69ee54">
+													<SHORT-NAME>Write</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>2</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+												<ECUC-CONTAINER-VALUE UUID="c10a68dc-ba18-4eb0-9bf9-af362192b27d">
+													<SHORT-NAME>WriteEnable</SHORT-NAME>
+													<DEFINITION-REF DEST="ECUC-PARAM-CONF-CONTAINER-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand</DEFINITION-REF>
+													<PARAMETER-VALUES>
+														<ECUC-TEXTUAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-ENUMERATION-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdType</DEFINITION-REF>
+															<VALUE>VMEM_WRITE_ENABLE</VALUE>
+														</ECUC-TEXTUAL-PARAM-VALUE>
+														<ECUC-NUMERICAL-PARAM-VALUE>
+															<DEFINITION-REF DEST="ECUC-INTEGER-PARAM-DEF">/MICROSAR/vMem_30_XXspi01/vMem/vMemDeviceInformation/vMemFlashCommandList/vMemFlashCommand/vMemCmdValue</DEFINITION-REF>
+															<VALUE>6</VALUE>
+														</ECUC-NUMERICAL-PARAM-VALUE>
+													</PARAMETER-VALUES>
+												</ECUC-CONTAINER-VALUE>
+											</SUB-CONTAINERS>
+										</ECUC-CONTAINER-VALUE>
+									</SUB-CONTAINERS>
+								</ECUC-CONTAINER-VALUE>
+							</CONTAINERS>
+						</ECUC-MODULE-CONFIGURATION-VALUES>
+					</ELEMENTS>
+				</AR-PACKAGE>
+			</AR-PACKAGES>
+		</AR-PACKAGE>
+	</AR-PACKAGES>
+</AUTOSAR>

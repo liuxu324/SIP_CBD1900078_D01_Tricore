@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2018)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**  FILENAME  : plugin.xml                                                    **
+**                                                                            **
+**  VERSION   : 5.0.0                                                         **
+**                                                                            **
+**  DATE      : 2018-08-28                                                    **
+**                                                                            **
+**  VARIANT   : Variant PC                                                    **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX2G                                              **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY : [cover parentID={3354E3B0-F866-483b-87F9-7887F5B56598}]    **
+**                                                                            **
+**  DESCRIPTION  : Tresos plugin for Flsloader Driver                         **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) : NA                                                     **
+**                                                                            **
+**  MAY BE CHANGED BY USER : no                                               **
+**                                                                            **
+*******************************************************************************/
+-->
+<!-- [cover parentID={C9F1BB3C-DFD7-4f59-97E4-1AFCBB5AFFCA}]
+      covered for MANIFEST.MF [/cover] -->
+<!-- [cover parentID={C68A313F-E5DB-49c3-AA70-3217053EF84F}]
+      covered for plugin.properties [/cover] -->
+<plugin>
+
+    <extension point="dreisoft.tresos.launcher2.plugin.module"
+           id="FlsLoader_Aurix2GAS422_ModuleExt"
+           name="FlsLoader Driver PlugIn with a TemplateGenerator">
+               
+          <module id="FlsLoader_Aurix2GAS422"
+            label="%ModuleLabel"
+            mandatory="false"
+            allowMultiple="true"
+            description="%ModuleDesc"
+            copyright="(c) 2018 Infineon Technologies"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            specVersionMajor="4"
+            specVersionMinor="2"
+            specVersionPatch="2"
+            relVersionMajor="4"
+            relVersionMinor="2"
+            relVersionPatch="2"
+            categoryType="%ModuleName"
+            categoryLayer="MCAL"
+            categoryCategory="ECU Firmware"
+            categoryComponent="ECUC">
+       <cluster name="MCAL"/>
+            
+      <ecuType target="AURIX2G" derivate="TC387"/>
+      <ecuType target="AURIX2G" derivate="TC389"/>
+      <ecuType target="AURIX2G" derivate="TC397"/>
+      <ecuType target="AURIX2G" derivate="TC397_ADAS"/>
+      <ecuType target="AURIX2G" derivate="TC399"/>
+       </module>                   
+   </extension>
+   
+   <extension point="dreisoft.tresos.launcher2.plugin.configuration"  
+              id="FlsLoader_Aurix2GAS422_ConfigExt"
+              name="FlsLoader Driver Parameter Definition Extension">
+    <configuration moduleId="FlsLoader_Aurix2GAS422">
+           <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/FlsLoader.xdm" type="xdm"/>
+      </schema>
+     
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/AURIX2G/EcucDefs/FlsLoader"/>
+      </data>
+           
+      <editor id="FlsLoader_Aurix2GAS422_Edit"
+              label="%ModuleName"
+              tooltip="%ModuleDesc">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/AURIX2G/EcucDefs/FlsLoader"/>
+          <parameter name="title" value="FlsLoader"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+  </extension>
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="FlsLoader_Aurix2GAS422_GenExt"
+              name="FlsLoader_Aurix2G Generator">
+    <generator moduleId="FlsLoader_Aurix2GAS422"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+
+      <!-- common template path parameters -->
+      <parameter name="templates"
+                 mode="generate,verify" value="generate/template"/>
+
+      <!-- swcd modes and template path parameters -->
+      <parameter name="mode_type"
+                 mode="generate_swcd" value="generate/template"/>
+
+      <parameter name="mode_type"
+                 mode="verify_swcd" value="verify"/>
+
+      <parameter name="templates"
+                 mode="generate_swcd,verify_swcd" value="generate_swcd"/>
+
+    </generator>
+  </extension>
+
+
+</plugin>
+

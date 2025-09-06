@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Settings Name="com.vector.cfg.core.sip.ISIPService">
+    <Settings Name="ModuleList">
+      <Settings Name="Os">
+        <Settings Name="TC39x">
+          <Setting Name="SIP_Folder" Value="Os" />
+          <Settings Name="37B05D7F-9A16-47F8-9D0D-B0401627FE21">
+            <Setting Name="Derivative" Value="TC397_StepB" />
+            <Setting Name="SIP_Folder" Value="TC39x" />
+            <Setting Name="ReleaseType" Value="Tested" />
+          </Settings>
+        </Settings>
+      </Settings>
+    </Settings>
+  </Settings>
+</Settings>

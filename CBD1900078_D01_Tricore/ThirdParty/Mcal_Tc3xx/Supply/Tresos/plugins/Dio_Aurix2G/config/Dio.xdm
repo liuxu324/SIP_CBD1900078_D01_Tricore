@@ -1,0 +1,500 @@
+<?xml version='1.0'?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2018)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**  FILENAME  : Dio.xdm                                                       **
+**                                                                            **
+**  VERSION   : 7.0.0                                                         **
+**                                                                            **
+**  DATE      : 2018-09-20                                                    **
+**                                                                            **
+**  VARIANT   : Variant LT                                                    **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX2G                                              **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY :  [cover parentID={7E2F6043-8189-4ddd-B792-3FA295AC2F74}]   **
+**                                                                            **
+**  DESCRIPTION  : XML data model for Dio driver                              **
+**                                                                            **
+**   [/cover]                                                                 **
+**                                                                            **
+**  SPECIFICATION(S) : Specification of Dio Driver, AUTOSAR Release 4.2.2     **
+**                                                                            **
+**  MAY BE CHANGED BY USER : no                                               **
+**                                                                            **
+*******************************************************************************/
+-->
+  <datamodel version="5.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/12/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/12/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+    <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+       <!-- [cover parentID={BD607180-6DDB-4175-9E75-6DCCAEBFBD5C}] [/cover] -->  
+      <d:lst type="TOP-LEVEL-PACKAGES">
+        <d:ctr name="AURIX2G" type="AR-PACKAGE">
+          <a:a name="UUID" value="ECUC:AUTOSAR"/>
+          <d:lst type="TOP-LEVEL-PACKAGES">
+            <d:ctr name="EcucDefs" type="AR-PACKAGE">
+              <a:a name="UUID" value="ECUC:ECUCDEFS"/>
+              <d:lst type="ELEMENTS">
+              <!-- [cover parentID={8A22156A-F55E-407d-9677-9660DAE4C9D4}] [/cover] -->
+                <d:chc name="Dio" type="AR-ELEMENT" value="MODULE-DEF">
+                  <v:ctr type="MODULE-DEF">
+                    <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                      <ad:ADMIN-DATA>
+                        <ad:DOC-REVISIONS>
+                          <ad:DOC-REVISION>
+                            <ad:REVISION-LABEL>4.2.2
+                            </ad:REVISION-LABEL>
+                            <ad:ISSUED-BY>AUTOSAR
+                            </ad:ISSUED-BY>
+                            <ad:DATE>2014-10-31
+                            </ad:DATE>
+                          </ad:DOC-REVISION>
+                        </ad:DOC-REVISIONS>
+                      </ad:ADMIN-DATA>
+                    </a:a>
+                    <a:a name="DESC" 
+                       value="EN: Configuration of the Dio (Digital IO) module."/>
+                    <a:a name="LOWER-MULTIPLICITY" value="0"/>
+                    <a:a name="POSTBUILDVARIANTSUPPORT" value="true"/>
+                    <a:a name="RELEASE" value="asc:4.2.2"/>
+                    <d:ref type="REFINED_MODULE_DEF" value="ASPath:/AUTOSAR/EcucDefs/Dio"/>
+                    <a:a name="UPPER-MULTIPLICITY" value="1"/>
+                    <a:a name="UUID" 
+                       value="ECUC:8a22156a-f55e-407d-9677-9660dae4c9d4"/>
+                    <v:var name="IMPLEMENTATION_CONFIG_VARIANT" 
+                         type="ENUMERATION">
+                     <!-- [cover parentID={5CD3314E-D53B-46ee-BD43-64AF9D8FE37D}] Config Variant [/cover] -->
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                      </a:a>
+                      <a:a name="LABEL" value="Config Variant"/>
+                      <a:da name="DEFAULT" value="VariantLinkTime"/>
+                      <a:da name="RANGE">
+                        <a:v>VariantLinkTime</a:v>
+                      </a:da>
+                    </v:var>
+                    <!-- [cover parentID={B9EA6561-FD73-4381-BDB6-8E027A43AD62}] DioConfig [/cover] -->
+                    <!-- [cover parentID={4C1B4204-B2A2-444c-A325-0F5B1E318880}] Variant Link Time [/cover] -->
+                    <v:ctr name="DioConfig" type="IDENTIFIABLE">
+                      <a:a name="DESC" 
+                         value="EN: This container contains the configuration parameters and sub containers of the AUTOSAR DIO module."/>
+                      <a:a name="UUID" 
+                         value="ECUC:b9ea6561-fd73-4381-bdb6-8e027a43ad62"/>
+                      <!-- [cover parentID={F85F480F-FEE7-4a00-A99A-4AEDE301E703}] DioPort [/cover] -->
+                      <v:lst name="DioPort" type="MAP">
+                        <a:da name="MIN" value="1"/>
+                        <a:da name="MAX" type="XPath" expr="ecu:get('Dio.DioPortMax')"/>
+                        <v:ctr name="DioPort" type="IDENTIFIABLE">
+                        <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                           <icc:v mclass="PreCompile">VariantLinkTime</icc:v>
+                        </a:a>
+                          <a:a name="NAME_PATTERN" value="DioPort_?"/>
+                          <a:a name="DESC" 
+                             value="EN: Configuration of individual DIO ports, consisting of channels and possible channel groups."/>
+                          <a:a name="UUID" 
+                             value="ECUC:f85f480f-fee7-4a00-a99a-4aede301e703"/>
+                          <!-- [cover parentID={D596F059-D21F-46fa-8C62-8EAE8FF3D68D}] DioPortId [/cover] -->
+                          <v:var name="DioPortId" type="INTEGER">
+                            <a:a name="DESC" 
+                                       value="EN: Numeric identifier of the DIO port. Not all MCU ports may be used for DIO, thus there may be &quot;gaps&quot; in the list of all IDs. This value will be"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                    type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                            </a:a>
+                            <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                            <a:a name="SCOPE" value="ECU"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                            <a:a name="UUID" 
+                                     value="ECUC:d596f059-d21f-46fa-8c62-8eae8ff3d68d"/>
+                            <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index,'0')"/>
+                            <a:da name="INVALID" type="Multi">
+                              <mt:xpath expr="not(ecu:has(concat('Dio.DioChannels_Port',node:current()/../DioPortId)))" true=" PortId entered does not exist"/>
+                              <mt:range>
+                                <mt:tst expr="&lt;=ecu:get('Dio.MaxAvailablePort')"/> 
+                                <mt:tst expr="&gt;=0"/>
+                              </mt:range> 
+                            </a:da>
+                          </v:var>
+                          <!-- [cover parentID={3160AAE0-8510-4b1f-88AC-40F7C48A9E2D}] DioChannel [/cover] -->
+                          <v:lst name="DioChannel" type="MAP">
+                            <a:da name="MIN" value="0"/>
+                            <a:da name="MAX" value="16"/>
+                            <a:da name="INVALID" type="XPath">
+                              <a:tst expr="(ecu:has(concat('Dio.DioChannels_Port',node:current()/../DioPortId))) and
+                                      ((num:i(count(../DioChannel/*))) >
+                                        num:i( count( text:split(ecu:get(concat('Dio.DioChannels_Port',node:current()/../DioPortId))) ) ))"
+                                        true="Number of DIO channels is out of range."/>
+                            </a:da>
+                            <!-- [cover parentID={3160AAE0-8510-4b1f-88AC-40F7C48A9E2D}] DioChannel [/cover] -->
+                            <v:ctr name="DioChannel" type="IDENTIFIABLE">
+                            <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                             <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v mclass="PreCompile">VariantLinkTime</icc:v>
+                              </a:a>
+                              <a:a name="NAME_PATTERN" value="DioChannel_?"/>
+                              <a:a name="DESC" 
+                                       value="EN: Configuration of an individual DIO channel."/>
+                              <a:a name="UUID" 
+                                       value="ECUC:3160aae0-8510-4b1f-88ac-40f7c48a9e2d"/>
+                              <a:da name="INVALID" type="XPath">
+                                <a:tst expr="text:uniq(../../../*/DioChannel/*/@name,@name)" false="EN: DIO - DioChannel node names should be unique across DIO Ports"/>
+                              </a:da>
+                              <!-- [cover parentID={E87DE39B-7754-4f85-816C-B58B7659A4E1}] DioChannelId [/cover] -->
+                              <v:var name="DioChannelId" type="INTEGER">
+                                <a:a name="DESC" 
+                                         value="EN: Channel Id of the DIO channel. This value will be assigned to the symbolic names."/>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                        type="IMPLEMENTATIONCONFIGCLASS">
+                                  <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                                </a:a>
+                                <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                <a:a name="SCOPE" value="ECU"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                                <a:a name="UUID" 
+                                           value="ECUC:e87de39b-7754-4f85-816c-b58b7659a4e1"/>
+                                <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index,'0')"/>
+                                <a:da name="INVALID" type="Multi">
+                                  <mt:xpath expr="not(contains( ecu:get(concat('Dio.DioChannels_Port',node:current()/../../../DioPortId)), concat('_', . , '_' )))"
+                                         true="Invalid DioChannelId"/>
+                                  <mt:range>
+                                    <mt:tst expr="&lt;=15"/>
+                                    <mt:tst expr="&gt;=0"/>
+                                  </mt:range>
+                                </a:da>
+                              </v:var>
+                            </v:ctr>
+                          </v:lst>
+                          <!-- [cover parentID={8E498821-8D5C-4512-88FC-8D4D90DCA1AB}] DioChannelGroup [/cover] -->
+                          <v:lst name="DioChannelGroup" type="MAP">
+                            <v:ctr name="DioChannelGroup" type="IDENTIFIABLE">
+                            <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                             <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v mclass="PreCompile">VariantLinkTime</icc:v>
+                               </a:a>
+                              <a:a name="DESC" 
+                                      value="EN: Definition and configuration of DIO channel groups. A channel group represents several adjoining DIO channels represented by a logical group."/>
+                              <a:da name="INVALID" type="XPath">
+                                <a:tst expr="text:uniq(../../../*/DioChannelGroup/*/@name,@name)" false="EN: DIO - DioChannelGroup node names should be unique across DIO Ports"/>
+                              </a:da>
+                              <a:a name="UUID" value="ECUC:8e498821-8d5c-4512-88fc-8d4d90dca1ab"/>
+                              <!-- [cover parentID={C0A5CA8E-4BF0-4e03-83D7-6559E724A983}] DioChannelGroupIdentification [/cover] -->
+                              <v:var name="DioChannelGroupIdentification"  type="STRING">
+                                <a:a name="DESC" 
+                                        value="EN: The DIO channel group is identified in DIO API by a pointer to a data structure (of type Dio_ChannelGroupType). That data structure contains the channel group information."/>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                          type="IMPLEMENTATIONCONFIGCLASS">
+                                  <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                                </a:a>
+                                <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                <a:a name="SCOPE" value="ECU"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                                <a:a name="UUID" 
+                                          value="ECUC:c0a5ca8e-4bf0-4e03-83d7-6559e724a983"/>
+                                <a:da name="DEFAULT" type="XPath" expr="concat('DioChGrpId_P', node:fallback(node:current()/../../../DioPortId,'0'), '_', node:fallback(node:current()/../@index,'0'))"/>
+                              </v:var>
+                              <!-- [cover parentID={C3F03C97-DEF2-40d9-BDD3-052B0ACD5A91}] DioPortMask [/cover] -->
+                              <v:var name="DioPortMask" type="INTEGER">
+                                <a:a name="DESC" 
+                                        value="EN: This shall be the mask which defines the positions of the channel"/>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                          type="IMPLEMENTATIONCONFIGCLASS">
+                                  <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                                </a:a>
+                                <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                <a:a name="SCOPE" value="LOCAL"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" 
+                                   value="ECUC:c3f03c97-def2-40d9-bdd3-052b0acd5a91"/>
+                                <a:da name="DEFAULT" value="0"/>
+                                <a:da name="INVALID" type="Multi">
+                                  <mt:xpath expr="(ecu:has(concat('Dio.DioChannels_Port',node:current()/../../../DioPortId))) and
+                                boolean( bit:and( (.) , (bit:not(num:hextoint(ecu:get(concat('Dio.DioPortMask_Port',node:current()/../../../DioPortId))))) ) )"
+                                true="Invalid DioPortMask"/>
+                                  <mt:range>
+                                    <mt:tst expr="&lt;=65535"/> 
+                                    <mt:tst expr="&gt;=0"/>
+                                  </mt:range>
+                                </a:da>
+                              </v:var>
+                              <!-- [cover parentID={41125C72-502E-4fb4-B85C-1B499923B736}] DioPortOffset [/cover] -->
+                              <v:var name="DioPortOffset" type="INTEGER">
+                                <a:da name="DEFAULT" value="0"/>
+                                <a:a name="CALCULATION-FORMULA"
+                                 value="position of the first bit of dioportmask which is set to &apos;1&apos; counted from lsb"/>
+                                <a:a name="CALCULATION-LANGUAGE" value="INFORMAL"/>
+                                <a:a name="DERIVED" value="TRUE"/>             
+                                <a:a name="DESC" 
+                                   value="EN: The position of the Channel Group on the port, counted"/>
+                                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                            type="IMPLEMENTATIONCONFIGCLASS">
+                                  <icc:v vclass="Link">VariantLinkTime</icc:v>
+                                </a:a>
+                                <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                                <a:a name="SCOPE" value="LOCAL"/>
+                                <a:da name="EDITABLE" value="false"/>
+                                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                                <a:a name="UUID" 
+                                   value="ECUC:41125c72-502e-4fb4-b85c-1b499923b736"/>
+                                <a:da name="INVALID" type="Multi">
+                                  <mt:xpath expr="(ecu:has(concat('Dio.DioChannels_Port',node:current()/../../../DioPortId))) and
+                                (node:current() > ecu:get(concat('Dio.Port',node:current()/../../../DioPortId,'_MSPin')))"
+                                true="Invalid DioPortOffset"/>
+                                  <mt:range>
+                                    <mt:tst expr="&lt;=15"/> 
+                                    <mt:tst expr="&gt;=0"/>
+                                  </mt:range>
+                                </a:da>
+                              </v:var>
+                            </v:ctr>
+                          </v:lst>
+                        </v:ctr>
+                      </v:lst>
+                    </v:ctr>
+                  <!-- [cover parentID={BA24CF3D-7A2A-4465-A7A7-6A5F42C8E3BA}] DioGeneral [/cover] -->
+                  <v:ctr name="DioGeneral" type="IDENTIFIABLE">
+                    <a:a name="DESC" 
+                         value="EN: General DIO module configuration parameters."/>
+                    <a:a name="UUID" 
+                         value="ECUC:ba24cf3d-7a2a-4465-a7a7-6a5f42c8e3ba"/>
+                    <!-- [cover parentID={F82078D3-B78E-4805-8069-A1CB89699750}] DioDevErrorDetect [/cover] -->
+                    <v:var name="DioDevErrorDetect" type="BOOLEAN">
+                      <a:a name="DESC" 
+                           value="EN: Switches the Default Error Tracer (Det) detection and notification ON or OFF."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                                  type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="ECUC:f82078d3-b78e-4805-8069-a1cb89699750"/>
+                      <a:da name="DEFAULT" value="true"/>
+                    </v:var>
+                    <!-- [cover parentID={01513B33-8238-4e96-AFE3-753CCA65EFFA}] DioFlipChannelApi [/cover] -->
+                    <v:var name="DioFlipChannelApi" type="BOOLEAN">
+                      <a:a name="DESC" 
+                           value="EN: Adds / removes the service Dio_FlipChannel() from the code."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="ECUC:01513b33-8238-4e96-afe3-753cca65effa"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                    <!-- [cover parentID={20D99DC2-E3FE-4832-8ECF-379936ADE262}] DioVersionInfoApi [/cover] -->
+                    <v:var name="DioVersionInfoApi" type="BOOLEAN">
+                      <a:a name="DESC" 
+                           value="EN: Adds / removes the service Dio_ GetVersionInfo() from the code."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" 
+                           value="ECUC:20d99dc2-e3fe-4832-8ecf-379936ade262"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                    <!-- [cover parentID={88BD61BC-9026-4e3b-95D7-D7D12B1CD9D4}] Dio_SafetyEnable [/cover] -->
+                    <v:var name="DioSafetyEnable" type="BOOLEAN">
+                      <a:a name="DESC"
+                          value="EN: Enable/Disable the Safety check and all associated notifications."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                          type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantLinkTime</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:da name="DEFAULT" value="true"/>
+                      <a:a name="UUID" value="ECUC:412da385-6bf4-4819-87e4-8ec223fb5b17"/>
+                    </v:var>
+                  </v:ctr>
+                  
+                  <!-- [cover parentID={D713504C-3ACA-42fd-A137-F0DC58E320CB}] CommonPublishedInfornmation [/cover] -->
+                  <v:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                    <a:a name="DESC" value="EN: Common container, aggregated by all modules. It contains published information about vendor and versions."/>
+                    <a:a name="UUID" value="492f8482-3e2c-4bf1-b27f-01fd7ac35788"/>
+                    <!-- [cover parentID={A7BEA326-08E5-460c-A639-0A2B51CEFB6B}] ArMajorVersion. [/cover] -->
+                    <v:var name="ArMajorVersion" type="INTEGER_LABEL">
+                      <a:a name="DESC" value="EN: Major version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PublishedInformation">VariantLinkTime</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-88fe-1166b258bb8a"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=255"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="DEFAULT" value="4"/>
+                    </v:var>
+                    <!-- [cover parentID={AC0BCAE5-57D7-4e8a-BBC1-53F82CBBD9DA}] ArMinorVersion [/cover] -->
+                    <v:var name="ArMinorVersion" type="INTEGER_LABEL">
+                      <a:a name="DESC" value="EN: Minor version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="73f87c7f-e230-4178-bff0-eb2704aae656"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PublishedInformation">VariantLinkTime</icc:v>
+                      </a:a>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=255"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="DEFAULT" value="2"/>
+                    </v:var>
+                    <!-- [cover parentID={A32197FF-5219-4912-A203-9D36D6C074C8}] ArPatchVersion [/cover] -->
+                    <v:var name="ArPatchVersion" type="INTEGER_LABEL">
+                      <a:a name="DESC" value="EN: Patch level version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="2380135d-6778-417a-a34b-e10017d4dd54"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PublishedInformation">VariantLinkTime</icc:v>
+                      </a:a>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=255"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="DEFAULT" value="2"/>
+                    </v:var>
+                    <!-- [cover parentID={D8380642-C5D9-4965-9125-01A3F88AF0D6}] SwMajorVersion [/cover] -->
+                    <v:var name="SwMajorVersion" type="INTEGER_LABEL">
+                      <a:a name="DESC" value="EN: Major version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="fca015e3-5f28-4cbe-8949-8f4b87d86827"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PublishedInformation">VariantLinkTime</icc:v>
+                      </a:a>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=255"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="DEFAULT" value="3"/>
+                    </v:var>
+                    <!-- [cover parentID={EF81CE5E-38A9-41d3-B70E-F5C8B64B1E81}] SwMinorVersion [/cover] -->
+                    <v:var name="SwMinorVersion" type="INTEGER_LABEL">
+                      <a:a name="DESC" value="EN: Minor version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PublishedInformation">VariantLinkTime</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="14ab81e0-3d80-43dc-8b92-247e5a542df9"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=255"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="DEFAULT" value="0"/>
+                    </v:var>
+                    <!-- [cover parentID={8562A2F1-9826-46c7-B028-150AAB1FA89C}] SwPatchVersion [/cover] -->
+                    <v:var name="SwPatchVersion" type="INTEGER_LABEL">
+                      <a:a name="DESC" value="EN: Patch level version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PublishedInformation">VariantLinkTime</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="32e37bfd-18b6-41d1-9248-a81dbe0fe4c5"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=255"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="DEFAULT" value="0"/>
+                    </v:var>
+                    <!-- [cover parentID={891CE194-71CA-4358-A29C-5F7BF00610E6}] ModuleId [/cover] -->
+                    <v:var name="ModuleId" type="INTEGER_LABEL">
+                      <a:a name="DESC" value="EN: Module ID of this module from Module List"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PublishedInformation">VariantLinkTime</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="3b407478-6902-4f80-b7cf-f33b0854e638"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=65535"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="DEFAULT" value="120"/>
+                    </v:var>
+                    <!-- [cover parentID={8252D88D-3BEE-414d-8BB3-3EF4B1E3268B}] VendorID [/cover] -->
+                    <v:var name="VendorId" type="INTEGER_LABEL">
+                      <a:a name="DESC" value="EN: Vendor ID of the dedicated implementation of this module according to the AUTOSAR vendor list"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PublishedInformation">VariantLinkTime</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="7d650b2d-4adb-41f0-a68e-5f0c416501d1"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=65535"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="DEFAULT" value="17"/>
+                    </v:var>
+                    
+                    <v:var name="Release" type="STRING_LABEL">
+                      <a:a name="DESC" value="EN: Aurix2G derivative used for the implementation"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PublishedInformation">VariantLinkTime</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="3b407478-6902-4f40-b7cf-f33b0854e638"/>
+                      <a:da name="DEFAULT" type="XPath" expr="ecu:get('Rel.Derivate')"/>
+                    </v:var>
+                  </v:ctr>
+                </v:ctr>
+              </d:chc>
+            </d:lst>
+          </d:ctr>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+</datamodel>

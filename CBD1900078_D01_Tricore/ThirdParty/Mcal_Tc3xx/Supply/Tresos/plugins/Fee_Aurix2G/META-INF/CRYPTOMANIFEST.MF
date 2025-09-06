@@ -1,0 +1,36 @@
+
+Name: config/Fee.xdm
+SignatureKeyID: Infineon
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377426837780488566151455609272972480349278486705636840
+ 0282815145422961883743564160757998578856476985026135
+
+Name: generate/template/inc/Fee_PBcfg.h
+SignatureKeyID: Infineon
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773972785887302524278209422647188748510451343213124
+ 438845688275559336277520549631172729362017309321822489
+
+Name: generate/template/Fee_Bswmd.arxml
+SignatureKeyID: Infineon
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421796832274003867825761928793037762200777006861162
+ 0131136845232350336226069831270369744007584681813808
+
+Name: generate/template/src/Fee_PBcfg.c
+SignatureKeyID: Infineon
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377426357119957082426216151705269167402703497513423987
+ 4876972951605817878242816282144787758836285036472086
+
+Name: generate/template/inc/Fee_Cfg.h
+SignatureKeyID: Infineon
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423977306798991524662576100917634805020587196153888
+ 5545664930509828312973471762342524274582987483251811
+

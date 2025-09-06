@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2018)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**  FILENAME  : plugin.xml                                                    **
+**                                                                            **
+**  VERSION   : 5.0.0                                                         **
+**                                                                            **
+**  DATE      : 2018-08-24                                                    **
+**                                                                            **
+**  VARIANT   : Variant PB                                                    **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX2G                                              **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY : [cover parentID={366E57B5-A2DE-4025-BAF1-D365D89A25DF}]    **
+**                 [cover parentID={08776230-FFAB-4ead-A74E-C185EA106BC3}]    **
+**                 [cover parentID={A96771B7-F301-403c-A24E-7535B97C7960}]    **
+**                 [cover parentID={F40222E7-D039-4b4a-AFC7-DE64EA883C45}]    **
+**                                                                            **
+**  DESCRIPTION  : Tresos plugin for Can Driver                               **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) : Specification of Can Driver, AUTOSAR Release 4.2.2     **
+**                                                                            **
+**  MAY BE CHANGED BY USER : no                                               **
+**                                                                            **
+*******************************************************************************/
+-->
+
+
+<plugin>
+
+ <extension point="dreisoft.tresos.launcher2.plugin.module"
+             id="Can_Aurix2GAS422_ModuleExt"
+             name="Can Module with code template generator">
+
+    <module id="Can_Aurix2GAS422"
+            label="%ModuleLabel"
+            mandatory="false"
+            allowMultiple="true"
+            description="%ModuleDesc"
+            copyright="(c) 2018 Infineon Technologies"
+            swVersionMajor="4"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            swVersionSuffix=""
+            specVersionMajor="4"
+            specVersionMinor="2"
+            specVersionPatch="2"
+            specVersionSuffix=""
+            relVersionMajor="4"
+            relVersionMinor="2"
+            relVersionPatch="2"
+            relVersionSuffix=""
+            categoryType="Can"
+            categoryLayer="MCAL"
+            categoryCategory="ECU Firmware"
+            categoryComponent="ECUC">
+      <cluster name="Can Stack"/>
+      <ecuType target="AURIX2G" derivate="TC387"/>
+      <ecuType target="AURIX2G" derivate="TC389"/>
+      <ecuType target="AURIX2G" derivate="TC397"/>
+      <ecuType target="AURIX2G" derivate="TC397_ADAS"/>
+      <ecuType target="AURIX2G" derivate="TC399"/>
+    </module>
+  </extension>
+
+    <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+             id="Can_Aurix2GAS422_ConfigExt"
+             name="Can_Aurix Configuration">
+    <configuration moduleId="Can_Aurix2GAS422">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Can_17_McmCan.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/AURIX2G/EcucDefs/Can"/>
+      </data>
+
+      <editor id="Can_Aurix2GAS422_Edit"
+              label="%ModuleName"
+              tooltip="%ModuleDesc">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/AURIX2G/EcucDefs/Can"/>
+          <parameter name="title" value="Can"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+  </extension>
+  
+   <!-- this extension point needs to be defined and point to the configuratin parameters for the Loadable and the Selectable use case -->
+  <extension
+      point="dreisoft.tresos.autosar2.api.plugin.postbuildSetup"
+      id="Can_Aurix2GAS422_PostBuildExt">
+    <configuration
+         activeLoadableRef="ASPath:/AURIX2G/EcucDefs/EcuC/EcucSelectedLoadableVariant/EcucSelectedLoadableRef"
+         activeSelectableRef="ASPath:/AURIX2G/EcucDefs/EcuC/EcucPostBuildVariants/EcucSelectedPostBuildVariantRef"
+         selectableRefs="ASPath:/AURIX2G/EcucDefs/EcuC/EcucPostBuildVariants/EcucPostBuildVariantRef">
+     </configuration>
+  </extension>
+
+  <!-- 
+     This extension draws the connection between the module, and the com importer.
+   -->   
+  <extension point="dreisoft.tresos.comimporter.api.plugin.comtransformer">
+    <comtransformer
+           id="ComTransformer_Can_Aurix2GAS422"
+           moduleId="Can_Aurix2GAS422">
+      <transformer
+             class="dreisoft.tresos.comimporter.api.transformer.asr40.CanTransformer">
+      </transformer>
+    </comtransformer>
+  </extension>   
+  
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="Can_Aurix2GAS422_GenExt"
+              name="Can_Aurix Generator">
+    <generator moduleId="Can_Aurix2GAS422"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+
+      <!-- common template path parameters -->
+      <parameter name="templates"
+                 mode="generate,verify" value="generate/template"/>
+
+      <!-- swcd modes and template path parameters -->
+      <parameter name="mode_type"
+                 mode="generate_swcd" value="generate/template"/>
+
+      <parameter name="mode_type"
+                 mode="verify_swcd" value="verify"/>
+
+      <parameter name="templates"
+                 mode="generate_swcd,verify_swcd" value="generate_swcd"/>
+
+    <!-- only having this parameter set to true, a generator is called once for each variant! -->
+      <parameter name="variantAware" value="true"/>
+
+    </generator>
+  </extension>
+    
+  <!-- this post-generator just calls an ant script which renames the file created by the TemplateBasedCodeGenerator defined above
+       otherwise the next run of the TemplateBasedCodeGenerator for another variant would overwrite the file -->
+  <extension point="dreisoft.tresos.generator.api.plugin.generator"
+             id="Can_Aurix2GAS422_Gen_Template_MoveFile">
+    <generator moduleId="Can_Aurix2GAS422"
+               id="Can_Aurix2GAS422_Gen_Template_MoveFile"
+               class="dreisoft.tresos.generator.ng.api.NGGenerator"
+               modes="generate,Template_withPostRename"
+               step="post">
+      <!-- Specify the ant build script as parameter to the NGGenerator. -->
+      <parameter name="buildfile"  value="generate/template_ant/ant_generator.xml"/>
+
+      <!-- only having this parameter set to true, a generator is called once for each variant! -->
+      <parameter name="variantAware" value="true"/>
+    </generator>
+  </extension>
+
+  </plugin>
+

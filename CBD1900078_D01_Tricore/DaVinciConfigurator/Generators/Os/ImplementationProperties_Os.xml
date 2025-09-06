@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Settings Name="com.vector.cfg.core.sip.ISIPService">
+    <Settings Name="ModuleList">
+      <Settings Name="Os">
+        <Settings Name="TC21x">
+          <Setting Name="Compiler" Value="Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+        </Settings>
+        <Settings Name="TC22x">
+          <Setting Name="Compiler" Value="Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+        </Settings>
+        <Settings Name="TC23x">
+          <Setting Name="Compiler" Value="Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+        </Settings>
+        <Settings Name="TC24x">
+          <Setting Name="Compiler" Value="Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+        </Settings>
+        <Settings Name="TC26x">
+          <Setting Name="Compiler" Value="Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+        </Settings>
+        <Settings Name="TC27x">
+          <Setting Name="Compiler" Value="Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+        </Settings>
+        <Settings Name="TC29x">
+          <Setting Name="Compiler" Value="Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+        </Settings>
+        <Settings Name="TC39x">
+          <Setting Name="Compiler" Value="Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+        </Settings>
+        <Settings Name="TC38x">
+          <Setting Name="Compiler" Value="Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+        </Settings>
+        <Settings Name="TC35x">
+          <Setting Name="Compiler" Value="Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+        </Settings>
+      </Settings>
+    </Settings>
+  </Settings>
+</Settings>

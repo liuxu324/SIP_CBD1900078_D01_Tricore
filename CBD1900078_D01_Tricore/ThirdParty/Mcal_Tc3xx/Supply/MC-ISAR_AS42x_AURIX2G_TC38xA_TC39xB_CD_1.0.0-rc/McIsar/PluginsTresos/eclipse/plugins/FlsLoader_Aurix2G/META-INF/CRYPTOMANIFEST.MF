@@ -1,0 +1,29 @@
+
+Name: generate/template/Flsloader_Bswmd.arxml
+SignatureKeyID: Infineon
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421189378390855003825452698488704049947662298392304
+ 7250472077215395710558498907333999473003387456193407
+
+Name: generate/template/src/FlsLoader_Cfg.c
+SignatureKeyID: Infineon
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773973834149837281348019192585031675906345960657962
+ 443068509868985114495470735882466072566397745418011103
+
+Name: config/FlsLoader.xdm
+SignatureKeyID: Infineon
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377424439927723525698021571329793108422695962171208444
+ 6303248326732060494652546226900008404243718364652024
+
+Name: generate/template/inc/FlsLoader_Cfg.h
+SignatureKeyID: Infineon
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594743777880432966313341276883693921547384859646948625
+ 490389976580920445579277237194279466684275044862423169
+

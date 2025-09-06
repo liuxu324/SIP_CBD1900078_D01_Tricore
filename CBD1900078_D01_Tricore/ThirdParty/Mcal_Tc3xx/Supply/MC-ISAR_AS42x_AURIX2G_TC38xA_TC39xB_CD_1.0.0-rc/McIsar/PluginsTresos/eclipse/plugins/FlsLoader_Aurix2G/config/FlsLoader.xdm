@@ -1,0 +1,1183 @@
+<?xml version='1.0'?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2018)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**  FILENAME  : FlsLoader.xdm                                                 **
+**                                                                            **
+**  VERSION   : 6.0.0                                                         **
+**                                                                            **
+**  DATE      : 2018-09-21                                                    **
+**                                                                            **
+**  VARIANT   : Variant PC                                                    **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX2G                                              **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY : [cover parentID={67CEB2BD-1F28-4b1e-98B7-3F66F0A30413}]    **
+**                                                                            **
+**  DESCRIPTION  : XML data model for FlsLoader driver                        **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) : NA                                                     **
+**                                                                            **
+**  MAY BE CHANGED BY USER : no                                               **
+**                                                                            **
+*******************************************************************************/
+-->
+<!-- [cover parentID={F465F51F-1554-4a89-B3A3-15E33E36F21E}] FlsLoader.bmd [/cover] -->
+<datamodel version="5.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/12/root.xsd"
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/12/attribute.xsd"
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd"
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar"  
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <!-- [cover parentID={BD607180-6DDB-4175-9E75-6DCCAEBFBD5C}] FlsLoaderGeneral [/cover] -->
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="AURIX2G" type="AR-PACKAGE">
+        <a:a name="UUID" value="ECUC:AUTOSAR"/>
+        <d:lst type="TOP-LEVEL-PACKAGES">
+          <d:ctr name="EcucDefs" type="AR-PACKAGE">
+            <a:a name="UUID" value="ECUC:ECUCDEFS"/>
+            <d:lst type="ELEMENTS">
+              <d:chc name="FlsLoader" type="AR-ELEMENT" value="MODULE-DEF">
+                <v:ctr type="MODULE-DEF">
+                  <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                    <ad:ADMIN-DATA>
+                      <ad:DOC-REVISIONS>
+                        <ad:DOC-REVISION>
+                          <ad:REVISION-LABEL>4.2.2</ad:REVISION-LABEL>
+                          <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                          <ad:DATE>2014-10-31</ad:DATE>
+                        </ad:DOC-REVISION>
+                      </ad:DOC-REVISIONS>
+                    </ad:ADMIN-DATA>
+                  </a:a>
+                  <a:a name="DESC" value="EN: Configuration of the FlsLoader module."/>
+                  <a:a name="LOWER-MULTIPLICITY" value="0"/>
+                  <a:a name="POSTBUILDVARIANTSUPPORT" value="false"/>
+                  <a:a name="RELEASE" value="asc:4.2.2"/>
+                  <a:a name="UPPER-MULTIPLICITY" value="1"/>
+                  <a:a name="UUID" value="DCE:820c8734-fcba-4a70-ade2-60935d2440cb"/>
+                  <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                    <a:a name="LABEL" value="Config Variant"/>
+                    <a:da name="DEFAULT" value="VariantPreCompile"/>
+                    <a:da name="RANGE" value="VariantPreCompile"/>
+                  </v:var>
+                  <!--*************************************
+                  *****FlsLoader General Configuration***** 
+                  ***************************************** -->
+                  <!-- [cover parentID={706004CB-FDB9-424e-97BA-B8DC208F577E}] FlsLoaderGeneral [/cover] -->
+                  <v:ctr name="FlsLoaderGeneral" type="IDENTIFIABLE">
+                    <a:a name="DESC" 
+                         value="FlsLoader driver configuration."/>
+                    <a:a name="UUID" 
+                         value="DCE:39ad22fd-9140-41e4-b7ef-0fce20806dd8"/>
+                    <!-- [cover parentID={76EB6908-4EC6-4971-AEE1-6B4154D3B54A}] FlsLoaderDevErrorDetect [/cover] -->
+                    <v:var name="FlsLoaderDevErrorDetect" type="BOOLEAN">
+                      <a:a name="DESC" 
+                           value="EN: Preprocessor switch to enable/disable the FlsLoaderDevErrorDetect."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="UUID" 
+                           value="DCE:9c9bdd07-25ff-4a12-bd06-df38c2cd5c8f"/>
+                      <a:da name="DEFAULT" value="true"/>
+                    </v:var>
+                    <v:var name="FlsLoaderEnableLockCheck" type="BOOLEAN">
+                      <a:a name="DESC" 
+                             value="EN: Preprocessor switch to enable/disable the Lock Check functionality in Erase and Write API's."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="UUID" 
+                           value="DCE:6a29d629-d176-45ba-a064-c94c8733d9c2"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                    <!-- [cover parentID={90A0B6E7-60A9-431e-AB2B-B6310D3796B4}] FlsLoaderCallOutFunction [/cover] -->
+                    <v:var name="FlsLoaderCallOutFunction" type="FUNCTION-NAME">
+                      <a:a name="DESC"
+                           value="EN: User defined call out function. User can provide either a call out function name or address of call out function. Default value of NULL_PTR is considered as call out disabled."/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID"
+                           value="ECUC:9a658f77-834b-4dd3-add7-59b968176e7d"/>
+                      <a:da name="DEFAULT" value="NULL_PTR"/>
+                    </v:var>
+                    <!-- [cover parentID={BB7AD025-067F-4d0a-BD0D-8103FFF2552D}] FlsLoaderCallOutEnable [/cover] -->
+                    <v:var name="FlsLoaderCallOutTime" type="INTEGER">
+                      <a:a name="DESC" 
+                             value="EN: Specifies the maximum time in nanoseconds to wait before invoking call-out function to application"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="UUID" 
+                           value="DCE:6a29d629-a176-45ba-a064-c94c873f39c2"/>
+                      <a:da name="DEFAULT" value="5000000"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=4294967295"/>
+                        <a:tst expr="&gt;=10000"/>
+                      </a:da>
+                      <a:da name="EDITABLE" type="XPath">
+                        <a:tst expr="../FlsLoaderCallOutFunction != 'NULL_PTR'"/>
+                      </a:da>
+                    </v:var>
+                  </v:ctr>
+                  <!--*****************************************
+                  *****FlsLoader Optional APIs Configuration*** 
+                  ***************************************** -->   
+                  <!-- [cover parentID={01F6E0A4-AE47-4356-A3E6-A7ACAF2C7DE7}] FlsLoaderOptionalApi [/cover] -->                  
+                  <v:ctr name="FlsLoaderOptionalApi" type="IDENTIFIABLE">
+                    <a:a name="DESC" 
+                         value="EN: FlsLoader driver optional API Configuration."/>
+                    <a:a name="UUID" 
+                         value="DCE:109b2e3b-0f4a-4315-89d4-d3ddeb193105"/>
+                    <!-- [cover parentID={A43E1BB2-FA49-4fb4-AD9F-02FBBC30CAFA}] FlsLoaderDeInitApi [/cover] -->
+                    <v:var name="FlsLoaderDeInitApi" type="BOOLEAN">
+                      <a:a name="DESC" 
+                           value="EN: Preprocessor switch to enable/disable the FlsLoader_DeInit API."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="UUID" 
+                           value="DCE:3fc4c7b8-6345-4f67-a2f6-4037af1e3d83"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                    <!-- [cover parentID={73EE6649-C62E-4162-BAF2-B03ADC997C5D}] FlsLoaderLockUnlockApi [/cover] -->
+                    <v:var name="FlsLoaderLockUnlockApi" type="BOOLEAN">
+                      <a:a name="DESC" 
+                           value="EN: Preprocessor switch to enable/disable the FlsLoader_Lock and FlsLoader_Unlock APIs"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="UUID" 
+                           value="DCE:1e7b66c7-46e8-4b32-9908-e28d89b897e3"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                    <!-- [cover parentID={B0B0FABF-036E-480e-A430-5598EB47E81F}] FlsLoaderVersionInfoApi  [/cover] -->
+                    <v:var name="FlsLoaderVersionInfoApi" type="BOOLEAN">
+                      <a:a name="DESC" 
+                           value="EN: Preprocessor switch to enable/disable the FlsLoader_GetVersionInfo API"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="UUID" 
+                           value="DCE:1d80fd03-eadc-4a7f-96f5-4290fdab447f"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                  </v:ctr>
+                  <!--*****************************************
+                  *****FlsLoader PFLASH Configuration********** 
+                  ***************************************** -->
+              <!-- [cover parentID={6249A191-7F2F-4195-A236-1D875DF99E71}] FlsLoaderPFLASHConfig [/cover] -->
+              <v:lst name="FlsLoaderPFLASHConfig" type="MAP">
+                <a:da name="MIN" value="1"/>
+                <a:da name="MAX" value="1"/>
+              <v:ctr name="FlsLoaderPFLASHConfig" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: This container contains the sub containers for each PFLASH Bank configuration."/>
+                <a:a name="UUID" 
+                     value="ECUC:d97c27ef-38b0-4bdf-8384-d10c0a3bba83"/>  
+                  <!-- [cover parentID={3C5228A4-9880-42ec-B6C4-532F1D18C714}] FlsLoaderPFlash0ProtConfig [/cover] -->                   
+                  <v:ctr name="FlsLoaderPFlash0ProtConfig" type="IDENTIFIABLE">
+                    <a:da name="ENABLE" type="XPath">
+                      <a:tst expr= "ecu:get('FlsLoader.PfBank') > num:i(0)" />
+                    </a:da>           
+                    <a:a name="DESC" 
+                         value="EN: PFLASH Bank 0 protection configuration."/>
+                    <a:a name="UUID" 
+                         value="ECUC:6aa61659-c6de-4d25-8713-ac864fdf5e37"/>
+                  <!-- [cover parentID={330C6365-88B0-455a-9BA8-6B8CD7BC21A6}] FlsLoaderPFlash0WriteProt [/cover] -->
+                    <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>                
+                  <v:var name="FlsLoaderPFLash0WriteProt" type="ENUMERATION">
+                    <a:a name="DESC" 
+                          value="EN: PFLASH Bank 0 protection configuration."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                          type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="6af99e0c-df9d-4f91-80c7-32a09a6f075b"/>
+                    <a:da name="DEFAULT" value="NO_PROTECTION"/>
+                    <a:da name="RANGE">
+                      <a:v>NO_PROTECTION</a:v>
+                      <a:v>WRITE_PROTECTION</a:v>
+                      <a:v>OTP_PROTECTION</a:v>
+                      <a:v>WOP_PROTECTION</a:v>
+                    </a:da>
+                  </v:var>
+                  <!-- [cover parentID={94162B85-1A0C-4ed1-BAE4-B56FE05CEEFB}] FlsLoaderPF0Sector [/cover] -->
+                    <v:lst name="FlsLoaderPF0Sector" type="MAP">
+                     <a:da name="MIN" type="XPath" expr="ecu:get('FlsLoader.Pf0Sectors')"/>
+                       <a:da name="MAX" type="XPath" expr="ecu:get('FlsLoader.Pf0Sectors')"/>
+                      <v:ctr name="FlsLoaderPF0Sector" type="IDENTIFIABLE">
+                        <a:a name="NAME_PATTERN" value="FlsLoaderPF0Sector?"/>                     
+                        <a:a name="DESC" 
+                             value="EN: Configuration of the individual PF0 sectors."/>
+                        <a:a name="UUID" 
+                             value="ECUC:1768f065-a030-4115-8de9-30b561da3ba3"/>
+                        <!-- [cover parentID={61C2CD0E-EB0D-4397-9C52-5847DE78E045}] FlsLoaderPFSectorWriteProtection [/cover] -->
+                        <v:var name="FlsLoaderPFSectorWriteProtection" type="ENUMERATION">
+                          <a:a name="DESC"
+                               value="EN: Sector Write protection."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="bf3e4123-a208-4261-aaac-01e1bd166470"/>
+                          <a:da name="DEFAULT" value="NO_PROTECTION"/>
+                          <a:da name="RANGE">
+                            <a:v>NO_PROTECTION</a:v>
+                            <a:v>WRITE_PROTECTION</a:v>
+                            <a:v>OTP_PROTECTION</a:v>
+                            <a:v>WOP_PROTECTION</a:v>
+                          </a:da>
+                          <a:da name="ENABLE" type="XPath">
+                            <a:tst expr= "ecu:get('FlsLoader.Pf0Sectors') > num:i(0)" />
+                          </a:da>
+                         <a:da name="EDITABLE" type="XPath">
+                           <a:tst expr="(./../../../FlsLoaderPFLash0WriteProt  = 'WRITE_PROTECTION') or (./../../../FlsLoaderPFLash0WriteProt  = 'OTP_PROTECTION') or (./../../../FlsLoaderPFLash0WriteProt  = 'WOP_PROTECTION')"/>
+                         </a:da>                    
+                        </v:var>                        
+                      </v:ctr>
+                    </v:lst>
+                  <!-- [cover parentID={BE61697F-4FFB-444f-AA24-9B3576926FA0}] FlsLoaderPF0UcbPW0_0 [/cover] -->
+                  <v:var name="FlsLoaderPFUcbPW0_0" type="INTEGER">
+                      <a:a name="DESC" 
+                           value="1th least significant word password out of 8 words  password"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPreCompile</icc:v>                   
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="e9afaa0c-2dc7-4390-a7c9-c605ae01c22f"/>
+                      <a:da name="DEFAULT" value="0"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=4294967295"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                  </v:var>
+                  <!-- [cover parentID={2A23F8BB-B7C0-4e5a-B6A9-0B28D6886667}] FlsLoaderPF0UcbPW0_1 [/cover] -->
+                  <v:var name="FlsLoaderPFUcbPW0_1" type="INTEGER">
+                    <a:a name="DESC" 
+                         value="2nd least significant word password out of 8 words  password"/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantPreCompile</icc:v>                   
+                    </a:a>
+                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="e9afaa0c-2dc7-4390-a7c9-c605ae01c22a"/>
+                    <a:da name="DEFAULT" value="0"/>
+                    <a:da name="INVALID" type="Range">
+                      <a:tst expr="&lt;=4294967295"/>
+                      <a:tst expr="&gt;=0"/>
+                    </a:da> 
+                  </v:var>
+                  <!-- [cover parentID={14998B69-F11E-481b-9D4F-77FCB24C5EF2}] FlsLoaderPF0UcbPW1_0 [/cover] -->
+                  <v:var name="FlsLoaderPFUcbPW1_0" type="INTEGER">
+                    <a:a name="DESC" 
+                         value="3rd least significant word password out of 8 words  password"/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantPreCompile</icc:v>                   
+                    </a:a>
+                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="e9afaa0c-2dc7-4390-a7c9-c605ae01c23f"/>
+                    <a:da name="DEFAULT" value="0"/>
+                    <a:da name="INVALID" type="Range">
+                      <a:tst expr="&lt;=4294967295"/>
+                      <a:tst expr="&gt;=0"/>
+                    </a:da>                        
+                  </v:var>
+                  <!-- [cover parentID={8CD73FDD-DD56-4cbd-984C-301550DC0B45}] FlsLoaderPF0UcbPW1_1 [/cover] -->
+                  <v:var name="FlsLoaderPFUcbPW1_1" type="INTEGER">
+                    <a:a name="DESC" 
+                         value="4th least significant word password out of 8 words  password"/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantPreCompile</icc:v>                   
+                    </a:a>
+                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="e9afaa0c-2dc7-4390-a7c9-c605ae01c32f"/>
+                    <a:da name="DEFAULT" value="0"/>
+                    <a:da name="INVALID" type="Range">
+                      <a:tst expr="&lt;=4294967295"/>
+                      <a:tst expr="&gt;=0"/>
+                    </a:da>                         
+                  </v:var>
+                  <!-- [cover parentID={F6DCD0D9-ED01-4358-90EB-22964960FC45}] FlsLoaderPF0UcbPW2_0 [/cover] -->
+                  <v:var name="FlsLoaderPFUcbPW2_0" type="INTEGER">
+                    <a:a name="DESC" 
+                         value="5th least significant word password out of 8 words  password"/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantPreCompile</icc:v>                   
+                    </a:a>
+                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="7f8acec7-f9d9-421b-9d87-2fbf002b3364"/>
+                    <a:da name="DEFAULT" value="0"/>
+                    <a:da name="INVALID" type="Range">
+                      <a:tst expr="&lt;=4294967295"/>
+                      <a:tst expr="&gt;=0"/>
+                    </a:da>                         
+                  </v:var>
+                  <!-- [cover parentID={E4E203E5-4AB3-4409-BB53-42286ABD277B}] FlsLoaderPF0UcbPW2_1 [/cover] -->
+                  <v:var name="FlsLoaderPFUcbPW2_1" type="INTEGER">
+                    <a:a name="DESC" 
+                         value="6th least significant word password out of 8 words  password"/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantPreCompile</icc:v>                   
+                    </a:a>
+                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="f158aeb5-c294-4e93-9d36-73b215c02563"/>
+                    <a:da name="DEFAULT" value="0"/>
+                    <a:da name="INVALID" type="Range">
+                      <a:tst expr="&lt;=4294967295"/>
+                      <a:tst expr="&gt;=0"/>
+                    </a:da>                         
+                  </v:var>
+                  <!-- [cover parentID={CABA144D-C594-4cd8-A8DB-1D381BB4AA86}] FlsLoaderPF0UcbPW3_0 [/cover] -->
+                  <v:var name="FlsLoaderPFUcbPW3_0" type="INTEGER">
+                    <a:a name="DESC" 
+                         value="7th least significant word password out of 8 words  password"/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantPreCompile</icc:v>                   
+                    </a:a>
+                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="05f89bd5-22c2-4185-aafd-39b1a2715593"/>
+                    <a:da name="DEFAULT" value="0"/>
+                    <a:da name="INVALID" type="Range">
+                      <a:tst expr="&lt;=4294967295"/>
+                      <a:tst expr="&gt;=0"/>
+                    </a:da>                         
+                  </v:var>
+                  <!-- [cover parentID={F256803E-B1D9-49c9-9386-22C406F0A612}] FlsLoaderPF0UcbPW3_1 [/cover] -->
+                  <v:var name="FlsLoaderPFUcbPW3_1" type="INTEGER">
+                    <a:a name="DESC" 
+                         value="Most significant word password out of 8 words  password"/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantPreCompile</icc:v>                   
+                    </a:a>
+                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="a5242655-e895-4777-ab66-6b7ef366ab96"/>
+                    <a:da name="DEFAULT" value="0"/>
+                    <a:da name="INVALID" type="Range">
+                      <a:tst expr="&lt;=4294967295"/>
+                      <a:tst expr="&gt;=0"/>
+                    </a:da>                         
+                  </v:var>                  
+                  </v:ctr> 
+                  <!-- [cover parentID={E0FCC62A-3A62-45b4-96AB-AF8FC8983DBE}] FlsLoaderPFlash1ProtConfig [/cover] -->                
+                  <v:ctr name="FlsLoaderPFlash1ProtConfig" type="IDENTIFIABLE">
+                    <a:da name="ENABLE" type="XPath">
+                      <a:tst expr= "ecu:get('FlsLoader.PfBank') > num:i(1)" />
+                    </a:da>
+                    <a:a name="DESC" 
+                         value="EN: PFLASH Bank 1 protection configuration."/>
+                    <a:a name="UUID" 
+                         value="ECUC:6aa61649-c6de-4d25-8713-ac866fdf5e37"/> 
+                  <!-- [cover parentID={9F7A322F-7F3F-422c-8FE1-8B9E027461A3}] FlsLoaderPFlash1WriteProt [/cover] -->
+                    <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>                
+                  <v:var name="FlsLoaderPFLash1WriteProt" type="ENUMERATION">
+                    <a:a name="DESC" 
+                          value="EN:PFlash Read/Write protection."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                          type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="6af99e0c-df9d-7f91-80c7-32a49a6f075b"/>
+                    <a:da name="DEFAULT" value="NO_PROTECTION"/>
+                    <a:da name="RANGE">
+                      <a:v>NO_PROTECTION</a:v>
+                      <a:v>WRITE_PROTECTION</a:v>
+                      <a:v>OTP_PROTECTION</a:v>
+                      <a:v>WOP_PROTECTION</a:v>
+                    </a:da>
+                  </v:var>
+                  <!-- [cover parentID={AA7E1C51-3211-42ab-99B5-FA7C9AE25A6D}] FlsLoaderPF1Sector [/cover] -->
+                    <v:lst name="FlsLoaderPF1Sector" type="MAP">
+                     <a:da name="MIN" type="XPath" expr="ecu:get('FlsLoader.Pf1Sectors')"/>
+                       <a:da name="MAX" type="XPath" expr="ecu:get('FlsLoader.Pf1Sectors')"/>
+                      <v:ctr name="FlsLoaderPF1Sector" type="IDENTIFIABLE">
+                 <a:a name="NAME_PATTERN" value="FlsLoaderPF1Sector?"/>                   
+                        <a:a name="DESC" 
+                             value="EN: PFLASH Bank 1 sector protection configuration."/>
+                        <a:a name="UUID" 
+                             value="ECUC:1733f065-a030-4205-22e9-30b571da3ba3"/>
+                  <!-- [cover parentID={70BC2564-D6AD-4efd-B96B-7D77DE6C6969}] FlsLoaderPFSectorWriteProtection [/cover] -->
+                  <v:var name="FlsLoaderPFSectorWriteProtection" type="ENUMERATION">
+                    <a:a name="DESC"
+                      value="EN: Sector Write protection."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="bf3e4123-a208-4061-aaac-01e124466470"/>
+                    <a:da name="DEFAULT" value="NO_PROTECTION"/>
+                    <a:da name="RANGE">
+                      <a:v>NO_PROTECTION</a:v>
+                      <a:v>WRITE_PROTECTION</a:v>
+                      <a:v>OTP_PROTECTION</a:v>
+                      <a:v>WOP_PROTECTION</a:v>
+                    </a:da>
+                    <a:da name="ENABLE" type="XPath">
+                      <a:tst expr= "ecu:get('FlsLoader.Pf1Sectors') > num:i(0)" />
+                    </a:da>
+                    <a:da name="EDITABLE" type="XPath">
+                     <a:tst expr="(./../../../FlsLoaderPFLash1WriteProt  = 'WRITE_PROTECTION') or (./../../../FlsLoaderPFLash1WriteProt  = 'OTP_PROTECTION') or(./../../../FlsLoaderPFLash1WriteProt  = 'WOP_PROTECTION')"/>
+                    </a:da> 
+                  </v:var>                      
+                      </v:ctr>
+                    </v:lst>
+                  </v:ctr> 
+                  <!-- [cover parentID={A7E645C7-BDE2-4368-865A-BE28B0D52B85}] FlsLoaderPFlash2ProtConfig [/cover] -->                
+                  <v:ctr name="FlsLoaderPFlash2ProtConfig" type="IDENTIFIABLE">
+                    <a:da name="ENABLE" type="XPath">
+                      <a:tst expr= "ecu:get('FlsLoader.PfBank') > num:i(2)" />
+                    </a:da>               
+                    <a:a name="DESC" 
+                         value="EN: PFLASH Bank 2 protection configuration."/>
+                    <a:a name="UUID" 
+                         value="ECUC:6aa61659-c6de-4d25-5713-ac862gdh5e37"/>
+                  <!-- [cover parentID={696545F2-3698-49d3-8739-FF1A7870582F}] FlsLoaderPFlash2WriteProt [/cover] --> 
+                    <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>                
+                  <v:var name="FlsLoaderPFLash2WriteProt" type="ENUMERATION">
+                    <a:a name="DESC" 
+                          value="EN:PFlash Read/Write protection."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                          type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="6af88e0c-df9d-4f91-80c7-10a09a6f075b"/>
+                    <a:da name="DEFAULT" value="NO_PROTECTION"/>
+                    <a:da name="RANGE">
+                      <a:v>NO_PROTECTION</a:v>
+                      <a:v>WRITE_PROTECTION</a:v>
+                      <a:v>OTP_PROTECTION</a:v>
+                      <a:v>WOP_PROTECTION</a:v>
+                    </a:da>
+                  </v:var>
+                  <!-- [cover parentID={FC3962FA-6CF5-4dfb-8342-7A22A06CF8BF}] FlsLoaderPF2Sector [/cover] -->
+                    <v:lst name="FlsLoaderPF2Sector" type="MAP">
+                     <a:da name="MIN" type="XPath" expr="ecu:get('FlsLoader.Pf2Sectors')"/>
+                       <a:da name="MAX" type="XPath" expr="ecu:get('FlsLoader.Pf2Sectors')"/>
+                      <v:ctr name="FlsLoaderPF2Sector" type="IDENTIFIABLE">
+                      <a:a name="NAME_PATTERN" value="FlsLoaderPF2Sector?"/>                      
+                        <a:a name="DESC" 
+                             value="EN: PFLASH Bank 2 sector protection configuration."/>
+                        <a:a name="UUID" 
+                             value="ECUC:1768f065-a030-4715-8de9-307761da3ba3"/>
+                  <!-- [cover parentID={3C2C6DD5-F982-40d2-8ACE-B3D7CCF74A45}] FlsLoaderPFSectorWriteProtection [/cover] -->
+                  <v:var name="FlsLoaderPFSectorWriteProtection" type="ENUMERATION">
+                    <a:a name="DESC"
+                      value="EN: Sector Write protection."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="bf3e4123-a208-4261-aaac-01e1cd166470"/>
+                    <a:da name="DEFAULT" value="NO_PROTECTION"/>
+                    <a:da name="RANGE">
+                      <a:v>NO_PROTECTION</a:v>
+                      <a:v>WRITE_PROTECTION</a:v>
+                      <a:v>OTP_PROTECTION</a:v>
+                      <a:v>WOP_PROTECTION</a:v>
+                    </a:da>
+                    <a:da name="ENABLE" type="XPath">
+                      <a:tst expr= "ecu:get('FlsLoader.Pf2Sectors') > num:i(0)" />
+                    </a:da>
+                    <a:da name="EDITABLE" type="XPath">
+                     <a:tst expr="(./../../../FlsLoaderPFLash2WriteProt  = 'WRITE_PROTECTION') or (./../../../FlsLoaderPFLash2WriteProt  = 'OTP_PROTECTION') or(./../../../FlsLoaderPFLash2WriteProt  = 'WOP_PROTECTION')"/>
+                    </a:da> 
+                  </v:var>                      
+                      </v:ctr>
+                    </v:lst>
+                  </v:ctr> 
+                  <!-- [cover parentID={053F1E4B-3064-440c-89D7-07BB3340FF3F}] FlsLoaderPFlash3ProtConfig [/cover] -->                
+                  <v:ctr name="FlsLoaderPFlash3ProtConfig" type="IDENTIFIABLE">
+                    <a:da name="ENABLE" type="XPath">
+                      <a:tst expr= "ecu:get('FlsLoader.PfBank') > num:i(3)" />
+                    </a:da>               
+                    <a:a name="DESC" 
+                         value="EN: PFLASH Bank 3 protection configuration."/>
+                    <a:a name="UUID" 
+                         value="ECUC:6aa61659-c6de-7725-8713-ac864fdf5e37"/>
+                  <!-- [cover parentID={5AB1A57F-1897-425b-AEE5-8C1034C7D436}] FlsLoaderPFlash3WriteProt [/cover] -->
+                    <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>                
+                  <v:var name="FlsLoaderPFLash3WriteProt" type="ENUMERATION">
+                    <a:a name="DESC" 
+                          value="EN:PFlash Read/Write protection."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                          type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="6af99e0c-df7e-4f91-80c7-32a09a6f075b"/>
+                    <a:da name="DEFAULT" value="NO_PROTECTION"/>
+                    <a:da name="RANGE">
+                      <a:v>NO_PROTECTION</a:v>
+                      <a:v>WRITE_PROTECTION</a:v>
+                      <a:v>OTP_PROTECTION</a:v>
+                      <a:v>WOP_PROTECTION</a:v>
+                    </a:da>
+                  </v:var>
+                  <!-- [cover parentID={253B176C-9580-446d-9C33-AC4491930995}] FlsLoaderPF3Sector [/cover] -->
+                    <v:lst name="FlsLoaderPF3Sector" type="MAP">
+                     <a:da name="MIN" type="XPath" expr="ecu:get('FlsLoader.Pf3Sectors')"/>
+                       <a:da name="MAX" type="XPath" expr="ecu:get('FlsLoader.Pf3Sectors')"/>
+                      <v:ctr name="FlsLoaderPF3Sector" type="IDENTIFIABLE">
+                       <a:a name="NAME_PATTERN" value="FlsLoaderPF3Sector?"/>                     
+                        <a:a name="DESC" 
+                             value="EN: PFLASH Bank 3 sector protection configuration."/>
+                        <a:a name="UUID" 
+                             value="ECUC:1768f065-a030-4205-8de9-30b561d55ba3"/>
+                  <!-- [cover parentID={0AFE66D0-6BEC-4e3b-89FB-5547FBB0366C}] FlsLoaderPFSectorWriteProtection [/cover] -->
+                  <v:var name="FlsLoaderPFSectorWriteProtection" type="ENUMERATION">
+                    <a:a name="DESC"
+                      value="EN: Sector Write protection."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="bf3e4123-a208-4261-aaac-01e1ed166470"/>
+                    <a:da name="DEFAULT" value="NO_PROTECTION"/>
+                    <a:da name="RANGE">
+                      <a:v>NO_PROTECTION</a:v>
+                      <a:v>WRITE_PROTECTION</a:v>
+                      <a:v>OTP_PROTECTION</a:v>
+                      <a:v>WOP_PROTECTION</a:v>
+                    </a:da>
+                    <a:da name="ENABLE" type="XPath">
+                      <a:tst expr= "ecu:get('FlsLoader.Pf3Sectors') > num:i(0)" />
+                    </a:da>
+                    <a:da name="EDITABLE" type="XPath">
+                     <a:tst expr="(./../../../FlsLoaderPFLash3WriteProt  = 'WRITE_PROTECTION') or (./../../../FlsLoaderPFLash3WriteProt  = 'OTP_PROTECTION') or(./../../../FlsLoaderPFLash3WriteProt  = 'WOP_PROTECTION')"/>
+                    </a:da> 
+                  </v:var>                      
+                      </v:ctr>
+                    </v:lst>    
+                  </v:ctr> 
+                  <!-- [cover parentID={77F8B07E-CFD6-4c0a-A9AD-22678616B41E}] FlsLoaderPFlash4ProtConfig [/cover] -->                
+                  <v:ctr name="FlsLoaderPFlash4ProtConfig" type="IDENTIFIABLE">     
+                    <a:da name="ENABLE" type="XPath">
+                      <a:tst expr= "ecu:get('FlsLoader.PfBank') > num:i(4)" />
+                    </a:da>               
+                    <a:a name="DESC" 
+                         value="EN: PFLASH Bank 4 protection configuration."/>
+                    <a:a name="UUID" 
+                         value="ECUC:6aa61659-c6de-4d25-8713-ac994fdf5e37"/> 
+                  <!-- [cover parentID={E33FEC05-D233-456c-9AB4-57A323D3F941}] FlsLoaderPFlash4WriteProt [/cover] -->  
+                    <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>                
+                  <v:var name="FlsLoaderPFLash4WriteProt" type="ENUMERATION">
+                    <a:a name="DESC" 
+                          value="EN:PFlash Read/Write protection."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                          type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="6af99e0c-779d-4f91-80c7-32a09a6f075b"/>
+                    <a:da name="DEFAULT" value="NO_PROTECTION"/>
+                    <a:da name="RANGE">
+                      <a:v>NO_PROTECTION</a:v>
+                      <a:v>WRITE_PROTECTION</a:v>
+                      <a:v>OTP_PROTECTION</a:v>
+                      <a:v>WOP_PROTECTION</a:v>
+                    </a:da>
+                  </v:var>
+                  <!-- [cover parentID={7AC478B8-D828-4792-ACBA-E44CECACAB6D}] FlsLoaderPF4Sector [/cover] -->
+                    <v:lst name="FlsLoaderPF4Sector" type="MAP">
+                     <a:da name="MIN" type="XPath" expr="ecu:get('FlsLoader.Pf4Sectors')"/>
+                       <a:da name="MAX" type="XPath" expr="ecu:get('FlsLoader.Pf4Sectors')"/>
+                      <v:ctr name="FlsLoaderPF4Sector" type="IDENTIFIABLE">
+                        <a:a name="NAME_PATTERN" value="FlsLoaderPF4Sector?"/>                    
+                        <a:a name="DESC" 
+                             value="EN: PFLASH Bank 1 sector protection configuration."/>
+                        <a:a name="UUID" 
+                             value="ECUC:1768f065-a030-4205-8de9-322861da3ba3"/>
+                  <!-- [cover parentID={9DC73DF0-22FF-4ba9-8A86-C146DF4EA7B6}] FlsLoaderPFSectorWriteProtection [/cover] -->
+                  <v:var name="FlsLoaderPFSectorWriteProtection" type="ENUMERATION">
+                    <a:a name="DESC"
+                      value="EN: Sector Write protection."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="bf3e4123-a208-4261-aaac-01e128166470"/>
+                    <a:da name="DEFAULT" value="NO_PROTECTION"/>
+                    <a:da name="RANGE">
+                      <a:v>NO_PROTECTION</a:v>
+                      <a:v>WRITE_PROTECTION</a:v>
+                      <a:v>OTP_PROTECTION</a:v>
+                      <a:v>WOP_PROTECTION</a:v>
+                    </a:da>
+                    <a:da name="ENABLE" type="XPath">
+                      <a:tst expr= "ecu:get('FlsLoader.Pf4Sectors') > num:i(0)" />
+                    </a:da>
+                    <a:da name="EDITABLE" type="XPath">
+                     <a:tst expr="(./../../../FlsLoaderPFLash4WriteProt  = 'WRITE_PROTECTION') or (./../../../FlsLoaderPFLash4WriteProt  = 'OTP_PROTECTION') or(./../../../FlsLoaderPFLash4WriteProt  = 'WOP_PROTECTION')"/>
+                    </a:da> 
+                  </v:var>                      
+                      </v:ctr>
+                    </v:lst>
+                  </v:ctr> 
+                  <!-- [cover parentID={2D3A03B9-44B5-4b7b-B49E-C54CD3527587}] FlsLoaderPFlash5ProtConfig [/cover] -->                
+                  <v:ctr name="FlsLoaderPFlash5ProtConfig" type="IDENTIFIABLE"> 
+                    <a:da name="ENABLE" type="XPath">
+                      <a:tst expr= "ecu:get('FlsLoader.PfBank') > num:i(5)" />
+                    </a:da>               
+                    <a:a name="DESC" 
+                         value="EN: PFLASH Bank 5 protection configuration."/>
+                    <a:a name="UUID" 
+                         value="ECUC:6aa61659-c6de-4d25-5513-ac864fdf5e37"/>
+                  <!-- [cover parentID={35CBCDBD-7EA6-471e-A56F-AF8724694F6A}] FlsLoaderPFlash5WriteProt [/cover] -->   
+                    <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>                       
+                  <v:var name="FlsLoaderPFLash5WriteProt" type="ENUMERATION">
+                    <a:a name="DESC" 
+                          value="EN:PFlash Read/Write protection."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                          type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="6af99e0c-df9d-1d91-80c7-32a09a6f075b"/>
+                    <a:da name="DEFAULT" value="NO_PROTECTION"/>
+                    <a:da name="RANGE">
+                      <a:v>NO_PROTECTION</a:v>
+                      <a:v>WRITE_PROTECTION</a:v>
+                      <a:v>OTP_PROTECTION</a:v>
+                      <a:v>WOP_PROTECTION</a:v>
+                    </a:da>
+                  </v:var>
+                  <!-- [cover parentID={EE212AFC-9E95-407d-A332-20F03426EB5C}] FlsLoaderPF5Sector [/cover] -->
+                    <v:lst name="FlsLoaderPF5Sector" type="MAP">
+                     <a:da name="MIN" type="XPath" expr="ecu:get('FlsLoader.Pf5Sectors')"/>
+                       <a:da name="MAX" type="XPath" expr="ecu:get('FlsLoader.Pf5Sectors')"/>
+                      <v:ctr name="FlsLoaderPF5Sector" type="IDENTIFIABLE">
+                        <a:a name="NAME_PATTERN" value="FlsLoaderPF5Sector?"/>                    
+                        <a:a name="DESC" 
+                             value="EN: PFLASH Bank 5 sector protection configuration."/>
+                        <a:a name="UUID" 
+                             value="ECUC:1768f065-a030-4205-8de9-30b561da3ba3"/>
+                  <!-- [cover parentID={B00ABBA5-10CE-4aca-B758-3E7C00D17F2C}] FlsLoaderPFSectorWriteProtection [/cover] -->
+                  <v:var name="FlsLoaderPFSectorWriteProtection" type="ENUMERATION">
+                    <a:a name="DESC"
+                      value="EN: Sector Write protection."/>
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                    </a:a>
+                    <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                    <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                    <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                    <a:a name="UUID" value="bf3e4123-a208-4261-aaac-01e12d166470"/>
+                    <a:da name="DEFAULT" value="NO_PROTECTION"/>
+                    <a:da name="RANGE">
+                      <a:v>NO_PROTECTION</a:v>
+                      <a:v>WRITE_PROTECTION</a:v>
+                      <a:v>OTP_PROTECTION</a:v>
+                      <a:v>WOP_PROTECTION</a:v>
+                    </a:da>
+                    <a:da name="ENABLE" type="XPath">
+                      <a:tst expr= "ecu:get('FlsLoader.Pf5Sectors') > num:i(0)" />
+                    </a:da>
+                    <a:da name="EDITABLE" type="XPath">
+                     <a:tst expr="(./../../../FlsLoaderPFLash5WriteProt  = 'WRITE_PROTECTION') or (./../../../FlsLoaderPFLash5WriteProt  = 'OTP_PROTECTION') or(./../../../FlsLoaderPFLash5WriteProt  = 'WOP_PROTECTION')"/>
+                    </a:da> 
+                  </v:var>                      
+                      </v:ctr>
+                    </v:lst>
+                  </v:ctr>      
+                  </v:ctr>
+              </v:lst>
+              <!-- [cover parentID={F20966CD-EA5E-4a44-8A40-3A9843BDEEDF}] FlsLoaderDFLASHConfig [/cover] -->             
+              <v:lst name="FlsLoaderDFLASHConfig" type="MAP">
+                <a:da name="MIN" value="1"/>
+                <a:da name="MAX" value="1"/>
+              <v:ctr name="FlsLoaderDFLASHConfig" type="IDENTIFIABLE">
+                <a:a name="DESC" 
+                     value="EN: This container contains the configuration parameters and sub containers of the FlsLoader module."/>
+                <a:a name="UUID" 
+                     value="ECUC:d93c27ef-38b0-4bdf-8384-d10c0a3bba83"/> 
+                  <!-- [cover parentID={7E56BDFC-6003-4f29-9383-6188C99BD023}] FlsLoaderDFlash0ProtConfig [/cover] -->                   
+                  <v:ctr name="FlsLoaderDFlash0ProtConfig" type="IDENTIFIABLE">
+                    <a:da name="ENABLE" type="XPath">
+                      <a:tst expr= "ecu:get('FlsLoader.DfBank') > num:i(0)" />
+                    </a:da>
+                      <a:a name="DESC" 
+                          value="EN:DF protection configuration."/>                
+                      <a:a name="UUID" 
+                          value="DCE:108b2e3b-0f4a-4315-89d4-d3ddeb193116"/>  
+                        <!-- [cover parentID={9F70C7CC-AE7B-4a55-B143-95FC3362C1A0}] FlsLoaderDF0Prot [/cover] --> 
+                        <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>                      
+                        <v:var name="FlsLoaderDF0Prot" type="ENUMERATION">
+                        <a:a name="DESC" 
+                               value="EN:DF0 Read/Write protection."/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="c37e5f8c-2ef2-472a-98b5-dcc18cbea5cd"/>
+                        <a:da name="DEFAULT" value="NO_PROTECTION"/>
+                        <a:da name="RANGE">
+                          <a:v>NO_PROTECTION</a:v>
+                          <a:v>READ_PROTECTION</a:v>
+                          <a:v>WRITE_PROTECTION</a:v>
+                        </a:da>
+                        </v:var>
+                        <!-- [cover parentID={77D07159-E72E-45eb-BBFF-86FE454E82EB}] FlsLoaderDF0UcbPW0_0 [/cover] -->
+                        <v:var name="FlsLoaderDF0UcbPW0_0" type="INTEGER">
+                          <a:a name="DESC" 
+                              value="1st least significant word password out of 8 words  password"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PreCompile">VariantPreCompile</icc:v>                   
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" value="e9afaa0c-2dc7-4390-a7c9-c615ae01c46a"/>
+                         <a:da name="DEFAULT" value="0"/>
+                         <a:da name="INVALID" type="Range">
+                           <a:tst expr="&lt;=4294967295"/>
+                           <a:tst expr="&gt;=0"/>
+                         </a:da> 
+                         <a:da name="EDITABLE" type="XPath">
+                            <a:tst expr="(../FlsLoaderDF0Prot  != 'NO_PROTECTION')"/>
+                         </a:da>
+                        </v:var>
+                        <!-- [cover parentID={0F947D37-0697-4975-96D3-BA41D0AE159B}] FlsLoaderDF0UcbPW0_1 [/cover] -->
+                        <v:var name="FlsLoaderDF0UcbPW0_1" type="INTEGER">
+                          <a:a name="DESC" 
+                              value="2nd least significant word password out of 8 words  password"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                           <icc:v class="PreCompile">VariantPreCompile</icc:v>                   
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="e9afaa0c-2dc7-4390-a7c9-c305ae01c26f"/>
+                          <a:da name="DEFAULT" value="0"/>
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=4294967295"/>
+                            <a:tst expr="&gt;=0"/>
+                          </a:da>                        
+                          <a:da name="EDITABLE" type="XPath">
+                            <a:tst expr="(../FlsLoaderDF0Prot  != 'NO_PROTECTION')"/>
+                          </a:da>
+                        </v:var>
+                        <!-- [cover parentID={9A0CE860-73E9-4e23-B27F-8A1A7A3D809C}] FlsLoaderDF0UcbPW1_0 [/cover] -->
+                        <v:var name="FlsLoaderDF0UcbPW1_0" type="INTEGER">
+                          <a:a name="DESC" 
+                              value="3rd least significant word password out of 8 words  password"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PreCompile">VariantPreCompile</icc:v>                   
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="e9afaa0c-2dc7-4390-a7c9-c905ae01d34f"/>
+                          <a:da name="DEFAULT" value="0"/>
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=4294967295"/>
+                            <a:tst expr="&gt;=0"/>
+                          </a:da> 
+                          <a:da name="EDITABLE" type="XPath">
+                            <a:tst expr="(../FlsLoaderDF0Prot  != 'NO_PROTECTION')"/>
+                          </a:da>                                                 
+                        </v:var>
+                        <!-- [cover parentID={C0776B51-384D-4709-8E6D-ABF1D00047B6}] FlsLoaderDF0UcbPW1_1 [/cover] -->
+                        <v:var name="FlsLoaderDF0UcbPW1_1" type="INTEGER">
+                          <a:a name="DESC" 
+                              value="4th least significant word password out of 8 words  password"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PreCompile">VariantPreCompile</icc:v>                   
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="e9afaa0c-2dc7-4390-a7c9-c805ae02c33f"/>
+                          <a:da name="DEFAULT" value="0"/>
+                          <a:da name="INVALID" type="Range">
+                           <a:tst expr="&lt;=4294967295"/>
+                           <a:tst expr="&gt;=0"/>
+                          </a:da>
+                          <a:da name="EDITABLE" type="XPath">
+                            <a:tst expr="(../FlsLoaderDF0Prot  != 'NO_PROTECTION')"/>
+                          </a:da>                                                  
+                        </v:var>
+                        <!-- [cover parentID={F9778DF0-EFDB-421e-AA09-14E94214AC9A}] FlsLoaderDF0UcbPW2_0 [/cover] -->
+                        <v:var name="FlsLoaderDF0UcbPW2_0" type="INTEGER">
+                          <a:a name="DESC" 
+                              value="5th least significant word password out of 8 words  password"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PreCompile">VariantPreCompile</icc:v>                   
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="e9afaa0c-2dc7-4394-a7c9-c615ae01c46a"/>
+                          <a:da name="DEFAULT" value="0"/>
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=4294967295"/>
+                            <a:tst expr="&gt;=0"/>
+                          </a:da>
+                          <a:da name="EDITABLE" type="XPath">
+                            <a:tst expr="(../FlsLoaderDF0Prot  != 'NO_PROTECTION')"/>
+                          </a:da>
+                        </v:var>
+                        <!-- [cover parentID={5BCD9F9D-ADF5-4434-B469-47BB71B3E13D}] FlsLoaderDF0UcbPW2_1 [/cover] -->
+                        <v:var name="FlsLoaderDF0UcbPW2_1" type="INTEGER">
+                          <a:a name="DESC" 
+                              value="6th least significant word password out of 8 words  password"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PreCompile">VariantPreCompile</icc:v>                   
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="e9afaa0c-2dc7-4393-a7c9-c305ae01c26f"/>
+                          <a:da name="DEFAULT" value="0"/>
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=4294967295"/>
+                            <a:tst expr="&gt;=0"/>
+                          </a:da> 
+                          <a:da name="EDITABLE" type="XPath">
+                            <a:tst expr="(../FlsLoaderDF0Prot  != 'NO_PROTECTION')"/>
+                          </a:da>                                                
+                        </v:var>
+                        <!-- [cover parentID={F3633EF3-180D-4ab5-8F0C-6C9D82392C61}] FlsLoaderDF0UcbPW3_0 [/cover] -->
+                        <v:var name="FlsLoaderDF0UcbPW3_0" type="INTEGER">
+                          <a:a name="DESC" 
+                              value="7th least significant word password out of 8 words  password"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PreCompile">VariantPreCompile</icc:v>                   
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="e9afaa0c-2dc7-4392-a7c9-c905ae01d34f"/>
+                          <a:da name="DEFAULT" value="0"/>
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=4294967295"/>
+                            <a:tst expr="&gt;=0"/>
+                          </a:da> 
+                          <a:da name="EDITABLE" type="XPath">
+                            <a:tst expr="(../FlsLoaderDF0Prot  != 'NO_PROTECTION')"/>
+                          </a:da>                                                 
+                        </v:var>
+                        <!-- [cover parentID={BD80095D-5AA2-4888-9220-2985D2D3F2F5}] FlsLoaderDF0UcbPW3_1 [/cover] -->
+                        <v:var name="FlsLoaderDF0UcbPW3_1" type="INTEGER">
+                          <a:a name="DESC" 
+                              value="Most significant word password out of 8 words  password"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v class="PreCompile">VariantPreCompile</icc:v>                   
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                          <a:a name="UUID" value="e9afaa0c-2dc7-4391-a7c9-c805ae02c33f"/>
+                          <a:da name="DEFAULT" value="0"/>
+                          <a:da name="INVALID" type="Range">
+                            <a:tst expr="&lt;=4294967295"/>
+                            <a:tst expr="&gt;=0"/>
+                          </a:da> 
+                          <a:da name="EDITABLE" type="XPath">
+                            <a:tst expr="(../FlsLoaderDF0Prot  != 'NO_PROTECTION')"/>
+                          </a:da>                                                 
+                        </v:var>
+                    </v:ctr>            
+                  </v:ctr>
+              </v:lst>
+              <!-- [cover parentID={EDE382B8-E758-451f-B3B2-3E0DE67FCB50}] CommonPublishedInformation [/cover] -->            
+              <v:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                <a:a name="DESC" value="EN: Common container, aggregated by all modules. It contains published information about vendor and versions."/>
+                <a:a name="UUID" value="492f8482-3e2c-4bf1-b27f-01fd7ac35788"/>
+                <!-- [cover parentID={4EC18E37-87E0-450b-A9AE-549497E8A411}] ArMajorVersion [/cover] -->
+                <v:var name="ArMajorVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Major version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-88fe-1166b258bb8a"/>
+                  <a:da name="DEFAULT" value="4"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <!-- [cover parentID={D4C8840C-78B0-4df3-A0F1-E35FAFA413D0}] ArMinorVersion [/cover] -->
+                <v:var name="ArMinorVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Minor version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="73f87c7f-e230-4178-bff0-eb2704aae656"/>
+                  <a:da name="DEFAULT" value="2"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <!-- [cover parentID={ACB8AFF6-D125-4f86-AF13-BC66997C5C4D}] ArPatchVersion [/cover] -->
+                <v:var name="ArPatchVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Patch level version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="2380135d-6778-417a-a34b-e10017d4dd54"/>
+                  <a:da name="DEFAULT" value="2"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <!-- [cover parentID={8409B7B5-89C5-40c2-B16A-805BE98034B9}] SwMajorVersion [/cover] -->
+                <v:var name="SwMajorVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Major version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="fca015e3-5f28-4cbe-8949-8f4b87d86827"/>
+                  <a:da name="DEFAULT" value="3"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <!-- [cover parentID={3A5BD69C-8D5D-4fef-9F2B-72DD26056992}] SwMinorVersion [/cover] -->
+                <v:var name="SwMinorVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Minor version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="14ab81e0-3d80-43dc-8b92-247e5a542df9"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <!-- [cover parentID={333DC1DC-1F71-40d8-876C-6092A575F2E2}] SwPatchVersion [/cover] -->
+                <v:var name="SwPatchVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Patch level version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="32e37bfd-18b6-41d1-9248-a81dbe0fe4c5"/>
+                  <a:da name="DEFAULT" value="0"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <!-- [cover parentID={2C763265-B01E-4a5c-A6C6-687D78F47323}] ModuleId [/cover] -->
+                <v:var name="ModuleId" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Module ID of this module from Module List"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="3b407478-6902-4f80-b7cf-f33b0854e638"/>
+                  <a:da name="DEFAULT" value="255"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <!-- [cover parentID={133E5F97-1C2A-4ef1-90F7-97295B3B6D0D}] VendorId [/cover] -->
+                <v:var name="VendorId" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Vendor ID of the dedicated implementation of this module according to the AUTOSAR vendor list"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="7d650b2d-4adb-41f0-a68e-5f0c416501d1"/>
+                  <a:da name="DEFAULT" value="17"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                </v:var>
+                <!-- [cover parentID={17ECF7BA-0CA2-4b81-B1F0-6CD913DA62AD}] Release [/cover] -->
+                <v:var name="Release" type="STRING_LABEL">
+                  <a:a name="DESC" value="EN: Aurix2G derivative used for the implementation"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                    <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="3b407478-6902-4f40-b7cf-f33b0854e638"/>
+                  <a:da name="DEFAULT" type="XPath" expr="ecu:get('Rel.Derivate')"/>
+                </v:var>
+               </v:ctr>           
+            </v:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+    </d:lst>
+  </d:ctr>
+</datamodel>

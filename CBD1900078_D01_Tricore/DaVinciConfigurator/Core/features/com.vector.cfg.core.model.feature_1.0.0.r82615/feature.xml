@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.vector.cfg.core.model.feature"
+      label="AUTOSAR Model for DaVinci Products"
+      version="1.0.0.r82615"
+      provider-name="Vector Informatik GmbH">
+
+   <description>
+      AUTOSAR model for DaVinci products.
+   </description>
+
+   <copyright>
+      (c) Copyright Vector Informatik GmbH. All Rights Reserved.
+   </copyright>
+
+   <license url="http://www.vector.com">
+      Vector Group License Agreement
+
+This software is licensed under the terms and conditions of „Delivery and maintenance of software products” of Vector Group, see www.vector.com
+   </license>
+
+   <includes
+         id="com.vector.cfg.model.mdf.feature"
+         version="1.12.0.201803261234"/>
+
+   <plugin
+         id="com.vector.annotations.publishedapi"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.annotations.obfuscation"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.query"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.parser"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.util"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.util.text"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.unit"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.rules"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.resources"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         fragment="true"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.parser.resources"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.util.log4j2.plugin"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.mdf.authentication"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.automation.scripting.base"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.util.scripting.dynamic"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.util.base"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.util.log"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.util.servicecontext"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.davinci.util"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.davinci.util.collections"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.util.services"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.mdf"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.util.classloading"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.formula.api"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.json"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.arxml"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.base"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.preferences"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.project"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.jaxb"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.app.changenotification"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.core.app"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.api"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.exporter"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.variance.api"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.annotation.api"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.model.annotation"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.mdf.meta"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.workflow.annotations.update"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.workflow.annotations.diff"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.persistency.annotations.copypaste"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+</feature>

@@ -1,0 +1,422 @@
+<html>
+<body>
+<h2>Edit the Configuration</h2>
+<p>
+    Editing means in this case manipulating a configuration that is bound to a schema (or parameter
+    definition) and therefore has a schema conforimg structure and all schema information is available.
+    Changing an unbound model e.g. when writing an importer that transforms an AUTOSAR 2.0 into an
+    AUTOSAR 2.1 configuration is described in <a href="Transform.html">Model transformation</a>.
+</p>
+
+<h3>Generic Access and Kind specific access</h3>
+
+<p>
+    The DCtxt API allows to edit the configuration in different ways:
+</p>
+
+<p>
+    <ul>
+        <li>
+            The generic editing capabilities are provided by the class <a href="../../model/Any.html">Any</a>
+        </li>
+        <li>
+            Node kind specific editing is provided by the classes: <a href="../../model/Var.html">Var</a>, and
+            <a href="../../model/Ref.html">Ref</a>, <a href="../../model/Chc.html">Chc</a> and
+            <a href="../../model/Ctr.html">Ctr</a>.
+        </li>
+    </ul>
+</p>
+
+<p>
+    The difference between the class <code>Any</code> and the kind specific classes is that the methods of
+    <code>Any</code> apply to any kind of nodes whereas the kind specific classes re-implement the methods of
+    the <code>Any</code> class in a node kind specific way and add kind specific functionality.
+</p>
+The following topics are covered by this page:
+<ul>
+<li><a href="#ChangingNodeNames">Changing node names</a></li>
+<li><a href="#SettingVariableValues">Setting variable values</a></li>
+<li><a href="#ChangingReferenceValues">Changing reference values</a></li>
+<li><a href="#ChangingSelectionOfChoice">Changing the selection of a choice</a></li>
+<li><a href="#AddingCtrAndChcToLists">Adding containers and choices to lists</a></li>
+<li><a href="#AdditionalListOperations">Additional operations on lists</a></li>
+<li><a href="#UsingNodeOperations">Using node operations</a></li>
+<li><a href="#AddingMinChilds">Adding minimum number of child elements in lists</a></li>
+</ul>
+
+
+<h3><a name="ChangingNodeNames">Changing node names</a></h3>
+
+<p>
+    Only the names of choices and containers that are entries of a list can be changed. Variables and
+    References that are list entries are always addressed by their index never by their name. The name of
+    nodes that are non list entries are determined by the schema. Consider the following schema:
+</p>
+
+<p>
+    <pre>
+        &lt;v:ctr name="Toplevel"&gt;
+        &lt;v:lst name="CtrList" type="MAP"&gt;
+        &lt;v:ctr name="CtrList"&gt;
+        &lt;v:lst name="VarList"&gt;
+        &lt;v:var name="VarList" type="INTEGER"/&gt;
+        &lt;/v:lst&gt;
+        &lt;/v:ctr&gt;
+        &lt;/v:lst&gt;
+        &lt;/v:ctr&gt;
+    </pre>
+</p>
+
+<p>
+    would result in a configuration like this:
+</p>
+
+<p>
+    <pre>
+        &lt;d:ctr name="Toplevel"&gt;
+        &lt;d:lst name="CtrList" type="MAP"&gt;
+        &lt;d:ctr name="CtrListEntry_1"&gt;
+        &lt;d:lst name="VarList"&gt;
+        &lt;d:var type="INTEGER" value="1"/&gt;
+        &lt;/d:lst&gt;
+        &lt;/d:ctr&gt;
+        &lt;/d:lst&gt;
+        &lt;/d:ctr&gt;
+    </pre>
+</p>
+
+<p>
+    In the above example only the name of the <code>d:ctr</code> element inside the <code>d:lst</code> can be set.
+</p>
+
+<p>
+    As only containers and choices can be named only <a href="../../model/Ctr.html">Ctr</a> and
+    <a href="../../model/Chc.html">Chc</a> have <code>setName</code> methods:
+</p>
+
+<p>
+    <pre>
+        dctxt.ctr.setName( "NewName" );
+        dctxt.chc.setName( "MyList/OldName", "NewName" );
+    </pre>
+</p>
+
+<h3><a name="SettingVariableValues">Setting variable values</a></h3>
+
+<p>
+    The class <a href="../../model/Var.html">Var</a> allows to change the values of variables. It allows to change
+    the value of variables of unknown type or alter lists of variables of unknown type:
+</p>
+
+<p>
+    <pre>
+        ctxt.var.setValue( "MyCtr/MyVar", "NewValue" );
+        ctxt.var.addValue( "MyCtr/MyVarLst", "NewValue" );
+    </pre>
+</p>
+
+<p>
+    It also allows to change values in a variable type specific way (String, Bool, Int, Float). E.g.:
+</p>
+
+<p>
+    <pre>
+        ctxt.var.setInt( "MyCtr/MyInt", 5 );
+        ctxt.var.deleteAll( "MyCtr/MyIntList" );
+        ctxt.var.addInts( "MyCtr/MyIntList", [ 5, 3, 1, 8 ] );
+    </pre>
+</p>
+
+<p>
+    Changing variables can occur as a single value operation altering single value variables or a single list
+    entry:
+</p>
+
+<p>
+    <pre>
+        ctxt.var.setBool( true );                        // Change context node
+        ctxt.var.setBool( "MyCtr/MyBool", true );        // Change node referenced by path
+        ctxt.var.setBool( 5, true );                     // Change 5th entry of the list referenced by ctxt
+        ctxt.var.setBool( "MyCtr/MyBoolList", 5, true ); // change the 5th list entry of the list MyBoolList
+    </pre>
+</p>
+
+<p>
+    or as a list operation:
+</p>
+
+<p>
+    <pre>
+        ctxt.var.addFloat( "MyCtr/MyFloatList", 3.0 );                // Adds a new float value to MyFloatList
+        ctxt.var.insertFloat( "MyCtr/MyFloatList", 2, 3.0 );          // Insert a new float value at position 2
+        ctxt.var.deleteAll();                                         // Deletes all entries of the context list
+        ctxt.var.addFloats( [ 7.1, 3.9, 1.2 ] );                      // Adds new values to the list referenced by ctxt
+        ctxt.var.deleteAll( "MyCtr/MyFloatList" );                    // Deletes all entries of MyFloatList
+        ctxt.var.addFloats( "MyCtr/MyFloatList", [ 7.1, 3.9, 1.2 ] ); // Adds values to MyFloatList
+        ctxt.car.addFloats( new MXPath( "//*[@type='FLOAT']", [ 3.0, -1 ] );    // Alters the values of all float variables
+                                                                                // The first one gets value 3.0, all others -1
+    </pre>
+</p>
+
+<h3><a name="ChangingReferenceValues">Changing reference values</a></h3>
+
+<p>
+    References have a path as their value. The path can be a path in any of the supported path formats
+    (XPath, ASPath....). The value of a reference can also be set by the <code>setValue</code> methods provided
+    by the <a href="../../model/Var.html">Var</a> class:
+</p>
+
+<p>
+    <pre>
+        ctxt.ref.setValue( "MyCtr/MyRef", "ASPath:/TS_T16D4M2I0R0/Can/CanGeneral" );
+    </pre>
+</p>
+
+<p>
+    or by referencing to an other context:
+</p>
+
+<p>
+    <pre>
+        DCtxt referencedCtxt = getReferencedCtxt();
+        ctxt.ref.setRef( "MyCtr/MyRef", referencedCtxt );
+    </pre>
+</p>
+
+<p>
+    In addition to this the <a href="../../model/Ref.html">Ref</a> class provides a method that allows to convert
+    references. If for example the name of an other module changed, this method allows to change all references to
+    nodes inside the other module:
+</p>
+
+<p>
+    <pre>
+        ctxt.ref.convertRefs( new MCPath( "//*[@type = 'REFERENCE']" ), "ASPath", "/?/OldCan/", "/$0/NewCan/$1" );
+    </pre>
+</p>
+
+<p>
+    The <a href="../../model/Ref.html#convertRefs">convertRefs</a> selects a list of references via an
+    <a href="../../model/expr/IMExpr">IMExpr</a> e.g. an XPath expression like in the example above and uses
+    a <a href="../../model/path/AbstractPathTransformer">AbstractPathTransformer</a> to convert paths. In the
+    example above the <a href="../../model/path/ASPathTransformer">ASPathTransformer</a> is utilized. For more
+    information see package <a href="../../model/path/package-summary.html">dreisoft.tresos.datamodel.api.model.path</a>.
+</p>
+
+
+<h3><a name="ChangingSelectionOfChoice">Changing the selection of a choice</a></h3>
+
+<p>
+    A choice hosts a list of containers but only one is the active configuration. The active container can be selected
+    via the <a href="../../module/Chc.html">Chc</a> class by naming the active container:
+</p>
+
+<p>
+    <pre>
+        ctxt.chc.setSelection( "MyActiveContainer" );
+    </pre>
+</p>
+
+<p>
+    "MyActiveContainer" in this case is the name of the container that should be set as active container. The
+    <code>setSelection</code> method exists in the same variants as the <code>setValue</code> methods of the
+    <code>Var</code> class:
+</p>
+
+<p>
+    <pre>
+        ctxt.chc.setSelection( 5, "MyActiveContainer" );
+        ctxt.chc.setSelection( "MyCtr/MyChc", "MyActiveContainer" );
+        ...
+    </pre>
+</p>
+
+<h3><a name="AddingCtrAndChcToLists">Adding container and choices to lists</a></h3>
+
+<p>
+    Container and Choices provide methods to add and insert new container or choice nodes to lists:
+</p>
+
+<p>
+    <pre>
+        ctxt.ctr.addCtr( "MyCtr/MyCtrList", "NewCtr" );                        // Adds container NewCtr to the list MyCtrList
+        ctxt.ctr.insertCtr( "MyCtr/MyCtrList", 5, "NewCtr" );                  // Insert container NewCtr into list MyCtrList at pos. 5
+        ctxt.ctr.addChc( "MyCtr/MyChcList", "NewChc", "NewActiveContainer" );  // Adds the choice NewChc with the initial selection
+                                                                               // NewActiveContainer to the list MyChcList
+        ctxt.ctr.insertChc( "MyCtr/MyChcList", 7, "NewChc", "NewActiveContainer" );  // Inserts the choice NewChc with the initial selection
+                                                                                     // NewActiveContainer to the list MyChcList at position 7
+
+    </pre>
+</p>
+
+<p>
+    Name and initial selection of the new container or choice can be left empty (set to <code>null</code>). In this
+    case a unique name is created for the choice or container (according to the <code>NAME_PATTERN</code>-attribute
+    in the schema) respectively the default selection is used.
+</p>
+
+<h3><a name="AdditionalListOperations">Additional operations on lists</a></h3>
+
+<p>
+    In addition to the list operations described in the sections above the <code>Any</code> class (from which the
+    kind specific classes are derived) provides three additional list operations that apply to all kinds of list
+    entries (variables, references, containers, choices):
+</p>
+
+<p>
+    <ul>
+        <li><a href="../../model/Any.html#delete">delete</a>
+            Delete an entry from a list
+        </li>
+        <li><a href="../../model/Any.html#move">move</a>
+            Move an entry inside its list
+        </li>
+        <li><a href="../../model/Any.html#copy">copy</a>
+            Duplicate an entry inside its list
+        </li>
+    </ul>
+</p>
+
+<p>
+    Although these methods are defined in the <code>Any</code> class they should be called as members of the
+    kind specific classes as the <code>Chc</code> class for example supports calling the <code>delete</code>
+    also with a container of a choice as context in which case the complete choice would be deleted.
+</p>
+
+<p>
+    The <code>delete</code> method can be used for operations on single entries:
+</p>
+
+<p>
+    <pre>
+        ctxt.ctr.delete();                  // Delete context node
+        ctxt.ctr.delete( 5 );               // Delete 5th entry of the context list
+        ctxt.ctr.delete( "MyList/OldCtr" ); // Delete the container OldCtr from list MyList
+        ctxt.ctr.delete( "MyList", 5 );     // Delete 5th entry of the list MyList
+    </pre>
+</p>
+
+<p>
+    and for all entries:
+</p>
+
+<p>
+    <pre>
+        ctxt.ctr.deleteAll();                                            // Delete all entries of the context list
+        ctxt.ctr.deleteAll( "MyList" );                                  // Delete all entries of the list MyList
+        ctxt.ctr.deleteAll( new MXPath( "MyList/*[DeleteIt = '1']" ) );  // Delete all entries that have a variable DeleteIt set to 1
+
+    </pre>
+</p>
+
+<p>
+    The methods <code>move</code> and <code>copy</code> only operate on one list. This means via these methods no elements can be
+    moved or copied from one list to an other. These methods (<code>move</code> and <code>copy</code>) always operate on single
+    nodes:
+</p>
+
+<p>
+    <pre>
+        ctxt.var.move( "MyList", 5, 6 );   // Move entry 5 to position 6 in the list MyList
+        ctxt.var.copy( "MyList", 5, 6 );   // Duplicate entry 5 of list MyList and add the new node at position 6
+        ctxt.var.copy( "MyList", 5, -1 );  // Duplicate entry 5 of list MyList and at it at the end of the list
+    </pre>
+</p>
+
+<p>
+    As containers and choices both have lists with named entries, additional methods are provided that allow
+    to provide a name for the new node:
+</p>
+
+<p>
+    <pre>
+        ctxt.ctr.copy( "MyList", 5, -1, "NewCtr" );   // Duplicates entry 5 and adds the new container as a
+                                                      // container with the name NewCtr to the end of the list
+    </pre>
+</p>
+
+<p>
+    If no name is provided a unique name is created from the <code>NAME_PATTERN</code> attribute of the
+    respective schema node.
+</p>
+
+
+<h3><a name="UsingNodeOperations">Using node operations</a></h3>
+
+<p>
+    It is possible to trigger automatic configuration functions like a wizard or similar complex operations which
+    are implemented via the Public API. In this case, the operations (that change the configuration) must be scheduled in a specific
+    thread and Undo/Redo support must be provided. This functionality can be controlled by the context option
+    <a href="../../model/Opt.html#OPT_USE_NODE_OPERATION">Opt.OPT_USE_NODE_OPERATION</a>. Via the method
+    <a href="../../model/Opt.html#setUseNodeOperations">Opt.setUseNodeOperations</a> the functionality can be
+    enabled or disabled:
+</p>
+
+<p>
+    <pre>
+        ctxt.opt.setUseNodeOperations( true );
+    </pre>
+</p>
+
+<p>
+    On the other hand when implementing a generator or an importer transformation these functionality is not needed.
+    As this option depends on the context, tresos Studio itself sets this option
+    correctly when entering a method that uses the Public API to access the configuration. The
+    current value of the option can be queried with:
+</p>
+
+<p>
+    <pre>
+        boolean useNodeOperations = ctxt.opt.getUseNodeOperations();
+    </pre>
+</p>
+
+<h3><a name="AddingMinChilds">Adding minimum number of child elements in lists</a></h3>
+
+<p>
+    Lists can specify a minimum number of entries via the <code>MIN</code> attribute. E.g.:
+</p>
+
+<p>
+    <pre>
+        &lt;v:lst name="MyCtrs" type="MAP"&gt;
+        &lt;a:da name="MIN" value="10"/&gt;
+        &lt;v:ctr name="MyCtrs"/&gt;
+        &lt;/v:lst&gt;
+    </pre>
+</p>
+
+<p>
+    defines a list of containers that must have at least 10 entries. These entries in the form of default entries
+    can be added automatically to newly created sub-lists by the Public API when creating new list entries
+    that itself contain sub-lists e.g. when calling:
+</p>
+
+<p>
+    <pre>
+        ctxt.ctr.addCtr( "NewListEntry" );
+    </pre>
+</p>
+
+<p>
+    When the context option <a href="../../model/Opt.html#OPT_ADD_MISSING_CHILDS">Opt.OPT_ADD_MISSING_CHILDS</a>
+    is enabled via:
+</p>
+
+<p>
+    <pre>
+        ctxt.opt.setAddMissingChilds( true );
+    </pre>
+</p>
+
+<p>
+    Lists beneath the newly created container (in the above example "NewListEntry") automatically contain the requested
+    minimum number of entries.
+</p>
+
+<p>
+    The option is enabled by default.
+</p>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+2024.11.13-v1.0.1 pxl
+	1、Vector包正常编译(mcal编译正常 密钥：F64B-D6A1-B8B5-5383-2025.3.3 )
+	2、此固件版本修改CAN00通道引脚和4个LED灯引脚。
+	3、Tasking-6.2r2版本正常编译生成elf，并下载烧录到TC397核心板中，多核正常，CAN通信正常，部分UDS诊断正常。
+
+2024.12.5-V1.0.2 pxl
+	1、针对加报文异常问题做分析，查出为程序进入trap--字节对齐问题导致，此版本已做修改，编译下载验证；
+	解决问题参考：https://blog.csdn.net/m0_58346868/article/details/141301593?fromshare=blogdetail&sharetype=blogdetail&sharerId=141301593&sharerefer=PC&sharesource=qq_44705488&sharefrom=from_link
+	2、添加扩展帧，通信正常；
+
+2024.12.18-V1.0.3 pxl
+	1、完成多路CAN配置，已验证发送正常。

@@ -1,0 +1,1773 @@
+<?xml version='1.0'?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2018)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**  FILENAME     : Smu.xdm                                                    **
+**                                                                            **
+**  VERSION      : 10.0.0                                                     **
+**                                                                            **
+**  DATE         : 2018-08-27                                                 **
+**                                                                            **
+**  VARIANT      : Variant PB                                                 **
+**                                                                            **
+**  PLATFORM     : Infineon AURIX2G                                           **
+**                                                                            **
+**  AUTHOR       : DL-AUTOSAR-Engineering                                     **
+**                                                                            **
+**  VENDOR       : Infineon Technologies                                      **
+**                                                                            **
+**  TRACEABILITY :  [cover parentID={087676F5-C93D-45cd-8FB8-CDFB4CE5C6C5} ]  **
+**                                                                            **
+**  DESCRIPTION  : XML data model for Smu driver                              **
+**                                                                            **
+**  SPECIFICATION(S) : NA                                                     **
+**                                                                            **
+**  MAY BE CHANGED BY USER : no                                               **
+**                                                                            **
+*******************************************************************************/
+-->
+<datamodel version="5.0"
+  xmlns="http://www.tresos.de/_projects/DataModel2/12/root.xsd"
+  xmlns:a="http://www.tresos.de/_projects/DataModel2/12/attribute.xsd"
+  xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd"
+  xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar"
+    xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd"
+    xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd"
+    xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd"
+    xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"
+    xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="AURIX2G" type="AR-PACKAGE">
+        <a:a name="UUID" value="ECUC:AUTOSAR"/>
+        <d:lst type="TOP-LEVEL-PACKAGES">
+          <d:ctr name="EcucDefs" type="AR-PACKAGE">
+            <a:a name="UUID" value="ECUC:ECUCDEFS"/>
+            <d:lst type="ELEMENTS">
+              <!-- [cover parentID={2EA88976-A790-4fb0-B6F3-0A933F59A92A}] Smu [/cover] -->
+              <!-- [cover parentID={F54B1791-7E57-4162-BFEF-35439D5FE09E}] Smu [/cover] -->
+              <d:chc name="Smu" type="AR-ELEMENT" value="MODULE-DEF">
+                <v:ctr type="MODULE-DEF">
+                  <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                    <ad:ADMIN-DATA>
+                      <ad:DOC-REVISIONS>
+                        <ad:DOC-REVISION>
+                          <ad:REVISION-LABEL>4.2.2</ad:REVISION-LABEL>
+                          <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                          <ad:DATE>2014-10-31</ad:DATE>
+                        </ad:DOC-REVISION>
+                      </ad:DOC-REVISIONS>
+                    </ad:ADMIN-DATA>
+                  </a:a>
+                  <a:a name="DESC"
+                  value="EN: Configuration of the Smu (Safety Management Unit) module."/>
+                  <a:a name="LOWER-MULTIPLICITY" value="0"/>
+                  <a:a name="POSTBUILDVARIANTSUPPORT" value="true"/>
+                  <a:a name="RELEASE" value="asc:4.2.2"/>
+                  <a:a name="UPPER-MULTIPLICITY" value="1"/>
+                  <a:a name="UUID"
+                  value="ECUC:865c8c0e-f964-4d70-92a9-ff60c9da4cee"/>
+                  <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                    <a:a name="IMPLEMENTATIONCONFIGCLASS" type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                    </a:a>
+                    <a:a name="LABEL" value="Config Variant"/>
+                    <a:da name="DEFAULT" value="VariantPostBuild"/>
+                    <a:da name="RANGE">
+                      <a:v>VariantPostBuild</a:v>
+                    </a:da>
+                  </v:var>
+                  <!-- [cover parentID={D8B54B2B-3A71-44ec-B355-F403D5C6E6AC}] SmuConfigSet [/cover] -->
+                  <v:lst name="SmuConfigSet" type="MAP">
+                    <a:da name="MIN" value="1"/>
+                    <a:da name="MAX" value="1"/>
+                    <!-- [cover parentID={D8B54B2B-3A71-44ec-B355-F403D5C6E6AC}] SmuConfigSet [/cover] -->
+                    <v:ctr name="SmuConfigSet" type="IDENTIFIABLE">
+                      <a:a name="DESC"
+                      value="This is the base container that contains the post-build configuration parameters"/>
+                      <a:a name="UUID" value="ccda81dc-46cf-4171-858b-7c947884702f"/>
+                      <!-- [cover parentID={7B0C8253-59EF-428a-BD2B-CB41F7B13B50}] SmuCoreConfig [/cover] -->
+                      <v:ctr name="SmuCoreConfig" type="IDENTIFIABLE">
+                        <a:a name="DESC"
+                        value="This is the base container that contains the post-build configuration parameters for SmuCore"/>
+                        <a:a name="UUID" value="ccda81dc-46cf-4171-858b-7c947884567f"/>
+                        <!-- [cover parentID={376971C4-A748-45a8-9558-9AB588BD1F7A}] SmuCoreRecoveryTimer [/cover] -->
+                        <v:ctr name="SmuCoreRecoveryTimer" type="IDENTIFIABLE">
+                          <a:a name="DESC"
+                          value="EN: SmuCore Recovery Timer configuration (parameters)."/>
+                          <a:a name="UUID" value="3ea7abca-6ba4-5d14-befd-8bb9351fe86f"/>
+                          <!-- [cover parentID={338559BF-E5D9-48bb-9E43-9C03192AE24B}] SmuCoreEnableRT0 [/cover] -->
+                          <v:var name="SmuCoreEnableRT0" type="ENUMERATION">
+                            <a:a name="DESC"
+                            value="Defines the Enabling or Disabling of SmuCore Recovery Timer 0."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" value="bfec07fb-567f-421e-b568-cb43a4ab5676"/>
+                            <a:da name="DEFAULT" value="SMU_RT_DISABLE"/>
+                            <a:da name="RANGE">
+                              <a:v>SMU_RT_DISABLE</a:v>
+                              <a:v>SMU_RT_ENABLE</a:v>
+                            </a:da>
+                          </v:var>
+                          <!-- [cover parentID={08DD082A-AC66-4809-A46B-E2B63A2C46AB}] SmuCoreEnableRT1 [/cover] -->
+                          <v:var name="SmuCoreEnableRT1" type="ENUMERATION">
+                            <a:a name="DESC"
+                            value="Defines the Enabling or Disabling of SmuCore Recovery Timer 1."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" value="bfec07fb-587f-421e-b564-cb43a4e5eda6"/>
+                            <a:da name="DEFAULT" value="SMU_RT_DISABLE"/>
+                            <a:da name="RANGE">
+                              <a:v>SMU_RT_DISABLE</a:v>
+                              <a:v>SMU_RT_ENABLE</a:v>
+                            </a:da>
+                          </v:var>
+                          <!-- [cover parentID={FEBF5181-D348-4d2a-A78C-7D5C336D6A5A}] SmuCoreRTDuration [/cover] -->
+                          <v:var name="SmuCoreRTDuration" type="INTEGER">
+                            <a:a name="DESC"
+                            value="Defines the SmuCore Recovery Timer maximum duration."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" value="98ce928e-6ed1-4968-95b2-21d30b1fa49e"/>
+                            <a:da name="DEFAULT" value="16383"/>
+                            <a:da name="INVALID" type="Range">
+                              <a:tst expr="&lt;=16777215"/>
+                              <a:tst expr="&gt;=1"/>
+                            </a:da>
+                          </v:var>
+                        </v:ctr>
+                        <!-- [cover parentID={59761F6D-005E-4149-9392-91F9A8E9B228}] SmuCoreRT0Alarm [/cover] -->
+                        <v:lst name="SmuCoreRT0Alarm" type="MAP">
+                          <!-- [cover parentID={8FC057BA-B669-4603-AB03-F8E832B8B555}] Smu.SmuCoreTotalRT0Alarms [/cover] -->
+                          <a:da name="MIN" type="XPath" expr="ecu:get('Smu.SmuCoreTotalRT0Alarms')"/>
+                          <a:da name="MAX" type="XPath" expr="ecu:get('Smu.SmuCoreTotalRT0Alarms')"/>
+                          <a:da name="ENABLE" type="XPath">
+                            <a:tst expr="((../SmuCoreRecoveryTimer/SmuCoreEnableRT0 = 'SMU_RT_ENABLE'))"/>
+                          </a:da>
+                          <v:ctr name="SmuCoreRT0Alarm" type="IDENTIFIABLE">
+                            <a:a name="DESC"
+                            value="Alarms for Recovery Timer 0."/>
+                            <a:a name="UUID" value="97e6fd09-f2da-4944-b2e0-edc4dc70e5a3"/>
+                            <!-- [cover parentID={ECCEB685-61CF-439d-8989-760C0F324153}] SmuCoreRT0AlarmGroupId [/cover] -->
+                            <v:var name="SmuCoreRT0AlarmGroupId" type="ENUMERATION">
+                              <a:a name="DESC"
+                              value="Defines the alarm group that can use the recovery timer 0."/>
+                              <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                              </a:a>
+                              <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                              <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                              <a:a name="SCOPE" value="LOCAL"/>
+                              <a:a name="UUID" value="bfec07fb-550f-421e-b568-cb43a4d8965a6"/>
+                              <a:da name="DEFAULT" value="SMU_ALARM_GROUP0"/>
+                              <a:da name="RANGE">
+                                <a:v>SMU_ALARM_GROUP0</a:v>
+                                <a:v>SMU_ALARM_GROUP1</a:v>
+                                <a:v>SMU_ALARM_GROUP2</a:v>
+                                <a:v>SMU_ALARM_GROUP3</a:v>
+                                <a:v>SMU_ALARM_GROUP4</a:v>
+                                <a:v>SMU_ALARM_GROUP5</a:v>
+                                <a:v>SMU_ALARM_GROUP6</a:v>
+                                <a:v>SMU_ALARM_GROUP7</a:v>
+                                <a:v>SMU_ALARM_GROUP8</a:v>
+                                <a:v>SMU_ALARM_GROUP9</a:v>
+                                <a:v>SMU_ALARM_GROUP10</a:v>
+                                <a:v>SMU_ALARM_GROUP11</a:v>
+                              </a:da>
+                            </v:var>
+                            <!-- [cover parentID={85C4011E-D720-4462-A3D1-7A1027A8EC90}] SmuCoreRT0AlarmId [/cover] -->
+                            <v:var name="SmuCoreRT0AlarmId" type="INTEGER">
+                              <a:a name="DESC"
+                              value="Defines the alarm identifier of the selected group that can use the recovery timer 0."/>
+                              <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                              </a:a>
+                              <a:da name="INVALID" type="XPath">
+                                <a:tst expr="((../SmuCoreRT0AlarmGroupId = 'SMU_ALARM_GROUP0') and
+                                  (../SmuCoreRT0AlarmId = text:split(ecu:get('Smu.SmuGroup0UnavailableIds'),'_')))
+                                " true="ERROR. Alarm ID is reserved"/>
+                                <a:tst expr="((../SmuCoreRT0AlarmGroupId = 'SMU_ALARM_GROUP1') and
+                                  (../SmuCoreRT0AlarmId = text:split(ecu:get('Smu.SmuGroup1UnavailableIds'),'_')))
+                                " true="ERROR. Alarm ID is reserved"/>
+                                <a:tst expr="((../SmuCoreRT0AlarmGroupId = 'SMU_ALARM_GROUP2') and
+                                  (../SmuCoreRT0AlarmId = text:split(ecu:get('Smu.SmuGroup2UnavailableIds'),'_')))
+                                " true="ERROR. Alarm ID is reserved"/>
+                                <a:tst expr="((../SmuCoreRT0AlarmGroupId = 'SMU_ALARM_GROUP3') and
+                                  (../SmuCoreRT0AlarmId = text:split(ecu:get('Smu.SmuGroup3UnavailableIds'),'_')))
+                                " true="ERROR. Alarm ID is reserved"/>
+                                <a:tst expr="((../SmuCoreRT0AlarmGroupId = 'SMU_ALARM_GROUP4') and
+                                  (../SmuCoreRT0AlarmId = text:split(ecu:get('Smu.SmuGroup4UnavailableIds'),'_')))
+                                " true="ERROR. Alarm ID is reserved"/>
+                                <a:tst expr="((../SmuCoreRT0AlarmGroupId = 'SMU_ALARM_GROUP5') and
+                                  (../SmuCoreRT0AlarmId = text:split(ecu:get('Smu.SmuGroup5UnavailableIds'),'_')))
+                                " true="ERROR. Alarm ID is reserved"/>
+                                <a:tst expr="((../SmuCoreRT0AlarmGroupId = 'SMU_ALARM_GROUP6') and
+                                  (../SmuCoreRT0AlarmId = text:split(ecu:get('Smu.SmuGroup6UnavailableIds'),'_')))
+                                " true="ERROR. Alarm ID is reserved"/>
+                                <a:tst expr="((../SmuCoreRT0AlarmGroupId = 'SMU_ALARM_GROUP7') and
+                                  (../SmuCoreRT0AlarmId = text:split(ecu:get('Smu.SmuGroup7UnavailableIds'),'_')))
+                                " true="ERROR. Alarm ID is reserved"/>
+                                <a:tst expr="((../SmuCoreRT0AlarmGroupId = 'SMU_ALARM_GROUP8') and
+                                  (../SmuCoreRT0AlarmId = text:split(ecu:get('Smu.SmuGroup8UnavailableIds'),'_')))
+                                " true="ERROR. Alarm ID is reserved"/>
+                                <a:tst expr="((../SmuCoreRT0AlarmGroupId = 'SMU_ALARM_GROUP9') and
+                                  (../SmuCoreRT0AlarmId = text:split(ecu:get('Smu.SmuGroup9UnavailableIds'),'_')))
+                                " true="ERROR. Alarm ID is reserved"/>
+                                <a:tst expr="((../SmuCoreRT0AlarmGroupId = 'SMU_ALARM_GROUP10') and
+                                  (../SmuCoreRT0AlarmId = text:split(ecu:get('Smu.SmuGroup10UnavailableIds'),'_')))
+                                " true="ERROR. Alarm ID is reserved"/>
+                                <a:tst expr="((../SmuCoreRT0AlarmGroupId = 'SMU_ALARM_GROUP11') and
+                                  (../SmuCoreRT0AlarmId = text:split(ecu:get('Smu.SmuGroup11UnavailableIds'),'_')))
+                                " true="ERROR. Alarm ID is reserved"/>
+                              </a:da>
+                              <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                              <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                              <a:a name="SCOPE" value="LOCAL"/>
+                              <a:a name="UUID" value="98ce928e-6ed1-5968-93b2-24d3ab89549e"/>
+                              <a:da name="DEFAULT" value="0"/>
+                              <a:da name="INVALID" type="Range">
+                                <a:tst expr="&lt;=31"/>
+                                <a:tst expr="&gt;=0"/>
+                              </a:da>
+                            </v:var>
+                          </v:ctr>
+                        </v:lst>
+                        <!-- [cover parentID={2060A032-71BB-4680-8CEA-ED302BC3FB45}] SmuCoreRT1Alarm [/cover] -->
+                        <v:lst name="SmuCoreRT1Alarm" type="MAP">
+                          <!-- [cover parentID={65B0DD57-82C3-4dab-8D72-863EB3E0CE98}] Smu.SmuCoreTotalRT1Alarms [/cover] -->
+                          <a:da name="MIN" type="XPath" expr="ecu:get('Smu.SmuCoreTotalRT1Alarms')"/>
+                          <a:da name="MAX" type="XPath" expr="ecu:get('Smu.SmuCoreTotalRT1Alarms')"/>
+                          <a:da name="ENABLE" type="XPath">
+                            <a:tst expr="((../SmuCoreRecoveryTimer/SmuCoreEnableRT1 = 'SMU_RT_ENABLE'))"/>
+                          </a:da>
+                          <v:ctr name="SmuCoreRT1Alarm" type="IDENTIFIABLE">
+                            <a:a name="DESC"
+                            value="Alarms for the Recovery Timer 1."/>
+                            <a:a name="UUID" value="97e6fd09-f3da-4944-b2e1-edc4dc70e5a3"/>
+                            <!-- [cover parentID={C0E7F988-0F07-4e0c-8DBA-EE54430DAE48}] SmuCoreRT1AlarmGroupId [/cover] -->
+                            <v:var name="SmuCoreRT1AlarmGroupId" type="ENUMERATION">
+                              <a:a name="DESC"
+                              value="Defines the alarm group that can use the recovery timer 1."/>
+                              <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                              </a:a>
+                              <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                              <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                              <a:a name="SCOPE" value="LOCAL"/>
+                              <a:a name="UUID" value="bfec07fb-550f-421e-b562-cb43a43w789a6"/>
+                              <a:da name="DEFAULT" value="SMU_ALARM_GROUP0"/>
+                              <a:da name="RANGE">
+                                <a:v>SMU_ALARM_GROUP0</a:v>
+                                <a:v>SMU_ALARM_GROUP1</a:v>
+                                <a:v>SMU_ALARM_GROUP2</a:v>
+                                <a:v>SMU_ALARM_GROUP3</a:v>
+                                <a:v>SMU_ALARM_GROUP4</a:v>
+                                <a:v>SMU_ALARM_GROUP5</a:v>
+                                <a:v>SMU_ALARM_GROUP6</a:v>
+                                <a:v>SMU_ALARM_GROUP7</a:v>
+                                <a:v>SMU_ALARM_GROUP8</a:v>
+                                <a:v>SMU_ALARM_GROUP9</a:v>
+                                <a:v>SMU_ALARM_GROUP10</a:v>
+                                <a:v>SMU_ALARM_GROUP11</a:v>
+                              </a:da>
+                            </v:var>
+                            <!-- [cover parentID={A895BA16-D4FA-49b7-92BC-04105CBD643C}] SmuCoreRT1AlarmId [/cover] -->
+                            <v:var name="SmuCoreRT1AlarmId" type="INTEGER">
+                              <a:a name="DESC"
+                              value="Defines the alarm identifier of the selected group that can use the recovery timer 1."/>
+                              <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                              </a:a>
+                              <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                              <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                              <a:a name="SCOPE" value="LOCAL"/>
+                              <a:a name="UUID" value="98ce938e-6ed1-5962-93b2-24d30b6789349e"/>
+                              <a:da name="DEFAULT" value="0"/>
+                              <a:da name="INVALID" type="XPath">
+                                <a:tst expr="((../SmuCoreRT1AlarmGroupId = 'SMU_ALARM_GROUP0') and
+                                  (../SmuCoreRT1AlarmId = text:split(ecu:get('Smu.SmuGroup0UnavailableIds'),'_')))
+                                " true="ERROR. Alarm ID is reserved"/>
+                                <a:tst expr="((../SmuCoreRT1AlarmGroupId = 'SMU_ALARM_GROUP1') and
+                                  (../SmuCoreRT1AlarmId = text:split(ecu:get('Smu.SmuGroup1UnavailableIds'),'_')))
+                                " true="ERROR. Alarm ID is reserved"/>
+                                <a:tst expr="((../SmuCoreRT1AlarmGroupId = 'SMU_ALARM_GROUP2') and
+                                  (../SmuCoreRT1AlarmId = text:split(ecu:get('Smu.SmuGroup2UnavailableIds'),'_')))
+                                " true="ERROR. Alarm ID is reserved"/>
+                                <a:tst expr="((../SmuCoreRT1larmGroupId = 'SMU_ALARM_GROUP3') and
+                                  (../SmuCoreRT1AlarmId = text:split(ecu:get('Smu.SmuGroup3UnavailableIds'),'_')))
+                                " true="ERROR. Alarm ID is reserved"/>
+                                <a:tst expr="((../SmuCoreRT1AlarmGroupId = 'SMU_ALARM_GROUP4') and
+                                  (../SmuCoreRT1AlarmId = text:split(ecu:get('Smu.SmuGroup4UnavailableIds'),'_')))
+                                " true="ERROR. Alarm ID is reserved"/>
+                                <a:tst expr="((../SmuCoreRT1AlarmGroupId = 'SMU_ALARM_GROUP5') and
+                                  (../SmuCoreRT1AlarmId = text:split(ecu:get('Smu.SmuGroup5UnavailableIds'),'_')))
+                                " true="ERROR. Alarm ID is reserved"/>
+                                <a:tst expr="((../SmuCoreRT1AlarmGroupId = 'SMU_ALARM_GROUP6') and
+                                  (../SmuCoreRT1AlarmId = text:split(ecu:get('Smu.SmuGroup6UnavailableIds'),'_')))
+                                " true="ERROR. Alarm ID is reserved"/>
+                                <a:tst expr="((../SmuCoreRT1AlarmGroupId = 'SMU_ALARM_GROUP7') and
+                                  (../SmuCoreRT1AlarmId = text:split(ecu:get('Smu.SmuGroup7UnavailableIds'),'_')))
+                                " true="ERROR. Alarm ID is reserved"/>
+                                <a:tst expr="((../SmuCoreRT1AlarmGroupId = 'SMU_ALARM_GROUP8') and
+                                  (../SmuCoreRT1AlarmId = text:split(ecu:get('Smu.SmuGroup8UnavailableIds'),'_')))
+                                " true="ERROR. Alarm ID is reserved"/>
+                                <a:tst expr="((../SmuCoreRT1AlarmGroupId = 'SMU_ALARM_GROUP9') and
+                                  (../SmuCoreRT1AlarmId = text:split(ecu:get('Smu.SmuGroup9UnavailableIds'),'_')))
+                                " true="ERROR. Alarm ID is reserved"/>
+                                <a:tst expr="((../SmuCoreRT1AlarmGroupId = 'SMU_ALARM_GROUP10') and
+                                  (../SmuCoreRT1AlarmId = text:split(ecu:get('Smu.SmuGroup10UnavailableIds'),'_')))
+                                " true="ERROR. Alarm ID is reserved"/>
+                                <a:tst expr="((../SmuCoreRT1AlarmGroupId = 'SMU_ALARM_GROUP11') and
+                                  (../SmuCoreRT1AlarmId = text:split(ecu:get('Smu.SmuGroup11UnavailableIds'),'_')))
+                                " true="ERROR. Alarm ID is reserved"/>
+                              </a:da>
+                              <a:da name="INVALID" type="Range">
+                                <a:tst expr="&lt;=31"/>
+                                <a:tst expr="&gt;=0"/>
+                              </a:da>
+                            </v:var>
+                          </v:ctr>
+                        </v:lst>
+                        <!-- [cover parentID={3CCF3643-BA99-4382-9057-D582E489EA46}] SmuCoreAlarmGlobalConfig [/cover] -->
+                        <v:ctr name="SmuCoreAlarmGlobalConfig" type="IDENTIFIABLE">
+                          <a:a name="DESC"
+                          value="EN: SmuCore Alarm Global Configuration ."/>
+                          <a:a name="UUID" value="3ea7abca-6ca4-4d14-befd-82b3345ac678e86f"/>
+                          <!-- [cover parentID={1C7F7B50-1858-49b7-BDE8-226E15588ACC}] SmuCoreInterruptSet0 [/cover] -->
+                          <v:var name="SmuCoreInterruptSet0" type="ENUMERATION">
+                            <a:a name="DESC"
+                            value="Defines the output value of the interrupt request vector when the alarm configuration flag selects the interrupt configuration set 0."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" value="bfec07fb-550f-421e-b578-cb43a567gha6"/>
+                            <a:da name="DEFAULT" value="SMU_SELECT_INT_NONE"/>
+                            <a:da name="RANGE">
+                              <a:v>SMU_SELECT_INT_NONE</a:v>
+                              <a:v>SMU_SELECT_INT0</a:v>
+                              <a:v>SMU_SELECT_INT1</a:v>
+                              <a:v>SMU_SELECT_INT2</a:v>
+                              <a:v>SMU_SELECT_INT0_INT1</a:v>
+                              <a:v>SMU_SELECT_INT0_INT2</a:v>
+                              <a:v>SMU_SELECT_INT1_INT2</a:v>
+                              <a:v>SMU_SELECT_INT0_INT1_INT2</a:v>
+                            </a:da>
+                          </v:var>
+                          <!-- [cover parentID={D1E0C4E1-6CB8-4cb0-A45C-630A2508D9CA}] SmuCoreInterruptSet1 [/cover] -->
+                          <v:var name="SmuCoreInterruptSet1" type="ENUMERATION">
+                            <a:a name="DESC"
+                            value="Defines the output value of the interrupt request vector when the alarm configuration flag selects the interrupt configuration set 1"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" value="bfec07fb-550f-421e-b578-cb43yshj096da6"/>
+                            <a:da name="DEFAULT" value="SMU_SELECT_INT_NONE"/>
+                            <a:da name="RANGE">
+                              <a:v>SMU_SELECT_INT_NONE</a:v>
+                              <a:v>SMU_SELECT_INT0</a:v>
+                              <a:v>SMU_SELECT_INT1</a:v>
+                              <a:v>SMU_SELECT_INT2</a:v>
+                              <a:v>SMU_SELECT_INT0_INT1</a:v>
+                              <a:v>SMU_SELECT_INT0_INT2</a:v>
+                              <a:v>SMU_SELECT_INT1_INT2</a:v>
+                              <a:v>SMU_SELECT_INT0_INT1_INT2</a:v>
+                            </a:da>
+                          </v:var>
+                          <!-- [cover parentID={9B5BB773-1891-46b3-8592-44D502F779E3}] SmuCoreInterruptSet2 [/cover] -->
+                          <v:var name="SmuCoreInterruptSet2" type="ENUMERATION">
+                            <a:a name="DESC"
+                            value="Defines the output value of the interrupt request vector when the alarm configuration flag selects the interrupt configuration set 2"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" value="bfec07fb-550f-421e-b578-cb43a245eda6"/>
+                            <a:da name="DEFAULT" value="SMU_SELECT_INT_NONE"/>
+                            <a:da name="RANGE">
+                              <a:v>SMU_SELECT_INT_NONE</a:v>
+                              <a:v>SMU_SELECT_INT0</a:v>
+                              <a:v>SMU_SELECT_INT1</a:v>
+                              <a:v>SMU_SELECT_INT2</a:v>
+                              <a:v>SMU_SELECT_INT0_INT1</a:v>
+                              <a:v>SMU_SELECT_INT0_INT2</a:v>
+                              <a:v>SMU_SELECT_INT1_INT2</a:v>
+                              <a:v>SMU_SELECT_INT0_INT1_INT2</a:v>
+                            </a:da>
+                          </v:var>
+                          <!-- [cover parentID={99BD063E-756A-43ce-A569-E968F7FDC86B}] SmuCoreCpu0ResetRequest [/cover] -->
+                          <v:var name="SmuCoreCpu0ResetRequest" type="BOOLEAN">
+                            <a:a name="DESC"
+                            value="This parameter defines the Cpu reset request to CPU."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" value="bfec07fb-550f-423e-b578-cb43a4e5ead6"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:da name="DEFAULT" value="false"/>
+                          </v:var>
+                          <!-- [cover parentID={08EADD33-D235-40f8-8725-C1C1D2271C3E}] SmuCoreCpu1ResetRequest [/cover] -->
+                          <v:var name="SmuCoreCpu1ResetRequest" type="BOOLEAN">
+                            <a:a name="DESC"
+                            value="This parameter defines the Cpu reset request to CPU."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" value="bfec07fb-550f-423e-b578-cb43b4e5eda6"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:da name="DEFAULT" value="false"/>
+                          </v:var>
+                          <!-- [cover parentID={ECD57C17-2A4F-4eef-A36D-02A0851DB12E}] SmuCoreCpu2ResetRequest [/cover] -->
+                          <v:var name="SmuCoreCpu2ResetRequest" type="BOOLEAN">
+                            <a:a name="DESC"
+                            value="This parameter defines the Cpu reset request to CPU."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" value="bfec07fb-550f-423e-b578-cb43c4e5eda6"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:da name="DEFAULT" value="false"/>
+                          </v:var>
+                          <!-- [cover parentID={7AAD3290-A8C8-401b-AC7A-DFDBB84B4E42}] SmuCoreCpu3ResetRequest [/cover] -->
+                          <v:var name="SmuCoreCpu3ResetRequest" type="BOOLEAN">
+                            <a:a name="DESC"
+                            value="This parameter defines the Cpu reset request to CPU."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" value="bfec07fb-550f-423e-b578-cb43d4e5eda6"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:da name="DEFAULT" value="false"/>
+                          </v:var>
+                          <!-- [cover parentID={03AE1220-89E1-43b4-A1EE-CD4AC7AD752C}] SmuCoreCpu4ResetRequest [/cover] -->
+                          <v:var name="SmuCoreCpu4ResetRequest" type="BOOLEAN">
+                            <a:a name="DESC"
+                            value="This parameter defines the Cpu reset request to CPU."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" value="bfec07fb-550f-423e-b578-cb43e4e5eda6"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:da name="DEFAULT" value="false"/>
+                            <a:da name="EDITABLE" type="XPath">
+                              <a:tst expr="((ecu:get('Smu.SmuAlarmGroup4') != num:i(0)))"/>
+                            </a:da>
+                          </v:var>
+                          <!-- [cover parentID={A1A2D537-0AE5-4127-A062-73747851B7B8}] SmuCoreCpu5ResetRequest [/cover] -->
+                          <v:var name="SmuCoreCpu5ResetRequest" type="BOOLEAN">
+                            <a:a name="DESC"
+                            value="This parameter defines the Cpu reset request to CPU."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" value="bfec07fb-550f-423e-b578-cb43f4e5eda6"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:da name="DEFAULT" value="false"/>
+                            <a:da name="EDITABLE" type="XPath">
+                              <a:tst expr="((ecu:get('Smu.SmuAlarmGroup5') != num:i(0)))"/>
+                            </a:da>
+                          </v:var>
+                          <!-- [cover parentID={5EC7A65B-9B88-47fb-8490-7A5BF8EAAF27}] SmuCoreIGCS0ActivatePES [/cover] -->
+                          <v:var name="SmuCoreIGCS0ActivatePES" type="BOOLEAN">
+                            <a:a name="DESC"
+                            value="Defines the control of the Port Emergency Stop (PES) feature when IGCS0 configured alarm is active. When an internal action is triggered, the hardware triggers automatically the PES on enabling"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" value="bfec07fb-550f-423e-b578-cb43g4e5eda6"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:da name="DEFAULT" value="false"/>
+                          </v:var>
+                          <!-- [cover parentID={7C0FDDEB-0F08-471b-9430-7ECE02D8B7AD}] SmuCoreIGCS1ActivatePES [/cover] -->
+                          <v:var name="SmuCoreIGCS1ActivatePES" type="BOOLEAN">
+                            <a:a name="DESC"
+                            value="Defines the control of the Port Emergency Stop (PES) feature when IGCS1 configured alarm is active. When an internal action is triggered, the hardware triggers automatically the PES on enabling"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" value="bfec07fb-550f-423e-b578-cb43a4e5edb6"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:da name="DEFAULT" value="false"/>
+                          </v:var>
+                          <!-- [cover parentID={F938149D-344D-4636-89FF-6A4496CECA3F}] SmuCoreIGCS2ActivatePES [/cover] -->
+                          <v:var name="SmuCoreIGCS2ActivatePES" type="BOOLEAN">
+                            <a:a name="DESC"
+                            value="Defines the control of the Port Emergency Stop (PES) feature when IGCS2 configured alarm is active. When an internal action is triggered, the hardware triggers automatically the PES on enabling"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" value="bfec07fb-550f-423e-b578-cb43a4e5edc6"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:da name="DEFAULT" value="false"/>
+                          </v:var>
+                          <!-- [cover parentID={B66B5AD9-2F1D-47b0-9010-0EF023D3CD88}] SmuCoreNMIActivatePES [/cover] -->
+                          <v:var name="SmuCoreNMIActivatePES" type="BOOLEAN">
+                            <a:a name="DESC"
+                            value="Defines the control of the Port Emergency Stop (PES) feature when NMI configured alarm is active. When an internal action is triggered, the hardware triggers automatically the PES on enabling"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" value="bfec07fb-550f-423e-b578-cb43a4e5edd6"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:da name="DEFAULT" value="false"/>
+                          </v:var>
+                          <!-- [cover parentID={1C28DCE8-93B3-40a6-AD2F-6A913DBEAFF2}] SmuCoreCpuResetActivatePES   [/cover] -->
+                          <v:var name="SmuCoreCpuResetActivatePES" type="BOOLEAN">
+                            <a:a name="DESC"
+                            value="Defines the control of the Port Emergency Stop (PES) feature when CPU RESET configured alarm is active. When an internal action is triggered, the hardware triggers automatically the PES on enabling"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" value="bfec07fb-550f-423e-b578-cb43a4e5ede6"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:da name="DEFAULT" value="false"/>
+                          </v:var>
+                          <!-- [cover parentID={973FD401-B436-4071-9240-6D21132E316F}] SmuCoreEnableFaultToRunState [/cover] -->
+                          <v:var name="SmuCoreEnableFaultToRunState" type="ENUMERATION">
+                            <a:a name="DESC"
+                            value="Defines the control of Fault State to Fault Free (Run) State transition. The state transition is possible only when this parameter is defined with SMU_EFRST_ENABLE"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" value="bfec07fb-550f-421e-b579-cb43a2e5eda6"/>
+                            <a:da name="DEFAULT" value="SMU_EFRST_DISABLE"/>
+                            <a:da name="RANGE">
+                              <a:v>SMU_EFRST_ENABLE</a:v>
+                              <a:v>SMU_EFRST_DISABLE</a:v>
+                            </a:da>
+                          </v:var>
+                        </v:ctr>
+                        <!-- [cover parentID={921FF83E-635B-4794-BD5D-171A4875DDF1}] SmuCoreFSPHandling [/cover] -->
+                        <v:ctr name="SmuCoreFSPHandling" type="IDENTIFIABLE">
+                          <a:a name="DESC"
+                          value="EN: SmuCore driver FSP configuration (parameters) ."/>
+                          <a:a name="UUID" value="3ea7abca-6ba4-4d14-befd-82b3351fe89f"/>
+                          <!-- [cover parentID={888D5512-F712-4b6e-BC8F-87FF982F94C8}] SmuCoreFSPPrescaler1 [/cover] -->
+                          <v:var name="SmuCoreFSPPrescaler1" type="ENUMERATION">
+                            <a:a name="DESC"
+                            value="Defines the dividing factor to apply to the reference clock FEVR_OSC. The divided clock is used as reference to generate the timing of the FSP fault state"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" value="bfec07fb-551f-421e-b568-cb43a2e5eda6"/>
+                            <a:da name="DEFAULT" value="SMU_REF_CLK_FRQ_DIV_2"/>
+                            <a:da name="RANGE">
+                              <a:v>SMU_REF_CLK_FRQ_DIV_2</a:v>
+                              <a:v>SMU_REF_CLK_FRQ_DIV_4</a:v>
+                              <a:v>SMU_REF_CLK_FRQ_DIV_8</a:v>
+                              <a:v>SMU_REF_CLK_FRQ_DIV_16</a:v>
+                              <a:v>SMU_REF_CLK_FRQ_DIV_32</a:v>
+                              <a:v>SMU_REF_CLK_FRQ_DIV_64</a:v>
+                              <a:v>SMU_REF_CLK_FRQ_DIV_128</a:v>
+                              <a:v>SMU_REF_CLK_FRQ_DIV_256</a:v>
+                            </a:da>
+                          </v:var>
+                          <!-- [cover parentID={D3EB10E0-FC00-48d2-AF37-C8FD985273DC}] SmuCoreFSPPrescaler2 [/cover] -->
+                          <v:var name="SmuCoreFSPPrescaler2" type="ENUMERATION">
+                            <a:a name="DESC"
+                            value="Defines the dividing factor to apply to the reference clock FEVR_OSC in order to generate the timing of the fault free state for the dynamic dual rail and time switching modes of the fault signaling protocol"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" value="bfec07fb-551f-441e-b568-cb43a2e5eda6"/>
+                            <a:da name="DEFAULT" value="SMU_REF_CLK_FRQ_DIV_512"/>
+                            <a:da name="RANGE">
+                              <a:v>SMU_REF_CLK_FRQ_DIV_512</a:v>
+                              <a:v>SMU_REF_CLK_FRQ_DIV_1024</a:v>
+                              <a:v>SMU_REF_CLK_FRQ_DIV_2048</a:v>
+                              <a:v>SMU_REF_CLK_FRQ_DIV_4096</a:v>
+                            </a:da>
+                          </v:var>
+                          <!-- [cover parentID={AAAF22E7-EB91-49f6-A202-9E6DD75A74E5}] SmuCoreFSPSignalingMode [/cover] -->
+                          <v:var name="SmuCoreFSPSignalingMode" type="ENUMERATION">
+                            <a:a name="DESC"
+                            value="Defines the type of signal output for FSP on an alarm event"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" value="bfec07fb-561f-445e-b568-cb43a2e5eda6"/>
+                            <a:da name="DEFAULT" value="SMU_FSP_BISTABLE_PROTOCOL"/>
+                            <a:da name="RANGE">
+                              <a:v>SMU_FSP_BISTABLE_PROTOCOL</a:v>
+                              <a:v>SMU_FSP_DUAL_RAIL_PROTOCOL</a:v>
+                              <a:v>SMU_FSP_TIME_SWITCHING_PROTOCOL</a:v>
+                            </a:da>
+                          </v:var>
+                          <!-- [cover parentID={6D73B240-C099-44b8-804B-A5871DC46365}] SmuCorePESOnFSP [/cover] -->
+                          <v:var name="SmuCorePESOnFSP" type="ENUMERATION">
+                            <a:a name="DESC"
+                            value="Defines the PES to automatically request when an alarm event configured to start the FSP is detected"/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" value="bfec07fb-261f-445e-c568-cb43a2e5eda6"/>
+                            <a:da name="DEFAULT" value="SMU_FSP_PES_DISABLE"/>
+                            <a:da name="RANGE">
+                              <a:v>SMU_FSP_PES_ENABLE</a:v>
+                              <a:v>SMU_FSP_PES_DISABLE</a:v>
+                            </a:da>
+                          </v:var>
+                          <!-- [cover parentID={91B5F8B9-09E2-4b33-8E12-1F003A3990B1}] SmuCoreFSPFaultStateDuration [/cover] -->
+                          <v:var name="SmuCoreFSPFaultStateDuration" type="INTEGER">
+                            <a:a name="DESC">
+                              <a:v>This parameter enables the maximum fault state duration of FSP signal. The value is written in TFSP_HIGH bits of SMU_FSP register. It shall be specified as a number of fSMU_FS ticks.
+                              </a:v>
+                            </a:a>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" value="98ce928e-3ed1-4968-93b4-21d90b1fa49e"/>
+                            <a:da name="DEFAULT" value="1"/>
+                            <a:da name="INVALID" type="Range">
+                              <a:tst expr="&lt;=1023"/>
+                              <a:tst expr="&gt;=0"/>
+                            </a:da>
+                          </v:var>
+                        </v:ctr>
+                        <v:lst name="SmuCoreAlarmGroup" type="MAP">
+                          <!-- [cover parentID={6C137F61-1F8A-4e62-901E-D72E2FCF2872}] SmuCoreTotalAlarmGroups [/cover] -->
+                          <a:da name="MIN" type="XPath" expr="ecu:get('Smu.SmuCoreTotalAlarmGroups')"/>
+                          <a:da name="MAX" type="XPath" expr="ecu:get('Smu.SmuCoreTotalAlarmGroups')"/>
+                          <v:ctr name="SmuCoreAlarmGroup" type="IDENTIFIABLE">
+                            <a:a name="DESC"
+                            value="Container for SmuCore Alarm Group."/>
+                            <a:a name="UUID" value="97e6fd09-f2da-4844-b2e0-ecc3dc70e5a3"/>
+                            <!-- [cover parentID={BEE055CB-6786-434f-BB9F-A00FEEFC529B}] SmuCoreAlmGrpId [/cover] -->
+                            <v:var name="SmuCoreAlmGrpId" type="INTEGER">
+                              <a:a name="DESC"
+                              value="EN: Group Id of the SMU alarm group. This value will be assigned to the symbolic name derived of the AlarmGroup container short name."/>
+                              <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                              </a:a>
+                              <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                              <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                              <a:a name="SCOPE" value="LOCAL"/>
+                              <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                              <a:a name="UUID"
+                              value="ECUC:3e518668-f29a-463d-b183-d4b4d1c28766"/>
+                              <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index,'0')"/>
+                              <a:da name="INVALID" type="Range">
+                                <a:tst expr="&lt;=65535"/>
+                                <a:tst expr="&gt;=0"/>
+                              </a:da>
+                              <a:da name="RANGE" type="XPath">
+                                <a:tst expr="(.&gt;= 0 ) and (.&lt; num:i(count(node:current()/../../*)))"
+                                false="Value out of range: must be in range 0 to N-1 (N is number of configured alarm groups)."/>
+                                <a:tst expr="text:uniq(../../*/SmuCoreAlmGrpId,.)"  false="Duplicated value, SmuCoreAlmGrpId must be unique across all groups."/>
+                              </a:da>
+                            </v:var>
+                            <!-- [cover parentID={E72C75C4-2304-4679-8578-267A07738EFB}] SmuCoreAlarmBehavior [/cover] -->
+                            <v:lst name="SmuCoreAlarmBehavior" type="MAP">
+                              <!-- [cover parentID={E72C75C4-2304-4679-8578-267A07738EFB}] SmuCoreAlarmBehavior [/cover] -->
+                              <!-- [cover parentID={35B251E0-4830-43d0-AE85-AA8D70B1CD62}] SmuCoreAlarmBehavior [/cover] -->
+                              <a:da name="MIN" type="XPath" expr="ecu:get('Smu.SmuCoreTotalAlarmBehavior')"/>
+                              <a:da name="MAX" type="XPath" expr="ecu:get('Smu.SmuCoreTotalAlarmBehavior')"/>
+                              <!-- [cover parentID={E72C75C4-2304-4679-8578-267A07738EFB}] SmuCoreAlarmBehavior [/cover] -->
+                              <v:ctr name="SmuCoreAlarmBehavior" type="IDENTIFIABLE">
+                                <a:a name="DESC"
+                                value="Container for SMU Alarm Behavior."/>
+                                <a:a name="UUID" value="97e6fd09-f2da-4844-b2e0-edc4dc78hj5a3"/>
+                                <!-- [cover parentID={8E7CFFC9-3D35-4e05-BD00-BC286ACF004B}] SmuCoreAlmBehaviourId [/cover] -->
+                                <v:var name="SmuCoreAlmBehaviourId" type="INTEGER">
+                                  <a:a name="DESC"
+                                  value="EN: Alarm Id of the alarm group. This value will be assigned to the symbolic name derived of the AlarmBehaviour container short name."/>
+                                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                                  </a:a>
+                                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                  <a:a name="SCOPE" value="LOCAL"/>
+                                  <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                                  <a:a name="UUID"
+                                  value="ECUC:3e518668-f29a-463d-b183-d4b4d1c28786"/>
+                                  <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index,'0')"/>
+                                  <a:da name="INVALID" type="Range">
+                                    <a:tst expr="&lt;=65535"/>
+                                    <a:tst expr="&gt;=0"/>
+                                  </a:da>
+                                  <a:da name="RANGE" type="XPath">
+                                    <a:tst expr="(.&gt;= 0 ) and (.&lt; num:i(count(node:current()/../../*)))"
+                                    false="Value out of range: must be in range 0 to N-1 (N is number of configured alarms)."/>
+                                    <a:tst expr="text:uniq(../../*/SmuCoreAlmBehaviourId,.)"  false="Duplicated value, SmuCoreAlmBehaviourId must be unique across all alarms."/>
+                                  </a:da>
+                                </v:var>
+                                <!-- [cover parentID={C9FB39DF-E078-4640-8F20-A42E7116FFC3}] SmuCoreAlarmIntBeh [/cover] -->
+                                <v:var name="SmuCoreAlarmIntBeh" type="ENUMERATION">
+                                  <a:a name="DESC"
+                                  value="Defines the internal behavior of an alarm event"/>
+                                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                  </a:a>
+                                  <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                  <a:a name="SCOPE" value="LOCAL"/>
+                                  <a:a name="UUID" value="bfec07fb-550f-421e-b568-cb43a2e5eda6"/>
+                                  <a:da name="DEFAULT" value="SMU_NA_INT_ACTION"/>
+                                  <a:da name="RANGE">
+                                    <a:v>SMU_NA_INT_ACTION</a:v>
+                                    <a:v>SMU_IGCS0_INT_ACTION</a:v>
+                                    <a:v>SMU_IGCS1_INT_ACTION</a:v>
+                                    <a:v>SMU_IGCS2_INT_ACTION</a:v>
+                                    <a:v>SMU_NMI_INT_ACTION</a:v>
+                                    <a:v>SMU_RESET_INT_ACTION</a:v>
+                                    <a:v>SMU_CPU_RESET_INT_ACTION</a:v>
+                                  </a:da>
+                                  <!-- [cover parentID={16721204-FE96-4bd0-AD97-7BA32D6FB9DA}]  [/cover] -->
+                                  <!-- [cover parentID={F9399F6F-677B-4ab8-A6D6-0C85E2ED5CCC}]  [/cover] -->
+                                  <!-- [cover parentID={40FFC091-D881-448e-9B30-F4E91097A853}]  [/cover] -->
+                                  <!-- [cover parentID={D5810358-4486-4fcf-BF72-9635B3535C5E}]  [/cover] -->
+                                  <!-- [cover parentID={0B5961F2-E1BE-4cf3-9066-174E674DB267}]  [/cover] -->
+                                  <!-- [cover parentID={24D1E12E-FDAC-48a6-92E1-46C9200FD1F0}]  [/cover] -->
+                                  <!-- [cover parentID={B9779D0F-B61C-44e8-B56B-07826922319F}]  [/cover] -->
+                                  <!-- [cover parentID={65316334-B16E-4f4d-B0BF-2792AA48384A}]  [/cover] -->
+                                  <!-- [cover parentID={B6E47CEA-3DD2-4de7-93EE-A01541788498}]  [/cover] -->
+                                  <!-- [cover parentID={C5B04A6C-BE31-402f-9F32-71982B90610A}]  [/cover] -->
+                                  <!-- [cover parentID={27B1E10E-1019-4088-A785-D2D7C3252D0F}]  [/cover] -->
+                                  <!-- [cover parentID={943151C5-959A-4efd-8531-3FA28E55E59A}]  [/cover] -->
+                                  <!-- [cover parentID={654FE9FF-23C8-46ed-856B-9F76DEBC6EBC}]  [/cover] -->
+                                  <!-- [cover parentID={A5CED061-4DB3-46a0-80D8-34F1F91EFB97}]  [/cover] -->
+                                  <a:da name="INVALID" type="XPath">
+                                    <a:tst expr="((../../../SmuCoreAlmGrpId = num:i(0)) and
+                                      (../SmuCoreAlmBehaviourId = text:split(ecu:get('Smu.SmuGroup0UnavailableIds'),'_')))
+                                    and (. !='SMU_NA_INT_ACTION')" true="ERROR. Alarm ID is reserved"/>
+                                    <a:tst expr="((../../../SmuCoreAlmGrpId = num:i(1)) and
+                                      (../SmuCoreAlmBehaviourId = text:split(ecu:get('Smu.SmuGroup1UnavailableIds'),'_')))
+                                    and (. !='SMU_NA_INT_ACTION')" true="ERROR. Alarm ID is reserved"/>
+                                    <a:tst expr="((../../../SmuCoreAlmGrpId = num:i(2)) and
+                                      (../SmuCoreAlmBehaviourId = text:split(ecu:get('Smu.SmuGroup2UnavailableIds'),'_')))
+                                    and (. !='SMU_NA_INT_ACTION')" true="ERROR. Alarm ID is reserved"/>
+                                    <a:tst expr="((../../../SmuCoreAlmGrpId = num:i(3)) and
+                                      (../SmuCoreAlmBehaviourId = text:split(ecu:get('Smu.SmuGroup3UnavailableIds'),'_')))
+                                    and (. !='SMU_NA_INT_ACTION')" true="ERROR. Alarm ID is reserved"/>
+                                    <a:tst expr="((../../../SmuCoreAlmGrpId = num:i(4)) and
+                                      (../SmuCoreAlmBehaviourId = text:split(ecu:get('Smu.SmuGroup4UnavailableIds'),'_')))
+                                    and (. !='SMU_NA_INT_ACTION')" true="ERROR. Alarm ID is reserved"/>
+                                    <a:tst expr="((../../../SmuCoreAlmGrpId = num:i(5)) and
+                                      (../SmuCoreAlmBehaviourId = text:split(ecu:get('Smu.SmuGroup5UnavailableIds'),'_')))
+                                    and (. !='SMU_NA_INT_ACTION')" true="ERROR. Alarm ID is reserved"/>
+                                    <a:tst expr="((../../../SmuCoreAlmGrpId = num:i(6)) and
+                                      (../SmuCoreAlmBehaviourId = text:split(ecu:get('Smu.SmuGroup6UnavailableIds'),'_')))
+                                    and (. !='SMU_NA_INT_ACTION')" true="ERROR. Alarm ID is reserved"/>
+                                    <a:tst expr="((../../../SmuCoreAlmGrpId = num:i(7)) and
+                                      (../SmuCoreAlmBehaviourId = text:split(ecu:get('Smu.SmuGroup7UnavailableIds'),'_')))
+                                    and (. !='SMU_NA_INT_ACTION')" true="ERROR. Alarm ID is reserved"/>
+                                    <a:tst expr="((../../../SmuCoreAlmGrpId = num:i(8)) and
+                                      (../SmuCoreAlmBehaviourId = text:split(ecu:get('Smu.SmuGroup8UnavailableIds'),'_')))
+                                    and (. !='SMU_NA_INT_ACTION')" true="ERROR. Alarm ID is reserved"/>
+                                    <a:tst expr="((../../../SmuCoreAlmGrpId = num:i(9)) and
+                                      (../SmuCoreAlmBehaviourId = text:split(ecu:get('Smu.SmuGroup9UnavailableIds'),'_')))
+                                    and (. !='SMU_NA_INT_ACTION')" true="ERROR. Alarm ID is reserved"/>
+                                    <a:tst expr="((../../../SmuCoreAlmGrpId = num:i(10)) and
+                                      (../SmuCoreAlmBehaviourId = text:split(ecu:get('Smu.SmuGroup10UnavailableIds'),'_')))
+                                    and (. !='SMU_NA_INT_ACTION')" true="ERROR. Alarm ID is reserved"/>
+                                    <a:tst expr="((../../../SmuCoreAlmGrpId = num:i(11)) and
+                                      (../SmuCoreAlmBehaviourId = text:split(ecu:get('Smu.SmuGroup11UnavailableIds'),'_')))
+                                    and (. !='SMU_NA_INT_ACTION')" true="ERROR. Alarm ID is reserved"/>
+                                  </a:da>
+                                </v:var>
+                                <!-- [cover parentID={B613BB15-775D-4c4a-9F23-B01D98419DB8}] SmuCoreAlarmFSP [/cover] -->
+                                <v:var name="SmuCoreAlarmFSP" type="ENUMERATION">
+                                  <a:a name="DESC"
+                                  value="Defines the Fault Signaling of an alarm event"/>
+                                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                  </a:a>
+                                  <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                  <a:a name="SCOPE" value="LOCAL"/>
+                                  <a:a name="UUID" value="bfec07fb-650f-421e-b568-cb43a2e5eda6"/>
+                                  <a:da name="DEFAULT" value="SMU_ALARM_FSP_DISABLED"/>
+                                  <a:da name="RANGE">
+                                    <a:v>SMU_ALARM_FSP_ENABLED</a:v>
+                                    <a:v>SMU_ALARM_FSP_DISABLED</a:v>
+                                  </a:da>
+                                  <a:da name="INVALID" type="XPath">
+                                    <a:tst expr="((../../../SmuCoreAlmGrpId = num:i(0)) and
+                                      (../SmuCoreAlmBehaviourId = text:split(ecu:get('Smu.SmuGroup0UnavailableIds'),'_')))
+                                    and (. !='SMU_ALARM_FSP_DISABLED')" true="ERROR. Alarm ID is reserved"/>
+                                    <a:tst expr="((../../../SmuCoreAlmGrpId = num:i(1)) and
+                                      (../SmuCoreAlmBehaviourId = text:split(ecu:get('Smu.SmuGroup1UnavailableIds'),'_')))
+                                    and (. !='SMU_ALARM_FSP_DISABLED')" true="ERROR. Alarm ID is reserved"/>
+                                    <a:tst expr="((../../../SmuCoreAlmGrpId = num:i(2)) and
+                                      (../SmuCoreAlmBehaviourId = text:split(ecu:get('Smu.SmuGroup2UnavailableIds'),'_')))
+                                    and (. !='SMU_ALARM_FSP_DISABLED')" true="ERROR. Alarm ID is reserved"/>
+                                    <a:tst expr="((../../../SmuCoreAlmGrpId = num:i(3)) and
+                                      (../SmuCoreAlmBehaviourId = text:split(ecu:get('Smu.SmuGroup3UnavailableIds'),'_')))
+                                    and (. !='SMU_ALARM_FSP_DISABLED')" true="ERROR. Alarm ID is reserved"/>
+                                    <a:tst expr="((../../../SmuCoreAlmGrpId = num:i(4)) and
+                                      (../SmuCoreAlmBehaviourId = text:split(ecu:get('Smu.SmuGroup4UnavailableIds'),'_')))
+                                    and (. !='SMU_ALARM_FSP_DISABLED')" true="ERROR. Alarm ID is reserved"/>
+                                    <a:tst expr="((../../../SmuCoreAlmGrpId = num:i(5)) and
+                                      (../SmuCoreAlmBehaviourId = text:split(ecu:get('Smu.SmuGroup5UnavailableIds'),'_')))
+                                    and (. !='SMU_ALARM_FSP_DISABLED')" true="ERROR. Alarm ID is reserved"/>
+                                    <a:tst expr="((../../../SmuCoreAlmGrpId = num:i(6)) and
+                                      (../SmuCoreAlmBehaviourId = text:split(ecu:get('Smu.SmuGroup6UnavailableIds'),'_')))
+                                    and (. !='SMU_ALARM_FSP_DISABLED')" true="ERROR. Alarm ID is reserved"/>
+                                    <a:tst expr="((../../../SmuCoreAlmGrpId = num:i(7)) and
+                                      (../SmuCoreAlmBehaviourId = text:split(ecu:get('Smu.SmuGroup7UnavailableIds'),'_')))
+                                    and (. !='SMU_ALARM_FSP_DISABLED')" true="ERROR. Alarm ID is reserved"/>
+                                    <a:tst expr="((../../../SmuCoreAlmGrpId = num:i(8)) and
+                                      (../SmuCoreAlmBehaviourId = text:split(ecu:get('Smu.SmuGroup8UnavailableIds'),'_')))
+                                    and (. !='SMU_ALARM_FSP_DISABLED')" true="ERROR. Alarm ID is reserved"/>
+                                    <a:tst expr="((../../../SmuCoreAlmGrpId = num:i(9)) and
+                                      (../SmuCoreAlmBehaviourId = text:split(ecu:get('Smu.SmuGroup9UnavailableIds'),'_')))
+                                    and (. !='SMU_ALARM_FSP_DISABLED')" true="ERROR. Alarm ID is reserved"/>
+                                    <a:tst expr="((../../../SmuCoreAlmGrpId = num:i(10)) and
+                                      (../SmuCoreAlmBehaviourId = text:split(ecu:get('Smu.SmuGroup10UnavailableIds'),'_')))
+                                    and (. !='SMU_ALARM_FSP_DISABLED')" true="ERROR. Alarm ID is reserved"/>
+                                    <a:tst expr="((../../../SmuCoreAlmGrpId = num:i(11)) and
+                                      (../SmuCoreAlmBehaviourId = text:split(ecu:get('Smu.SmuGroup11UnavailableIds'),'_')))
+                                    and (. !='SMU_ALARM_FSP_DISABLED')" true="ERROR. Alarm ID is reserved"/>
+                                  </a:da>
+                                </v:var>
+                              </v:ctr>
+                            </v:lst>
+                          </v:ctr>
+                        </v:lst>
+                      </v:ctr>
+                      <!-- [cover parentID={50B66750-6038-4dee-BC85-0F89EAA63B89}] SmuStdbyConfig [/cover] -->
+                      <v:ctr name="SmuStdbyConfig" type="IDENTIFIABLE">
+                        <a:a name="DESC"
+                        value="This is the base container that contains the post-build configuration parameters for SmuStdby"/>
+                        <a:a name="UUID" value="ccda81dc-46cf-4171-858b-7c9478fg802f"/>
+                        <a:da name="EDITABLE" type="XPath">
+                          <a:tst expr="((../../../SmuGeneral/SmuStdbyEnable = 'true'))"/>
+                        </a:da>
+                        <!-- [cover parentID={7996E92D-1F8D-4f71-8915-78C8D72D9A29}] SmuStdbyAlarmGlobalConfig [/cover] -->
+                        <v:ctr name="SmuStdbyAlarmGlobalConfig" type="IDENTIFIABLE">
+                          <a:a name="DESC"
+                          value="EN: SmuStdby Alarm Global Configuration ."/>
+                          <a:a name="UUID" value="3ea7abca-6ca4-4d14-befd-82b3351fe86f"/>
+                          <a:da name="EDITABLE" type="XPath">
+                            <a:tst expr="((../../../../SmuGeneral/SmuStdbyEnable = 'true'))"/>
+                          </a:da>
+                          <!-- [cover parentID={FFD05C8B-3CEB-4007-AECD-0732764B43FD}] SmuStdbyEnableFSP0 [/cover] -->
+                          <v:var name="SmuStdbyEnableFSP0" type="BOOLEAN">
+                            <a:a name="DESC"
+                            value="Defines the error pin 33.8 to be used for FSP"/>
+                            <a:da name="EDITABLE" type="XPath">
+                              <a:tst expr="((../../../../../SmuGeneral/SmuStdbyEnable = 'true'))"/>
+                            </a:da>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" value="bfec07fb-550f-423e-b578-cb43a4es67hd6"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:da name="DEFAULT" value="false"/>
+                          </v:var>
+                          <!-- [cover parentID={7564A03F-CE21-4096-BD36-6E0AB6A01E3D}] SmuStdbyEnableFSP1  [/cover] -->
+                          <v:var name="SmuStdbyEnableFSP1" type="BOOLEAN">
+                            <a:a name="DESC"
+                            value="Defines the error pin 33.10 to be used for FSP"/>
+                            <a:da name="EDITABLE" type="XPath">
+                              <a:tst expr="((../../../../../SmuGeneral/SmuStdbyEnable = 'true'))"/>
+                            </a:da>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                              <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                            </a:a>
+                            <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                            <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                            <a:a name="SCOPE" value="LOCAL"/>
+                            <a:a name="UUID" value="bfec07fb-550f-423e-b578-cb43a4e78ude6"/>
+                            <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                            <a:da name="DEFAULT" value="false"/>
+                          </v:var>
+                        </v:ctr>
+                        <!-- [cover parentID={BEE2A326-7057-498f-9749-F55437457F90}] SmuStdbyAlarmGroup [/cover] -->
+                        <v:lst name="SmuStdbyAlarmGroup" type="MAP">
+                          <!-- [cover parentID={EE630B75-6DD2-42a2-B754-58D1DD312551}] Smu.SmuStdbyTotalAlarmGroups [/cover] -->
+                          <a:da name="MIN" type="XPath" expr="ecu:get('Smu.SmuStdbyTotalAlarmGroups')"/>
+                          <a:da name="MAX" type="XPath" expr="ecu:get('Smu.SmuStdbyTotalAlarmGroups')"/>
+                          <a:da name="EDITABLE" type="XPath">
+                            <a:tst expr="((../../../../SmuGeneral/SmuStdbyEnable = 'true'))"/>
+                          </a:da>
+                          <v:ctr name="SmuStdbyAlarmGroup" type="IDENTIFIABLE">
+                            <a:a name="DESC"
+                            value="Container for SmuStdby Alarm Group."/>
+                            <a:a name="UUID" value="97e6fd09-f2da-4844-b2e0-ectyhdc70e5a3"/>
+                            <a:da name="EDITABLE" type="XPath">
+                              <a:tst expr="((../../../../../SmuGeneral/SmuStdbyEnable = 'true'))"/>
+                            </a:da>
+                            <!-- [cover parentID={17708537-A30D-4ce1-AA7A-89504ED280E0}] SmuStdbyAlmGrpId [/cover] -->
+                            <v:var name="SmuStdbyAlmGrpId" type="INTEGER">
+                              <a:a name="DESC"
+                              value="EN: Group Id of the SMU alarm group. This value will be assigned to the symbolic name derived of the AlarmGroup container short name."/>
+                              <a:da name="EDITABLE" type="XPath">
+                                <a:tst expr="((../../../../../../SmuGeneral/SmuStdbyEnable = 'true'))"/>
+                              </a:da>
+                              <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                type="IMPLEMENTATIONCONFIGCLASS">
+                                <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                              </a:a>
+                              <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                              <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                              <a:a name="SCOPE" value="LOCAL"/>
+                              <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                              <a:a name="UUID"
+                              value="ECUC:3e518668-f29a-463d-b183-d4b4t1c29766"/>
+                              <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index,'0')"/>
+                              <a:da name="INVALID" type="Range">
+                                <a:tst expr="&lt;=65535"/>
+                                <a:tst expr="&gt;=0"/>
+                              </a:da>
+                              <a:da name="RANGE" type="XPath">
+                                <a:tst expr="(.&gt;= 0 ) and (.&lt; num:i(count(node:current()/../../*)))"
+                                false="Value out of range: must be in range 0 to N-1 (N is number of configured alarm groups)."/>
+                                <a:tst expr="text:uniq(../../*/SmuStdbyAlmGrpId,.)"  false="Duplicated value, SmuStdbyAlmGrpId must be unique across all groups."/>
+                              </a:da>
+                            </v:var>
+                            <!-- [cover parentID={A5F24688-5339-4b37-BAE9-E347EB058FC3}] SmuStdbyAlarmBehavior [/cover] -->
+                            <v:lst name="SmuStdbyAlarmBehavior" type="MAP">
+                              <!-- [cover parentID={65CD6F79-23D8-4db9-B5DF-51469369C36D}] Smu.SmuStdbyTotalAlarmBehavior [/cover] -->
+                              <a:da name="MIN" type="XPath" expr="ecu:get('Smu.SmuStdbyTotalAlarmBehavior')"/>
+                              <a:da name="MAX" type="XPath" expr="ecu:get('Smu.SmuStdbyTotalAlarmBehavior')"/>
+                              <a:da name="EDITABLE" type="XPath">
+                                <a:tst expr="((../../../../../../SmuGeneral/SmuStdbyEnable = 'true'))"/>
+                              </a:da>
+                              <v:ctr name="SmuStdbyAlarmBehavior" type="IDENTIFIABLE">
+                                <a:a name="DESC"
+                                value="Container for SmuStdby Alarm Behavior."/>
+                                <a:a name="UUID" value="97e6fd09-f2da-4844-b2e0-edc4dc70e5a3"/>
+                                <a:da name="EDITABLE" type="XPath">
+                                  <a:tst expr="((../../../../../../../SmuGeneral/SmuStdbyEnable = 'true'))"/>
+                                </a:da>
+                                <!-- [cover parentID={9C8B95DE-6271-42e3-AD4E-4EF68B19303B}] SmuStdbyAlmBehaviourId [/cover] -->
+                                <v:var name="SmuStdbyAlmBehaviourId" type="INTEGER">
+                                  <a:a name="DESC"
+                                  value="EN: Alarm Id of the alarm group. This value will be assigned to the symbolic name derived of the AlarmBehaviour container short name."/>
+                                  <a:da name="EDITABLE" type="XPath">
+                                    <a:tst expr="((../../../../../../../../SmuGeneral/SmuStdbyEnable = 'true'))"/>
+                                  </a:da>
+                                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                                  </a:a>
+                                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                  <a:a name="SCOPE" value="LOCAL"/>
+                                  <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                                  <a:a name="UUID"
+                                  value="ECUC:3e518668-f29a-463d-b183-d4b7gh1c28766"/>
+                                  <a:da name="DEFAULT" type="XPath" expr="node:fallback(node:current()/../@index,'0')"/>
+                                  <a:da name="INVALID" type="Range">
+                                    <a:tst expr="&lt;=65535"/>
+                                    <a:tst expr="&gt;=0"/>
+                                  </a:da>
+                                  <a:da name="RANGE" type="XPath">
+                                    <a:tst expr="(.&gt;= 0 ) and (.&lt; num:i(count(node:current()/../../*)))"
+                                    false="Value out of range: must be in range 0 to N-1 (N is number of configured alarms)."/>
+                                    <a:tst expr="text:uniq(../../*/SmuStdbyAlmBehaviourId,.)"  false="Duplicated value, SmuStdbyAlmBehaviourId must be unique across all alarms."/>
+                                  </a:da>
+                                </v:var>
+                                <!-- [cover parentID={6393593A-8A4E-4557-8147-702A6A4DBE44}] SmuStdbyAlarmFSP   [/cover] -->
+                                <v:var name="SmuStdbyAlarmFSP" type="ENUMERATION">
+                                  <a:a name="DESC"
+                                  value="Defines the Fault Signaling of an alarm event"/>
+                                  <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                                    type="IMPLEMENTATIONCONFIGCLASS">
+                                    <icc:v class="PostBuild">VariantPostBuild</icc:v>
+                                  </a:a>
+                                  <a:da name="EDITABLE" type="XPath">
+                                    <a:tst expr="((../../../../../../../../SmuGeneral/SmuStdbyEnable = 'true'))"/>
+                                  </a:da>
+                                  <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                                  <a:a name="SCOPE" value="LOCAL"/>
+                                  <a:a name="UUID" value="bfec07fb-650f-421e-b568-cb43a2e5eyuj6"/>
+                                  <a:da name="DEFAULT" value="SMU_ALARM_FSP_DISABLED"/>
+                                  <a:da name="RANGE">
+                                    <a:v>SMU_ALARM_FSP_ENABLED</a:v>
+                                    <a:v>SMU_ALARM_FSP_DISABLED</a:v>
+                                  </a:da>
+                                  <a:da name="INVALID" type="XPath">
+                                    <a:tst expr="((../../../SmuStdbyAlmGrpId = num:i(0)) and
+                                      (../SmuStdbyAlmBehaviourId = text:split(ecu:get('Smu.SmuGroup20UnavailableIds'),'_')))
+                                    and (. !='SMU_ALARM_FSP_DISABLED')" true="ERROR. Alarm ID is reserved"/>
+                                    <a:tst expr="((../../../SmuStdbyAlmGrpId = num:i(1)) and
+                                      (../SmuStdbyAlmBehaviourId = text:split(ecu:get('Smu.SmuGroup21UnavailableIds'),'_')))
+                                    and (. !='SMU_ALARM_FSP_DISABLED')" true="ERROR. Alarm ID is reserved"/>
+                                  </a:da>
+                                </v:var>
+                              </v:ctr>
+                            </v:lst>
+                          </v:ctr>
+                        </v:lst>
+                      </v:ctr>
+                    </v:ctr>
+                  </v:lst>
+                  <!-- [cover parentID={A16CAF7C-5075-439f-B914-7077B2798BE0}] SmuGeneral [/cover] -->
+                  <v:ctr name="SmuGeneral" type="IDENTIFIABLE">
+                    <a:a name="DESC"
+                    value="EN: SMU Module related generic configurations."/>
+                    <a:a name="UUID" value="3ea7abca-6ba4-1d14-befd-8bb9351fe86f"/>
+                    <!-- [cover parentID={82C97A2A-D06A-4521-AF0C-185D5CCD3EC9}] SmuStdbyEnable [/cover] -->
+                    <v:var name="SmuStdbyEnable" type="BOOLEAN">
+                      <a:a name="DESC"
+                      value="This parameter switches the SmuStdby on/off"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="UUID" value="bfec07fb-550f-423e-b578-cb43e4e5eyj6"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                    <!-- [cover parentID={B60C5A37-032A-4adb-BF3A-A1D101F182CA}] SmuDevErrorDetect [/cover] -->
+                    <v:var name="SmuDevErrorDetect" type="BOOLEAN">
+                      <a:a name="DESC"
+                      value="EN: Switches the Default Error Tracer (Det) detection and notification ON or OFF."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID"
+                      value="940168d-eeab-4151-a78e-381ce11c5706"/>
+                      <a:da name="DEFAULT" value="true"/>
+                    </v:var>
+                    <!-- [cover parentID={6144DDE2-B2E0-42b4-AE4F-60FBF33726B0}] SmuSafetyEnable [/cover] -->
+                    <v:var name="SmuSafetyEnable" type="BOOLEAN">
+                      <a:a name="DESC"
+                      value="EN: Switches the safety Error Checking ON or OFF."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID"
+                      value="940168d-eeab-4151-a78e-381ce11c67806"/>
+                      <a:da name="DEFAULT" value="true"/>
+                      <a:da name="INVALID" type="XPath">
+                        <a:tst expr="((not(node:exists(../../SmuDemEventParameterRefsConf/*[1]))) and (../SmuSafetyEnable = 'true'))" true="SMU - Safety error reporting is enabled, enable DEM reporting."/>
+                      </a:da>
+                    </v:var>
+                    <!-- [cover parentID={8D8905EF-B25B-45f5-B928-431E7BDB55E8}] SmuInitCheckApi [/cover] -->
+                    <v:var name="SmuInitCheckApi" type="BOOLEAN">
+                      <a:a name="DESC"
+                      value="EN: Switches the Smu_InitCheck detection and notification ON or OFF."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID"
+                      value="940168d-eeab-4151-a78e-381ce11c570gh6"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                    <!-- [cover parentID={375A3FD3-B465-4331-8A5E-B0FCF276DDC3}] SmuRuntimeApiMode [/cover] -->
+                    <v:var name="SmuRuntimeApiMode" type="ENUMERATION">
+                      <a:a name="DESC"
+                      value="Defines the output value of the Runtime API mode"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="UUID" value="bfec07fb-550f-421e-b578-cb43a2eghta6"/>
+                      <a:da name="DEFAULT" value="SMU_MCAL_SUPERVISOR"/>
+                      <a:da name="RANGE">
+                        <a:v>SMU_MCAL_SUPERVISOR</a:v>
+                        <a:v>SMU_MCAL_USER1</a:v>
+                      </a:da>
+                    </v:var>
+                    <!-- [cover parentID={E45112B5-4FC0-4ceb-BDBD-056B3CB8A630}] SmuInitDeInitApiMode [/cover] -->
+                    <v:var name="SmuInitDeInitApiMode" type="ENUMERATION">
+                      <a:a name="DESC"
+                      value="Defines the output value of the Init API mode"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="UUID" value="bfec07fb-550f-421e-b578-cb43a2e1eda6"/>
+                      <a:da name="DEFAULT" value="SMU_MCAL_SUPERVISOR"/>
+                      <a:da name="RANGE">
+                        <a:v>SMU_MCAL_SUPERVISOR</a:v>
+                        <a:v>SMU_MCAL_USER1</a:v>
+                      </a:da>
+                      <a:da name="INVALID" type="XPath">
+                        <a:tst expr="node:value(../SmuRuntimeApiMode) = 'SMU_MCAL_SUPERVISOR' and node:value(.) = 'SMU_MCAL_USER1'"
+                        true="Runtime API in SV mode, choose InitDeinit as SV "/>
+                      </a:da>
+                    </v:var>
+                    <!-- [cover parentID={0D57E25D-C0CD-4263-8DB4-224D16C784C4}] SmuVersionInfoApi [/cover] -->
+                    <v:var name="SmuVersionInfoApi" type="BOOLEAN">
+                      <a:a name="DESC"
+                      value="EN: Adds / removes the service Smu_GetVersionInfo() from the code."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID"
+                      value="ECUC:8ea4cb56-cf5e-4afc-95ce-cebac08ac0e6"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                    <!-- [cover parentID={1BF64E9B-ADF6-4b0a-8E43-7F764801FBC5}] SmuCoreFSP0OutputEnable [/cover] -->
+                    <v:var name="SmuCoreFSP0OutputEnable" type="BOOLEAN">
+                      <a:a name="DESC"
+                      value="This parameter sets FSP[0] state to output if TRUE"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="UUID" value="bfec07fb-550f-423e-b578-sywnn876dk"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                    <!-- [cover parentID={43256736-41C6-4c78-AAAE-70A8F363093C}] SmuCoreFSP1OutputEnable [/cover] -->
+                    <v:var name="SmuCoreFSP1OutputEnable" type="BOOLEAN">
+                      <a:a name="DESC"
+                      value="This parameter sets FSP[1] state to output if TRUE"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="UUID" value="bfec07fb-550f-423e-b578-cb467dhjeda6"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                    <!-- [cover parentID={8D8E2B86-1E3F-4800-BE32-858D1561C17D}] SmuCoreFSP0PortEnable [/cover] -->
+                    <v:var name="SmuCoreFSP0PortEnable" type="BOOLEAN">
+                      <a:a name="DESC"
+                      value="This parameter sets FSP[0] PORT enable TRUE"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="UUID" value="bfec07fb-550f-423e-b578-cb43e45689eda6"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                    <!-- [cover parentID={2BD3C3CC-9D8F-494e-BC56-448A7C83F9CA}] SmuCoreFSP1PortEnable [/cover] -->
+                    <v:var name="SmuCoreFSP1PortEnable" type="BOOLEAN">
+                      <a:a name="DESC"
+                      value="This parameter sets FSP[1] PORT enable TRUE"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="UUID" value="bfec07fb-550f-423e-b578-cb43e4e5yudja6"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                    <!-- [cover parentID={BCC165CC-350D-4cb2-A173-57AE65CADCFC}] SmuCoreGlitchFilterSCU [/cover] -->
+                    <v:var name="SmuCoreGlitchFilterSCU" type="BOOLEAN">
+                      <a:a name="DESC"
+                      value="This parameter sets glitch filter for SCU enabled"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="UUID" value="bfec07fb-550f-423e-b578-cb43e4e5e89a6"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                    <!-- [cover parentID={C5203409-620A-4738-9FDD-3664BCFA5DA5}] SmuCoreGlitchFilterSTS [/cover] -->
+                    <v:var name="SmuCoreGlitchFilterSTS" type="BOOLEAN">
+                      <a:a name="DESC"
+                      value="This parameter sets glitch filter for SMU_STS enabled"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="UUID" value="bfec07fb-550f-423e-b578-cb43e4e5fda6"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                    <!-- [cover parentID={D91A4690-9D12-4720-8CA7-2878E54A4D32}] SmuAGStatusTimeout [/cover] -->
+                    <v:var name="SmuAGStatusTimeout" type="INTEGER">
+                      <a:a name="DESC">
+                        <a:v>  timeout value for SMU AGStatus
+                        </a:v>
+                      </a:a>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="UUID" value="98ce928e-6ed1-1968-95b2-21d30b1fa49e"/>
+                      <a:da name="DEFAULT" value="4096"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=65535"/>
+                        <a:tst expr="&gt;=4096"/>
+                      </a:da>
+                    </v:var>
+                  </v:ctr>
+                  <!-- [cover parentID={0BAE4324-952C-4ddd-948D-1293E6A07DD3}] CommonPublishedInformation [/cover] -->
+                  <v:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                    <a:a name="DESC" value="EN: Common container, aggregated by all modules. It contains published information about vendor and versions."/>
+                    <a:a name="UUID" value="492f8482-3e2c-4bf1-b27f-01fd7a235788"/>
+                    <!-- [cover parentID={C1312EFB-ACE1-4d9b-9B41-9D279896AE89}] ArMajorVersion  [/cover] -->
+                    <v:var name="ArMajorVersion" type="INTEGER_LABEL">
+                      <a:a name="DESC" value="EN: Major version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PublishedInformation">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-88fe-1166b258bb8a"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=65535"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="DEFAULT" value="4"/>
+                    </v:var>
+                    <!-- [cover parentID={2BD99E12-2C1D-4809-8828-B1C59DB74517}] ArMinorVersion [/cover] -->
+                    <v:var name="ArMinorVersion" type="INTEGER_LABEL">
+                      <a:a name="DESC" value="EN: Minor version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PublishedInformation">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="73f87c7f-e230-4178-bff0-ea2704aae656"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=65535"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="DEFAULT" value="2"/>
+                    </v:var>
+                    <!-- [cover parentID={D06053F5-D4AB-4bbc-980F-7C69300E9CD0}] ArPatchVersion [/cover] -->
+                    <v:var name="ArPatchVersion" type="INTEGER_LABEL">
+                      <a:a name="DESC" value="EN: Patch level version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PublishedInformation">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="2380135d-6778-417a-a34b-e100aad4dd54"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=255"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="DEFAULT" value="2"/>
+                    </v:var>
+                    <!-- [cover parentID={76D2A5D3-0262-4262-858B-DB4BC003D24E}] SwMajorVersion [/cover] -->
+                    <v:var name="SwMajorVersion" type="INTEGER_LABEL">
+                      <a:a name="DESC" value="EN: Major version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PublishedInformation">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="fca015e3-5f28-4cbe-8949-8fab87d86827"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=255"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="DEFAULT" value="3"/>
+                    </v:var>
+                    <!-- [cover parentID={07422CAB-E055-4dcc-9DA6-6ADC15B16C3F}] SwMinorVersion [/cover] -->
+                    <v:var name="SwMinorVersion" type="INTEGER_LABEL">
+                      <a:a name="DESC" value="EN: Minor version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PublishedInformation">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="14ab81e0-3d80-43dc-8b92-2a7e5a542df9"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=255"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="DEFAULT" value="0"/>
+                    </v:var>
+                    <!-- [cover parentID={111F3758-8516-4a7e-9608-6D3B1472530F}] SwPatchVersion [/cover] -->
+                    <v:var name="SwPatchVersion" type="INTEGER_LABEL">
+                      <a:a name="DESC" value="EN: Patch level version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PublishedInformation">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="32e37bfd-18b6-41d1-9248-a81dae0fe4c5"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=255"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="DEFAULT" value="0"/>
+                    </v:var>
+                    <!-- [cover parentID={9123F51A-EA1A-44ca-8CCA-1914F4B57D49}] ModuleId [/cover] -->
+                    <v:var name="ModuleId" type="INTEGER_LABEL">
+                      <a:a name="DESC" value="EN: Module ID of this module from Module List"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PublishedInformation">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="3b407478-6902-4f80-b7cf-f33b0854e638"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=65535"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="DEFAULT" value="255"/>
+                    </v:var>
+                    <!-- [cover parentID={4075E543-C093-4c08-AD3F-42FCD2F0D92D}] VendorId [/cover] -->
+                    <v:var name="VendorId" type="INTEGER_LABEL">
+                      <a:a name="DESC" value="EN: Vendor ID of the dedicated implementation of this module according to the AUTOSAR vendor list"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PublishedInformation">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="7d650b2d-4adb-41f0-aa8e-5f0c416501d1"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=65535"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="DEFAULT" value="17"/>
+                    </v:var>
+                    <!-- [cover parentID={864A8F1A-9AE4-496b-A551-3540322C9787}] Release [/cover] -->
+                    <v:var name="Release" type="STRING_LABEL">
+                      <a:a name="DESC" value="EN: Aurix derivative used for the implementation"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v class="PublishedInformation">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="3b407478-6902-4f40-b7cf-f33b0854e638"/>
+                      <a:da name="DEFAULT" type="XPath" expr="ecu:get('Rel.Derivate')"/>
+                    </v:var>
+                  </v:ctr>
+                  <!-- [cover parentID={1B6D2CD3-1AC7-4c6f-8D2C-09A5F3887D40}] SmuDemEventParameterRefsConf [/cover] -->
+                  <v:lst name="SmuDemEventParameterRefsConf" type="MAP">
+                    <a:da name="MAX" value="1"/>
+                    <v:ctr name="SmuDemEventParameterRefsConf" type="IDENTIFIABLE">
+                      <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="DESC"
+                      value="EN: Container for the references to DemEventParameter elements which shall be invoked using the API Dem_ReportErrorStatus API in case the corresponding error occurs. The EventId is taken from the referenced DemEventParameter&apos;s DemEventId symbolic name. The standardized errors are provided in the container and can be extended by vendor specific error references."/>
+                      <a:a name="UUID"
+                      value="ECUC:4c697a37-02d8-42df-8696-0c9f59aab8c7"/>
+                      <!-- [cover parentID={E27CF057-6648-4902-AA21-C6615ED36DEA}] SmuActivateRunStateFailureNotification [/cover] -->
+                      <v:lst name="SmuActivateRunStateFailureNotification">
+                        <a:da name="MIN" type="XPath" expr="node:fallback(../SmuSafetyEnable,'false') = 'true'" true="0" false="1" />
+                        <a:da name="MAX" value="1"/>
+                        <v:ref name="SmuActivateRunStateFailureNotification"
+                          type="SYMBOLIC-NAME-REFERENCE">
+                          <a:a name="DESC"
+                          value="EN: Reference to configured DEM event to report activate RUN state failure."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="UUID"
+                          value="ECUC:66c8e900-6197-42a3-8125-a695aa21788e"/>
+                          <a:da name="REF"
+                          value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Dem/DemConfigSet/DemEventParameter"/>
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst expr="node:refvalid(.)" false="EN: SMU - The configured node does not exist or may not be referenced."/>
+                          </a:da>
+                        </v:ref>
+                      </v:lst>
+                      <!-- [cover parentID={59F6449F-CC34-413b-914F-C095459E2F51}] SmuClearAlarmStatusFailureNotification [/cover] -->
+                      <v:lst name="SmuClearAlarmStatusFailureNotification">
+                        <a:da name="MAX" value="1"/>
+                        <a:da name="MIN" type="XPath" expr="node:fallback(../SmuSafetyEnable,'false') = 'true'" true="0" false="1" />
+                        <v:ref name="SmuClearAlarmStatusFailureNotification"
+                          type="SYMBOLIC-NAME-REFERENCE">
+                          <a:a name="DESC"
+                          value="EN: Reference to configured DEM event to report clear alarm status failure."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="UUID"
+                          value="ECUC:66c8e900-6197-42a3-8125-a695aa21898e"/>
+                          <a:da name="REF"
+                          value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Dem/DemConfigSet/DemEventParameter"/>
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst expr="node:refvalid(.)" false="EN: SMU - The configured node does not exist or may not be referenced."/>
+                          </a:da>
+                        </v:ref>
+                      </v:lst>
+                      <!-- [cover parentID={0598AF1D-6B73-4f50-A4A2-8F71B6ECA8F0}] SmuReleaseFSPFailureNotification [/cover] -->
+                      <v:lst name="SmuReleaseFSPFailureNotification">
+                        <a:da name="MAX" value="1"/>
+                        <a:da name="MIN" type="XPath" expr="node:fallback(../SmuSafetyEnable,'false') = 'true'" true="0" false="1" />
+                        <v:ref name="SmuReleaseFSPFailureNotification"
+                          type="SYMBOLIC-NAME-REFERENCE">
+                          <a:a name="DESC"
+                          value="EN: Reference to configured DEM event to report release FSP failure."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="UUID"
+                          value="ECUC:66c8e900-6197-42a3-8125-a695aa2erfg6e"/>
+                          <a:da name="REF"
+                          value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Dem/DemConfigSet/DemEventParameter"/>
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst expr="node:refvalid(.)" false="EN: SMU - The configured node does not exist or may not be referenced."/>
+                          </a:da>
+                        </v:ref>
+                      </v:lst>
+                      <!-- [cover parentID={4E720C7A-DECF-4c78-A6EF-781E790A57BF}] SmuCoreAliveFailureNotification [/cover] -->
+                      <v:lst name="SmuCoreAliveFailureNotification">
+                        <a:da name="MAX" value="1"/>
+                        <a:da name="MIN" type="XPath" expr="node:fallback(../SmuSafetyEnable,'false') = 'true'" true="0" false="1" />
+                        <v:ref name="SmuCoreAliveFailureNotification"
+                          type="SYMBOLIC-NAME-REFERENCE">
+                          <a:a name="DESC"
+                          value="EN: Reference to configured DEM event to report Smu_core_alive test failure."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="UUID"
+                          value="ECUC:66c8e900-6197-42a3-8125-a695dbg1788e"/>
+                          <a:da name="REF"
+                          value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Dem/DemConfigSet/DemEventParameter"/>
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst expr="node:refvalid(.)" false="EN: SMU - The configured node does not exist or may not be referenced."/>
+                          </a:da>
+                        </v:ref>
+                      </v:lst>
+                      <!-- [cover parentID={E6EE71B7-56DB-47c5-930B-D5A53DBA252C}] SmuRTStopFailureNotification [/cover] -->
+                      <v:lst name="SmuRTStopFailureNotification">
+                        <a:da name="MAX" value="1"/>
+                        <a:da name="MIN" type="XPath" expr="node:fallback(../SmuSafetyEnable,'false') = 'true'" true="0" false="1" />
+                        <v:ref name="SmuRTStopFailureNotification"
+                          type="SYMBOLIC-NAME-REFERENCE">
+                          <a:a name="DESC"
+                          value="EN: Reference to configured DEM event to report RT stop failure."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="UUID"
+                          value="ECUC:66c8e900-6197-42a3-8125-a695aa217yhui"/>
+                          <a:da name="REF"
+                          value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Dem/DemConfigSet/DemEventParameter"/>
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst expr="node:refvalid(.)" false="EN: SMU - The configured node does not exist or may not be referenced."/>
+                          </a:da>
+                        </v:ref>
+                      </v:lst>
+                      <!-- [cover parentID={A9CCE2F5-B5AA-4907-9776-226061F750FB}] SmuActivatePESFailureNotification [/cover] -->
+                      <v:lst name="SmuActivatePESFailureNotification">
+                        <a:da name="MAX" value="1"/>
+                        <a:da name="MIN" type="XPath" expr="node:fallback(../SmuSafetyEnable,'false') = 'true'" true="0" false="1" />
+                        <v:ref name="SmuActivatePESFailureNotification"
+                          type="SYMBOLIC-NAME-REFERENCE">
+                          <a:a name="DESC"
+                          value="EN: Reference to configured DEM event to activate PES failure."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="UUID"
+                          value="ECUC:66c8e900-6197-42a3-8125-a695aa217ghns89"/>
+                          <a:da name="REF"
+                          value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Dem/DemConfigSet/DemEventParameter"/>
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst expr="node:refvalid(.)" false="EN: SMU - The configured node does not exist or may not be referenced."/>
+                          </a:da>
+                        </v:ref>
+                      </v:lst>
+                      <!-- [cover parentID={213F9823-FE85-4df3-A34B-F96D67B68DAE}] SmuActivateFSPFailureNotification [/cover] -->
+                      <v:lst name="SmuActivateFSPFailureNotification">
+                        <a:da name="MAX" value="1"/>
+                        <a:da name="MIN" type="XPath" expr="node:fallback(../SmuSafetyEnable,'false') = 'true'" true="0" false="1" />
+                        <v:ref name="SmuActivateFSPFailureNotification"
+                          type="SYMBOLIC-NAME-REFERENCE">
+                          <a:a name="DESC"
+                          value="EN: Reference to configured DEM event to activate FSP failure."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="UUID"
+                          value="ECUC:66c8e900-6197-42a3-8125-a695aa217898fhj"/>
+                          <a:da name="REF"
+                          value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Dem/DemConfigSet/DemEventParameter"/>
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst expr="node:refvalid(.)" false="EN: SMU - The configured node does not exist or may not be referenced."/>
+                          </a:da>
+                        </v:ref>
+                      </v:lst>
+                      <!-- [cover parentID={A1566C7B-1757-4711-95CA-64381EEA53FD}] SmuSetAlarmStatusFailureNotification [/cover] -->
+                      <v:lst name="SmuSetAlarmStatusFailureNotification">
+                        <a:da name="MAX" value="1"/>
+                        <a:da name="MIN" type="XPath" expr="node:fallback(../SmuSafetyEnable,'false') = 'true'" true="0" false="1" />
+                        <v:ref name="SmuSetAlarmStatusFailureNotification"
+                          type="SYMBOLIC-NAME-REFERENCE">
+                          <a:a name="DESC"
+                          value="EN: Reference to configured DEM event to set alarm status failure."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="UUID"
+                          value="ECUC:66c8e900-6197-42a3-8125-a695aa217890hj"/>
+                          <a:da name="REF"
+                          value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Dem/DemConfigSet/DemEventParameter"/>
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst expr="node:refvalid(.)" false="EN: SMU - The configured node does not exist or may not be referenced."/>
+                          </a:da>
+                        </v:ref>
+                      </v:lst>
+                      <!-- [cover parentID={CBA9827F-6571-4e25-8950-8EB3B83474EB}] SmuSffFailureNotification [/cover] -->
+                      <v:lst name="SmuSffFailureNotification">
+                        <a:da name="MAX" value="1"/>
+                        <a:da name="MIN" type="XPath" expr="node:fallback(../SmuSafetyEnable,'false') = 'true'" true="0" false="1" />
+                        <v:ref name="SmuSffFailureNotification"
+                          type="SYMBOLIC-NAME-REFERENCE">
+                          <a:a name="DESC"
+                          value="EN: Reference to configured DEM event for SFF test failure."/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="SCOPE" value="LOCAL"/>
+                          <a:a name="UUID"
+                          value="ECUC:66c8e900-6197-42a3-8125-a695aa21780i8e"/>
+                          <a:da name="REF"
+                          value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Dem/DemConfigSet/DemEventParameter"/>
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst expr="node:refvalid(.)" false="EN: SMU - The configured node does not exist or may not be referenced."/>
+                          </a:da>
+                        </v:ref>
+                      </v:lst>
+                    </v:ctr>
+                  </v:lst>
+                </v:ctr>
+              </d:chc>
+            </d:lst>
+          </d:ctr>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+</datamodel>

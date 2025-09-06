@@ -1,0 +1,78 @@
+ 14:42:28 - Action 'Converting legacy file(s) to AUTOSAR files' started.
+              Convert legacy file(s) to System Description.
+              Used executable: C:\Vector\CBD1900078_D01_Tricore\Generators\LegacyDb2SystemDescrConverter\LegacyDb2SystemDescrConverter.exe.
+              Arguments: "C:\Vector\CBD1900078_D01_Tricore\Application\DEMO_0314\AUTOSAR\Inputfiles\CAN1.dbc" "C:\Vector\CBD1900078_D01_Tricore\Application\DEMO_0314\AUTOSAR\Inputfiles\CAN2.dbc" "C:\Vector\CBD1900078_D01_Tricore\Application\DEMO_0314\AUTOSAR\Inputfiles\CAN.dbc" -o "C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\LegacyConverterResults\1756622548908-0\ConvertedLegacy" -r 42 -e -v 19.
+              
+              Vector Legacy Database Converter.
+              Version: 1.8.30.0.
+              Copyright (c) 2018 Vector Informatik GmbH.
+              License is restricted to the usage with CBD1900078 (D01) for MSR_Vector_SLP4.
+              
+              [info] SIP License found as C:\Vector\CBD1900078_D01_Tricore\SipLicense.lic.
+              [info] Command line: C:\Vector\CBD1900078_D01_Tricore\Generators\LegacyDb2SystemDescrConverter\LegacyDb2SystemDescrConverter.exe "C:\Vector\CBD1900078_D01_Tricore\Application\DEMO_0314\AUTOSAR\Inputfiles\CAN1.dbc" "C:\Vector\CBD1900078_D01_Tricore\Application\DEMO_0314\AUTOSAR\Inputfiles\CAN2.dbc" "C:\Vector\CBD1900078_D01_Tricore\Application\DEMO_0314\AUTOSAR\Inputfiles\CAN.dbc" -o "C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\LegacyConverterResults\1756622548908-0\ConvertedLegacy" -r 42 -e -v 19.
+              [info] Converting DBC file C:\Vector\CBD1900078_D01_Tricore\Application\DEMO_0314\AUTOSAR\Inputfiles\CAN1.dbc.
+              [error] DBC attribute definition GenMsgSendType has unknown default value cyclicX.
+              [error] DBC attribute definition GenSigSendType has unknown default value cyclicX.
+              [info] Converting DBC file C:\Vector\CBD1900078_D01_Tricore\Application\DEMO_0314\AUTOSAR\Inputfiles\CAN2.dbc.
+              [error] DBC attribute definition GenMsgSendType has unknown default value cyclicX.
+              [error] DBC attribute definition GenSigSendType has unknown default value cyclicX.
+              [info] Converting DBC file C:\Vector\CBD1900078_D01_Tricore\Application\DEMO_0314\AUTOSAR\Inputfiles\CAN.dbc.
+              [error] DBC attribute definition GenMsgSendType has unknown default value cyclicX.
+              [error] DBC attribute definition GenSigSendType has unknown default value cyclicX.
+              [info] Writing System Description...
+              [info] Writing 3 ECU Extracts...
+              
+              C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\LegacyConverterResults\1756622548908-0\ConvertedLegacy.arxml.
+              C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\LegacyConverterResults\1756622548908-0\ConvertedLegacy_MyECU.arxml.
+              C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\LegacyConverterResults\1756622548908-0\ConvertedLegacy_RearECU.arxml.
+              C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\LegacyConverterResults\1756622548908-0\ConvertedLegacy_Tester.arxml.
+              Elapsed time: 0.774 seconds.
+              6 Errors.
+              0 Warnings.
+              [Warning] Legacy Converter finished with errors/warnings.
+ 14:42:30 - Action 'Converting legacy file(s) to AUTOSAR files' successfully finished with warnings.
+                 [Warning] Legacy Converter finished with errors/warnings.
+ 14:51:34 - Action 'Converting legacy file(s) to AUTOSAR files' started.
+ 14:51:34 - Action 'Converting legacy file(s) to AUTOSAR files' started.
+              Convert legacy file(s) to System Description.
+              Convert legacy file(s) to System Description.
+              Used executable: C:\Vector\CBD1900078_D01_Tricore\Generators\LegacyDb2SystemDescrConverter\LegacyDb2SystemDescrConverter.exe.
+              Used executable: C:\Vector\CBD1900078_D01_Tricore\Generators\LegacyDb2SystemDescrConverter\LegacyDb2SystemDescrConverter.exe.
+              Arguments: "C:\Vector\CBD1900078_D01_Tricore\Application\DEMO_0314\AUTOSAR\Inputfiles\CAN1.dbc" "C:\Vector\CBD1900078_D01_Tricore\Application\DEMO_0314\AUTOSAR\Inputfiles\CAN2.dbc" -o "C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\LegacyConverterResults\1756623094603-0\ConvertedLegacy" -r 42 -e -v 19.
+              Arguments: "C:\Vector\CBD1900078_D01_Tricore\Application\DEMO_0314\AUTOSAR\Inputfiles\CAN1.dbc" "C:\Vector\CBD1900078_D01_Tricore\Application\DEMO_0314\AUTOSAR\Inputfiles\CAN2.dbc" -o "C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\LegacyConverterResults\1756623094603-0\ConvertedLegacy" -r 42 -e -v 19.
+              
+              
+              Vector Legacy Database Converter.
+              Vector Legacy Database Converter.
+              Version: 1.8.30.0.
+              Version: 1.8.30.0.
+              Copyright (c) 2018 Vector Informatik GmbH.
+              Copyright (c) 2018 Vector Informatik GmbH.
+              License is restricted to the usage with CBD1900078 (D01) for MSR_Vector_SLP4.
+              License is restricted to the usage with CBD1900078 (D01) for MSR_Vector_SLP4.
+              
+              
+              [info] SIP License found as C:\Vector\CBD1900078_D01_Tricore\SipLicense.lic.
+              [info] SIP License found as C:\Vector\CBD1900078_D01_Tricore\SipLicense.lic.
+              [info] Command line: C:\Vector\CBD1900078_D01_Tricore\Generators\LegacyDb2SystemDescrConverter\LegacyDb2SystemDescrConverter.exe "C:\Vector\CBD1900078_D01_Tricore\Application\DEMO_0314\AUTOSAR\Inputfiles\CAN1.dbc" "C:\Vector\CBD1900078_D01_Tricore\Application\DEMO_0314\AUTOSAR\Inputfiles\CAN2.dbc" -o "C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\LegacyConverterResults\1756623094603-0\ConvertedLegacy" -r 42 -e -v 19.
+              [info] Command line: C:\Vector\CBD1900078_D01_Tricore\Generators\LegacyDb2SystemDescrConverter\LegacyDb2SystemDescrConverter.exe "C:\Vector\CBD1900078_D01_Tricore\Application\DEMO_0314\AUTOSAR\Inputfiles\CAN1.dbc" "C:\Vector\CBD1900078_D01_Tricore\Application\DEMO_0314\AUTOSAR\Inputfiles\CAN2.dbc" -o "C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\LegacyConverterResults\1756623094603-0\ConvertedLegacy" -r 42 -e -v 19.
+              [info] Converting DBC file C:\Vector\CBD1900078_D01_Tricore\Application\DEMO_0314\AUTOSAR\Inputfiles\CAN1.dbc.
+              [info] Converting DBC file C:\Vector\CBD1900078_D01_Tricore\Application\DEMO_0314\AUTOSAR\Inputfiles\CAN1.dbc.
+              [error] DBC attribute definition GenMsgSendType has unknown default value cyclicX.
+              [error] DBC attribute definition GenMsgSendType has unknown default value cyclicX.
+              [error] DBC attribute definition GenSigSendType has unknown default value cyclicX.
+              [error] DBC attribute definition GenSigSendType has unknown default value cyclicX.
+              [info] Converting DBC file C:\Vector\CBD1900078_D01_Tricore\Application\DEMO_0314\AUTOSAR\Inputfiles\CAN2.dbc.
+              [info] Converting DBC file C:\Vector\CBD1900078_D01_Tricore\Application\DEMO_0314\AUTOSAR\Inputfiles\CAN2.dbc.
+              [error] DBC attribute definition GenMsgSendType has unknown default value cyclicX.
+              [error] DBC attribute definition GenMsgSendType has unknown default value cyclicX.
+              [error] DBC attribute definition GenSigSendType has unknown default value cyclicX.
+              [error] DBC attribute definition GenSigSendType has unknown default value cyclicX.
+              [info] Writing System Description...
+              [info] Writing System Description...
+              [info] Writing 3 ECU Extracts...
+              [info] Writing 3 ECU Extracts...
+              
+              
+              C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\LegacyConverterResults\1756623094603-0\ConvertedLegacy.arxml.
+              C:\Users\liuxu\AppData\Local\Temp\DaVinci\Cfg-0188396\LegacyConverterResults\1756623094603-0\ConvertedLegacy.arxml.

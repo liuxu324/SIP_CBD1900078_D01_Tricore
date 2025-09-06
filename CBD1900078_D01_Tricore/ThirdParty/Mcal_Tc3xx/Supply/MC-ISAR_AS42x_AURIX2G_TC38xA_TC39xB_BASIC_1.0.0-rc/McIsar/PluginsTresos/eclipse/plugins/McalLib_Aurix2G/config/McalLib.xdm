@@ -1,0 +1,791 @@
+<?xml version='1.0'?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2018)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**  FILENAME  : McalLib.xdm                                                   **
+**                                                                            **
+**  VERSION   : 7.0.0                                                         **
+**                                                                            **
+**  DATE      : 2018-08-09                                                    **
+**                                                                            **
+**  VARIANT   : Variant PC                                                    **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX2G                                              **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY : [cover parentID=]                                          **
+**                                                                            **
+**  DESCRIPTION  : XML data model for Mcal Library                            **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) : Specification of Mcal Library.                         **
+**                                                                            **
+**  MAY BE CHANGED BY USER : no                                               **
+**                                                                            **
+*******************************************************************************/
+-->
+<!-- [cover parentID={D455CB69-EBF4-4bff-B2BA-45828457DA7C}][/cover] -->
+<datamodel version="5.0"
+           xmlns="http://www.tresos.de/_projects/DataModel2/12/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/12/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+         <!-- [cover parentID={BD607180-6DDB-4175-9E75-6DCCAEBFBD5C}] McalLibMcalAvailableCores [/cover] -->
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="AURIX2G" type="AR-PACKAGE">
+        <a:a name="UUID" value="ECUC:AUTOSAR"/>
+        <d:lst type="TOP-LEVEL-PACKAGES">
+        <d:ctr name="EcucDefs" type="AR-PACKAGE">
+        <a:a name="UUID" value="ECUC:ECUCDEFS"/>
+        <d:lst type="ELEMENTS">
+          <d:chc name="McalLib" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                <ad:ADMIN-DATA>
+                  <ad:DOC-REVISIONS>
+                    <ad:DOC-REVISION>
+                      <ad:REVISION-LABEL>4.2.2</ad:REVISION-LABEL>
+                      <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                      <ad:DATE>2017-05-10</ad:DATE>
+                    </ad:DOC-REVISION>
+                  </ad:DOC-REVISIONS>
+                </ad:ADMIN-DATA>
+              </a:a>
+              <a:a name="DESC"
+                   value="EN: Published information of Mcal Library."/>
+              <a:a name="LOWER-MULTIPLICITY" value="0"/>
+              <a:a name="RELEASE" value="asc:4.2.2"/>
+              <a:a name="UPPER-MULTIPLICITY" value="1"/>
+              <a:a name="UUID" value="13aa2440-e790-4121-9e12-3a380efb0d6b"/>
+              <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                     type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v class="PreCompile">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:da name="DEFAULT" value="VariantPreCompile"/>
+                <a:da name="RANGE">
+                  <a:v>VariantPreCompile</a:v>
+                </a:da>
+              </v:var>
+
+             <!--********************************************************-->
+             <!--*******Mcal Library Published Information - Start*******-->
+             <!--********************************************************-->
+             <!-- [cover parentID={4DEC4E05-BC49-46f5-9BF9-D12ECEB1F596}] McalLibPublishedInformation [/cover] -->
+              <v:ctr name="McalLibPublishedInformation" type="IDENTIFIABLE">
+                <a:a name="DESC"
+                     value="EN: This is the general container that contains the pre-build configuration parameters"/>
+                <a:a name="UUID"
+                     value="dcc39b88-cc2b-4358-ba88-30120722c6ca"/>
+             <!-- [cover parentID={12F6FA57-C92E-45c7-92DA-35D17CC72BD3}] McalLibMcalAvailableCores [/cover] -->
+                <v:var name="McalLibMcalAvailableCores" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the number of cores available on the current variant of Aurix2G HW."/>
+                 <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                 type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1166b258bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="((ecu:get('McalLib.NoOfCoreAvailable')))"/>
+                  <a:da name="INVALID" type="Range">
+                  <a:tst expr="&lt;=ecu:get('McalLib.NoOfCoreAvailable')"/>
+                  <a:tst expr="&gt;=ecu:get('McalLib.NoOfCoreAvailable')"/>
+                </a:da>
+                
+                </v:var>
+                <!-- [cover parentID={5F633297-D73F-48a5-AA3C-0A22615226CF}] McalLibDsprCore0StartAddr [/cover] -->
+                <v:var name="McalLibDsprCore0StartAddr" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the DSPR start address for Core 0 of the current variant of Aurix2G HW."/>
+                 <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1166b358bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('McalLib.DsprCore0StartAddr')"/>
+                  <a:da name="INVALID" type="Range">
+                  <a:tst expr="&lt;=ecu:get('McalLib.DsprCore0StartAddr')"/>
+                  <a:tst expr="&gt;=ecu:get('McalLib.DsprCore0StartAddr')"/>
+                </a:da>                     
+                </v:var>
+                <!-- [cover parentID={9467D1A7-E0A1-4f80-8375-650D09CA81F6}] McalLibDsprCore0EndAddr [/cover] -->
+                <v:var name="McalLibDsprCore0EndAddr" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the DSPR end address for Core 0 of the current variant of Aurix2G HW."/>
+                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1166b458bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('McalLib.DsprCore0EndAddr')"/>  
+                  <a:da name="INVALID" type="Range">
+                  <a:tst expr="&lt;=ecu:get('McalLib.DsprCore0EndAddr')"/>
+                  <a:tst expr="&gt;=ecu:get('McalLib.DsprCore0EndAddr')"/>
+                </a:da>                             
+                </v:var>     
+                <!-- [cover parentID={0E82E4AC-B9C0-4342-B6DB-A0F88E3F9A64}] McalLibDsprCore1StartAddr [/cover] -->
+                <v:var name="McalLibDsprCore1StartAddr" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the DSPR start address for Core 1 of the current variant of Aurix2G HW."/>
+                 <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1166b558bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('McalLib.DsprCore1StartAddr')"/>  
+                  <a:da name="INVALID" type="Range">
+                  <a:tst expr="&lt;=ecu:get('McalLib.DsprCore1StartAddr')"/>
+                  <a:tst expr="&gt;=ecu:get('McalLib.DsprCore1StartAddr')"/>
+                </a:da>                             
+                </v:var>
+                <!-- [cover parentID={306B3996-F7AD-425d-90AE-BB16EAA299B0}] McalLibDsprCore1EndAddr [/cover] -->
+                <v:var name="McalLibDsprCore1EndAddr" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the DSPR end address for Core 1 of the current variant of Aurix2G HW."/>
+                 <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                 </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1166b658bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('McalLib.DsprCore1EndAddr')"/> 
+                  <a:da name="INVALID" type="Range">
+                  <a:tst expr="&lt;=ecu:get('McalLib.DsprCore1EndAddr')"/>
+                  <a:tst expr="&gt;=ecu:get('McalLib.DsprCore1EndAddr')"/>
+                </a:da>
+                                
+                </v:var>                
+                <!-- [cover parentID={E79B8E45-8A04-44a8-B199-664001DECA26}] McalLibDsprCore2StartAddr [/cover] -->
+                <v:var name="McalLibDsprCore2StartAddr" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the DSPR start address for Core 2 of the current variant of Aurix2G HW."/>
+                 <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1166b758bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('McalLib.DsprCore2StartAddr')"/> 
+                  <a:da name="INVALID" type="Range">
+                  <a:tst expr="&lt;=ecu:get('McalLib.DsprCore2StartAddr')"/>
+                  <a:tst expr="&gt;=ecu:get('McalLib.DsprCore2StartAddr')"/>
+                </a:da>
+                                 
+                </v:var>
+                <!-- [cover parentID={D553C5D7-3FA8-4b1f-A26C-BEC658B59C42}] McalLibDsprCore2EndAddr [/cover] -->
+                <v:var name="McalLibDsprCore2EndAddr" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the DSPR end address for Core 2 of the current variant of Aurix2G HW."/>
+                 <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1166b858bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('McalLib.DsprCore2EndAddr')"/> 
+                  <a:da name="INVALID" type="Range">
+                  <a:tst expr="&lt;=ecu:get('McalLib.DsprCore2EndAddr')"/>
+                  <a:tst expr="&gt;=ecu:get('McalLib.DsprCore2EndAddr')"/>
+                </a:da>
+                                
+                </v:var>      
+              <!-- [cover parentID={17C6F319-237A-454d-9DA9-9FC676460A86}] McalLibDsprCore3StartAddr [/cover] -->  
+                <v:var name="McalLibDsprCore3StartAddr" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the DSPR start address for Core 3 of the current variant of Aurix2G HW."/>
+                 <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1166b958bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('McalLib.DsprCore3StartAddr')"/> 
+                  <a:da name="INVALID" type="Range">
+                  <a:tst expr="&lt;=ecu:get('McalLib.DsprCore3StartAddr')"/>
+                  <a:tst expr="&gt;=ecu:get('McalLib.DsprCore3StartAddr')"/>
+                </a:da>
+                                 
+                </v:var>
+                <!-- [cover parentID={B473FA4F-F73F-4e01-9DC6-9728456FFC2A}] McalLibDsprCore3EndAddr [/cover] -->
+                <v:var name="McalLibDsprCore3EndAddr" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the DSPR end address for Core 3 of the current variant of Aurix2G HW."/>
+                 <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1166b268bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('McalLib.DsprCore3EndAddr')"/>
+                  <a:da name="INVALID" type="Range">
+                  <a:tst expr="&lt;=ecu:get('McalLib.DsprCore3EndAddr')"/>
+                  <a:tst expr="&gt;=ecu:get('McalLib.DsprCore3EndAddr')"/>
+                </a:da>
+                                
+                </v:var>   
+                <!-- [cover parentID={16FC2514-B4C2-4aee-A8F2-47ED0BEEB87F}] McalLibDsprCore4StartAddr [/cover] -->
+                <v:var name="McalLibDsprCore4StartAddr" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the DSPR start address for Core 4 of the current variant of Aurix2G HW."/>
+                 <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1166b278bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('McalLib.DsprCore4StartAddr')"/> 
+                  <a:da name="INVALID" type="Range">
+                  <a:tst expr="&lt;=ecu:get('McalLib.DsprCore4StartAddr')"/>
+                  <a:tst expr="&gt;=ecu:get('McalLib.DsprCore4StartAddr')"/>
+                </a:da>
+                                
+                </v:var>
+                <!-- [cover parentID={4FC56667-42AE-4774-8C6A-C1B0D8E4764D}] McalLibDsprCore4EndAddr [/cover] -->
+                <v:var name="McalLibDsprCore4EndAddr" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the DSPR end address for Core 4 of the current variant of Aurix2G HW."/>
+                 <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                     type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v class="PublishedInformation">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1166b288bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('McalLib.DsprCore4EndAddr')"/>  
+                  <a:da name="INVALID" type="Range">
+                  <a:tst expr="&lt;=ecu:get('McalLib.DsprCore4EndAddr')"/>
+                  <a:tst expr="&gt;=ecu:get('McalLib.DsprCore4EndAddr')"/>
+                </a:da>
+                             
+                </v:var>    
+                <!-- [cover parentID={7C7B3B88-FF74-468d-B954-5191E66145AF}] McalLibDsprCore5StartAddr [/cover] -->
+                <v:var name="McalLibDsprCore5StartAddr" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the DSPR start address for Core 5 of the current variant of Aurix2G HW."/>
+                 <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1166b298bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('McalLib.DsprCore5StartAddr')"/> 
+                  <a:da name="INVALID" type="Range">
+                  <a:tst expr="&lt;=ecu:get('McalLib.DsprCore5StartAddr')"/>
+                  <a:tst expr="&gt;=ecu:get('McalLib.DsprCore5StartAddr')"/>
+                </a:da>
+                            
+                </v:var>
+                <!-- [cover parentID={977F6AA3-39B4-44ce-9093-300B69D24D4C}] McalLibDsprCore5EndAddr [/cover] -->
+                <v:var name="McalLibDsprCore5EndAddr" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the DSPR end address for Core 5 of the current variant of Aurix2G HW."/>
+                 <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1166b259bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('McalLib.DsprCore5EndAddr')"/>
+                  <a:da name="INVALID" type="Range">
+                  <a:tst expr="&lt;=ecu:get('McalLib.DsprCore5EndAddr')"/>
+                  <a:tst expr="&gt;=ecu:get('McalLib.DsprCore5EndAddr')"/>
+                </a:da>
+                        
+                </v:var>                  
+                <!-- [cover parentID={8324A8FA-B057-4853-9A29-E04D03973ED6}] McalLibPsprCore0StartAddr [/cover] -->
+                <v:var name="McalLibPsprCore0StartAddr" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the PSPR start address for Core 0 of the current variant of Aurix2G HW."/>
+                 <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1167b258bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('McalLib.PsprCore0StartAddr')"/>
+                <a:da name="INVALID" type="Range">
+                <a:tst expr="&lt;=ecu:get('McalLib.PsprCore0StartAddr')"/>
+                <a:tst expr="&gt;=ecu:get('McalLib.PsprCore0StartAddr')"/>
+                </a:da>
+             
+                </v:var>
+                <!-- [cover parentID={77AD8C1C-0CDD-4ff3-8E32-1F5A73BA8C21}] McalLibPsprCore0EndAddr [/cover] -->
+                <v:var name="McalLibPsprCore0EndAddr" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the PSPR end address for Core 0 of the current variant of Aurix2G HW."/>
+                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1168b258bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('McalLib.PsprCore0EndAddr')"/>
+                <a:da name="INVALID" type="Range">
+                <a:tst expr="&lt;=ecu:get('McalLib.PsprCore0EndAddr')"/>
+                <a:tst expr="&gt;=ecu:get('McalLib.PsprCore0EndAddr')"/>
+                </a:da>
+                        
+                </v:var>                
+                <!-- [cover parentID={0858E902-418C-4cb2-91E6-D8CC237B3AA2}] McalLibPsprCore1StartAddr [/cover] -->
+                <v:var name="McalLibPsprCore1StartAddr" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the PSPR start address for Core 1 of the current variant of Aurix2G HW."/>
+                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                 type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1169b258bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('McalLib.PsprCore1StartAddr')"/>
+                <a:da name="INVALID" type="Range">
+                <a:tst expr="&lt;=ecu:get('McalLib.PsprCore1StartAddr')"/>
+                <a:tst expr="&gt;=ecu:get('McalLib.PsprCore1StartAddr')"/>
+                </a:da>
+              
+                </v:var>
+                <!-- [cover parentID={0708912C-BD7A-4b88-8D9E-657CB4D0DEBC}] McalLibPsprCore1EndAddr [/cover] -->
+                <v:var name="McalLibPsprCore1EndAddr" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the PSPR end address for Core 1 of the current variant of Aurix2G HW."/>
+                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                type="IMPLEMENTATIONCONFIGCLASS">
+               <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1176b258bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('McalLib.PsprCore1EndAddr')"/> 
+                <a:da name="INVALID" type="Range">
+                <a:tst expr="&lt;=ecu:get('McalLib.PsprCore1EndAddr')"/>
+                <a:tst expr="&gt;=ecu:get('McalLib.PsprCore1EndAddr')"/>
+                </a:da>
+                        
+                </v:var>                  
+              <!-- [cover parentID={F5F2AFF8-9C12-4581-9533-E0F17401EA9F}] McalLibPsprCore2StartAddr [/cover] -->
+                <v:var name="McalLibPsprCore2StartAddr" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the PSPR start address for Core 2 of the current variant of Aurix2G HW."/>
+                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1186b258bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('McalLib.PsprCore2StartAddr')"/>
+                <a:da name="INVALID" type="Range">
+                <a:tst expr="&lt;=ecu:get('McalLib.PsprCore2StartAddr')"/>
+                <a:tst expr="&gt;=ecu:get('McalLib.PsprCore2StartAddr')"/>
+                </a:da>
+           
+                </v:var>
+                <!-- [cover parentID={FCA1A795-534C-4707-BB4B-BE8B756718A3}] McalLibPsprCore2EndAddr [/cover] -->
+                <v:var name="McalLibPsprCore2EndAddr" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the PSPR end address for Core 2 of the current variant of Aurix2G HW."/>
+                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1196b258bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('McalLib.PsprCore2EndAddr')"/>  
+                <a:da name="INVALID" type="Range">
+                <a:tst expr="&lt;=ecu:get('McalLib.PsprCore2EndAddr')"/>
+                <a:tst expr="&gt;=ecu:get('McalLib.PsprCore2EndAddr')"/>
+                </a:da>
+                    
+                </v:var>                                
+              <!-- [cover parentID={A250159B-3E96-4696-82B0-15967F9F581C}] McalLibPsprCore3StartAddr [/cover] -->
+                <v:var name="McalLibPsprCore3StartAddr" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the PSPR start address for Core 3 of the current variant of Aurix2G HW."/>
+                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1266b258bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('McalLib.PsprCore3StartAddr')"/>
+                <a:da name="INVALID" type="Range">
+                <a:tst expr="&lt;=ecu:get('McalLib.PsprCore3StartAddr')"/>
+                <a:tst expr="&gt;=ecu:get('McalLib.PsprCore3StartAddr')"/>
+                </a:da>
+         
+                </v:var>
+                <!-- [cover parentID={D411143B-A3D4-418c-8AEC-D80BF441BA4F}] McalLibPsprCore3EndAddr [/cover] -->
+                <v:var name="McalLibPsprCore3EndAddr" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the PSPR end address for Core 3 of the current variant of Aurix2G HW."/>
+                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1366b258bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('McalLib.PsprCore3EndAddr')"/> 
+                <a:da name="INVALID" type="Range">
+                <a:tst expr="&lt;=ecu:get('McalLib.PsprCore3EndAddr')"/>
+                <a:tst expr="&gt;=ecu:get('McalLib.PsprCore3EndAddr')"/>
+                </a:da>
+                        
+                </v:var> 
+                <!-- [cover parentID={F70D471C-2611-4cd7-AA0F-761CADF48F6C}] McalLibPsprCore4StartAddr [/cover] -->
+                <v:var name="McalLibPsprCore4StartAddr" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the PSPR start address for Core 4 of the current variant of Aurix2G HW."/>
+                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1466b258bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('McalLib.PsprCore4StartAddr')"/>
+                <a:da name="INVALID" type="Range">
+                <a:tst expr="&lt;=ecu:get('McalLib.PsprCore4StartAddr')"/>
+                <a:tst expr="&gt;=ecu:get('McalLib.PsprCore4StartAddr')"/>
+                </a:da>
+  
+                </v:var>
+                <!-- [cover parentID={C64A2954-7115-4028-AE36-9DADF16FEC32}] McalLibPsprCore4EndAddr [/cover] -->
+                <v:var name="McalLibPsprCore4EndAddr" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the PSPR end address for Core 4 of the current variant of Aurix2G HW."/>
+                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1566b258bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('McalLib.PsprCore4EndAddr')"/>  
+                <a:da name="INVALID" type="Range">
+                <a:tst expr="&lt;=ecu:get('McalLib.PsprCore4EndAddr')"/>
+                <a:tst expr="&gt;=ecu:get('McalLib.PsprCore4EndAddr')"/>
+                </a:da>
+                    
+                </v:var>                 
+                <!-- [cover parentID={E7669F9B-3A34-4ec5-B209-7BA11951CF4C}] McalLibPsprCore5StartAddr [/cover] -->
+                <v:var name="McalLibPsprCore5StartAddr" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the PSPR start address for Core 5 of the current variant of Aurix2G HW."/>
+                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1666b258bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('McalLib.PsprCore5StartAddr')"/>
+                <a:da name="INVALID" type="Range">
+                <a:tst expr="&lt;=ecu:get('McalLib.PsprCore5StartAddr')"/>
+                <a:tst expr="&gt;=ecu:get('McalLib.PsprCore5StartAddr')"/>
+                </a:da>
+       
+                <a:da name="EDITABLE" value="false"/>
+                </v:var>
+                <!-- [cover parentID={0F9C6583-568A-47a4-98E7-70E6654B5B34}] McalLibPsprCore5EndAddr [/cover] -->
+                <v:var name="McalLibPsprCore5EndAddr" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the PSPR end address for Core 5 of the current variant of Aurix2G HW."/>
+                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1766b258bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('McalLib.PsprCore5EndAddr')"/> 
+                <a:da name="INVALID" type="Range">
+                <a:tst expr="&lt;=ecu:get('McalLib.PsprCore5EndAddr')"/>
+                <a:tst expr="&gt;=ecu:get('McalLib.PsprCore5EndAddr')"/>
+                </a:da>
+                    
+                </v:var> 
+                <!-- [cover parentID={28617BD8-2A89-4b36-B2C6-FEB4DC8276E1}] McalLibBackUpClockFreq [/cover] -->
+                <v:var name="McalLibBackUpClockFreq" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the backup clock frequency of the current variant of Aurix2G HW."/>
+                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1866b258bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('McalLib.BackupClockFreq')"/>
+                <a:da name="INVALID" type="Range">
+                <a:tst expr="&lt;=ecu:get('McalLib.BackupClockFreq')"/>
+                <a:tst expr="&gt;=ecu:get('McalLib.BackupClockFreq')"/>
+                </a:da>
+          
+                </v:var>
+                <!-- [cover parentID={C551702D-E7EC-4183-B1E2-0E262BAFB387}] McalLibSystemClockFreq [/cover] -->
+                <v:var name="McalLibSystemClockFreq" type="INTEGER">
+                <a:a name="DESC" value="EN: Mentions the system clock frequency of the current variant of Aurix2G HW."/>
+                <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1966b258bcca"/>
+                <a:da name="DEFAULT" type="XPath" expr="ecu:get('McalLib.SysClockFreq')"/>  
+                <a:da name="INVALID" type="Range">
+                <a:tst expr="&lt;=ecu:get('McalLib.SysClockFreq')"/>
+                <a:tst expr="&gt;=ecu:get('McalLib.SysClockFreq')"/>
+                </a:da>                         
+                </v:var>                 
+              </v:ctr>
+
+             <!--********************************************************-->
+             <!--*******Mcal Library Published Information - Stop *******-->
+             <!--********************************************************-->
+
+             <!--********************************************************-->
+             <!--***Mcal Library Common Published Information - Start****-->
+             <!--********************************************************-->
+
+             <!-- [cover parentID={1B237700-4AA4-44fd-BAEB-A07D12217876}] CommonPublishedInformation [/cover] -->
+              <v:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                <a:a name="DESC" value="EN: This container contains the published information of the Mcal Library."/>
+                <a:a name="UUID" value="492f8482-3e2c-4bf1-b27f-01fd7ac35cc8"/>
+                <!-- [cover parentID={8CC9B56D-09A8-47e9-955B-A44332378211}] ArMajorVersion [/cover] -->
+                <v:var name="ArMajorVersion" type="INTEGER_LABEL">
+                <a:a name="DESC" value="EN: Major version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                 <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                 </a:a>
+                <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-3333-1166b358b887"/>
+                <a:da name="INVALID" type="Range">
+                  <a:tst expr="&lt;=255"/>
+                  <a:tst expr="&gt;=0"/>
+                </a:da>
+                <a:da name="DEFAULT" value="4"/>
+                </v:var>
+                <!-- [cover parentID={AFDED21E-0CE6-4b33-9294-B1E358F2AD25}] ArMinorVersion [/cover] -->            
+                <v:var name="ArMinorVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Minor version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                   <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                  type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="73f87c7f-e230-4178-3333-ea2704aaecc6"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="2"/>
+                </v:var>
+                <!-- [cover parentID={36E2A7E4-779F-498f-B7C9-4B817FE03259}] ArPatchVersion [/cover] -->           
+                <v:var name="ArPatchVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Revision version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                   <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                 <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                 type="IMPLEMENTATIONCONFIGCLASS">
+                 <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                 </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="2380135d-6778-417a-3333-e100aad4cc54"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="2"/>
+                </v:var>
+            <!-- [cover parentID={BF6D7AD1-4BE0-49c2-AFD5-3B6D9233521C}] SwMajorVersion [/cover] -->    
+                  <v:var name="SwMajorVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Major version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                   <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                  type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="fca015e3-5f28-4cbe-3333-8fab87d8cc27"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="3"/>
+                </v:var>
+                <!-- [cover parentID={83ECD15E-00A1-4bf6-A018-E5826A6BEA08}] SwMinorVersion [/cover] -->            
+                <v:var name="SwMinorVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Minor version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                   <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                  type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="14ab81e0-3d80-43dc-3333-2a7e5a54ccf9"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="0"/>
+                </v:var>
+          <!-- [cover parentID={1075952A-678A-485a-A3FB-2916300CF48A}] SwPatchVersion [/cover] -->      
+                <v:var name="SwPatchVersion" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Patch level version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                   <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                  type="IMPLEMENTATIONCONFIGCLASS">
+                  <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="32e37bfd-18b6-41d1-3333-a81dae0cc4c5"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=255"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="0"/>
+                </v:var>
+                <!-- [cover parentID={10F3B831-335E-4247-B9CD-1C2071D025C4}] ModuleId [/cover] -->          
+                <v:var name="ModuleId" type="INTEGER_LABEL">
+                  <a:a name="DESC" value="EN: Module ID of this module from Module List"/>
+                   <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                 type="IMPLEMENTATIONCONFIGCLASS">
+                 <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                 </a:a>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="3b407478-6902-4f80-3333-f33b08cce638"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="255"/>
+                </v:var>
+                   <!-- [cover parentID={867DA0DD-6E13-4486-AAAE-4C8F23566532}] VendorId [/cover] -->              
+                   <v:var name="VendorId" type="INTEGER_LABEL">
+                   <a:a name="DESC" value="EN: Vendor ID of the dedicated implementation of this module according to the AUTOSAR vendor list"/>
+                   <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                   <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                   type="IMPLEMENTATIONCONFIGCLASS">
+                <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                  </a:a>
+                              <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="7d650b2d-4adb-41f0-3333-5f0c41cc01d1"/>
+                  <a:da name="INVALID" type="Range">
+                    <a:tst expr="&lt;=65535"/>
+                    <a:tst expr="&gt;=0"/>
+                  </a:da>
+                  <a:da name="DEFAULT" value="17"/>
+                </v:var>
+                
+                 <v:var name="Release" type="STRING_LABEL">
+                 <a:a name="DESC" value="EN: Aurix2G derivative used for the implementation"/>
+                 <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PublishedInformation">VariantPreCompile</icc:v>
+                   </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" value="3b407478-6902-4f40-b7cf-f33b0854e638"/>
+                  <a:da name="DEFAULT" type="XPath" expr="ecu:get('Rel.Derivate')"/>
+              </v:var>
+
+             </v:ctr>
+
+
+             <!--********************************************************-->
+             <!--***Mcal Library Common Published Information - Stop****-->
+             <!--********************************************************-->
+             
+             <!--********************************************************-->
+                          <!--***Mcal Library General****-->
+             <!--********************************************************-->
+<!-- [cover parentID={94D96562-692F-468f-B2F9-0EED81C655E6}] McalLibGeneral [/cover] -->
+             <v:ctr name="McalLibGeneral" type="IDENTIFIABLE">
+               <a:a name="DESC" 
+               value="EN: Module wide configuration parameters of the McalLib driver."/>
+               <a:a name="UUID" 
+               value="ECUC:9d811d70-8cc9-4c5c-bb07-fc5de786d2ec"/>
+<!-- [cover parentID={5E62A031-0659-4b73-B264-F338BE5EEBC7}] McalLibSafetyEnable [/cover] -->
+               <v:var name="McalLibSafetyEnable" type="BOOLEAN">
+                      <a:a name="DESC"
+                      value="EN: Enable/Disable the Safety check and all associated notifications."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:da name="DEFAULT" value="true"/>
+                      <a:a name="UUID" value="ECUC:412da385-6bf4-4819-87e4-8ec223fb5b17"/>
+               </v:var>
+            </v:ctr>
+             <!--********************************************************-->
+                          <!--***Mcal Library General - Stop****-->
+             <!--********************************************************-->
+             </v:ctr>
+          </d:chc>
+        </d:lst>
+        </d:ctr>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+</datamodel>

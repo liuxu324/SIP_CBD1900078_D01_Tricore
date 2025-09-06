@@ -1,0 +1,172 @@
+<html>
+<body>
+<h2>Navigation inside the model</h2>
+
+<p>
+    A <a href="../../model/DCtxt.html">DCtxt</a> instance is some sort of cursor that points to a configuration
+    node in a model. This cursor can be moved around inside the model via path expressions. In
+    addition to this new <code>DCtxt</code> instances can be created pointing to any configuration node in the model
+    so relevant positions inside the model can be "saved" for later use.
+</p>
+
+<h3>Navigation</h3>
+
+<p>
+    A <code>DCtxt</code> is moved around in the model via methods that start with the keyword <code>to</code>. E.g.:
+</p>
+
+<p>
+    <code>
+        ctxt.to( "PduRDefaultValue/DefaultValueElement" );<br>
+        ctxt.toParent();
+    </code>
+</p>
+
+<p>
+    Navigation commands can be chained as all navigation methods return <code>this</code>:
+</p>
+
+<p>
+    <code>
+        ctxt.to( "PduRDefaultValue/DefaultValueElement" ).toParent();
+    </code>
+</p>
+
+<p>
+    In addition to the navigation methods of the <code>DCtxt</code> class also kind specific classes
+    (<a href="../../model/Var.html">Var</a>, <a href="../../model/Ref.html">Ref</a>,
+    <a href="../../model/Ctr.html">Ctr</a>, <a href="../../model/Chc.html">Chc</a>) provide navigation
+    methods. These methods provide more kind specific navigation (skipping lists and choice containers) as
+    described in <a href="Query.html">Query</a>).
+</p>
+
+
+<h3>New Contexts</h3>
+
+<p>
+    In addition to navigate an existing <code>DCtxt</code> you can also instantiate a new <code>DCtxt</code> set to any
+    configuration node in the model. The methods to create new contexts all start with the keyword <code>get</code>:
+</p>
+
+<p>
+    <pre>
+        DCtxt clone  = DCtxt.get();
+        DCtxt other  = DCtxt.get( "PduRDefaultValue/DefaultValueElement" );
+        DCtxt child  = DCtxt.get( int idx );
+        DCtxt parent = DCtxt.getParent();
+        ...
+    </pre>
+</p>
+
+<p>
+    The <code>DCtxt</code> class provides non node kind specific navigation in
+    contrast to the methods provided by the kind specific implementation. For details see section above.
+</p>
+
+<p>
+    The method to create new <code>DCtxt</code> objects also provides the functionality to query multiple nodes which
+    in turn would return multiple <code>DCtxt</code> objects in the form of a list (<code>List&lt;DCtxt&gt;</code>):
+</p>
+
+<p>
+    <pre>
+        List(DCtxt) children = ctxt.getChildren();
+        List(DCtxt) entries  = ctxt.ctr.getEntries( "Task" );
+        List(DCtxt) nodes    = ctxt.xpath.getAll( "//*[text:match(name(.),'^Task.*5$')]" );
+        ...
+    </pre>
+</p>
+
+<p>
+    In addition to these method there are also methods available that allow to operate on an expression to
+    produce a list of nodes:
+</p>
+
+<p>
+    <pre>
+        List(DCtxt) nodes = ctxt.getAll( new MXPath( "//*[text:match(name(.),'^Task.*5$')]" );
+    </pre>
+</p>
+
+<p>
+    The usage of these expressions is described in
+    <a href="../../expr/package-summary.html">dreisoft.tresos.datamodel2.api.expr</a>.
+</p>
+
+<h3>Paths</h3>
+
+<p>
+    Paths used in navigation methods can be any path type provided by tresos. A path has the following format:
+</p>
+
+<p>
+    <code>
+        [ &lt;Type&gt; ":" ] &lt;Path&gt;
+    </code>
+</p>
+
+<p>
+    The folllowing path types are supported by default (new ones could be added):
+</p>
+
+<p>
+    <ul>
+        <li><b>XPath</b>:
+            <p>
+                This is the default path type if none is explicitly set. Path are standard XPath paths of the
+                form:
+            </p>
+
+            <p>
+                <pre>
+[ "/" ] ( &lt;Node-Name&gt; | "*[ &lt;Index&gt; "]" ) ( "/" ( &lt;Node-Name&gt; | "*[ &lt;Index&gt;"]" )*
+                </pre>
+            </p>
+            <p>Example: <pre>/AUTOSAR/TOP-LEVEL-PACKAGES/WdgM/ELEMENTS/WdgM
+            </pre>
+            </p>
+        </li>
+        <li><b>ASPath</b>:
+            <p>
+                This path type allows to access nodes via AUTOSAR paths.
+            </p>
+            <p>Example: <pre>/WdgM/WdgM
+            </pre>
+            </p>
+        </li>
+    </ul>
+</p>
+
+<p>
+    The path type of a path can be extracted with:
+</p>
+
+<p>
+    <code>
+        String pathType = ctxt.getPathType( "ASPath:/PduR/PduR" ); // returns ASPath
+    </code>
+</p>
+
+<p>
+    A path to a specific node can be queried with:
+</p>
+
+<p>
+    <code>
+        String path = ctxt.getPath( "ASPath" ); // returns "ASPath:/PduR/PduR"
+    </code>
+</p>
+
+<p>
+   Path queried in this way eventually include a path type (e.g. <code>ASPath:</code>). To get a path
+    without a path type use:
+</p>
+
+<p>
+    <code>
+        String path = ctxt.getPathWithoutType( "ASPath" ); // returns "/PduR/PduR"
+    </code>
+</p>
+
+</body>
+</html>

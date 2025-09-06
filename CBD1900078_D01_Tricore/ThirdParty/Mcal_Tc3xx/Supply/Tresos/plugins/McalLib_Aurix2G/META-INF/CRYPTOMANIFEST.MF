@@ -1,0 +1,22 @@
+
+Name: generate/template/McalLib_Bswmd.arxml
+SignatureKeyID: Infineon
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377425894022259005731451658441834088539480126752619751
+ 3136757196224442734221801613743798449671348315952203
+
+Name: generate/template/inc/McalLib_Cfg.h
+SignatureKeyID: Infineon
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377426992341471724111406597306994970503366451596637227
+ 7047369645818963668087731164207243963114803405166980
+
+Name: config/McalLib.xdm
+SignatureKeyID: Infineon
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594773975127885996825481048404549489770820746015292590
+ 760840931005281637717521118464943027133677725713116999
+

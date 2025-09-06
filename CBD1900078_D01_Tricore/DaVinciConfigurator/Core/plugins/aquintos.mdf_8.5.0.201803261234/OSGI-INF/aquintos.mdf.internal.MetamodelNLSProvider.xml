@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" activate="activate" deactivate="deactivate" name="aquintos.mdf.internal.MetamodelNLSProvider">
+   <service>
+      <provide interface="aquintos.mdf.IMetamodelNLSProvider"/>
+   </service>
+   <reference bind="bindMetadata" cardinality="0..n" interface="aquintos.mdf.mmregistry.IMetamodelNLSMetadata" name="nlsMetadata" policy="dynamic" unbind="unbindMetadata"/>
+   <implementation class="aquintos.mdf.internal.MetamodelNLSProvider"/>
+</scr:component>

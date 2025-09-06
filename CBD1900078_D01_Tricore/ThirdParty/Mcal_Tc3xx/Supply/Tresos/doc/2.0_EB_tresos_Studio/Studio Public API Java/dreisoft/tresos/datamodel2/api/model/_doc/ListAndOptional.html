@@ -1,0 +1,132 @@
+<html>
+<body>
+<h2>List nodes and optional nodes</h2>
+
+<p>
+    This chapter describes list operations and with list related handling of optional parameters.
+</p>
+
+<h3>List nodes</h3>
+
+<p>
+    Like in the AUTOSAR model list nodes that occur in the tresos datamodel do not explicitly show up
+    in the Public API (with some small exceptions where a configuration is created from scratch as it is
+    the case when transforming models). List nodes are implicitly skipped in the node kind specific classes
+    <a href="../../model/Any.html">Any</a>, <a href="../../model/Var.html">Var</a>... Only the class
+    <a href="../../model/DCtxt.html">DCtxt</a> which operates on the raw node tree. The kind specific classes
+    to make it simpler provide single value methods and list value methods instead:
+</p>
+
+<p>
+    <pre>
+        String value = ctxt.var.getString( "SingleValueString" );
+        String[] values = ctxt.var.getStrings( "MultiValueString" );
+    </pre>
+</p>
+
+<p>
+    To get access to all list specific properties (size, position, list name) the
+    <a href="../../model/Any.html">Any</a> class provides methods to query list properties:
+</p>
+
+<p>
+    <pre>
+        boolean isList = ctxt.any.isLst( "ListNode" );
+        boolean isMap = ctxt.any.isMap( "ListNode" );   // Node entries have unique names (Choices, Containers)
+        String listName = ctxt.any.getLstName( "ListNode" );
+        int size = ctxt.any.getLstSize( "ListNode" );
+        int index = ctxt.any.getLstIndex( "ListNode/ListEntry" );
+        List&lt;DCtxt&gt; entries = ctxt.any.getLstEntries( "ListNode" );
+    </pre>
+</p>
+
+<p>
+    <b>Beware:</b> The kind specific kind and type query methods also skip list whereas the methods in
+    <code>DCtxt</code> don't do that:
+</p>
+
+<p>
+    <pre>
+        boolean isLst = ctxt.any.isLst( "ListNode" );   // returns true
+        String type = ctxt.ctr.isCtr( "ListNode" );     // true if this is a list of containers
+        int kind1 = ctxt.any.getKind( "ListNode" );     // Any.CTR if this is a list of containers
+        int kind2 = ctxt.getKind( "ListNode" );         // Any.LST
+        String type1 = ctxt.any.getType( "ListNode" );  // "IDENTIFIABLE" if this is a list of Identifiables
+        String type2 = ctxt.getType( "ListNode" );      // "MAP" if this is a list hosting containers
+    </pre>
+</p>
+
+<h3>Optional Parameters</h3>
+<p>
+    AUTOSAR supports optional configuration parameters but does not provide an explicit concept for such parameters.
+    Optional parameters are marked in the parameter definition with a <code>LOWER-MULTIPLICITY == 0</code> and
+    an <code>UPPER-MULTIPLICITY == 1</code> which unfortunately in a VSMD can mean that a parameter changed its
+    maximum occurrence to 1 (e.g. at most one communication controller is supported).
+</p>
+
+<p>
+    tresos Studio on the other hand supports optional parameters by adding the attribute <code>OPTIONAL</code> to a node:
+</p>
+
+<p>
+    <pre>
+        &lt;v:var name="OptionalVariable"> type="INTEGER"&gt;
+            &lt;a:a name="OPTIONAL" value="TRUE/&gt;
+        &lt;/v:var&gt;
+    </pre>
+</p>
+
+<p>
+    Nevertheless the module developer can also represent optional nodes also in the more AUTOSAR fashioned way:
+</p>
+
+<p>
+    <pre>
+        &lt;v:lst name="OptionalVariable"&gt;
+            &lt;v:var name="OptionalVariable" type="INTEGER"/&gt;
+        &lt;/v:lst&gt;
+    </pre>
+</p>
+
+<p>
+    When accessing an other module it is not possible to know in advance in which form a possible optional
+    parameter is represented. This is one reason why the datamodel2 Public API provides an abstraction for
+    lists and optional parameters. No matter how the parameter is represented. If the semantic of the parameter
+    means that it can have only one value the parameter can be accessed with the single value methods of the
+    Public API. E.g. the following methods work:
+</p>
+
+<p>
+    <pre>
+        if( ctxt.var.isExisting( "OptionalVariable" ) ) {        // Check if parameter exists and is enabled
+          int value = ctxt.var.getInt( "OptionalVariable" );     // Get the value of the parameter
+        }
+    </pre>
+</p>
+
+<p>
+    no matter if the node structure beneath the current context looks this way:
+</p>
+
+<p>
+    <pre>
+        &lt;v:var name="OptionalVariable"> type="INTEGER"&gt;
+            &lt;a:a name="OPTIONAL" value="TRUE/&gt;
+        &lt;/v:var&gt;
+    </pre>
+</p>
+
+<p>
+    or this way:
+</p>
+
+<p>
+    <pre>
+        &lt;v:lst name="OptionalVariable"&gt;
+            &lt;v:var name="OptionalVariable" type="INTEGER"/&gt;
+        &lt;/v:lst&gt;
+    </pre>
+</p>
+
+</body>
+</html>

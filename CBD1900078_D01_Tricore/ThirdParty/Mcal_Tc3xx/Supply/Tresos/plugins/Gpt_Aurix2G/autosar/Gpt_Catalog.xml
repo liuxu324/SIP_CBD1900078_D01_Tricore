@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2018)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**  FILENAME  : Gpt_Catalog.xml                                               **
+**                                                                            **
+**  VERSION   : 3.0.0                                                         **
+**                                                                            **
+**  DATE      : 2018-03-29                                                    **
+**                                                                            **
+**  VARIANT   : Variant PB                                                    **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX2G                                              **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY : [cover parentID={CD8EF7F2-E442-4fe5-B313-AA894638FC00}]    **
+**                                                                            **
+**  DESCRIPTION  : Catalog file for GPT Driver                                **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) : Specification of GPT Driver, AUTOSAR Release 4.2.2     **
+**                                                                            **
+**  MAY BE CHANGED BY USER : no                                               **
+**                                                                            **
+*******************************************************************************/
+-->
+
+<CATALOG xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="catalog_V3_0_0.ml.xsd">
+  <SHORT-NAME>GptCatalog</SHORT-NAME>
+  <ABLOCKS>
+    <ABLOCK>
+      <SHORT-NAME>Gpt::ssc::src::Gpt.c</SHORT-NAME>
+      <CATEGORY>SWSRC</CATEGORY>
+      <FILES>
+        <FILE>Gpt/ssc/src/Gpt.c</FILE>
+      </FILES>
+    </ABLOCK>
+    <ABLOCK>
+      <SHORT-NAME>Gpt::ssc::inc::Gpt.h</SHORT-NAME>
+      <CATEGORY>SWHDR</CATEGORY>
+      <FILES>
+        <FILE>Gpt/ssc/inc/Gpt.h</FILE>
+      </FILES>
+    </ABLOCK>
+    <ABLOCK>
+      <SHORT-NAME>plugins::Gpt_Aurix2G::generate::template::src::Gpt_PBcfg.c</SHORT-NAME>
+      <CATEGORY>SWSRC</CATEGORY>
+      <FILES>
+        <FILE>plugins/Gpt_Aurix2G/generate/template/src/Gpt_PBcfg.c</FILE>
+      </FILES>
+    </ABLOCK>
+    <ABLOCK>
+      <SHORT-NAME>plugins::Gpt_Aurix2G::generate::template::inc::Gpt_Cfg.h</SHORT-NAME>
+      <CATEGORY>SWHDR</CATEGORY>
+      <FILES>
+        <FILE>plugins/Gpt_Aurix2G/generate/template/inc/Gpt_Cfg.h</FILE>
+      </FILES>
+    </ABLOCK>
+    <ABLOCK>
+      <SHORT-NAME>plugins::Gpt_Aurix2G::generate::template::inc::Gpt_PBcfg.h</SHORT-NAME>
+      <CATEGORY>SWHDR</CATEGORY>
+      <FILES>
+        <FILE>plugins/Gpt_Aurix2G/generate/template/inc/Gpt_PBcfg.h</FILE>
+      </FILES>
+    </ABLOCK>
+    <ABLOCK>
+      <SHORT-NAME>plugins::Gpt_Aurix2G::generate::template::Gpt.m</SHORT-NAME>
+      <CATEGORY>SWTOOL</CATEGORY>
+      <FILES>
+        <FILE>plugins/Gpt_Aurix2G/generate/template/Gpt.m</FILE>
+      </FILES>
+    </ABLOCK>
+    <ABLOCK>
+      <SHORT-NAME>plugins::Gpt_Aurix2G::config::Gpt.xdm</SHORT-NAME>
+      <CATEGORY>SWTOOL</CATEGORY>
+      <FILES>
+        <FILE>plugins/Gpt_Aurix2G/config/Gpt.xdm</FILE>
+      </FILES>
+    </ABLOCK>
+  </ABLOCKS>
+</CATALOG>

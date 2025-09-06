@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.vector.cfg.gui.app.dvcfg.external.feature"
+      label="3rd Party Libraries for DaVinci Cfg"
+      version="1.0.0.r82615"
+      provider-name="Vector Informatik GmbH">
+
+   <description>
+      3rd party libraries for DaVinci Configurator.
+   </description>
+
+   <copyright>
+      (c) Copyright Vector Informatik GmbH. All Rights Reserved.
+   </copyright>
+
+   <license url="http://www.vector.com">
+      Vector Group License Agreement
+
+This software is licensed under the terms and conditions of „Delivery and maintenance of software products” of Vector Group, see www.vector.com
+   </license>
+
+   <includes
+         id="org.eclipse.help"
+         version="2.2.104.v20180330-0640"/>
+
+   <includes
+         id="org.eclipse.emf.common"
+         version="2.13.0.v20170609-0707"/>
+
+   <includes
+         id="org.eclipse.emf.ecore"
+         version="2.13.0.v20170609-0707"/>
+
+   <includes
+         id="com.vector.cfg.core.external.feature"
+         version="1.0.0.r82615"/>
+
+   <plugin
+         id="ca.odell.glazedlists"
+         download-size="0"
+         install-size="0"
+         version="1.9.0.v201303080712"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.batik.css"
+         download-size="0"
+         install-size="0"
+         version="1.8.0.v20170214-1941"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.batik.util"
+         download-size="0"
+         install-size="0"
+         version="1.8.0.v20170214-1941"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.commons.codec"
+         download-size="0"
+         install-size="0"
+         version="1.9.0.v20170208-1614"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.lucene.analyzers-common"
+         download-size="0"
+         install-size="0"
+         version="6.1.0.v20161115-1612"
+         unpack="false"/>
+
+   <plugin
+         id="org.apache.lucene.core"
+         download-size="0"
+         install-size="0"
+         version="6.1.0.v20170814-1820"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ant.core"
+         download-size="0"
+         install-size="0"
+         version="3.5.0.v20170509-2149"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.core.databinding.beans"
+         download-size="0"
+         install-size="0"
+         version="1.4.0.v20170210-0856"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.e4.core.di.extensions.supplier"
+         download-size="0"
+         install-size="0"
+         version="0.15.0.v20170407-0928"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.e4.emf.xpath"
+         download-size="0"
+         install-size="0"
+         version="0.2.0.v20160630-0728"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.e4.ui.bindings"
+         download-size="0"
+         install-size="0"
+         version="0.12.1.v20170823-1632"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.e4.ui.css.core"
+         download-size="0"
+         install-size="0"
+         version="0.12.101.v20170712-1547"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.e4.ui.css.swt"
+         download-size="0"
+         install-size="0"
+         version="0.13.1.v20170808-1940"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.e4.ui.css.swt.theme"
+         download-size="0"
+         install-size="0"
+         version="0.11.0.v20170312-2302"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.e4.ui.di"
+         download-size="0"
+         install-size="0"
+         version="1.2.100.v20170414-1137"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.e4.ui.model.workbench"
+         download-size="0"
+         install-size="0"
+         version="2.0.1.v20170713-1800"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.e4.ui.services"
+         download-size="0"
+         install-size="0"
+         version="1.3.0.v20170307-2032"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.e4.ui.widgets"
+         download-size="0"
+         install-size="0"
+         version="1.2.0.v20160630-0736"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.e4.ui.workbench"
+         download-size="0"
+         install-size="0"
+         version="1.5.1.v20170815-1446"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.e4.ui.workbench.addons.swt"
+         download-size="0"
+         install-size="0"
+         version="1.3.1.v20170319-1442"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.e4.ui.workbench.renderers.swt"
+         download-size="0"
+         install-size="0"
+         version="0.14.102.v20180117-1153"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.e4.ui.workbench.swt"
+         download-size="0"
+         install-size="0"
+         version="0.14.101.v20170710-1119"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.e4.ui.workbench3"
+         download-size="0"
+         install-size="0"
+         version="0.14.0.v20160630-0740"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.p2.core"
+         download-size="0"
+         install-size="0"
+         version="2.4.101.v20170906-1259"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.p2.engine"
+         download-size="0"
+         install-size="0"
+         version="2.5.0.v20170319-2002"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.p2.metadata"
+         download-size="0"
+         install-size="0"
+         version="2.3.200.v20170511-1106"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.p2.metadata.repository"
+         download-size="0"
+         install-size="0"
+         version="1.2.401.v20170906-1259"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.p2.repository"
+         download-size="0"
+         install-size="0"
+         version="2.3.301.v20170906-1259"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.equinox.security"
+         download-size="0"
+         install-size="0"
+         version="1.2.300.v20170505-1235"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jface"
+         download-size="0"
+         install-size="0"
+         version="3.13.2.v20171022-1656"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jface.databinding"
+         download-size="0"
+         install-size="0"
+         version="1.8.100.v20170503-1507"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jface.text"
+         download-size="0"
+         install-size="0"
+         version="3.12.2.v20180112-1341"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.nebula.widgets.nattable.core"
+         download-size="0"
+         install-size="0"
+         version="1.5.0.201703192131"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.nebula.widgets.nattable.extension.glazedlists"
+         download-size="0"
+         install-size="0"
+         version="1.5.0.201703192131"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.nebula.widgets.pgroup"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.201804011600"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.nebula.widgets.tablecombo"
+         download-size="0"
+         install-size="0"
+         version="1.2.0.201804011600"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.swt"
+         download-size="0"
+         install-size="0"
+         version="3.106.3.v20180329-0507"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.swt.win32.win32.x86"
+         os="win32"
+         ws="win32"
+         arch="x86"
+         download-size="0"
+         install-size="0"
+         version="3.106.3.v20180329-0507"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.swt.win32.win32.x86_64"
+         os="win32"
+         ws="win32"
+         arch="x86_64"
+         download-size="0"
+         install-size="0"
+         version="3.106.3.v20180329-0507"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui"
+         download-size="0"
+         install-size="0"
+         version="3.109.0.v20170411-1742"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.console"
+         download-size="0"
+         install-size="0"
+         version="3.7.1.v20170728-0806"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.forms"
+         download-size="0"
+         install-size="0"
+         version="3.7.101.v20170815-1446"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.views"
+         download-size="0"
+         install-size="0"
+         version="3.9.0.v20170226-1833"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.views.properties.tabbed"
+         download-size="0"
+         install-size="0"
+         version="3.8.1.v20170713-0803"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.workbench"
+         download-size="0"
+         install-size="0"
+         version="3.110.1.v20170704-1208"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.workbench.texteditor"
+         download-size="0"
+         install-size="0"
+         version="3.10.100.v20170426-2021"
+         unpack="false"/>
+
+   <plugin
+         id="org.hamcrest.library"
+         download-size="0"
+         install-size="0"
+         version="1.3.0.v201505072020"
+         unpack="false"/>
+
+   <plugin
+         id="org.tukaani.xz"
+         download-size="0"
+         install-size="0"
+         version="1.5.0.v20170111-1717"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.ide"
+         download-size="0"
+         install-size="0"
+         version="3.13.1.v20170822-1526"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.ide.application"
+         download-size="0"
+         install-size="0"
+         version="1.2.0.v20170512-1452"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.navigator"
+         download-size="0"
+         install-size="0"
+         version="3.7.0.v20170418-1342"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.navigator.resources"
+         download-size="0"
+         install-size="0"
+         version="3.6.1.v20170823-1443"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ltk.core.refactoring"
+         download-size="0"
+         install-size="0"
+         version="3.8.0.v20170105-1156"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ltk.ui.refactoring"
+         download-size="0"
+         install-size="0"
+         version="3.9.0.v20170412-0825"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.compare"
+         download-size="0"
+         install-size="0"
+         version="3.7.101.v20170724-1603"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.core.filebuffers"
+         download-size="0"
+         install-size="0"
+         version="3.6.100.v20170203-1130"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.team.ui"
+         download-size="0"
+         install-size="0"
+         version="3.8.1.v20170515-1133"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.editors"
+         download-size="0"
+         install-size="0"
+         version="3.11.0.v20170202-1823"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.update.configurator"
+         download-size="0"
+         install-size="0"
+         version="3.3.400.v20160506-0750"
+         unpack="false"/>
+
+</feature>

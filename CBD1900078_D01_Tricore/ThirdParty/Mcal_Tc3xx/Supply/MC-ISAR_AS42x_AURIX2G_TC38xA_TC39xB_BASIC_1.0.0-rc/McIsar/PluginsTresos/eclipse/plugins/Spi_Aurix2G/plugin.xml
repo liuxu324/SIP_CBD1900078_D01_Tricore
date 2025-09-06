@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2018)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**  FILENAME  : plugin.xml                                                    **
+**                                                                            **
+**  VERSION   : 3.0.0                                                         **
+**                                                                            **
+**  DATE      : 2018-09-03                                                    **
+**                                                                            **
+**  VARIANT   : Variant PB                                                    **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX2G                                              **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**                                                                            **
+**  DESCRIPTION  : Tresos plugin for Spi Driver                               **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) : Specification of Spi Driver, AUTOSAR Release 4.2.2     **
+**                                                                            **
+**  MAY BE CHANGED BY USER : no                                               **
+**                                                                            **
+*******************************************************************************/
+-->
+<plugin>
+<!-- [cover parentID={9BB74C77-17FD-4e2d-8709-D7811D5F6FB8}][/cover] -->
+<!-- [cover parentID={0546DA3D-28C8-47bd-9B7E-1D63E586E517}][/cover] -->
+<!-- [cover parentID={BD1D06A9-AE4E-41d4-9152-2382977860E9}][/cover] -->
+<!-- [cover parentID={BD607180-6DDB-4175-9E75-6DCCAEBFBD5C}][/cover] -->
+   <extension point="dreisoft.tresos.launcher2.plugin.module"
+             id="Spi_Aurix2GAS422_ModuleExt"
+             name="Spi Module with template generator">
+
+    <module id="Spi_Aurix2GAS422"
+            label="%ModuleLabel"
+            mandatory="false"
+            allowMultiple="true"
+            description="%ModuleDesc"
+            copyright="(c) 2018 Infineon Technologies"
+            swVersionMajor="2"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            specVersionMajor="4"
+            specVersionMinor="2"
+            specVersionPatch="2"
+            relVersionMajor="4"
+            relVersionMinor="2"
+            relVersionPatch="2"
+            relVersionSuffix=""
+            categoryType="%ModuleName"
+            categoryLayer="MCAL"
+            categoryCategory="ECU Firmware"
+            categoryComponent="ECUC">
+      <cluster name="MCAL"/>
+      <ecuType target="AURIX2G" derivate="TC387"/>
+      <ecuType target="AURIX2G" derivate="TC389"/>
+      <ecuType target="AURIX2G" derivate="TC397"/>
+      <ecuType target="AURIX2G" derivate="TC397_ADAS"/>
+      <ecuType target="AURIX2G" derivate="TC399"/>
+    </module>
+  </extension>
+
+    <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+             id="Spi_Aurix2GAS422_ConfigExt"
+             name="Spi_Aurix2G Configuration">
+    <configuration moduleId="Spi_Aurix2GAS422">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/Spi.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/AURIX2G/EcucDefs/Spi"/>
+      </data>
+
+      <editor id="Spi_Aurix2GAS422_Edit"
+              label="%ModuleName"
+              tooltip="%ModuleDesc">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/AURIX2G/EcucDefs/Spi"/>
+          <parameter name="title" value="Spi"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+  </extension>
+
+   <!-- this extension point needs to be defined and point to the configuratin parameters for the Loadable and the Selectable use case -->
+  <extension
+      point="dreisoft.tresos.autosar2.api.plugin.postbuildSetup"
+      id="Spi_Aurix2GAS422_PostBuildExt">
+    <configuration
+         activeLoadableRef="ASPath:/AURIX2G/EcucDefs/EcuC/EcucSelectedLoadableVariant/EcucSelectedLoadableRef"
+         activeSelectableRef="ASPath:/AURIX2G/EcucDefs/EcuC/EcucPostBuildVariants/EcucSelectedPostBuildVariantRef"
+         selectableRefs="ASPath:/AURIX2G/EcucDefs/EcuC/EcucPostBuildVariants/EcucPostBuildVariantRef">
+     </configuration>
+  </extension>
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="Spi_Aurix2GAS422_GenExt"
+              name="Spi_Aurix2G Generator">
+    <generator moduleId="Spi_Aurix2GAS422"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+
+      <!-- common template path parameters -->
+      <parameter name="templates"
+                 mode="generate,verify" value="generate/template"/>
+
+      <!-- swcd modes and template path parameters -->
+      <parameter name="mode_type"
+                 mode="generate_swcd" value="generate/template"/>
+
+      <parameter name="mode_type"
+                 mode="verify_swcd" value="verify"/>
+
+      <parameter name="templates"
+                 mode="generate_swcd,verify_swcd" value="generate_swcd"/>
+
+    <!-- only having this parameter set to true, a generator is called once for each variant! -->
+      <parameter name="variantAware" value="true"/>
+
+    </generator>
+
+    </extension>
+
+    <!-- this post-generator just calls an ant script which renames the file created by the TemplateBasedCodeGenerator defined above
+       otherwise the next run of the TemplateBasedCodeGenerator for another variant would overwrite the file -->
+  <extension point="dreisoft.tresos.generator.api.plugin.generator"
+             id="Spi_Aurix2GAS422_Gen_Template_MoveFile">
+    <generator moduleId="Spi_Aurix2GAS422"
+               id="Spi_Aurix2GAS422_Gen_Template_MoveFile"
+               class="dreisoft.tresos.generator.ng.api.NGGenerator"
+               modes="generate,Template_withPostRename"
+               step="post">
+      <!-- Specify the ant build script as parameter to the NGGenerator. -->
+      <parameter name="buildfile"  value="generate/template_ant/ant_generator.xml"/>
+
+      <!-- only having this parameter set to true, a generator is called once for each variant! -->
+      <parameter name="variantAware" value="true"/>
+    </generator>
+  </extension>
+</plugin>

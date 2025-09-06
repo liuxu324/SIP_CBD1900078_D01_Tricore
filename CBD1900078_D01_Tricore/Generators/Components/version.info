@@ -1,0 +1,942 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CANbeddedVersionInfo Version="2.6">
+    <Properties>
+        <DeliveryDate>2019-05-07</DeliveryDate>
+        <CreatedDate>2019-05-07</CreatedDate>
+        <CBD>CBD1900078</CBD>
+        <SalesSite>VC</SalesSite>
+        <IntegrationSite>VC</IntegrationSite>
+        <SIP>21.06.27</SIP>
+        <Release>01</Release>
+        <ProjectNumber>489667</ProjectNumber>
+        <Eval>false</Eval>
+        <ErrataContacts>
+            <ErrataContact>
+                <Firstname>Arthur</Firstname>
+                <Surname>Chen</Surname>
+                <Email>arthur.chen@aptiv.com</Email>
+            </ErrataContact>
+        </ErrataContacts>
+        <CustomerContact>
+            <Firstname></Firstname>
+            <Surname></Surname>
+            <Email>Support@vector.com</Email>
+        </CustomerContact>
+        <Customer>Aptiv (China) Technology Company Ltd.
+Package: MSR_Vector_SLP4 - MSR Brand license "ASDM" for the brand Trumpchi of GAC
+Micro: Aurix 2G/TC397 B-Step
+Compiler: Tasking  V6.2r2</Customer>
+        <DeliveryType>Warranty delivery</DeliveryType>
+        <ReleaseType>Pre Production</ReleaseType>
+        <DeliveryReason>ESCAN00102829</DeliveryReason>
+        <OEM>Vector</OEM>
+        <SLP>MSR_Vector_SLP4</SLP>
+        <UseCases/>
+        <Controller>Tricore</Controller>
+        <CanCell>Mcan</CanCell>
+        <Compiler>Tasking</Compiler>
+        <DeliveryPath>\\vcshafs1\Delivery\PES\CBD19x\CBD1900078\D01</DeliveryPath>
+        <TestedDerivative>--</TestedDerivative>
+        <OrderedDerivative>Aurix 2G/TC397 B-Step</OrderedDerivative>
+        <NDA>true</NDA>
+        <ShowBetaDisclaimer>true</ShowBetaDisclaimer>
+    </Properties>
+    <ComponentCheck>
+        <Component Version="9.00.01" ScanPattern="Ccl_Asr4ComMCfg5" Project="Ccl_Asr4ComMCfg5" Delivered="true" Component="Description" ShortName="ComM"/>
+        <Component Version="9.00.03" ScanPattern="Ccl_Asr4ComMCfg5" Project="Ccl_Asr4ComMCfg5" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="ComM"/>
+        <Component Version="9.00.01" ScanPattern="Ccl_Asr4ComMCfg5" Project="Ccl_Asr4ComMCfg5" Delivered="true" Component="Implementation" ShortName="ComM">
+            <RelativeFileSpec>ComM.h;ComM_BusSM.h;ComM_Dcm.h;ComM_EcuMBswM.h;ComM_Nm.h;ComM_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="9.00.03" ScanPattern="Ccl_Asr4ComMCfg5" Project="Ccl_Asr4ComMCfg5" Delivered="true" Component="root" ShortName="ComM"/>
+        <Component Version="5.00.01" ScanPattern="Ccl_Asr4SmCan" Project="Ccl_Asr4SmCan" Delivered="true" Component="Description" ShortName="CanSM"/>
+        <Component Version="5.00.01" ScanPattern="Ccl_Asr4SmCan" Project="Ccl_Asr4SmCan" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CanSM"/>
+        <Component Version="3.00.01" ScanPattern="Ccl_Asr4SmCan" Project="Ccl_Asr4SmCan" Delivered="true" Component="Implementation" ShortName="CanSM">
+            <RelativeFileSpec>CanSM.h;CanSM_BswM.h;CanSM_Cbk.h;CanSM_ComM.h;CanSM_Dcm.h;CanSM_EcuM.h;CanSM_Int.h;CanSM_TxTimeoutException.h</RelativeFileSpec>
+        </Component>
+        <Component Version="7.00.03" ScanPattern="Ccl_Asr4SmCan" Project="Ccl_Asr4SmCan" Delivered="true" Component="root" ShortName="CanSM"/>
+        <Component Version="6.00.00" ScanPattern="Ccl_Asr4SmLin" Project="Ccl_Asr4SmLin" Delivered="true" Component="Description" ShortName="LinSM"/>
+        <Component Version="6.00.00" ScanPattern="Ccl_Asr4SmLin" Project="Ccl_Asr4SmLin" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="LinSM"/>
+        <Component Version="6.00.00" ScanPattern="Ccl_Asr4SmLin" Project="Ccl_Asr4SmLin" Delivered="true" Component="Implementation" ShortName="LinSM">
+            <RelativeFileSpec>LinSM.h;LinSM_Cbk.h;LinSM_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="6.00.01" ScanPattern="Ccl_Asr4SmLin" Project="Ccl_Asr4SmLin" Delivered="true" Component="root" ShortName="LinSM"/>
+        <Component Version="4.00.00" ScanPattern="Ccl_AsrSmEth" Project="Ccl_AsrSmEth" Delivered="true" Component="Description" ShortName="EthSM"/>
+        <Component Version="4.00.00" ScanPattern="Ccl_AsrSmEth" Project="Ccl_AsrSmEth" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="EthSM"/>
+        <Component Version="4.00.00" ScanPattern="Ccl_AsrSmEth" Project="Ccl_AsrSmEth" Delivered="true" Component="Implementation" ShortName="EthSM">
+            <RelativeFileSpec>EthSM.h;EthSM_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="5.00.01" ScanPattern="Ccl_AsrSmEth" Project="Ccl_AsrSmEth" Delivered="true" Component="root" ShortName="EthSM"/>
+        <Component Version="4.00.00" ScanPattern="Cdd_AsrCddCfg5" Project="Cdd_AsrCddCfg5" Delivered="true" Component="Description" ShortName="Cdd"/>
+        <Component Version="6.00.00" ScanPattern="Cdd_AsrCddCfg5" Project="Cdd_AsrCddCfg5" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="Cdd"/>
+        <Component Version="1.00.00" ScanPattern="Cdd_AsrCddCfg5" Project="Cdd_AsrCddCfg5" Delivered="true" Component="Implementation" ShortName="Cdd"/>
+        <Component Version="6.00.00" ScanPattern="Cdd_AsrCddCfg5" Project="Cdd_AsrCddCfg5" Delivered="true" Component="root" ShortName="Cdd"/>
+        <Component Version="7.00.00" ScanPattern="CommonAsr_ComGenericGenLib" Project="CommonAsr_ComGenericGenLib" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CommonAsr_ComGenericGenLib"/>
+        <Component Version="10.00.00" ScanPattern="CommonAsr_ComStackLib" Project="CommonAsr_ComStackLib" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CommonAsr_ComStackLib"/>
+        <Component Version="10.00.01" ScanPattern="CommonAsr_ComStackLib" Project="CommonAsr_ComStackLib" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CommonAsr_ComStackLib"/>
+        <Component Version="10.00.03" ScanPattern="CommonAsr_ComStackLib" Project="CommonAsr_ComStackLib" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CommonAsr_ComStackLib"/>
+        <Component Version="10.00.04" ScanPattern="CommonAsr_ComStackLib" Project="CommonAsr_ComStackLib" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CommonAsr_ComStackLib"/>
+        <Component Version="10.00.05" ScanPattern="CommonAsr_ComStackLib" Project="CommonAsr_ComStackLib" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CommonAsr_ComStackLib"/>
+        <Component Version="8.00.00" ScanPattern="CommonAsr_ComStackLib" Project="CommonAsr_ComStackLib" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CommonAsr_ComStackLib"/>
+        <Component Version="8.00.01" ScanPattern="CommonAsr_ComStackLib" Project="CommonAsr_ComStackLib" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CommonAsr_ComStackLib"/>
+        <Component Version="8.03.00" ScanPattern="CommonAsr_ComStackLib" Project="CommonAsr_ComStackLib" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CommonAsr_ComStackLib"/>
+        <Component Version="8.03.81" ScanPattern="CommonAsr_ComStackLib" Project="CommonAsr_ComStackLib" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CommonAsr_ComStackLib"/>
+        <Component Version="8.05.80" ScanPattern="CommonAsr_ComStackLib" Project="CommonAsr_ComStackLib" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CommonAsr_ComStackLib"/>
+        <Component Version="8.05.81" ScanPattern="CommonAsr_ComStackLib" Project="CommonAsr_ComStackLib" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CommonAsr_ComStackLib"/>
+        <Component Version="8.07.80" ScanPattern="CommonAsr_ComStackLib" Project="CommonAsr_ComStackLib" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CommonAsr_ComStackLib"/>
+        <Component Version="8.07.81" ScanPattern="CommonAsr_ComStackLib" Project="CommonAsr_ComStackLib" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CommonAsr_ComStackLib"/>
+        <Component Version="8.11.01" ScanPattern="CommonAsr_ComStackLib" Project="CommonAsr_ComStackLib" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CommonAsr_ComStackLib"/>
+        <Component Version="8.12.00" ScanPattern="CommonAsr_ComStackLib" Project="CommonAsr_ComStackLib" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CommonAsr_ComStackLib"/>
+        <Component Version="9.01.00" ScanPattern="CommonAsr_ComStackLib" Project="CommonAsr_ComStackLib" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CommonAsr_ComStackLib"/>
+        <Component Version="9.01.01" ScanPattern="CommonAsr_ComStackLib" Project="CommonAsr_ComStackLib" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CommonAsr_ComStackLib"/>
+        <Component Version="9.00.05" ScanPattern="CommonAsr_ComStackLib" Project="CommonAsr_ComStackLib" Delivered="true" Component="root" ShortName="CommonAsr_ComStackLib"/>
+        <Component Version="3.00.00" ScanPattern="CommonAsr_ComValidationLib" Project="CommonAsr_ComValidationLib" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CommonAsr_ComValidationLib"/>
+        <Component Version="3.01.01" ScanPattern="CommonAsr_ComValidationLib" Project="CommonAsr_ComValidationLib" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CommonAsr_ComValidationLib"/>
+        <Component Version="3.01.02" ScanPattern="CommonAsr_ComValidationLib" Project="CommonAsr_ComValidationLib" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CommonAsr_ComValidationLib"/>
+        <Component Version="3.02.00" ScanPattern="CommonAsr_ComValidationLib" Project="CommonAsr_ComValidationLib" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CommonAsr_ComValidationLib"/>
+        <Component Version="3.02.01" ScanPattern="CommonAsr_ComValidationLib" Project="CommonAsr_ComValidationLib" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CommonAsr_ComValidationLib"/>
+        <Component Version="4.00.00" ScanPattern="CommonAsr_ComValidationLib" Project="CommonAsr_ComValidationLib" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CommonAsr_ComValidationLib"/>
+        <Component Version="4.00.01" ScanPattern="CommonAsr_ComValidationLib" Project="CommonAsr_ComValidationLib" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CommonAsr_ComValidationLib"/>
+        <Component Version="7.00.00" ScanPattern="CommonAsr_DiagLib" Project="CommonAsr_DiagLib" Delivered="true" Component="GenTool_GeneratorMsr"/>
+        <Component Version="7.06.01" ScanPattern="CommonAsr_DiagLib" Project="CommonAsr_DiagLib" Delivered="true" Component="GenTool_GeneratorMsr"/>
+        <Component Version="4.00.00" ScanPattern="CommonAsr_IpStackLib" Project="CommonAsr_IpStackLib" Delivered="true" Component="GenTool_GeneratorMsr"/>
+        <Component Version="2.02.00" ScanPattern="CommonAsr_Tricore_Impl_CompAbstract" Project="CommonAsr_Tricore" Delivered="true" Component="Impl_CompAbstract_Tasking" ShortName="_Common"/>
+        <Component Version="2.03.01" ScanPattern="CommonAsr_Tricore_Impl_PlatformTypes" Project="CommonAsr_Tricore" Delivered="true" Component="Impl_PlatformTypes" ShortName="_Common">
+            <RelativeFileSpec>Platform_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="3.06.08" ScanPattern="CommonAsr_Tricore" Project="CommonAsr_Tricore" Delivered="true" Component="root" ShortName="_Common"/>
+        <Component Version="1.01.00" ScanPattern="CommonAsr__Common" Project="CommonAsr__Common" Delivered="true" Component="Impl_CanGeneralTypes" ShortName="_Common"/>
+        <Component Version="4.00.03" ScanPattern="CommonAsr__Common_Impl_ComStackTypes" Project="CommonAsr__Common" Delivered="true" Component="Impl_ComStackTypes" ShortName="_Common">
+            <RelativeFileSpec>ComStack_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="3.04.04" ScanPattern="CommonAsr__Common_Impl_StdTypes" Project="CommonAsr__Common" Delivered="true" Component="Impl_StdTypes" ShortName="_Common">
+            <RelativeFileSpec>Std_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="1.07.02" ScanPattern="CommonAsr__Common" Project="CommonAsr__Common" Delivered="true" Component="Impl__Compiler_Cfg" ShortName="_Common"/>
+        <Component Version="1.11.00" ScanPattern="CommonAsr__Common" Project="CommonAsr__Common" Delivered="true" Component="Impl__MemMap" ShortName="_Common"/>
+        <Component Version="3.14.00" ScanPattern="CommonAsr__Common" Project="CommonAsr__Common" Delivered="true" Component="root" ShortName="_Common"/>
+        <Component Version="1.01.21" ScanPattern="CommonAsr__PlatformSpecific" Project="CommonAsr__PlatformSpecific" Delivered="true" Component="root" ShortName="_Common"/>
+        <Component Version="2.00.00" ScanPattern="CommonAsr_vSet" Project="CommonAsr_vSet" Delivered="true" Component="Description" ShortName="vSet"/>
+        <Component Version="2.01.00" ScanPattern="CommonAsr_vSet" Project="CommonAsr_vSet" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="vSet"/>
+        <Component Version="2.01.00" ScanPattern="CommonAsr_vSet" Project="CommonAsr_vSet" Delivered="true" Component="root" ShortName="vSet"/>
+        <Component Version="2.00.00" ScanPattern="Cp_Asr4Xcp" Project="Cp_Asr4Xcp" Delivered="true" Component="Description" ShortName="Xcp"/>
+        <Component Version="4.00.01" ScanPattern="Cp_Asr4Xcp" Project="Cp_Asr4Xcp" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="Xcp"/>
+        <Component Version="4.00.01" ScanPattern="Cp_Asr4Xcp" Project="Cp_Asr4Xcp" Delivered="true" Component="Implementation" ShortName="Xcp">
+            <RelativeFileSpec>Xcp.h;Xcp_Priv.h;Xcp_Types.h;_XcpAppl.h</RelativeFileSpec>
+        </Component>
+        <Component Version="4.00.02" ScanPattern="Cp_Asr4Xcp" Project="Cp_Asr4Xcp" Delivered="true" Component="root" ShortName="Xcp"/>
+        <Component Version="3.00.01" ScanPattern="Cp_XcpOnTcpIpAsr" Project="Cp_XcpOnTcpIpAsr" Delivered="true" Component="Implementation" ShortName="TcpIpXcp">
+            <RelativeFileSpec>TcpIpXcp.h;TcpIpXcp_Cbk.h;TcpIpXcp_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="3.00.02" ScanPattern="Cp_XcpOnTcpIpAsr" Project="Cp_XcpOnTcpIpAsr" Delivered="true" Component="root" ShortName="TcpIpXcp"/>
+        <Component Version="1.05.00" ScanPattern="Diag_A2lGen" Project="Diag_A2lGen" Delivered="true" Component="Application" ShortName="Diag_A2lGen"/>
+        <Component Version="1.05.00" ScanPattern="Diag_A2lGen" Project="Diag_A2lGen" Delivered="true" Component="root" ShortName="Diag_A2lGen"/>
+        <Component Version="10.04.02" ScanPattern="Diag_Asr4Dcm" Project="Diag_Asr4Dcm" Delivered="true" Component="Description" ShortName="Dcm"/>
+        <Component Version="10.04.02" ScanPattern="Diag_Asr4Dcm" Project="Diag_Asr4Dcm" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="Dcm"/>
+        <Component Version="10.04.02" ScanPattern="Diag_Asr4Dcm" Project="Diag_Asr4Dcm" Delivered="true" Component="GenTool_GeneratorMsrCore" ShortName="Dcm"/>
+        <Component Version="10.04.02" ScanPattern="Diag_Asr4Dcm" Project="Diag_Asr4Dcm" Delivered="true" Component="Implementation" ShortName="Dcm">
+            <RelativeFileSpec>Dcm.h;Dcm_Base.h;Dcm_BaseCbk.h;Dcm_BaseInt.h;Dcm_BaseTypes.h;Dcm_Cbk.h;Dcm_Core.h;Dcm_CoreCbk.h;Dcm_CoreInt.h;Dcm_CoreTypes.h;Dcm_Ext.h;Dcm_Ext.h;Dcm_Ext.h;Dcm_Ext.h;Dcm_Ext.h;Dcm_ExtCbk.h;Dcm_ExtCbk.h;Dcm_ExtCbk.h;Dcm_ExtCbk.h;Dcm_ExtCbk.h;Dcm_ExtInt.h;Dcm_ExtInt.h;Dcm_ExtInt.h;Dcm_ExtInt.h;Dcm_ExtInt.h;Dcm_ExtTypes.h;Dcm_ExtTypes.h;Dcm_ExtTypes.h;Dcm_ExtTypes.h;Dcm_ExtTypes.h;Dcm_Int.h;Dcm_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="10.04.02" ScanPattern="Diag_Asr4Dcm" Project="Diag_Asr4Dcm" Delivered="true" Component="root" ShortName="Dcm"/>
+        <Component Version="16.05.00" ScanPattern="Diag_Asr4Dem" Project="Diag_Asr4Dem" Delivered="true" Component="Description" ShortName="Dem"/>
+        <Component Version="13.03.00" ScanPattern="Diag_Asr4Dem" Project="Diag_Asr4Dem" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="Dem"/>
+        <Component Version="15.05.00" ScanPattern="Diag_Asr4Dem" Project="Diag_Asr4Dem" Delivered="true" Component="Implementation" ShortName="Dem">
+            <RelativeFileSpec>Dem.h;Dem_API_Implementation.h;Dem_API_Interface.h;Dem_API_Types.h;Dem_Cbk.h;Dem_Cdd_Types.h;Dem_Cfg_Declarations.h;Dem_Cfg_Definitions.h;Dem_Cfg_Macros.h;Dem_Cfg_Types.h;Dem_ClearDTC_Implementation.h;Dem_ClearDTC_Interface.h;Dem_ClearDTC_Types.h;Dem_ClearTask_Implementation.h;Dem_ClearTask_Interface.h;Dem_ClearTask_Types.h;Dem_ClientAccess_Implementation.h;Dem_ClientAccess_Interface.h;Dem_ClientAccess_Types.h;Dem_ClientData_Implementation.h;Dem_ClientData_Interface.h;Dem_ClientData_Types.h;Dem_Com_Implementation.h;Dem_Com_Interface.h;Dem_Com_Types.h;Dem_DTCInternalStatus_Implementation.h;Dem_DTCInternalStatus_Interface.h;Dem_DTCInternalStatus_Types.h;Dem_DTCReadoutBuffer_Implementation.h;Dem_DTCReadoutBuffer_Interface.h;Dem_DTCReadoutBuffer_Types.h;Dem_DTCReporting_Implementation.h;Dem_DTCReporting_Interface.h;Dem_DTCReporting_Types.h;Dem_DTCSelector_Implementation.h;Dem_DTCSelector_Interface.h;Dem_DTCSelector_Types.h;Dem_DTC_Implementation.h;Dem_DTC_Interface.h;Dem_DTC_Types.h;Dem_DataReportIF_Implementation.h;Dem_DataReportIF_Interface.h;Dem_DataReportIF_Types.h;Dem_DataStorageIF_Implementation.h;Dem_DataStorageIF_Interface.h;Dem_DataStorageIF_Types.h;Dem_Data_Implementation.h;Dem_Data_Interface.h;Dem_Data_Types.h;Dem_Dcm.h;Dem_DcmAPI_Implementation.h;Dem_DcmAPI_Interface.h;Dem_DcmAPI_Types.h;Dem_Dcm_Implementation.h;Dem_Dcm_Interface.h;Dem_Dcm_Types.h;Dem_DebounceBase_Fwd.h;Dem_DebounceBase_Implementation.h;Dem_DebounceBase_Interface.h;Dem_DebounceBase_Types.h;Dem_DebounceCounterBased_Implementation.h;Dem_DebounceCounterBased_Interface.h;Dem_DebounceCounterBased_Types.h;Dem_DebounceMonitorInternal_Implementation.h;Dem_DebounceMonitorInternal_Interface.h;Dem_DebounceMonitorInternal_Types.h;Dem_DebounceTimeBased_Implementation.h;Dem_DebounceTimeBased_Interface.h;Dem_DebounceTimeBased_Types.h;Dem_Debounce_Implementation.h;Dem_Debounce_Interface.h;Dem_Debounce_Types.h;Dem_DebouncingState_Implementation.h;Dem_DebouncingState_Interface.h;Dem_DebouncingState_Types.h;Dem_DtrIF_Implementation.h;Dem_DtrIF_Interface.h;Dem_DtrIF_Types.h;Dem_Dtr_Implementation.h;Dem_Dtr_Interface.h;Dem_Dtr_Types.h;Dem_EnableCondition_Implementation.h;Dem_EnableCondition_Interface.h;Dem_EnableCondition_Types.h;Dem_EnvDataSwcApi_Implementation.h;Dem_EnvDataSwcApi_Interface.h;Dem_EnvDataSwcApi_Types.h;Dem_Error_Implementation.h;Dem_Error_Interface.h;Dem_Error_Types.h;Dem_Esm_Implementation.h;Dem_Esm_Interface.h;Dem_Esm_Types.h;Dem_EventInternalStatus_Implementation.h;Dem_EventInternalStatus_Interface.h;Dem_EventInternalStatus_Types.h;Dem_EventQueue_Implementation.h;Dem_EventQueue_Interface.h;Dem_EventQueue_Types.h;Dem_Event_Implementation.h;Dem_Event_Interface.h;Dem_Event_Types.h;Dem_ExtDataElementIF_Implementation.h;Dem_ExtDataElementIF_Interface.h;Dem_ExtDataElementIF_Types.h;Dem_ExtendedEntry_Implementation.h;Dem_ExtendedEntry_Interface.h;Dem_ExtendedEntry_Types.h;Dem_FilterData_Implementation.h;Dem_FilterData_Interface.h;Dem_FilterData_Types.h;Dem_FreezeFrameIterator_Implementation.h;Dem_FreezeFrameIterator_Interface.h;Dem_FreezeFrameIterator_Types.h;Dem_Indicator_Implementation.h;Dem_Indicator_Interface.h;Dem_Indicator_Types.h;Dem_InitState_Implementation.h;Dem_InitState_Interface.h;Dem_InitState_Types.h;Dem_Int.h;Dem_J1939Dcm.h;Dem_J1939DcmAPI_Implementation.h;Dem_J1939DcmAPI_Interface.h;Dem_J1939DcmAPI_Types.h;Dem_MemAccess_Implementation.h;Dem_MemAccess_Interface.h;Dem_MemAccess_Types.h;Dem_MemCopy.h;Dem_MemState_Implementation.h;Dem_MemState_Interface.h;Dem_MemState_Types.h;Dem_MemStorageManager_Implementation.h;Dem_MemStorageManager_Interface.h;Dem_MemStorageManager_Types.h;Dem_Mem_Implementation.h;Dem_Mem_Interface.h;Dem_Mem_Types.h;Dem_MemoryEntry_Fwd.h;Dem_MemoryEntry_Implementation.h;Dem_MemoryEntry_Interface.h;Dem_MemoryEntry_Types.h;Dem_MemoryRestoration_Implementation.h;Dem_MemoryRestoration_Interface.h;Dem_MemoryRestoration_Types.h;Dem_Memory_Implementation.h;Dem_Memory_Interface.h;Dem_Memory_Types.h;Dem_MidLookup_Implementation.h;Dem_MidLookup_Interface.h;Dem_MidLookup_Types.h;Dem_Monitor_Implementation.h;Dem_Monitor_Interface.h;Dem_Monitor_Types.h;Dem_Notifications_Implementation.h;Dem_Notifications_Interface.h;Dem_Notifications_Types.h;Dem_Nvm_Implementation.h;Dem_Nvm_Interface.h;Dem_Nvm_Types.h;Dem_OperationCycle_Implementation.h;Dem_OperationCycle_Interface.h;Dem_OperationCycle_Types.h;Dem_Prestore_Implementation.h;Dem_Prestore_Interface.h;Dem_Prestore_Types.h;Dem_Queue_Implementation.h;Dem_Queue_Interface.h;Dem_Queue_Types.h;Dem_SatelliteData_Implementation.h;Dem_SatelliteData_Interface.h;Dem_SatelliteData_Types.h;Dem_SatelliteInfo_Implementation.h;Dem_SatelliteInfo_Interface.h;Dem_SatelliteInfo_Types.h;Dem_Satellite_Implementation.h;Dem_Satellite_Interface.h;Dem_Satellite_Types.h;Dem_Scheduler_Implementation.h;Dem_Scheduler_Interface.h;Dem_Scheduler_Types.h;Dem_SnapshotEntry_Implementation.h;Dem_SnapshotEntry_Interface.h;Dem_SnapshotEntry_Types.h;Dem_Statistics_Implementation.h;Dem_Statistics_Interface.h;Dem_Statistics_Types.h;Dem_StorageCondition_Implementation.h;Dem_StorageCondition_Interface.h;Dem_StorageCondition_Types.h;Dem_Types.h;Dem_UDSStatus_Implementation.h;Dem_UDSStatus_Interface.h;Dem_UDSStatus_Types.h;Dem_Validation.h;_Dem_MemMap.h</RelativeFileSpec>
+        </Component>
+        <Component Version="15.05.00" ScanPattern="Diag_Asr4Dem" Project="Diag_Asr4Dem" Delivered="true" Component="root" ShortName="Dem"/>
+        <Component Version="1.02.00" ScanPattern="Diag_AsrSwcVDem42" Project="Diag_AsrSwcVDem42" Delivered="true" Component="Description" ShortName="vDem42"/>
+        <Component Version="1.02.00" ScanPattern="Diag_AsrSwcVDem42" Project="Diag_AsrSwcVDem42" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="vDem42"/>
+        <Component Version="1.02.00" ScanPattern="Diag_AsrSwcVDem42" Project="Diag_AsrSwcVDem42" Delivered="true" Component="Implementation" ShortName="vDem42">
+            <RelativeFileSpec>vDem42.h;vDem42_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="1.02.00" ScanPattern="Diag_AsrSwcVDem42" Project="Diag_AsrSwcVDem42" Delivered="true" Component="root" ShortName="vDem42"/>
+        <Component Version="1.23.00" ScanPattern="Diag_DataCddt_Vector" Project="Diag_DataCddt_Vector" Delivered="true" Component="DiagDescription"/>
+        <Component Version="1.23.00" ScanPattern="Diag_DataCddt_Vector" Project="Diag_DataCddt_Vector" Delivered="true" Component="root"/>
+        <Component Version="5.01.00" ScanPattern="DrvCan_Mpc5700McanLl" Project="DrvCan_Mpc5700McanLl" Delivered="true" Component="Description" ShortName="Can"/>
+        <Component Version="4.01.00" ScanPattern="DrvCan_Mpc5700McanLl" Project="DrvCan_Mpc5700McanLl" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="Can"/>
+        <Component Version="5.01.00" ScanPattern="DrvCan_Mpc5700McanLl" Project="DrvCan_Mpc5700McanLl" Delivered="true" Component="Implementation" ShortName="Can"/>
+        <Component Version="6.01.00" ScanPattern="DrvCan_Mpc5700McanLl" Project="DrvCan_Mpc5700McanLl" Delivered="true" Component="root" ShortName="Can"/>
+        <Component Version="4.00.00" ScanPattern="DrvCan_TricoreMcanAsr" Project="DrvCan_TricoreMcanAsr" Delivered="true" Component="GenTool_GeneratorMsr_Settings" ShortName="Can"/>
+        <Component Version="5.01.00" ScanPattern="DrvCan_TricoreMcanAsr" Project="DrvCan_TricoreMcanAsr" Delivered="true" Component="Implementation" ShortName="Can">
+            <RelativeFileSpec>Can.h;Can_Local.h</RelativeFileSpec>
+        </Component>
+        <Component Version="4.00.00" ScanPattern="DrvCan_TricoreMcanAsr" Project="DrvCan_TricoreMcanAsr" Delivered="true" Component="root" ShortName="Can"/>
+        <Component Version="3.03.02" ScanPattern="DrvCan__base" Project="DrvCan__base" Delivered="true" Component="GenTool_GeneratorMsr"/>
+        <Component Version="3.03.04" ScanPattern="DrvCan__base" Project="DrvCan__base" Delivered="true" Component="GenTool_GeneratorMsr"/>
+        <Component Version="4.06.00" ScanPattern="DrvCan__baseAsr" Project="DrvCan__baseAsr" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="Can"/>
+        <Component Version="6.01.00" ScanPattern="DrvCan__baseAsr" Project="DrvCan__baseAsr" Delivered="true" Component="root" ShortName="Can"/>
+        <Component Version="8.00.01" ScanPattern="DrvCan__coreAsr" Project="DrvCan__coreAsr" Delivered="true" Component="Implementation" ShortName="Can"/>
+        <Component Version="8.00.01" ScanPattern="DrvCan__coreAsr" Project="DrvCan__coreAsr" Delivered="true" Component="root" ShortName="Can"/>
+        <Component Version="5.00.01" ScanPattern="DrvEthSwitch_Sja1105PQRSAsr" Project="DrvEthSwitch_Sja1105PQRSAsr" Delivered="true" Component="Description" ShortName="EthSwt_30_Sja1105PQRS"/>
+        <Component Version="5.00.01" ScanPattern="DrvEthSwitch_Sja1105PQRSAsr" Project="DrvEthSwitch_Sja1105PQRSAsr" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="EthSwt_30_Sja1105PQRS"/>
+        <Component Version="5.00.01" ScanPattern="DrvEthSwitch_Sja1105PQRSAsr" Project="DrvEthSwitch_Sja1105PQRSAsr" Delivered="true" Component="Implementation" ShortName="EthSwt_30_Sja1105PQRS">
+            <RelativeFileSpec>EthSwt_30_Sja1105PQRS.h;EthSwt_30_Sja1105PQRS_Casc.h;EthSwt_30_Sja1105PQRS_Casc_Int.h;EthSwt_30_Sja1105PQRS_Int.h;EthSwt_30_Sja1105PQRS_LL.h;EthSwt_30_Sja1105PQRS_Mgmt.h;EthSwt_30_Sja1105PQRS_Mirror.h;EthSwt_30_Sja1105PQRS_Mirror_Int.h;EthSwt_30_Sja1105PQRS_Regs.h;EthSwt_30_Sja1105PQRS_Time.h;EthSwt_30_Sja1105PQRS_Time_Int.h;EthSwt_30_Sja1105PQRS_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="5.01.00" ScanPattern="DrvEthSwitch_Sja1105PQRSAsr" Project="DrvEthSwitch_Sja1105PQRSAsr" Delivered="true" Component="root" ShortName="EthSwt_30_Sja1105PQRS"/>
+        <Component Version="2.02.02" ScanPattern="DrvEthSwitch__baseAsr" Project="DrvEthSwitch__baseAsr" Delivered="true" Component="Implementation" ShortName="EthSwtBase">
+            <RelativeFileSpec>EthSwt_GeneralTypes.h</RelativeFileSpec>
+        </Component>
+        <Component Version="5.00.01" ScanPattern="DrvEthSwitch__baseAsr" Project="DrvEthSwitch__baseAsr" Delivered="true" Component="root" ShortName="EthSwtBase"/>
+        <Component Version="3.00.01" ScanPattern="DrvEth_Tc3xxEthAsr" Project="DrvEth_Tc3xxEthAsr" Delivered="true" Component="Description" ShortName="Eth_30_Tc3xx"/>
+        <Component Version="3.00.02" ScanPattern="DrvEth_Tc3xxEthAsr" Project="DrvEth_Tc3xxEthAsr" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="Eth_30_Tc3xx"/>
+        <Component Version="1.00.01" ScanPattern="DrvEth_Tc3xxEthAsr" Project="DrvEth_Tc3xxEthAsr" Delivered="true" Component="GenTool_GeneratorMsr_Settings" ShortName="Eth_30_Tc3xx"/>
+        <Component Version="3.00.01" ScanPattern="DrvEth_Tc3xxEthAsr" Project="DrvEth_Tc3xxEthAsr" Delivered="true" Component="Implementation" ShortName="Eth_30_Tc3xx">
+            <RelativeFileSpec>Eth_30_Tc3xx.h;Eth_30_Tc3xx_CfgAccess_Int.h;Eth_30_Tc3xx_HwAccess_Int.h;Eth_30_Tc3xx_Int.h;Eth_30_Tc3xx_IrqHandler_Int.h;Eth_30_Tc3xx_LL.h;Eth_30_Tc3xx_LL_Cfg.h;Eth_30_Tc3xx_LL_Int.h;Eth_30_Tc3xx_LL_IrqHandler.h;Eth_30_Tc3xx_LL_Regs.h;Eth_30_Tc3xx_LL_TimeSync.h;Eth_30_Tc3xx_LL_TrafficHandling.h;Eth_30_Tc3xx_LL_Types.h;Eth_30_Tc3xx_TimeSync.h;Eth_30_Tc3xx_TimeSync_Int.h;Eth_30_Tc3xx_TrafficHandling.h;Eth_30_Tc3xx_TrafficHandling_Int.h;Eth_30_Tc3xx_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="3.00.02" ScanPattern="DrvEth_Tc3xxEthAsr" Project="DrvEth_Tc3xxEthAsr" Delivered="true" Component="root" ShortName="Eth_30_Tc3xx"/>
+        <Component Version="3.08.01" ScanPattern="DrvEth__coreAsr" Project="DrvEth__coreAsr" Delivered="true" Component="Description" ShortName="Eth_30_Core"/>
+        <Component Version="3.08.00" ScanPattern="DrvEth__coreAsr" Project="DrvEth__coreAsr" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="Eth_30_Core"/>
+        <Component Version="3.04.03" ScanPattern="DrvEth__coreAsr" Project="DrvEth__coreAsr" Delivered="true" Component="Implementation" ShortName="Eth_30_Core"/>
+        <Component Version="3.08.01" ScanPattern="DrvEth__coreAsr" Project="DrvEth__coreAsr" Delivered="true" Component="root" ShortName="Eth_30_Core"/>
+        <Component Version="7.02.01" ScanPattern="DrvLin_TricoreAsr" Project="DrvLin_TricoreAsr" Delivered="true" Component="Description" ShortName="Lin"/>
+        <Component Version="14.01.00" ScanPattern="DrvLin_TricoreAsr" Project="DrvLin_TricoreAsr" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="Lin"/>
+        <Component Version="1.01.10" ScanPattern="DrvLin_TricoreAsr" Project="DrvLin_TricoreAsr" Delivered="true" Component="GenTool_GeneratorMsr_Settings" ShortName="Lin"/>
+        <Component Version="14.01.00" ScanPattern="DrvLin_TricoreSciCtrlAsr" Project="DrvLin_TricoreAsr" Delivered="true" Component="Implementation_SciCtrl" ShortName="Lin"/>
+        <Component Version="14.01.01" ScanPattern="DrvLin_TricoreAsr" Project="DrvLin_TricoreAsr" Delivered="true" Component="root" ShortName="Lin"/>
+        <Component Version="14.00.00" ScanPattern="DrvLin__core2Asr" Project="DrvLin__core2Asr" Delivered="true" Component="Description" ShortName="Lin"/>
+        <Component Version="14.01.00" ScanPattern="DrvLin__core2Asr" Project="DrvLin__core2Asr" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="Lin"/>
+        <Component Version="14.01.01" ScanPattern="DrvLin__core2Asr" Project="DrvLin__core2Asr" Delivered="true" Component="Implementation" ShortName="Lin">
+            <RelativeFileSpec>Lin.h;Lin_Bp.h;Lin_Fp.h;Lin_GeneralTypes.h;Lin_Types.h;Lin_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="14.01.02" ScanPattern="DrvLin__core2Asr" Project="DrvLin__core2Asr" Delivered="true" Component="root" ShortName="Lin"/>
+        <Component Version="1.00.01" ScanPattern="DrvMem_vMem_30_XXspi01" Project="DrvMem_vMem_30_XXspi01" Delivered="true" Component="Description" ShortName="vMem_30_XXspi01"/>
+        <Component Version="1.00.01" ScanPattern="DrvMem_vMem_30_XXspi01" Project="DrvMem_vMem_30_XXspi01" Delivered="true" Component="Description_Pre" ShortName="vMem_30_XXspi01"/>
+        <Component Version="1.00.01" ScanPattern="DrvMem_vMem_30_XXspi01" Project="DrvMem_vMem_30_XXspi01" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="vMem_30_XXspi01"/>
+        <Component Version="1.00.00" ScanPattern="DrvMem_vMem_30_XXspi01" Project="DrvMem_vMem_30_XXspi01" Delivered="true" Component="Implementation" ShortName="vMem_30_XXspi01">
+            <RelativeFileSpec>vMem_30_XXspi01.h;vMem_30_XXspi01_Int.h;vMem_30_XXspi01_LL.h;vMem_30_XXspi01_LL_FlsCmdSeqBuilder.h;vMem_30_XXspi01_LL_FlsCmdSeqExecuter.h;vMem_30_XXspi01_LL_Types.h;vMem_30_XXspi01_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="1.00.01" ScanPattern="DrvMem_vMem_30_XXspi01" Project="DrvMem_vMem_30_XXspi01" Delivered="true" Component="root" ShortName="vMem_30_XXspi01"/>
+        <Component Version="1.00.02" ScanPattern="DrvMem_vMem_30__core" Project="DrvMem_vMem_30__core" Delivered="true" Component="Description" ShortName="vMem"/>
+        <Component Version="1.03.01" ScanPattern="DrvMem_vMem_30__core" Project="DrvMem_vMem_30__core" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="vMem"/>
+        <Component Version="1.02.01" ScanPattern="DrvMem_vMem_30__core" Project="DrvMem_vMem_30__core" Delivered="true" Component="Implementation" ShortName="vMem"/>
+        <Component Version="1.04.01" ScanPattern="DrvMem_vMem_30__core" Project="DrvMem_vMem_30__core" Delivered="true" Component="root" ShortName="vMem"/>
+        <Component Version="6.05.00" ScanPattern="DrvTrans_GenericCandioAsr" Project="DrvTrans_GenericCandioAsr" Delivered="true" Component="Description" ShortName="CanTrcv_30_Generic"/>
+        <Component Version="3.01.00" ScanPattern="DrvTrans_GenericCandioAsr" Project="DrvTrans_GenericCandioAsr" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CanTrcv_30_Generic"/>
+        <Component Version="4.02.00" ScanPattern="DrvTrans_GenericCandioAsr" Project="DrvTrans_GenericCandioAsr" Delivered="true" Component="Implementation" ShortName="CanTrcv_30_Generic"/>
+        <Component Version="5.03.01" ScanPattern="DrvTrans_GenericCandioAsr" Project="DrvTrans_GenericCandioAsr" Delivered="true" Component="root" ShortName="CanTrcv_30_Generic"/>
+        <Component Version="4.02.00" ScanPattern="DrvTrans_GenericCandioAsrLl" Project="DrvTrans_GenericCandioAsrLl" Delivered="true" Component="Implementation"/>
+        <Component Version="6.06.00" ScanPattern="DrvTrans_Tja1043CandioAsr" Project="DrvTrans_Tja1043CandioAsr" Delivered="true" Component="Description" ShortName="CanTrcv_30_Tja1043"/>
+        <Component Version="3.03.00" ScanPattern="DrvTrans_Tja1043CandioAsr" Project="DrvTrans_Tja1043CandioAsr" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CanTrcv_30_Tja1043"/>
+        <Component Version="4.04.00" ScanPattern="DrvTrans_Tja1043CandioAsr" Project="DrvTrans_Tja1043CandioAsr" Delivered="true" Component="Implementation" ShortName="CanTrcv_30_Tja1043">
+            <RelativeFileSpec>CanTrcv_30_Tja1043.h</RelativeFileSpec>
+        </Component>
+        <Component Version="5.04.03" ScanPattern="DrvTrans_Tja1043CandioAsr" Project="DrvTrans_Tja1043CandioAsr" Delivered="true" Component="root" ShortName="CanTrcv_30_Tja1043"/>
+        <Component Version="4.04.00" ScanPattern="DrvTrans_Tja1043CandioAsrLl" Project="DrvTrans_Tja1043CandioAsrLl" Delivered="true" Component="Implementation"/>
+        <Component Version="3.01.00" ScanPattern="DrvTrans_Tja1100EthAsr" Project="DrvTrans_Tja1100EthAsr" Delivered="true" Component="Description" ShortName="EthTrcv_30_Tja1100"/>
+        <Component Version="5.00.01" ScanPattern="DrvTrans_Tja1100EthAsr" Project="DrvTrans_Tja1100EthAsr" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="EthTrcv_30_Tja1100"/>
+        <Component Version="3.01.00" ScanPattern="DrvTrans_Tja1100EthAsr" Project="DrvTrans_Tja1100EthAsr" Delivered="true" Component="Implementation" ShortName="EthTrcv_30_Tja1100">
+            <RelativeFileSpec>EthTrcv_30_Tja1100.h;EthTrcv_30_Tja1100_Hw.h;EthTrcv_30_Tja1100_Hw_Int.h;EthTrcv_30_Tja1100_Int.h;EthTrcv_30_Tja1100_IntDef.h;EthTrcv_30_Tja1100_LL.h;EthTrcv_30_Tja1100_LL_Regs.h;EthTrcv_30_Tja1100_Types.h;EthTrcv_30_Tja1100_Wakeup.h;EthTrcv_30_Tja1100_Wakeup_Int.h;EthTrcv_30_Tja1100_Wakeup_UsrIfc.h</RelativeFileSpec>
+        </Component>
+        <Component Version="5.01.00" ScanPattern="DrvTrans_Tja1100EthAsr" Project="DrvTrans_Tja1100EthAsr" Delivered="true" Component="root" ShortName="EthTrcv_30_Tja1100"/>
+        <Component Version="7.02.01" ScanPattern="DrvTrans_Tle7259LindioAsr" Project="DrvTrans_Tle7259LindioAsr" Delivered="true" Component="Description" ShortName="LinTrcv_30_Tle7259"/>
+        <Component Version="6.02.00" ScanPattern="DrvTrans_Tle7259LindioAsr" Project="DrvTrans_Tle7259LindioAsr" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="LinTrcv_30_Tle7259"/>
+        <Component Version="6.03.00" ScanPattern="DrvTrans_Tle7259LindioAsr" Project="DrvTrans_Tle7259LindioAsr" Delivered="true" Component="Implementation" ShortName="LinTrcv_30_Tle7259">
+            <RelativeFileSpec>LinTrcv_30_Tle7259.h</RelativeFileSpec>
+        </Component>
+        <Component Version="7.03.02" ScanPattern="DrvTrans_Tle7259LindioAsr" Project="DrvTrans_Tle7259LindioAsr" Delivered="true" Component="root" ShortName="LinTrcv_30_Tle7259"/>
+        <Component Version="3.04.01" ScanPattern="DrvTrans__baseCanxAsr" Project="DrvTrans__baseCanxAsr" Delivered="true" Component="GenTool_GeneratorMsr"/>
+        <Component Version="5.07.00" ScanPattern="DrvTrans__coreCanxAsr" Project="DrvTrans__coreCanxAsr" Delivered="true" Component="Implementation" ShortName="CanTrcv"/>
+        <Component Version="5.07.00" ScanPattern="DrvTrans__coreCanxAsr" Project="DrvTrans__coreCanxAsr" Delivered="true" Component="root" ShortName="CanTrcv"/>
+        <Component Version="2.00.00" ScanPattern="DrvTrans__coreEthAsr" Project="DrvTrans__coreEthAsr" Delivered="true" Component="Description" ShortName="EthTrcv_30_Core"/>
+        <Component Version="2.00.02" ScanPattern="DrvTrans__coreEthAsr" Project="DrvTrans__coreEthAsr" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="EthTrcv_30_Core"/>
+        <Component Version="2.00.00" ScanPattern="DrvTrans__coreEthAsr" Project="DrvTrans__coreEthAsr" Delivered="true" Component="Impl_GeneralTypes" ShortName="EthTrcv_30_Core">
+            <RelativeFileSpec>EthTrcv_GeneralTypes.h</RelativeFileSpec>
+        </Component>
+        <Component Version="3.01.00" ScanPattern="DrvTrans__coreEthAsr" Project="DrvTrans__coreEthAsr" Delivered="true" Component="Implementation" ShortName="EthTrcv_30_Core"/>
+        <Component Version="3.02.00" ScanPattern="DrvTrans__coreEthAsr" Project="DrvTrans__coreEthAsr" Delivered="true" Component="root" ShortName="EthTrcv_30_Core"/>
+        <Component Version="5.02.00" ScanPattern="DrvTrans__coreLinxAsr" Project="DrvTrans__coreLinxAsr" Delivered="true" Component="Description" ShortName="LinTrcv"/>
+        <Component Version="6.02.00" ScanPattern="DrvTrans__coreLinxAsr" Project="DrvTrans__coreLinxAsr" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="LinTrcv"/>
+        <Component Version="5.03.00" ScanPattern="DrvTrans__coreLinxAsr" Project="DrvTrans__coreLinxAsr" Delivered="true" Component="Implementation" ShortName="LinTrcv"/>
+        <Component Version="5.03.00" ScanPattern="DrvTrans__coreLinxAsr" Project="DrvTrans__coreLinxAsr" Delivered="true" Component="root" ShortName="LinTrcv"/>
+        <Component Version="4.00.01" ScanPattern="DrvWd_XTle4278gEAsr" Project="DrvWd_XTle4278gEAsr" Delivered="true" Component="Description" ShortName="Wdg_30_TLE4278G"/>
+        <Component Version="4.00.00" ScanPattern="DrvWd_XTle4278gEAsr" Project="DrvWd_XTle4278gEAsr" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="Wdg_30_TLE4278G"/>
+        <Component Version="4.00.00" ScanPattern="DrvWd_XTle4278gEAsr" Project="DrvWd_XTle4278gEAsr" Delivered="true" Component="Implementation" ShortName="Wdg_30_TLE4278G">
+            <RelativeFileSpec>Wdg_30_TLE4278G.h;Wdg_30_TLE4278G_Cbk.h;Wdg_30_TLE4278G_LL.h;Wdg_30_TLE4278G_Mode.h;Wdg_30_TLE4278G_Timer.h;Wdg_30_TLE4278G_TrgCnd.h;Wdg_30_TLE4278G_TrgCnd_Cbk.h;Wdg_30_TLE4278G_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="6.00.01" ScanPattern="DrvWd_XTle4278gEAsr" Project="DrvWd_XTle4278gEAsr" Delivered="true" Component="root" ShortName="Wdg_30_TLE4278G"/>
+        <Component Version="3.02.02" ScanPattern="DrvWd__coreAsr" Project="DrvWd__coreAsr" Delivered="true" Component="Description" ShortName="Wdg"/>
+        <Component Version="3.01.01" ScanPattern="DrvWd__coreAsr" Project="DrvWd__coreAsr" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="Wdg"/>
+        <Component Version="3.02.02" ScanPattern="DrvWd__coreAsr" Project="DrvWd__coreAsr" Delivered="true" Component="Implementation" ShortName="Wdg"/>
+        <Component Version="3.02.02" ScanPattern="DrvWd__coreAsr" Project="DrvWd__coreAsr" Delivered="true" Component="root" ShortName="Wdg"/>
+        <Component Version="4.02.00" ScanPattern="EcuAb_AsrIoHwAb" Project="EcuAb_AsrIoHwAb" Delivered="true" Component="Description" ShortName="IoHwAb"/>
+        <Component Version="6.01.00" ScanPattern="EcuAb_AsrIoHwAb" Project="EcuAb_AsrIoHwAb" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="IoHwAb"/>
+        <Component Version="3.00.00" ScanPattern="EcuAb_AsrIoHwAb" Project="EcuAb_AsrIoHwAb" Delivered="true" Component="Implementation" ShortName="IoHwAb">
+            <RelativeFileSpec>IoHwAb.h</RelativeFileSpec>
+        </Component>
+        <Component Version="7.01.00" ScanPattern="EcuAb_AsrIoHwAb" Project="EcuAb_AsrIoHwAb" Delivered="true" Component="root" ShortName="IoHwAb"/>
+        <Component Version="4.00.00" ScanPattern="EcuC_AsrEcuC" Project="EcuC_AsrEcuC" Delivered="true" Component="Description" ShortName="EcuC"/>
+        <Component Version="5.01.00" ScanPattern="EcuC_AsrEcuC" Project="EcuC_AsrEcuC" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="EcuC"/>
+        <Component Version="5.01.00" ScanPattern="EcuC_AsrEcuC" Project="EcuC_AsrEcuC" Delivered="true" Component="root" ShortName="EcuC"/>
+        <Component Version="1.08.05" ScanPattern="Elisa__core" Project="Elisa__core" Delivered="true" Component="Application"/>
+        <Component Version="1.08.07" ScanPattern="Elisa__core" Project="Elisa__core" Delivered="true" Component="root"/>
+        <Component Version="5.18.09" ScanPattern="GenTool_ConfiguratorCfg5" Project="GenTool_ConfiguratorCfg5" Delivered="true" Component="Application"/>
+        <Component Version="5.18.09" ScanPattern="GenTool_ConfiguratorCfg5" Project="GenTool_ConfiguratorCfg5" Delivered="true" Component="root"/>
+        <Component Version="2.00.00" ScanPattern="GenTool_ConfiguratorCfg5InstallationManager" Project="GenTool_ConfiguratorCfg5InstallationManager" Delivered="true" Component="Application" ShortName="InstallationManager"/>
+        <Component Version="1.00.01" ScanPattern="GenTool_ConfiguratorCfg5PlatformTypes" Project="GenTool_ConfiguratorCfg5PlatformTypes" Delivered="true" Component="Application" ShortName="PlatformTypes"/>
+        <Component Version="3.08.01" ScanPattern="GenTool_ConfiguratorCfg5TresosProxy" Project="GenTool_ConfiguratorCfg5TresosProxy" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="Tresos_proxy"/>
+        <Component Version="1.08.30" ScanPattern="GenTool_CsAsrLegacyDb2SystemDescr" Project="GenTool_CsAsrLegacyDb2SystemDescr" Delivered="true" Component="Application" ShortName="LegacyDb2SystemDescrConverter"/>
+        <Component Version="1.08.30" ScanPattern="GenTool_CsAsrLegacyDb2SystemDescr" Project="GenTool_CsAsrLegacyDb2SystemDescr" Delivered="true" Component="root" ShortName="LegacyDb2SystemDescrConverter"/>
+        <Component Version="1.02.01" ScanPattern="GenTool_IRAnalyzer" Project="GenTool_IRAnalyzer" Delivered="true" Component="Application" ShortName="IRAnalyzer"/>
+        <Component Version="1.05.00" ScanPattern="GenTool_LicenseLib" Project="GenTool_LicenseLib" Delivered="true" Component="Application"/>
+        <Component Version="1.02.00" ScanPattern="GenTool_LicenseLibWrapper" Project="GenTool_LicenseLibWrapper" Delivered="true" Component="Application"/>
+        <Component Version="1.00.15" ScanPattern="GenTool_McDataConverter" Project="GenTool_McDataConverter" Delivered="true" Component="Application" ShortName="McDataConv"/>
+        <Component Version="2.02.00" ScanPattern="GenTool_McDataConverter" Project="GenTool_McDataConverter" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="McDataConv"/>
+        <Component Version="2.01.03" ScanPattern="GenTool_McDataConverter" Project="GenTool_McDataConverter" Delivered="true" Component="root" ShortName="McDataConv"/>
+        <Component Version="12.03.01" ScanPattern="Gw_AsrPduRCfg5" Project="Gw_AsrPduRCfg5" Delivered="true" Component="Description" ShortName="PduR"/>
+        <Component Version="14.03.02" ScanPattern="Gw_AsrPduRCfg5" Project="Gw_AsrPduRCfg5" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="PduR"/>
+        <Component Version="12.03.01" ScanPattern="Gw_AsrPduRCfg5" Project="Gw_AsrPduRCfg5" Delivered="true" Component="Implementation" ShortName="PduR">
+            <RelativeFileSpec>PduR.h;PduR_Bm.h;PduR_Fm.h;PduR_Lock.h;PduR_McQ.h;PduR_RmIf.h;PduR_RmTp.h;PduR_RmTp_TxInst.h;PduR_Sm.h</RelativeFileSpec>
+        </Component>
+        <Component Version="14.03.03" ScanPattern="Gw_AsrPduRCfg5" Project="Gw_AsrPduRCfg5" Delivered="true" Component="root" ShortName="PduR"/>
+        <Component Version="6.00.00" ScanPattern="If_Asr4IfLin" Project="If_Asr4IfLin" Delivered="true" Component="Description" ShortName="LinIf"/>
+        <Component Version="6.00.01" ScanPattern="If_Asr4IfLin" Project="If_Asr4IfLin" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="LinIf"/>
+        <Component Version="6.00.00" ScanPattern="If_Asr4IfLin" Project="If_Asr4IfLin" Delivered="true" Component="Implementation" ShortName="LinIf">
+            <RelativeFileSpec>LinIf.h;LinIf_Cbk.h;LinIf_Types.h;LinTp_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="6.00.01" ScanPattern="If_Asr4IfLin" Project="If_Asr4IfLin" Delivered="true" Component="root" ShortName="LinIf"/>
+        <Component Version="6.01.01" ScanPattern="If_Asr4IfWd" Project="If_Asr4IfWd" Delivered="true" Component="Description" ShortName="WdgIf"/>
+        <Component Version="2.01.00" ScanPattern="If_Asr4IfWd" Project="If_Asr4IfWd" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="WdgIf"/>
+        <Component Version="5.02.02" ScanPattern="If_Asr4IfWd" Project="If_Asr4IfWd" Delivered="true" Component="Implementation" ShortName="WdgIf">
+            <RelativeFileSpec>WdgIf.h;WdgIf_Cfg.h;WdgIf_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="2.01.03" ScanPattern="If_Asr4IfWd" Project="If_Asr4IfWd" Delivered="true" Component="root" ShortName="WdgIf"/>
+        <Component Version="6.17.00" ScanPattern="If_AsrIfCan" Project="If_AsrIfCan" Delivered="true" Component="Description" ShortName="CanIf"/>
+        <Component Version="4.09.00" ScanPattern="If_AsrIfCan" Project="If_AsrIfCan" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CanIf"/>
+        <Component Version="6.17.00" ScanPattern="If_AsrIfCan" Project="If_AsrIfCan" Delivered="true" Component="Implementation" ShortName="CanIf">
+            <RelativeFileSpec>CanIf.h;CanIf_Cbk.h;CanIf_GeneralTypes.h;CanIf_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="8.00.00" ScanPattern="If_AsrIfCan" Project="If_AsrIfCan" Delivered="true" Component="root" ShortName="CanIf"/>
+        <Component Version="10.00.00" ScanPattern="If_AsrIfEth" Project="If_AsrIfEth" Delivered="true" Component="Description" ShortName="EthIf"/>
+        <Component Version="8.00.00" ScanPattern="If_AsrIfEth" Project="If_AsrIfEth" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="EthIf"/>
+        <Component Version="10.00.00" ScanPattern="If_AsrIfEth" Project="If_AsrIfEth" Delivered="true" Component="Implementation" ShortName="EthIf">
+            <RelativeFileSpec>EthIf.h;EthIf_Cbk.h;EthIf_EthCtrl.h;EthIf_EthCtrl_Cbk.h;EthIf_EthCtrl_Int.h;EthIf_EthCtrl_Types.h;EthIf_EthCtrl_Types_Int.h;EthIf_EthSwt.h;EthIf_EthSwt_Cbk.h;EthIf_EthSwt_Int.h;EthIf_EthSwt_Types.h;EthIf_EthSwt_Types_Int.h;EthIf_EthTrcv.h;EthIf_EthTrcv_Cbk.h;EthIf_EthTrcv_Int.h;EthIf_EthTrcv_Types.h;EthIf_EthTrcv_Types_Int.h;EthIf_Gw.h;EthIf_Gw_Cbk.h;EthIf_Gw_Int.h;EthIf_Gw_Types.h;EthIf_Gw_Types_Int.h;EthIf_Int.h;EthIf_Link.h;EthIf_Link_Cbk.h;EthIf_Link_Int.h;EthIf_Link_Types.h;EthIf_Link_Types_Int.h;EthIf_Mirror.h;EthIf_Mirror_Cbk.h;EthIf_Mirror_Int.h;EthIf_Mirror_Types.h;EthIf_Mirror_Types_Int.h;EthIf_Mode.h;EthIf_Mode_Cbk.h;EthIf_Mode_Int.h;EthIf_Mode_Types.h;EthIf_Mode_Types_Int.h;EthIf_Rx.h;EthIf_Rx_Cbk.h;EthIf_Rx_Int.h;EthIf_Rx_Types.h;EthIf_Rx_Types_Int.h;EthIf_Stats.h;EthIf_Stats_Cbk.h;EthIf_Stats_Int.h;EthIf_Stats_Types.h;EthIf_Stats_Types_Int.h;EthIf_SwtMgmt.h;EthIf_SwtMgmt_Cbk.h;EthIf_SwtMgmt_Int.h;EthIf_SwtMgmt_Types.h;EthIf_SwtMgmt_Types_Int.h;EthIf_SwtTime.h;EthIf_SwtTime_Cbk.h;EthIf_SwtTime_Int.h;EthIf_SwtTime_Types.h;EthIf_SwtTime_Types_Int.h;EthIf_Tx.h;EthIf_Tx_Cbk.h;EthIf_Tx_Int.h;EthIf_Tx_Types.h;EthIf_Tx_Types_Int.h;EthIf_Types.h;EthIf_Utils.h;EthIf_Utils_Cbk.h;EthIf_Utils_Int.h;EthIf_Utils_Types.h;EthIf_Utils_Types_Int.h;EthIf_ZeroCopy.h;EthIf_ZeroCopy_Cbk.h;EthIf_ZeroCopy_Int.h;EthIf_ZeroCopy_Types.h;EthIf_ZeroCopy_Types_Int.h</RelativeFileSpec>
+        </Component>
+        <Component Version="10.00.00" ScanPattern="If_AsrIfEth" Project="If_AsrIfEth" Delivered="true" Component="root" ShortName="EthIf"/>
+        <Component Version="8.06.04" ScanPattern="If_AsrIfFee" Project="If_AsrIfFee" Delivered="true" Component="Description" ShortName="Fee"/>
+        <Component Version="4.02.01" ScanPattern="If_AsrIfFee" Project="If_AsrIfFee" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="Fee"/>
+        <Component Version="8.04.02" ScanPattern="If_AsrIfFee" Project="If_AsrIfFee" Delivered="true" Component="Implementation" ShortName="Fee">
+            <RelativeFileSpec>Fee.h;Fee_Cbk.h;Fee_ChunkInfo.h;Fee_ChunkInfoDefs.h;Fee_InitEx.h;Fee_Int.h;Fee_IntBase.h;Fee_JobParams.h;Fee_LookUpTable.h;Fee_LookUpTableDefs.h;Fee_Partition.h;Fee_PartitionDefs.h;Fee_Sector.h;Fee_SectorDefs.h;Fee_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="10.03.02" ScanPattern="If_AsrIfFee" Project="If_AsrIfFee" Delivered="true" Component="root" ShortName="Fee"/>
+        <Component Version="4.05.00" ScanPattern="If_AsrIfMem" Project="If_AsrIfMem" Delivered="true" Component="Description" ShortName="MemIf"/>
+        <Component Version="5.02.00" ScanPattern="If_AsrIfMem" Project="If_AsrIfMem" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="MemIf"/>
+        <Component Version="3.03.01" ScanPattern="If_AsrIfMem" Project="If_AsrIfMem" Delivered="true" Component="Implementation" ShortName="MemIf">
+            <RelativeFileSpec>MemIf.h;MemIf_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="6.03.01" ScanPattern="If_AsrIfMem" Project="If_AsrIfMem" Delivered="true" Component="root" ShortName="MemIf"/>
+        <Component Version="12.01.03" ScanPattern="If_AsrIfSoAd" Project="If_AsrIfSoAd" Delivered="true" Component="Description" ShortName="SoAd"/>
+        <Component Version="10.01.01" ScanPattern="If_AsrIfSoAd" Project="If_AsrIfSoAd" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="SoAd"/>
+        <Component Version="12.01.03" ScanPattern="If_AsrIfSoAd" Project="If_AsrIfSoAd" Delivered="true" Component="Implementation" ShortName="SoAd">
+            <RelativeFileSpec>SoAd.h;SoAd_Cbk.h;SoAd_EventQueue.h;SoAd_Priv.h;SoAd_RouteGrp.h;SoAd_Rx.h;SoAd_SoCon.h;SoAd_TcpIp.h;SoAd_TimeoutList.h;SoAd_Tx.h;SoAd_Types.h;SoAd_Util.h</RelativeFileSpec>
+        </Component>
+        <Component Version="12.01.03" ScanPattern="If_AsrIfSoAd" Project="If_AsrIfSoAd" Delivered="true" Component="root" ShortName="SoAd"/>
+        <Component Version="15.01.03" ScanPattern="Il_AsrComCfg5" Project="Il_AsrComCfg5" Delivered="true" Component="Description" ShortName="Com"/>
+        <Component Version="15.02.01" ScanPattern="Il_AsrComCfg5" Project="Il_AsrComCfg5" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="Com"/>
+        <Component Version="15.01.03" ScanPattern="Il_AsrComCfg5" Project="Il_AsrComCfg5" Delivered="true" Component="Implementation" ShortName="Com">
+            <RelativeFileSpec>Com.h</RelativeFileSpec>
+        </Component>
+        <Component Version="15.02.03" ScanPattern="Il_AsrComCfg5" Project="Il_AsrComCfg5" Delivered="true" Component="root" ShortName="Com"/>
+        <Component Version="21.06.28" ScanPattern="MSR4_Product" Project="MSR4_Product" Delivered="true" Component="root"/>
+        <Component Version="21.06.32" ScanPattern="MSR4_Product_HLP" Project="MSR4_Product_HLP" Delivered="true" Component="root"/>
+        <Component Version="2.00.01" ScanPattern="MSR_DocumentationGuide" Project="MSR_DocumentationGuide" Delivered="true" Component="root"/>
+        <Component Version="20.07.00" ScanPattern="MSR_Misc_StaticServicePortInterfaces" Project="MSR_Misc_StaticServicePortInterfaces" Delivered="true" Component="root" ShortName="StaticServicePortInterfaces"/>
+        <Component Version="20.00.01" ScanPattern="MSR_Vector_SLP4" Project="MSR_Vector_SLP4" Delivered="true" Component="Preconfig"/>
+        <Component Version="21.06.27" ScanPattern="MSR_Vector_SLP4" Project="MSR_Vector_SLP4" Delivered="true" Component="root"/>
+        <Component Version="1.01.00" ScanPattern="Mcal_Tc3xxInf01Asr4Sub" Project="Mcal_Tc3xxInf01Asr4Sub" Delivered="true" Component="Description" ShortName="Mcal_Tc3xx"/>
+        <Component Version="1.02.01" ScanPattern="Mcal_Tc3xxInf01Asr4Sub" Project="Mcal_Tc3xxInf01Asr4Sub" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="Mcal_Tc3xx"/>
+        <Component Version="1.02.01" ScanPattern="Mcal_Tc3xxInf01Asr4Sub" Project="Mcal_Tc3xxInf01Asr4Sub" Delivered="true" Component="Implementation" ShortName="Mcal_Tc3xx"/>
+        <Component Version="1.03.02" ScanPattern="Mcal_Tc3xxInf01Asr4Sub" Project="Mcal_Tc3xxInf01Asr4Sub" Delivered="true" Component="root" ShortName="Mcal_Tc3xx"/>
+        <Component Version="5.09.02" ScanPattern="MemService_AsrNvM" Project="MemService_AsrNvM" Delivered="true" Component="Description" ShortName="NvM"/>
+        <Component Version="4.04.00" ScanPattern="MemService_AsrNvM" Project="MemService_AsrNvM" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="NvM"/>
+        <Component Version="5.07.02" ScanPattern="MemService_AsrNvM" Project="MemService_AsrNvM" Delivered="true" Component="Implementation" ShortName="NvM">
+            <RelativeFileSpec>NvM.h;NvM_Act.h;NvM_Cbk.h;NvM_Crc.h;NvM_JobProc.h;NvM_Qry.h;NvM_Queue.h;NvM_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="7.04.02" ScanPattern="MemService_AsrNvM" Project="MemService_AsrNvM" Delivered="true" Component="root" ShortName="NvM"/>
+        <Component Version="1.03.00" ScanPattern="Monitoring_Asr4Base" Project="Monitoring_Asr4Base" Delivered="true" Component="root" ShortName="Monitoring_Asr4Base"/>
+        <Component Version="3.01.03" ScanPattern="Monitoring_Asr4Rtm" Project="Monitoring_Asr4Rtm" Delivered="true" Component="Description" ShortName="Rtm"/>
+        <Component Version="4.01.04" ScanPattern="Monitoring_Asr4Rtm" Project="Monitoring_Asr4Rtm" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="Rtm"/>
+        <Component Version="3.01.04" ScanPattern="Monitoring_Asr4Rtm" Project="Monitoring_Asr4Rtm" Delivered="true" Component="Implementation" ShortName="Rtm">
+            <RelativeFileSpec>Rtm.h;Rtm_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="4.01.06" ScanPattern="Monitoring_Asr4Rtm" Project="Monitoring_Asr4Rtm" Delivered="true" Component="root" ShortName="Rtm"/>
+        <Component Version="1.04.05" ScanPattern="Monitoring_AsrDlt" Project="Monitoring_AsrDlt" Delivered="true" Component="Description" ShortName="Dlt"/>
+        <Component Version="2.01.04" ScanPattern="Monitoring_AsrDlt" Project="Monitoring_AsrDlt" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="Dlt"/>
+        <Component Version="1.07.04" ScanPattern="Monitoring_AsrDlt" Project="Monitoring_AsrDlt" Delivered="true" Component="Implementation" ShortName="Dlt">
+            <RelativeFileSpec>Dlt.h;Dlt.h;Dlt_Types.h;Dlt_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="2.01.06" ScanPattern="Monitoring_AsrDlt" Project="Monitoring_AsrDlt" Delivered="true" Component="root" ShortName="Dlt"/>
+        <Component Version="9.00.00" ScanPattern="Nm_Asr4NmCan" Project="Nm_Asr4NmCan" Delivered="true" Component="Description" ShortName="CanNm"/>
+        <Component Version="9.00.00" ScanPattern="Nm_Asr4NmCan" Project="Nm_Asr4NmCan" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CanNm"/>
+        <Component Version="8.00.00" ScanPattern="Nm_Asr4NmCan" Project="Nm_Asr4NmCan" Delivered="true" Component="Implementation" ShortName="CanNm">
+            <RelativeFileSpec>CanNm.h;CanNm_Cbk.h</RelativeFileSpec>
+        </Component>
+        <Component Version="9.00.00" ScanPattern="Nm_Asr4NmCan" Project="Nm_Asr4NmCan" Delivered="true" Component="root" ShortName="CanNm"/>
+        <Component Version="11.00.01" ScanPattern="Nm_Asr4NmIf" Project="Nm_Asr4NmIf" Delivered="true" Component="Description" ShortName="Nm"/>
+        <Component Version="10.00.00" ScanPattern="Nm_Asr4NmIf" Project="Nm_Asr4NmIf" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="Nm"/>
+        <Component Version="11.00.01" ScanPattern="Nm_Asr4NmIf" Project="Nm_Asr4NmIf" Delivered="true" Component="Implementation" ShortName="Nm">
+            <RelativeFileSpec>Nm.h;NmStack_Types.h;Nm_Cbk.h</RelativeFileSpec>
+        </Component>
+        <Component Version="11.01.00" ScanPattern="Nm_Asr4NmIf" Project="Nm_Asr4NmIf" Delivered="true" Component="root" ShortName="Nm"/>
+        <Component Version="2.03.00" ScanPattern="Nm_AsrNmLin" Project="Nm_AsrNmLin" Delivered="true" Component="Description" ShortName="LinNm"/>
+        <Component Version="3.02.00" ScanPattern="Nm_AsrNmLin" Project="Nm_AsrNmLin" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="LinNm"/>
+        <Component Version="2.03.00" ScanPattern="Nm_AsrNmLin" Project="Nm_AsrNmLin" Delivered="true" Component="Implementation" ShortName="LinNm">
+            <RelativeFileSpec>LinNm.h;LinNm_Cbk.h</RelativeFileSpec>
+        </Component>
+        <Component Version="3.02.01" ScanPattern="Nm_AsrNmLin" Project="Nm_AsrNmLin" Delivered="true" Component="root" ShortName="LinNm"/>
+        <Component Version="3.03.01" ScanPattern="Nm_AsrNmUdp" Project="Nm_AsrNmUdp" Delivered="true" Component="Description" ShortName="UdpNm"/>
+        <Component Version="3.03.00" ScanPattern="Nm_AsrNmUdp" Project="Nm_AsrNmUdp" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="UdpNm"/>
+        <Component Version="3.03.01" ScanPattern="Nm_AsrNmUdp" Project="Nm_AsrNmUdp" Delivered="true" Component="Implementation" ShortName="UdpNm">
+            <RelativeFileSpec>UdpNm.h;UdpNm_Cbk.h;UdpNm_Priv.h;UdpNm_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="3.03.01" ScanPattern="Nm_AsrNmUdp" Project="Nm_AsrNmUdp" Delivered="true" Component="root" ShortName="UdpNm"/>
+        <Component Version="2.19.00" ScanPattern="Os_CoreGen7" Project="Os_CoreGen7" Delivered="true" Component="Description" ShortName="Os"/>
+        <Component Version="2.28.00" ScanPattern="Os_CoreGen7" Project="Os_CoreGen7" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="Os"/>
+        <Component Version="2.29.00" ScanPattern="Os_CoreGen7" Project="Os_CoreGen7" Delivered="true" Component="Implementation" ShortName="Os"/>
+        <Component Version="2.31.00" ScanPattern="Os_CoreGen7" Project="Os_CoreGen7" Delivered="true" Component="root" ShortName="Os"/>
+        <Component Version="2.26.00" ScanPattern="Os_PlatformTriCoreAurixGen7" Project="Os_PlatformTriCoreAurixGen7" Delivered="true" Component="Description" ShortName="Os"/>
+        <Component Version="2.16.00" ScanPattern="Os_PlatformTriCoreAurixGen7" Project="Os_PlatformTriCoreAurixGen7" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="Os"/>
+        <Component Version="1.06.00" ScanPattern="Os_PlatformTriCoreAurixGen7" Project="Os_PlatformTriCoreAurixGen7" Delivered="true" Component="GenTool_GeneratorMsr_Settings" ShortName="Os"/>
+        <Component Version="2.27.00" ScanPattern="Os_PlatformTriCoreAurixGen7" Project="Os_PlatformTriCoreAurixGen7" Delivered="true" Component="Implementation" ShortName="Os"/>
+        <Component Version="2.29.00" ScanPattern="Os_PlatformTriCoreAurixGen7" Project="Os_PlatformTriCoreAurixGen7" Delivered="true" Component="root" ShortName="Os"/>
+        <Component Version="1.02.01" ScanPattern="Rte_Analyzer" Project="Rte_Analyzer" Delivered="true" Component="Application" ShortName="RteAnalyzer"/>
+        <Component Version="0.06.00" ScanPattern="Rte_Analyzer" Project="Rte_Analyzer" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="RteAnalyzer"/>
+        <Component Version="1.02.01" ScanPattern="Rte_Analyzer" Project="Rte_Analyzer" Delivered="true" Component="root" ShortName="RteAnalyzer"/>
+        <Component Version="4.19.00" ScanPattern="Rte_Asr4" Project="Rte_Asr4" Delivered="true" Component="Description" ShortName="Rte"/>
+        <Component Version="4.19.00" ScanPattern="Rte_Asr4" Project="Rte_Asr4" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="Rte"/>
+        <Component Version="4.19.00" ScanPattern="Rte_Asr4" Project="Rte_Asr4" Delivered="true" Component="Generator" ShortName="Rte"/>
+        <Component Version="4.19.00" ScanPattern="Rte_Asr4" Project="Rte_Asr4" Delivered="true" Component="root" ShortName="Rte"/>
+        <Component Version="1.19.00" ScanPattern="Rte_Core" Project="Rte_Core" Delivered="true" Component="Generator" ShortName="Rte"/>
+        <Component Version="1.19.00" ScanPattern="Rte_Core" Project="Rte_Core" Delivered="true" Component="Implementation" ShortName="Rte"/>
+        <Component Version="4.19.01" ScanPattern="Rte_DaVinciBase" Project="Rte_DaVinciBase" Delivered="true" Component="Generator" ShortName="Rte"/>
+        <Component Version="1.04.02" ScanPattern="SipModificationChecker" Project="SipModificationChecker" Delivered="true" Component="Application" ShortName="SipModificationChecker"/>
+        <Component Version="1.04.03" ScanPattern="SipModificationChecker" Project="SipModificationChecker" Delivered="true" Component="root" ShortName="SipModificationChecker"/>
+        <Component Version="10.03.00" ScanPattern="SysService_Asr4BswMCfg5" Project="SysService_Asr4BswMCfg5" Delivered="true" Component="Description" ShortName="BswM"/>
+        <Component Version="14.01.01" ScanPattern="SysService_Asr4BswMCfg5" Project="SysService_Asr4BswMCfg5" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="BswM"/>
+        <Component Version="10.03.00" ScanPattern="SysService_Asr4BswMCfg5" Project="SysService_Asr4BswMCfg5" Delivered="true" Component="Implementation" ShortName="BswM">
+            <RelativeFileSpec>BswM.h;BswM_CanSM.h;BswM_ComM.h;BswM_Dcm.h;BswM_EcuM.h;BswM_EthIf.h;BswM_EthSM.h;BswM_FrSM.h;BswM_J1939Dcm.h;BswM_J1939Nm.h;BswM_LinSM.h;BswM_LinTp.h;BswM_Nm.h;BswM_NvM.h;BswM_PduR.h;BswM_Sd.h;BswM_WdgM.h</RelativeFileSpec>
+        </Component>
+        <Component Version="14.01.01" ScanPattern="SysService_Asr4BswMCfg5" Project="SysService_Asr4BswMCfg5" Delivered="true" Component="root" ShortName="BswM"/>
+        <Component Version="10.00.00" ScanPattern="SysService_Asr4EcuM" Project="SysService_Asr4EcuM" Delivered="true" Component="Description" ShortName="EcuM"/>
+        <Component Version="10.00.00" ScanPattern="SysService_Asr4EcuM" Project="SysService_Asr4EcuM" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="EcuM"/>
+        <Component Version="10.00.00" ScanPattern="SysService_Asr4EcuM" Project="SysService_Asr4EcuM" Delivered="true" Component="Implementation" ShortName="EcuM">
+            <RelativeFileSpec>EcuM.h;EcuM_Cbk.h;EcuM_Error.h</RelativeFileSpec>
+        </Component>
+        <Component Version="10.00.01" ScanPattern="SysService_Asr4EcuM" Project="SysService_Asr4EcuM" Delivered="true" Component="root" ShortName="EcuM"/>
+        <Component Version="5.01.00" ScanPattern="SysService_Asr4FiM" Project="SysService_Asr4FiM" Delivered="true" Component="Description" ShortName="FiM"/>
+        <Component Version="5.01.00" ScanPattern="SysService_Asr4FiM" Project="SysService_Asr4FiM" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="FiM"/>
+        <Component Version="5.01.00" ScanPattern="SysService_Asr4FiM" Project="SysService_Asr4FiM" Delivered="true" Component="Implementation" ShortName="FiM">
+            <RelativeFileSpec>FiM.h;FiM_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="5.02.00" ScanPattern="SysService_Asr4FiM" Project="SysService_Asr4FiM" Delivered="true" Component="root" ShortName="FiM"/>
+        <Component Version="6.02.01" ScanPattern="SysService_Asr4WdM" Project="SysService_Asr4WdM" Delivered="true" Component="Description" ShortName="WdgM"/>
+        <Component Version="2.02.02" ScanPattern="SysService_Asr4WdM" Project="SysService_Asr4WdM" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="WdgM"/>
+        <Component Version="5.04.00" ScanPattern="SysService_Asr4WdM" Project="SysService_Asr4WdM" Delivered="true" Component="Implementation" ShortName="WdgM">
+            <RelativeFileSpec>WdgM.h;WdgM_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="2.03.01" ScanPattern="SysService_Asr4WdM" Project="SysService_Asr4WdM" Delivered="true" Component="root" ShortName="WdgM"/>
+        <Component Version="5.05.01" ScanPattern="SysService_AsrCrc" Project="SysService_AsrCrc" Delivered="true" Component="Description" ShortName="Crc"/>
+        <Component Version="3.01.00" ScanPattern="SysService_AsrCrc" Project="SysService_AsrCrc" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="Crc"/>
+        <Component Version="5.04.01" ScanPattern="SysService_AsrCrc" Project="SysService_AsrCrc" Delivered="true" Component="Implementation" ShortName="Crc">
+            <RelativeFileSpec>Crc.h</RelativeFileSpec>
+        </Component>
+        <Component Version="7.03.01" ScanPattern="SysService_AsrCrc" Project="SysService_AsrCrc" Delivered="true" Component="root" ShortName="Crc"/>
+        <Component Version="11.00.00" ScanPattern="SysService_AsrDet" Project="SysService_AsrDet" Delivered="true" Component="Description" ShortName="Det"/>
+        <Component Version="11.00.00" ScanPattern="SysService_AsrDet" Project="SysService_AsrDet" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="Det"/>
+        <Component Version="11.00.00" ScanPattern="SysService_AsrDet" Project="SysService_AsrDet" Delivered="true" Component="Implementation" ShortName="Det">
+            <RelativeFileSpec>Det.h</RelativeFileSpec>
+        </Component>
+        <Component Version="21.00.01" ScanPattern="SysService_AsrDet" Project="SysService_AsrDet" Delivered="true" Component="root" ShortName="Det"/>
+        <Component Version="2.03.01" ScanPattern="SysService_AsrRamTst" Project="SysService_AsrRamTst" Delivered="true" Component="Description" ShortName="RamTst"/>
+        <Component Version="4.00.00" ScanPattern="SysService_AsrRamTst" Project="SysService_AsrRamTst" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="RamTst"/>
+        <Component Version="2.02.00" ScanPattern="SysService_AsrRamTst" Project="SysService_AsrRamTst" Delivered="true" Component="Implementation" ShortName="RamTst"/>
+        <Component Version="4.00.02" ScanPattern="SysService_AsrRamTst" Project="SysService_AsrRamTst" Delivered="true" Component="root" ShortName="RamTst"/>
+        <Component Version="5.08.01" ScanPattern="SysService_AsrStbM" Project="SysService_AsrStbM" Delivered="true" Component="Description" ShortName="StbM"/>
+        <Component Version="5.08.01" ScanPattern="SysService_AsrStbM" Project="SysService_AsrStbM" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="StbM"/>
+        <Component Version="5.08.01" ScanPattern="SysService_AsrStbM" Project="SysService_AsrStbM" Delivered="true" Component="Implementation" ShortName="StbM">
+            <RelativeFileSpec>StbM.h;StbM_Cbk.h;StbM_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="5.08.01" ScanPattern="SysService_AsrStbM" Project="SysService_AsrStbM" Delivered="true" Component="root" ShortName="StbM"/>
+        <Component Version="3.07.01" ScanPattern="SysService_AsrTSynCan" Project="SysService_AsrTSynCan" Delivered="true" Component="Description" ShortName="CanTSyn"/>
+        <Component Version="3.07.01" ScanPattern="SysService_AsrTSynCan" Project="SysService_AsrTSynCan" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CanTSyn"/>
+        <Component Version="3.07.01" ScanPattern="SysService_AsrTSynCan" Project="SysService_AsrTSynCan" Delivered="true" Component="Implementation" ShortName="CanTSyn">
+            <RelativeFileSpec>CanTSyn.h;CanTSyn_Cbk.h;CanTSyn_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="3.07.01" ScanPattern="SysService_AsrTSynCan" Project="SysService_AsrTSynCan" Delivered="true" Component="root" ShortName="CanTSyn"/>
+        <Component Version="7.00.00" ScanPattern="SysService_AsrTSynEth" Project="SysService_AsrTSynEth" Delivered="true" Component="Description" ShortName="EthTSyn"/>
+        <Component Version="7.00.00" ScanPattern="SysService_AsrTSynEth" Project="SysService_AsrTSynEth" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="EthTSyn"/>
+        <Component Version="7.00.00" ScanPattern="SysService_AsrTSynEth" Project="SysService_AsrTSynEth" Delivered="true" Component="Implementation" ShortName="EthTSyn">
+            <RelativeFileSpec>EthTSyn.h;EthTSyn_Cbk.h;EthTSyn_Crc_Int.h;EthTSyn_Int.h;EthTSyn_Master_Int.h;EthTSyn_Pdelay_Int.h;EthTSyn_Slave_Int.h;EthTSyn_SwtMgmt_Cbk.h;EthTSyn_SwtMgmt_Int.h;EthTSyn_SwtTimeSync_Int.h;EthTSyn_Types.h;EthTSyn_Types_Int.h;EthTSyn_Util_Int.h</RelativeFileSpec>
+        </Component>
+        <Component Version="7.00.01" ScanPattern="SysService_AsrTSynEth" Project="SysService_AsrTSynEth" Delivered="true" Component="root" ShortName="EthTSyn"/>
+        <Component Version="4.00.04" ScanPattern="SysService_IpBase" Project="SysService_IpBase" Delivered="true" Component="Implementation" ShortName="IpBase">
+            <RelativeFileSpec>IpBase.h;IpBase_Ber.h;IpBase_Cfg.h;IpBase_Code.h;IpBase_Copy.h;IpBase_PBuf.h;IpBase_Priv.h;IpBase_Sock.h;IpBase_String.h;IpBase_Types.h;_Appl_Rand.h;_Appl_Time.h</RelativeFileSpec>
+        </Component>
+        <Component Version="4.00.04" ScanPattern="SysService_IpBase" Project="SysService_IpBase" Delivered="true" Component="root" ShortName="IpBase"/>
+        <Component Version="3.03.03" ScanPattern="Tp_Asr4TpCan" Project="Tp_Asr4TpCan" Delivered="true" Component="Description" ShortName="CanTp"/>
+        <Component Version="4.02.03" ScanPattern="Tp_Asr4TpCan" Project="Tp_Asr4TpCan" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="CanTp"/>
+        <Component Version="3.03.03" ScanPattern="Tp_Asr4TpCan" Project="Tp_Asr4TpCan" Delivered="true" Component="Implementation" ShortName="CanTp">
+            <RelativeFileSpec>CanTp.h;CanTp_Cbk.h;CanTp_Priv.h;CanTp_Types.h</RelativeFileSpec>
+        </Component>
+        <Component Version="4.03.05" ScanPattern="Tp_Asr4TpCan" Project="Tp_Asr4TpCan" Delivered="true" Component="root" ShortName="CanTp"/>
+        <Component Version="6.00.00" ScanPattern="Tp_Asr4TpLin" Project="Tp_Asr4TpLin" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="LinTp"/>
+        <Component Version="6.00.00" ScanPattern="Tp_Asr4TpLin" Project="Tp_Asr4TpLin" Delivered="true" Component="root" ShortName="LinTp"/>
+        <Component Version="8.00.05" ScanPattern="Tp_AsrTpTcpIp" Project="Tp_AsrTpTcpIp" Delivered="true" Component="Description" ShortName="TcpIp"/>
+        <Component Version="8.01.01" ScanPattern="Tp_AsrTpTcpIp" Project="Tp_AsrTpTcpIp" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="TcpIp"/>
+        <Component Version="8.00.05" ScanPattern="Tp_AsrTpTcpIp" Project="Tp_AsrTpTcpIp" Delivered="true" Component="Implementation" ShortName="TcpIp">
+            <RelativeFileSpec>TcpIp.h;TcpIp_Arp.h;TcpIp_Arp_Cbk.h;TcpIp_Cbk.h;TcpIp_DhcpV4.h;TcpIp_DhcpV4Server.h;TcpIp_DhcpV4_Cbk.h;TcpIp_DhcpV6.h;TcpIp_DhcpV6_Cbk.h;TcpIp_IcmpV4.h;TcpIp_IcmpV4_Cbk.h;TcpIp_IcmpV6.h;TcpIp_IpV4.h;TcpIp_IpV4_Cbk.h;TcpIp_IpV4_Priv.h;TcpIp_IpV4_Types.h;TcpIp_IpV6.h;TcpIp_IpV6_Cbk.h;TcpIp_IpV6_Priv.h;TcpIp_IpV6_Types.h;TcpIp_Mld.h;TcpIp_Ndp.h;TcpIp_Priv.h;TcpIp_Priv_Types.h;TcpIp_Tcp.h;TcpIp_Tcp_Cbk.h;TcpIp_Types.h;TcpIp_Udp.h;TcpIp_Udp_Cbk.h</RelativeFileSpec>
+        </Component>
+        <Component Version="8.00.00" ScanPattern="Tp_AsrTpTcpIp" Project="Tp_AsrTpTcpIp" Delivered="true" Component="Implementation_DhcpV4Server" ShortName="TcpIp"/>
+        <Component Version="8.00.00" ScanPattern="Tp_AsrTpTcpIp" Project="Tp_AsrTpTcpIp" Delivered="true" Component="Implementation_IpV4" ShortName="TcpIp"/>
+        <Component Version="8.00.00" ScanPattern="Tp_AsrTpTcpIp" Project="Tp_AsrTpTcpIp" Delivered="true" Component="Implementation_IpV6" ShortName="TcpIp"/>
+        <Component Version="8.01.03" ScanPattern="Tp_AsrTpTcpIp" Project="Tp_AsrTpTcpIp" Delivered="true" Component="root" ShortName="TcpIp"/>
+        <Component Version="2.00.02" ScanPattern="VStdLib_GenericAsr" Project="VStdLib_GenericAsr" Delivered="true" Component="Implementation" ShortName="VStdLib">
+            <RelativeFileSpec>_VStdLib_Cfg.h;vstdlib.h</RelativeFileSpec>
+        </Component>
+        <Component Version="2.00.02" ScanPattern="VStdLib_GenericAsr" Project="VStdLib_GenericAsr" Delivered="true" Component="root" ShortName="VStdLib"/>
+        <Component Version="1.07.00" ScanPattern="Xf_DiagXf" Project="Xf_DiagXf" Delivered="true" Component="Description" ShortName="DiagXf"/>
+        <Component Version="1.07.00" ScanPattern="Xf_DiagXf" Project="Xf_DiagXf" Delivered="true" Component="Generator" ShortName="DiagXf"/>
+        <Component Version="1.07.00" ScanPattern="Xf_DiagXf" Project="Xf_DiagXf" Delivered="true" Component="root" ShortName="DiagXf"/>
+        <Component Version="2.05.00" ScanPattern="_3rdParty_McalIntegration_Helper" Project="_3rdParty_McalIntegration_Helper" Delivered="true" Component="root" ShortName="3rdParty_McalIntegration_Helper"/>
+        <Component Version="1.00.00" ScanPattern="_Generic_AddOn" Project="_Generic_AddOn" Delivered="true" Component="GenTool_GeneratorMsr" ShortName="_Generic_AddOn"/>
+        <Component Version="1.02.00" ScanPattern="_TresosProxy_Dispatcher" Project="_TresosProxy_Dispatcher" Delivered="true" Component="root"/>
+    </ComponentCheck>
+    <DeliveryVersionNumber>
+        <Byte>21</Byte>
+        <Byte>06</Byte>
+        <Byte>27</Byte>
+        <Byte>01</Byte>
+        <Byte>90</Byte>
+        <Byte>00</Byte>
+        <Byte>78</Byte>
+        <Byte>01</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+    </DeliveryVersionNumber>
+    <Transformators>
+	
+	
+	
+	<Version Fix="2" Major="1" Minor="2"/>
+	<DataMaxVersion Major="1" Minor="1"/>
+	<SourceHeader>
+		<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fo="http://www.w3.org/1999/XSL/Format" version="1.0">
+			<xsl:output method="text"/>
+		</xsl:stylesheet>
+	</SourceHeader>
+	<HtmlOutput>
+		<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:fo="http://www.w3.org/1999/XSL/Format" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="2.0">
+			<xsl:output method="html"/>
+			
+			
+			<xsl:template match="/">
+				<html>
+					<head>
+						<title>
+							<xsl:text>Delivery description </xsl:text>
+							<xsl:value-of select="/CANbeddedVersionInfo/Properties/CBD"/>
+						</title>
+						<style>
+			     * {
+					  font-family: Verdana, Helvetica, sans-serif;
+					  color:black;
+				 }
+
+				  body {
+					  background: #F7F7F7;
+					  margin: 0;
+					  padding: 0;
+					  link=#234691; 
+					  vlink=#234691;
+				 }
+				 h1 {
+					  font-size: 16pt;
+					  color: white;
+					  text-align: center;
+					  background: #AD0829;
+					  padding:	20px 10px 20px 10px;
+				  }
+				  h3 {
+					  font-size: 12pt;
+					  color: black;
+					  padding: 4px 10px 4px 10px;
+					  border-bottom: medium solid;
+					  border-bottom-color: #AD0829;				  }
+                  h4 {
+					  font-size: 10pt;
+					  font-weight:  bold;
+					  padding: 4px 10px 4px 10px;
+				  }
+				  table {
+					  width: 90%;
+					  border-collapse: collapse;  /* separate*/
+					  margin-left: auto;    /* center table horizontally */
+					  margin-right: auto;
+				  }
+				  th {
+					  text-align:   left;
+					  font-weight:  bold;
+					  background: #DEDEDE;
+				  }
+				  tr.even {
+					  background: #EEEEEE;
+				  }
+				 p, td, th, li {
+					  font-size: 10pt;
+					  vertical-align: top;
+					  padding-right: 1em;
+				  }
+				 td.highlight {
+					  width: 20%;
+					  text-align: right;
+					  color: #AD0829;
+				  }
+				 td.bold {
+					  font-weight:  bold;
+				  }
+				 .small-text {
+					  font-size: 8pt;
+				  }
+			 </style>
+					</head>
+					
+					<body>
+						
+						<xsl:variable name="vIsMerged">
+							<xsl:choose>
+								<xsl:when test="count(/CANbeddedVersionInfo/MergedPackage)&gt;0">
+									<xsl:text>True</xsl:text>
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:text>False</xsl:text>
+								</xsl:otherwise>
+							</xsl:choose>
+						</xsl:variable>
+						
+						<xsl:variable name="vBaseAddress" select="/CANbeddedVersionInfo/MergedPackage[$vIsMerged='True']|/CANbeddedVersionInfo[$vIsMerged='False']"/>
+						
+						<xsl:variable name="vIsBuild">
+							<xsl:choose>
+								<xsl:when test="count($vBaseAddress//makesupport)&gt;0">
+									<xsl:text>True</xsl:text>
+								</xsl:when>
+								<xsl:otherwise>
+									<xsl:text>False</xsl:text>
+								</xsl:otherwise>
+							</xsl:choose>
+						</xsl:variable>
+						
+						<h1>
+							<xsl:text>Delivery Description </xsl:text>
+							<xsl:value-of select="/CANbeddedVersionInfo/Properties/CBD"/>
+							<xsl:if test="$vIsMerged='True'">
+								<xsl:text> with </xsl:text>
+								<xsl:for-each select="$vBaseAddress//SubPackage">
+									<xsl:value-of select=".//CBD"/>
+									<xsl:text> </xsl:text>
+								</xsl:for-each>
+							</xsl:if>
+						</h1>
+						
+						<h4>Delivery Information</h4>
+						<ul type="disc">
+							<xsl:for-each select="$vBaseAddress//Properties">
+								<xsl:sort select=".//CBD"/>
+								<xsl:variable name="vDeliverLink">
+									<xsl:text>#_Delivery_Information_</xsl:text>
+									<xsl:value-of select="position()"/>
+								</xsl:variable>
+								<xsl:variable name="vDeliverName">
+									<xsl:choose>
+										<xsl:when test="$vIsMerged='True'">
+											<xsl:text>Delivery Information - </xsl:text>
+											<xsl:value-of select=".//CBD"/>
+										</xsl:when>
+										<xsl:otherwise>
+											<xsl:text>Delivery Information</xsl:text>
+										</xsl:otherwise>
+									</xsl:choose>
+								</xsl:variable>
+								<li>
+									<a href="{$vDeliverLink}">
+										<xsl:value-of select="$vDeliverName"/>
+									</a>
+								</li>
+							</xsl:for-each>
+							
+							<li>
+								<a href="#_Detailed_Version_Information">Detailed Version Information</a>
+							</li>
+						</ul>
+						
+						<xsl:if test="$vIsBuild='True'">
+							<h4>Build Environment</h4>
+							<ul type="disc">
+								<xsl:for-each select="$vBaseAddress//makesupport">
+									<xsl:sort select="..//CBD"/>
+									<li>
+										<xsl:variable name="vDeliverLink">
+											<xsl:text>#_BuildEnvironment_</xsl:text>
+											<xsl:value-of select="position()"/>
+										</xsl:variable>
+										<xsl:variable name="vDeliverName">
+											<xsl:choose>
+												<xsl:when test="$vIsMerged='True'">
+													<xsl:text>Versions and Options - </xsl:text>
+													<xsl:value-of select="../Properties/CBD"/>
+												</xsl:when>
+												<xsl:otherwise>
+													<xsl:text>Versions and Options</xsl:text>
+												</xsl:otherwise>
+											</xsl:choose>
+										</xsl:variable>
+										<a href="{$vDeliverLink}">
+											<xsl:value-of select="$vDeliverName"/>
+										</a>
+									</li>
+								</xsl:for-each>
+							</ul>
+						</xsl:if>
+						<br/>
+						
+						
+						<xsl:for-each select="$vBaseAddress[$vIsMerged!='True']|$vBaseAddress/*[$vIsMerged='True']">
+							<xsl:sort select=".//CBD"/>
+							<xsl:call-template name="CBD_DeliveryInfo"/>
+						</xsl:for-each>
+						
+						<xsl:call-template name="DetailedVersionInfo"/>
+						
+						<xsl:if test="$vIsBuild='True'">
+							<h2>Build Environment</h2>
+							<xsl:for-each select="$vBaseAddress//makesupport[$vIsMerged!='True']|$vBaseAddress/*//makesupport[$vIsMerged='True']">
+								<xsl:sort select="..//CBD"/>
+								<xsl:call-template name="BuildEnvironment"/>
+							</xsl:for-each>
+						</xsl:if>
+					</body>
+				</html>
+			</xsl:template>
+			
+			
+			<xsl:template name="CBD_DeliveryInfo">
+				<xsl:variable name="varID">
+					<xsl:text>_Delivery_Information_</xsl:text>
+					<xsl:value-of select="position()"/>
+				</xsl:variable>
+				<h3>
+					<a id="{$varID}">Delivery Information <xsl:value-of select=".//Properties/CBD "/>
+					</a>
+				</h3>
+				<table>
+					
+					<xsl:call-template name="DeliveryId"/>
+					
+					<tr>
+						<td class="highlight">License Information</td>
+						<td>
+							<xsl:value-of select=".//Properties/Customer"/>
+						</td>
+					</tr>
+					
+					<xsl:if test=".//Properties/Eval='true'">
+						<tr>
+							<td class="highlight">Evaluation License</td>
+							<td class="bold">
+								<xsl:text>This license is for evaluation and prototyping purposes only.</xsl:text>
+							</td>
+						</tr>
+					</xsl:if>
+					
+					<xsl:call-template name="CustomerContacts"/>
+					
+					<xsl:call-template name="VectorContact"/>
+					
+					<xsl:call-template name="DeliveryInfoGeneral"/>
+				</table>
+			</xsl:template>
+			
+			
+			<xsl:template name="DetailedVersionInfo">
+				<h3>
+					<a id="_Detailed_Version_Information">Detailed Version Information</a>
+				</h3>
+				<table>
+					<tbody>
+						<tr>
+							<th>Project</th>
+							<th>Component</th>
+							<th>Version</th>
+						</tr>
+						<xsl:for-each select="/CANbeddedVersionInfo/ComponentCheck/Component">
+							<xsl:variable name="class">
+								<xsl:choose>
+									<xsl:when test="position() mod 2 = 1">odd</xsl:when>
+									<xsl:otherwise>even</xsl:otherwise>
+								</xsl:choose>
+							</xsl:variable>
+							<tr class="{$class}">
+								<td>
+									<xsl:value-of select="@Project"/>
+								</td>
+								<td>
+									<xsl:value-of select="@Component"/>
+								</td>
+								<td>
+									<xsl:value-of select="@Version"/>
+								</td>
+							</tr>
+						</xsl:for-each>
+					</tbody>
+				</table>
+			</xsl:template>
+			
+			
+			<xsl:template name="BuildEnvironment">
+				<xsl:variable name="vDeliverLink">
+					<xsl:text>_BuildEnvironment_</xsl:text>
+					<xsl:value-of select="position()"/>
+				</xsl:variable>
+				<h3>
+					<a id="{$vDeliverLink}">Versions and Options - <xsl:value-of select="..//CBD"/>
+					</a>
+				</h3>
+				<table>
+					<xsl:for-each select="./devtoolinfo/tool">
+						<tr class="even">
+							
+							<td colspan="2">
+								<xsl:value-of select="@type"/>
+							</td>
+						</tr>
+						<xsl:for-each select="./entry">
+							<tr>
+								<td class="highlight">
+									<xsl:value-of select="@type"/>
+								</td>
+								<td>
+									<xsl:value-of select="."/>
+								</td>
+							</tr>
+						</xsl:for-each>
+					</xsl:for-each>
+				</table>
+			</xsl:template>
+			
+			
+			<xsl:template name="DeliveryInfoGeneral">
+				
+				<tr>
+					<td class="highlight">Order Confirmation Number</td>
+					<td>
+						<xsl:value-of select=".//Properties/ProjectNumber"/>
+					</td>
+				</tr>
+				
+				<tr>
+					<td class="highlight">Delivery Number</td>
+					<td>
+						<xsl:value-of select=".//Properties/Release"/>
+					</td>
+				</tr>
+				
+				<tr>
+					<td class="highlight">Delivery Type</td>
+					<td>
+						<xsl:value-of select=".//Properties/DeliveryType"/>
+					</td>
+				</tr>
+				
+				<tr>
+					<td class="highlight">Release Type</td>
+					<td>
+						<xsl:value-of select=".//Properties/ReleaseType"/>
+					</td>
+				</tr>
+				
+				<tr>
+					<td class="highlight">Ordered Derivative</td>
+					<td>
+						<xsl:value-of select=".//Properties/OrderedDerivative"/>
+					</td>
+				</tr>
+				
+				<tr>
+					<td class="highlight">SIP Version</td>
+					<td>
+						<xsl:value-of select=".//Properties/SIP"/>
+					</td>
+				</tr>
+			</xsl:template>
+			
+			
+			<xsl:template name="CustomerContacts">
+				<xsl:if test="count(.//Properties/ErrataContacts) &gt; 0">
+					<tr>
+						<td class="highlight">Customer Contacts</td>
+						<td>
+							<xsl:for-each select=".//Properties/ErrataContacts/ErrataContact">
+								<xsl:value-of select="Firstname"/>
+								<xsl:text> </xsl:text>
+								<xsl:value-of select="Surname"/>
+								<xsl:text>   </xsl:text>
+								<span color="blue">
+									<a>
+										<xsl:attribute name="href">
+                <xsl:text>Mailto:</xsl:text>
+                <xsl:value-of select="Email"/>
+            </xsl:attribute>
+										<xsl:value-of select="Email"/>
+									</a>
+								</span>
+								<br/>
+							</xsl:for-each>
+							<span class="small-text">Contact address for Vector for all topics concerning this license. This includes questions and issue reports. Please inform Vector if this contact changes.</span>
+						</td>
+					</tr>
+				</xsl:if>
+				
+				<xsl:if test="count(.//Properties/ErrataContacts)&lt;= 0">
+					<tr>
+						<td class="highlight">Customer Contacts</td>
+						<td>
+							<xsl:text>You have not defined any contact. Therefore Vector will not be able to inform you about potential issues</xsl:text>
+						</td>
+					</tr>
+				</xsl:if>
+			</xsl:template>
+			
+			
+			<xsl:template name="VectorContact">
+				<tr>
+					<td class="highlight">Vector Contact</td>
+					<td>
+						<a>
+							<xsl:attribute name="href">
+    <xsl:text>Mailto:</xsl:text>
+    <xsl:value-of select=".//Properties/CustomerContact/Email"/>
+</xsl:attribute>
+							<xsl:value-of select=".//Properties/CustomerContact/Email"/>
+						</a>
+						<br/>
+						<span class="small-text">Contact address at Vector for all questions concerning this delivery.</span>
+					</td>
+				</tr>
+			</xsl:template>
+			
+			
+			<xsl:template name="DeliveryId">
+				<tr>
+					<td class="highlight">Delivery ID</td>
+					<td>
+						<xsl:for-each select=".//DeliveryVersionNumber/Byte">
+							<xsl:value-of select="."/>
+							<xsl:text>.</xsl:text>
+						</xsl:for-each>
+						<br/>
+						<span class="small-text">This is the unique identification number of this delivery. Please have this number ready at hand when contacting Vector customer support.</span>
+					</td>
+				</tr>
+			</xsl:template>
+		</xsl:stylesheet>
+	</HtmlOutput>
+</Transformators>
+</CANbeddedVersionInfo>

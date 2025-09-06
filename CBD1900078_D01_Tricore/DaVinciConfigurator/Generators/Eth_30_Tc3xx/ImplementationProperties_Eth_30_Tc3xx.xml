@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Settings Name="com.vector.cfg.core.sip.ISIPService">
+    <Settings Name="ModuleList">
+      <Settings Name="Eth">
+        <Settings Name="ETH_TC3XX">
+          <Setting Name="Compiler" Value="Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];GreenHills[BBC47DF5-C78B-4E8E-8F86-0EF503FD3198];Hitech[A26CCAEA-B59D-49A7-9DB4-112AD6624DD4];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+        </Settings>
+      </Settings>
+    </Settings>
+  </Settings>
+</Settings>

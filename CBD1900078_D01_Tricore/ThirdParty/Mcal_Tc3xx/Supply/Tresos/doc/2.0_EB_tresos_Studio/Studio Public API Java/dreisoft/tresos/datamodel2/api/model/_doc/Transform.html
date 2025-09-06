@@ -1,0 +1,175 @@
+<html>
+<body>
+<h2>Transform the model</h2>
+
+<p>
+    The datamodel2 Public API can be utilized in many different scenarios. One of them is to transform configurations.
+    Configuration transformations occur when converting an AUTOSAR 2.0 into an AUTOSAR 2.1 configuration for example.
+</p>
+
+<p>
+    When transforming a model the configuration is not bound (to a specific schema/parameter definition) as the
+    configuration does not conform to any schema during transformation. 
+    When using the Public API for  transformation purposes, the
+    functionality is restricted in certain ways but also provides additional freedom to modify the model.   
+</p>
+
+<p>
+    The special case that a model can be transformed is indicated by the option
+    <a href="../../model/Opt.html#OPT_NO_SCHEMA">Opt.OPT_NO_SCHEMA</a>.
+</p>
+
+<p>
+    When operating on a configuration that is not bound to a schema has the following restrictions:
+</p>
+
+<p>
+    <ul>
+        <li><b>No creation of sub elements</b>: When a schema is available tresos is able to determine mandatory
+            sub-nodes and automatically adds them for newly created nodes that are added to the configuration.
+            This functionality is not available when no schema exists. So when a container for example all variables,
+            references, sub-containers, choices, lists that are requested by the target schema of the transformation
+            must be added manually.
+        </li>
+        <li><b>No type information</b>: No node type information is available as this information is provided by the
+            schema. So when creating new nodes this information must be supplied by hand if it differs from the default
+            type.
+        </li>
+    </ul>
+</p>
+
+<p>
+    For a configuration that has a schema only a restricted set of changes can be done. New nodes can only be added.
+    Existing nodes can only be deleted, moved or copied within lists. Also the name of a node can only be changed
+    for list items. The value of a node can be altered no matter if the node is part of a list or not.
+</p>
+
+<p>
+    In contrast to this a configuration that has no schema can be manipulated in a much broader range:
+</p>
+
+<p>
+    <ul>
+        <li><b>Renaming nodes</b>: All nodes (except variables and references) inside of a list have a name which
+            can be changed.
+        </li>
+        <li><b>Adding/inserting nodes</b>: Nodes can be inserted anywhere in the configuration if the parent node
+            accepts a node of the requested kind as a child.
+        </li>
+        <li><b>Deleting nodes</b>: Nodes or trees of nodes can be removed from anywhere in the configuration.
+        </li>
+        <li><b>Adding/Removing lists</b>: List nodes can be added to the configuration or removed from the
+                                        configuration.
+        <li><b>Moving nodes</b>: Nodes may be moved freely inside the configuration if the target parent nodes accepts
+            the kind of the moved node.
+        </li>
+        <li><b>Copying nodes</b>: Nodes may be copied freely inside the configuration if the target parent nodes accepts
+            the kind of the copied node.
+        </li>
+    </ul>
+    <b>REMARK:</b> If default values should be added the <a
+        href="../../model/Var.html#nsAddValue(java.lang.String, java.lang.String, java.lang.String)">nsAddValue()-methods</a> should be used with <b>null</b> as value and the type of the node to be added, as described in section <a
+        href="Transform.html#SuppTypeInf">Supplying type information</a>.
+</p>
+
+<p>
+    To support the additional transformation functionionality a set of additional methods are provided in the
+    kind specific classes (<a href="../../model/Any.html">Any</a>, <a href="../../model/Var.html">Var</a>,
+    <a href="../../model/Ref.html">Ref</a>, <a href="../../model/Ctr.html">Ctr</a>,
+    <a href="../../model/Chc.html">Chc</a>).
+</p>
+
+<p>
+    All these method are marked by the prefix <b>ns</b>. E.g. a list can be added with:
+</p>
+
+<p>
+    <pre>
+        ctxt.any.<b>ns</b>AddLst( "MAP", "MyList" ); // Add a list named MyList of type MAP
+    </pre>
+</p>
+
+<p>
+    The following overview shows the transformation specific methods of the datamodel2 Public API:
+</p>
+
+<p>
+    <center>
+        <img width="600" src="TransformModel.png" alt="Query Model API" border="1" style="border-color:#B0B0B0"/>
+    </center>
+</p>
+
+<h3>Supplying type information</h3>
+<a name="SuppTypeInf"></a>
+<p>
+    When adding new nodes and no schema is available a type must be supplied. Therefore all <code>nsAdd*</code> and
+    <code>nsInsert*</code> methods accept a parameter <code>nodeType</code>:
+</p>
+
+<p>
+    <pre>
+        ctxt.var.nsAddString( "STRING", "MyStringVar", "MyStringValue" ); // Add a String variable type "STRING"
+        ctxt.var.nsAddBool( "BOOL", "MyBoolVar", false );                 // Add a boolean variable type "BOOL"
+        ctxt.var.nsAddBool( null, "MyBoolVar", false );                   // Add a boolean variable with
+                                                                          // with default type ("BOOLEAN")
+    </pre>
+</p>
+
+<p>
+    If the nodeType is left empty the default type is used (normally "" or in case of variables "STRING" for
+    Strings, "BOOLEAN" for booleans, "FLOAT" for floats, "INTEGER" for integers).
+</p>
+
+<h3>Adding lists</h3>
+
+<p>
+    The datamodel2 Public API hides list as far as possible but when transforming a model it is possible to manually
+    add lists to a model. The datamodel2 Public API provides a set of methods for this task. The base methods for
+    adding lists can be found in the <a href="../../model/Any.html">Any</a> class:
+</p>
+
+<p>
+    <pre>
+        ctxt.any.nsAddLst( null, "MyList" );                    // Add list MyList with type ""
+        ctxt.any.nsAddLst( "MAP", "MyList" );                   // Add list MyList with type "MAP"
+        ctxt.any.nsAddLst( "MyContainer", "MAP", "MyList" );    // Add list MyList with type "MAP"
+                                                                // to container MyContainer
+    </pre>
+</p>
+
+<p>
+    Lists are by default either of type "" (variables, references) which indicates that list items have no name
+    or of type "MAP" (containers, choices) which indicates that list items have a unique name. To prohibit
+    wrong type selection the kind specific classes <a href="../../model/Var.html">Var</a>,
+    <a href="../../model/Ref.html">Ref</a>, <a href="../../model/Ctr.html">Ctr</a> and
+    <a href="../../model/Chc.html">Chc</a> provide methods to add a list with a fitting type:
+</p>
+
+<p>
+    <pre>
+        ctxt.ctr.nsAddCtrLst( "MyList" );   //  Adds list MyList of type "MAP"
+        ctxt.ctr.nsAddChcLst( "MyList" );   //  Adds list MyList of type "MAP"
+        ctxt.var.nsAddVarLst( "MyList" );   //  Adds list MyList of type ""
+        ctxt.var.nsAddRefLst( "MyList" );   //  Adds list MyList of type ""
+    </pre>
+</p>
+
+<h3>Adding choices</h3>
+
+<p>
+    Choices consist of a choice node and one to many enclosed container nodes. One of these container nodes
+    is the selected container. In a configuration that is bound to a schema these containers are created
+    automatically. In case of a transformation the containers (or at least the selected one) must be created
+    manually. In case of an AUTOSAR configuration this looks the following way:
+</p>
+
+<p>
+    <pre>
+        DCtxt choice = ctxt.chc.nsAddChc( null, "MyChoice", null ); // Add choice node MyChoice
+        choice = ctxt.ctr.nsAddCtr( "IDENTIFIABLE", "Selection1" ); // Add container Selection1
+                                                                    // which becomes the selected one
+    </pre>
+</p>
+
+</body>
+</html>

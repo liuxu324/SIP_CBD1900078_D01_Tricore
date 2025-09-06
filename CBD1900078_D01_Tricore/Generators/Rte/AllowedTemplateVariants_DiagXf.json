@@ -1,0 +1,33 @@
+{
+   "description" : "RTE Analyzer allowed templates",
+   "version" : "1.0.0",
+   "Templates" : {
+      "295d936850502a9bd75eadc44c8182d2" : {},
+      "2aefc22805f5483bdba5a6cc24fcc46d" : {},
+      "30157a34dff4423d99cf87e55976acd2" : {},
+      "379c80a55c8a1fd85b04718150d3a568" : {},
+      "3ad53b1a233414a8c19ed31e396dfa96" : {},
+      "47eda45414cb10ba0711ed3b3709d9d1" : {},
+      "4ba0d6ea8c9dba5ace4d0652a5a8c617" : {},
+      "4cacac148a0e38de4edbc4080466e74e" : {},
+      "4ee63b39544e3446bee6bb08d57a6406" : {},
+      "52488dde2cad1b7777a2083231d9456a" : {},
+      "784755d1e09f78807d92c3a870e80aeb" : {},
+      "7b66d35034af34a277a395289a69beb9" : {},
+      "8110320600ea3c72d370f5fc91eb2360" : {},
+      "88e7b0b72efabbadee674e42d6e896ae" : {},
+      "8aed14c6686d7c3a8a8d84e9a25a5811" : {},
+      "8c8f85d0e49de55e861d37a0eae863c5" : {},
+      "a92ad9fdb822052643d6d80108a4ae80" : {},
+      "b850d8a7a39e37dde1a2b9466dea4e23" : {},
+      "b9397debd2d8216917afe9e9a58b2f62" : {},
+      "cc47c075ee62bcd2c20bd335cade8e73" : {},
+      "cdc12555c5aeb9ec3470cbf110cd006f" : {},
+      "d6d82da575e85d324aaad4d36107daee" : {},
+      "e8f535de66e06f357befa2a54446e51e" : {},
+      "ed0b03079e6f9705d65b9ff7f71bcb09" : {},
+      "ed2a57ced6ad8c66a5c69e5f353e47fc" : {},
+      "f22e665bd4263bda8aedc3b07dd91f20" : {},
+      "f8cdbd39ce7f846044bfc4f2d6df3f51" : {}
+   }
+}

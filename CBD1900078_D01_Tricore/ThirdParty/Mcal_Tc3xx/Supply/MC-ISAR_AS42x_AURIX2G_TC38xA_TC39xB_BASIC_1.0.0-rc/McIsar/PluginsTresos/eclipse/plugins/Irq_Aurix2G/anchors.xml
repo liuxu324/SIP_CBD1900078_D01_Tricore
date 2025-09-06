@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?NLS TYPE="org.eclipse.help.toc"?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2017)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**  FILENAME  : anchors.xml                                                   **
+**                                                                            **
+**  VERSION   : 1.0.0                                                         **
+**                                                                            **
+**  DATE      : 2017-10-12                                                    **
+**                                                                            **
+**  VARIANT   : Variant PC                                                    **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX2G                                              **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY : [cover parentID= ]                                         **
+**                                                                            **
+**  DESCRIPTION  : Tresos anchors file for Irq Driver                         **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) : na                                                     **
+**                                                                            **
+**  MAY BE CHANGED BY USER : yes                                              **
+**                                                                            **
+*******************************************************************************/
+-->
+<toc label="Irq Aurix2G/TC38x" link_to="../eb.tresos.doc.autocore.mcal.releasenotes/anchors.xml#EB_tresos_AutoCore_MCAL_releasenotes" topic="$nl$/index.html">
+ <topic label="Irq" href="">
+   <topic label="Users Guide &quot; TC3xx_SW_MCAL_UM_DEMO.pdf &quot; (.doc)" href="doc/TC3xx_SW_MCAL_UM_DEMO.pdf  "/>
+ </topic>
+</toc>

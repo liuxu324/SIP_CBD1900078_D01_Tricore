@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="aquintos.mdf.reuseunit.LockAdditionalReuseUnitArtifactsSingle">
+   <service>
+      <provide interface="aquintos.mdf.lock.IAdditionalArtifactsToLock"/>
+   </service>
+   <implementation class="aquintos.mdf.reuseunit.LockAdditionalReuseUnitArtifactsSingle"/>
+</scr:component>

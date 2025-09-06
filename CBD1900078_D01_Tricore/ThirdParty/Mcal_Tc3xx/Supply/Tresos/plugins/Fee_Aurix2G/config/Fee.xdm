@@ -1,0 +1,1333 @@
+<?xml version='1.0'?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2018)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**  FILENAME  : Fee.xdm                                                       **
+**                                                                            **
+**  VERSION   : 9.0.0                                                         **
+**                                                                            **
+**  DATE      : 2018-09-10                                                    **
+**                                                                            **
+**  VARIANT   : Variant PB                                                    **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX2G                                              **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**                                                                            **
+**  DESCRIPTION  : XML data model for Fee driver                              **
+**                                                                            **
+**                                                                            **
+**  SPECIFICATION(S) : Specification of Fee Driver, AUTOSAR Release 4.2.2     **
+**                                                                            **
+**  MAY BE CHANGED BY USER : yes                                              **
+**                                                                            **
+*******************************************************************************/
+-->
+<!-- [cover parentID={7B86F9C5-9ABB-4635-8BA7-0B88FDFA27CA}]Fee.xdm[/cover] -->
+<!-- [cover parentID={F4755DA6-DF81-423e-9926-74B21A5ACF67}][/cover] -->
+<!-- [cover parentID={4A6AC0B0-D865-47cb-ABF0-35022F3E6A02}][/cover] -->
+<datamodel version="5.0"
+           xmlns="http://www.tresos.de/_projects/DataModel2/12/root.xsd"
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/12/attribute.xsd"
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd"
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar"
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd"
+         xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd"
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd"
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd" >
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="AURIX2G" type="AR-PACKAGE">
+        <a:a name="UUID" value="ECUC:AUTOSAR"/>
+        <d:lst type="TOP-LEVEL-PACKAGES">
+          <d:ctr name="EcucDefs" type="AR-PACKAGE">
+            <a:a name="UUID" value="ECUC:ECUCDEFS"/>
+            <d:lst type="ELEMENTS">
+              <d:chc name="Fee" type="AR-ELEMENT" value="MODULE-DEF">
+                <v:ctr type="MODULE-DEF">
+                  <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                    <ad:ADMIN-DATA>
+                      <ad:DOC-REVISIONS>
+                        <ad:DOC-REVISION>
+                          <ad:REVISION-LABEL>4.2.2</ad:REVISION-LABEL>
+                          <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                          <ad:DATE>2014-10-31</ad:DATE>
+                        </ad:DOC-REVISION>
+                      </ad:DOC-REVISIONS>
+                    </ad:ADMIN-DATA>
+                  </a:a>
+                  <a:a name="DESC"
+                       value="EN: Configuration of the Fee (Flash EEPROM Emulation) module."/>
+                  <a:a name="LOWER-MULTIPLICITY" value="0"/>
+                  <a:a name="UPPER-MULTIPLICITY" value="1"/>
+				  				  <!-- [cover parentID={EC13564A-ADC9-4525-BB51-83629136B237}][/cover] -->
+                  <a:a name="POSTBUILDVARIANTSUPPORT" value="true"/>
+                  <a:a name="RELEASE" value="asc:4.2.2"/>
+                  <d:ref type="REFINED_MODULE_DEF" value="ASPath:/AUTOSAR/EcucDefs/Fee"/>
+                  <a:a name="UUID" value="ECUC:25e46613-7e63-4604-a81c-33867a9d91f7"/>
+                  <v:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION">
+                    <a:a name="LABEL" value="Config Variant"/>
+                    <a:da name="DEFAULT" value="VariantPostBuild"/>
+                    <a:da name="RANGE" value="VariantPostBuild"/>
+                  </v:var>
+				  <!-- [cover parentID={39AE43E4-30F2-4bbe-AFED-4997195FF994}] FeeBlockConfiguration [/cover] -->
+                  <v:lst name="FeeBlockConfiguration" type="MAP">
+                    <a:da name="MAX" type="XPath" expr="ecu:get('Fee.NumberOfBlocks')"/>
+                    <a:da name="MIN" value="1"/>
+                    <v:ctr name="FeeBlockConfiguration" type="IDENTIFIABLE">
+                       <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                       <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                       </a:a>
+                      <a:a name="DESC"
+                           value="EN: Configuration of block specific parameters for the Flash EEPROM Emulation module."/>
+                      <a:a name="UUID"
+                           value="ECUC:3e3f6a41-1274-4d00-b94d-504e69110cfa"/>
+					  <!-- [cover parentID={05785F54-4AB9-4670-9C0B-B8CFE220D658}] FeeBlockNumber [/cover] -->
+                      <v:var name="FeeBlockNumber" type="INTEGER">
+                        <a:a name="DESC" value="EN: Block identifier (handle)."/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                        <a:a name="SCOPE" value="ECU"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="true"/>
+                        <a:a name="UUID"
+                             value="ECUC:0a407883-2fc6-4823-a26e-ea079aa7e73f"/>
+                        <a:da name="DEFAULT" value="1"/>
+                        <a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=65534"/>
+                          <a:tst expr="&gt;=1"/>
+                        </a:da>
+                        <a:da name="INVALID" type="XPath">
+                          <a:tst expr="text:uniq(../../*/FeeBlockNumber,.)"  false="EN: FEE - FeeBlockNumber should be unique for each configured FEE Block."/>
+                        </a:da>
+                      </v:var>
+					  <!-- [cover parentID={B3C3DD7B-8901-49fc-8747-D1D371A9BA23}] FeeQsBlockInstances [/cover] -->
+                      <v:var name="FeeQsBlockInstances" type="INTEGER">
+                        <a:a name="DESC" value="EN: number of Block instances (handle)."/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                        <a:a name="SCOPE" value="ECU"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID"
+                             value="ECUC:0a407881-2fc6-4823-a26e-ea079aa7e73f"/>
+                        <a:da name="DEFAULT" value="0"/>
+              <a:da name="INVALID" type="Range">
+                <a:tst expr="&lt;=num:i(num:i(ecu:get('Fls.TotalSize')) div num:i(4096))"/>
+                <a:tst expr="&gt;=0"/>
+                        </a:da>
+                        <a:da name="EDITABLE" type="XPath">
+                          <a:tst expr="(../../../FeeGeneral/FeeBlockTypeConfigured != 'FEE_DOUBLE_SECTOR_DATA_ONLY') and (../FeeQuasiStaticManager != 'false')"/>
+                        </a:da>
+                      </v:var>
+                      <v:var name="FeeQsBlockAddress" type="INTEGER">
+                        <a:a name="DESC" value="EN: Block address in DFlash (handle)."/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                        <a:a name="SCOPE" value="ECU"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID"
+                             value="ECUC:0a407882-2fc6-4823-a26e-ea079aa7e73f"/>
+                        <a:da name="DEFAULT" value="0"/>
+                        <a:da name="INVALID" type="Multi">
+                            <mt:xpath expr="(. mod num:i(4096)) = num:i(0)"
+                                  false="EN: FEE - FeeQsBlockAddress should be a multiple of 4096"/>
+                            <mt:range>
+                                <mt:tst expr="&gt;=0"/>
+                                <mt:tst expr="&lt;1048576"/>
+                              </mt:range>
+                            </a:da>
+                        <a:da name="EDITABLE" type="XPath">
+                          <a:tst expr="../../../FeeGeneral/FeeBlockTypeConfigured != 'FEE_DOUBLE_SECTOR_DATA_ONLY' and (../FeeQuasiStaticManager != 'false')"/>
+                        </a:da>
+                      </v:var>
+                      <v:var name="FeeQuasiStaticManager" type="BOOLEAN">
+                        <a:a name="DESC" value="EN: Indicates whether the Block configures is for NVM or Quasi static data Manager."/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                        <a:a name="SCOPE" value="ECU"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID"
+                             value="ECUC:b1116e04-53cd-44a7-8056-f43434aa82c8"/>
+                        <a:da name="EDITABLE" type="XPath">
+                          <a:tst expr="../../../FeeGeneral/FeeBlockTypeConfigured != 'FEE_DOUBLE_SECTOR_DATA_ONLY'"/>
+                        </a:da>
+                        <a:da name="DEFAULT" value="false"/>
+                      </v:var>
+					  <!-- [cover parentID={1E60C36A-EADA-4c67-AFDA-7B89DBC46DF6}] FeeBlockSize [/cover] -->
+					  <!-- [cover parentID={585EAAC4-A88B-437f-B7A3-DBF17619676E}][/cover] -->
+                      <v:var name="FeeBlockSize" type="INTEGER">
+                        <a:a name="DESC"
+                             value="EN: Size of a logical block in bytes."/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                        <a:a name="SCOPE" value="ECU"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID"
+                             value="ECUC:24bf18c3-8512-4334-8585-6c7937444d1d"/>
+                        <a:da name="DEFAULT" value="1"/>
+                        <a:da name="INVALID" type="Multi">
+                            <mt:xpath expr="((. mod num:i(4096)) != num:i(0)) and (../FeeQuasiStaticManager='true')"
+                                  true="EN: FEE - FeeQsBlockSize should be a multiple of 4096"/>
+                            <mt:range>
+                                <mt:tst expr="&gt;=0"/>
+                                <mt:tst expr="&lt;=1048576"/>
+                             </mt:range>
+                        </a:da>
+                        <a:da name="INVALID" type="Range">
+                          <a:tst expr="&gt;=1"/>
+                          <a:tst expr="&lt;=ecu:get('Fee.BlockSize')"/>
+                        </a:da>
+                      </v:var>
+					  <!-- [cover parentID={EF6DDF6D-7A87-48bf-AAF9-527B2EB53A3C}] FeeImmediateData [/cover] -->
+                      <v:var name="FeeImmediateData" type="BOOLEAN">
+                        <a:a name="DESC" value="EN: Marker for high priority data."/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                        <a:a name="SCOPE" value="ECU"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID"
+                             value="ECUC:b1116e94-53cd-44a7-8056-f43434aa82c8"/>
+                        <a:da name="DEFAULT" value="false"/>
+                        <a:da name="EDITABLE" type="XPath">
+                          <a:tst expr="../../../FeeGeneral/FeeBlockTypeConfigured != 'FEE_QUASI_STATIC_DATA_ONLY' and (../FeeQuasiStaticManager != 'true')"/>
+                        </a:da>
+                      </v:var>
+					  <!-- [cover parentID={CDDA1837-891B-4f9c-AA3B-8C2600FD9511}] FeeNumberOfWriteCycles [/cover] -->
+                      <v:var name="FeeNumberOfWriteCycles" type="INTEGER">
+                        <a:a name="DESC"
+                             value="EN: Number of write cycles required for this block."/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID"
+                             value="ECUC:b55e41d9-f6b5-4613-937e-2b83fe37a654"/>
+                        <a:da name="DEFAULT" value="0"/>
+                        <a:da name="INVALID" type="Range">
+                          <a:tst expr="&lt;=16777215"/>
+                          <a:tst expr="&gt;=0"/>
+                        </a:da>
+                        <a:da name="EDITABLE" type="XPath">
+                          <a:tst expr="../../../FeeGeneral/FeeBlockTypeConfigured != 'FEE_QUASI_STATIC_DATA_ONLY' and (../FeeQuasiStaticManager != 'true')"/>
+                        </a:da>                        
+                      </v:var>
+					  <!-- [cover parentID={823E9AB6-4817-4081-B3A0-437B89E4237D}] FeeDeviceIndex [/cover] -->
+                      <v:ref name="FeeDeviceIndex" type="SYMBOLIC-NAME-REFERENCE">
+                        <a:a name="DESC"
+                             value="EN: Reference to the device this block is stored in."/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                        <a:a name="UUID"
+                             value="ECUC:f3bfa469-e131-4f58-bb89-ca7fc4548d25"/>
+                        <a:da name="REF"
+                              value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Fls/FlsGeneral"/>
+              <a:da name="INVALID" type="XPath">
+                <a:tst expr="node:refvalid(.)" false="EN: FEE - The configured node does not exist or may not be referenced."/>
+              </a:da>
+                      </v:ref>
+                    </v:ctr>
+                  </v:lst>
+				  <!-- [cover parentID={40DA9E07-9E9A-4777-85E7-A111B37D8453}] FeeGeneral [/cover] -->
+                  <v:ctr name="FeeGeneral" type="IDENTIFIABLE">
+                    <a:a name="DESC"
+                         value="EN: Container for general parameters. These parameters are not specific to a block."/>
+                    <a:a name="UUID"
+                         value="ECUC:40da9e07-9e9a-4777-85e7-a111b37d8453"/>
+					<!-- [cover parentID={F262F806-4D29-4ef6-B4C1-6167282E1F21}] FeeDevErrorDetect [/cover] -->
+                    <v:var name="FeeDevErrorDetect" type="BOOLEAN">
+                      <a:a name="DESC"
+                           value="EN: Switches the Default Error Tracer (Det) detection and notification ON or OFF."/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID"
+                           value="ECUC:f262f806-4d29-4ef6-b4c1-6167282e1f21"/>
+                      <a:da name="DEFAULT" value="true"/>
+                      <a:da name="EDITABLE" type="XPath">
+                        <a:tst expr="../FeeBlockTypeConfigured != 'FEE_QUASI_STATIC_DATA_ONLY'"/>
+                      </a:da>
+                    </v:var>
+					<!-- [cover parentID={BF90F199-1DF4-4b47-806D-4E137459159F}] FeeSafetyEnable [/cover] -->
+					 				  <v:var name="FeeSafetyEnable" type="BOOLEAN">
+                      <a:a name="DESC" 
+                       value="EN: This parameter enables the user to avail the functionality to detect and report the safety errors."/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                       type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="f262f806-4d29-4ef6-c5c1-6167282e1f21"/>
+                      <a:da name="DEFAULT" value="true"/>
+                    </v:var> 
+                    <!-- [cover parentID={3E00D6CB-FB75-4882-A9C7-BD255F090277}][/cover] -->
+										<v:var name="FeeInitCheckApi" type="BOOLEAN">
+                       <a:a name="DESC" 
+                           value="EN: This parameter enables the user to avail the functionality to check if FEE initialisation is proper.
+                           true: Fee_17_InitCheck() API is enabled for use.
+                           false: Fee_17_InitCheck() API is disabled for use."/>
+                       <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                         type="IMPLEMENTATIONCONFIGCLASS">
+                         <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                       </a:a>
+                       <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                       <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                       <a:a name="SCOPE" value="LOCAL"/>
+                       <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                       <a:a name="UUID" 
+                         value="ECUC:f262f806-4d29-4ef6-b4c1-6333282e1f21"/>
+                       <a:da name="DEFAULT" value="false"/>
+                	  </v:var>
+					<!-- [cover parentID={A5360D15-F12C-489d-A6C1-D1946BB47B2B}] FeeMainFunctionPeriod [/cover] -->
+                    <v:var name="FeeMainFunctionPeriod" type="FLOAT">
+                      <a:a name="DESC"
+                           value="EN: The period between successive calls to the main function in seconds."/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="ECU"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID"
+                           value="ECUC:a5360d15-f12c-489d-a6c1-d1946bb47b2b"/>
+                      <a:da name="DEFAULT" value="0.01"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=1"/>
+                        <a:tst expr="&gt;=1.0E-3"/>
+                      </a:da>
+                    </v:var>
+					<!-- [cover parentID={3B4F73C8-354A-4d0e-86E6-0E2D07BA5590}] FeeNvmJobEndNotification [/cover] -->
+                    <v:lst name="FeeNvmJobEndNotification">
+                      <a:da name="MAX" value="1"/>
+                      <v:var name="FeeNvmJobEndNotification" type="FUNCTION-NAME">
+                        <a:a name="DESC"
+                             value="EN: Mapped to the job end notification routine provided by the upper layer module (NvM_JobEndNotification)."/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                          <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID"
+                             value="ECUC:3b4f73c8-354a-4d0e-86e6-0e2d07ba5590"/>
+                        <a:da name="DEFAULT" value="NULL_PTR"/>
+                      <a:da name="EDITABLE" type="XPath">
+                        <a:tst expr="../../FeeBlockTypeConfigured != 'FEE_QUASI_STATIC_DATA_ONLY'"/>
+                      </a:da>
+                      </v:var>
+                    </v:lst>
+					<!-- [cover parentID={9A658F03-834B-4dd3-ADD7-58B968076E7D}] FeeNvmJobErrorNotification [/cover] -->
+                    <v:lst name="FeeNvmJobErrorNotification">
+                      <a:da name="MAX" value="1"/>
+                      <v:var name="FeeNvmJobErrorNotification" type="FUNCTION-NAME">
+                        <a:a name="DESC"
+                             value="EN: Mapped to the job error notification routine provided by the upper layer module (NvM_JobErrorNotification)."/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v mclass="PreCompile">VariantPostBuild</icc:v>   
+                          <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID"
+                             value="ECUC:9a658f03-834b-4dd3-add7-58b968076e7d"/>
+                        <a:da name="DEFAULT" value="NULL_PTR"/>
+                      <a:da name="EDITABLE" type="XPath">
+                        <a:tst expr="../../FeeBlockTypeConfigured != 'FEE_QUASI_STATIC_DATA_ONLY'"/>
+                      </a:da>
+                      </v:var>
+                    </v:lst>
+                    <v:lst name="FeeQsJobEndNotification">
+                      <a:da name="MAX" value="1"/>
+                      <v:var name="FeeQsJobEndNotification" type="FUNCTION-NAME">
+                        <a:a name="DESC"
+                             value="EN: Mapped to the job end notification routine provided by the upper layer module (Qs_JobEndNotification)."/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                          <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID"
+                             value="ECUC:3b4f7399-354a-4d0e-86e6-0e2d07ba5590"/>
+                        <a:da name="EDITABLE" type="XPath">
+                          <a:tst expr="../../FeeBlockTypeConfigured != 'FEE_DOUBLE_SECTOR_DATA_ONLY'"/>
+                        </a:da>
+                        <a:da name="DEFAULT" value="NULL_PTR"/>
+                      </v:var>
+                    </v:lst>
+                    <v:lst name="FeeQsJobErrorNotification">
+                      <a:da name="MAX" value="1"/>
+                      <v:var name="FeeQsJobErrorNotification" type="FUNCTION-NAME">
+                        <a:a name="DESC"
+                             value="EN: Mapped to the job error notification routine provided by the upper layer module (Qs_JobErrorNotification)."/>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                          <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                          <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                        </a:a>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID"
+                             value="ECUC:9a658f77-834b-4dd3-add7-58b968076e7d"/>
+                        <a:da name="EDITABLE" type="XPath">
+                          <a:tst expr="../../FeeBlockTypeConfigured != 'FEE_DOUBLE_SECTOR_DATA_ONLY'"/>
+                        </a:da>
+                        <a:da name="DEFAULT" value="NULL_PTR"/>
+                      </v:var>
+                    </v:lst>
+					<!-- [cover parentID={CBBD2E13-D937-4e0f-8546-6EA5CC3B7EEB}] FeePollingMode [/cover] -->
+                    <v:var name="FeePollingMode" type="BOOLEAN">
+                      <a:a name="DESC"
+                           value="EN: Pre-processor switch to enable and disable the polling mode for this module."/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID"
+                           value="ECUC:cbbd2e13-d937-4e0f-8546-6ea5cc3b7eeb"/>
+                      <a:da name="DEFAULT" value="false"/>
+                      <a:da name="EDITABLE" value="false"/>
+                    </v:var>
+					<!-- [cover parentID={F064E794-EDD8-4288-B518-84C07839383D}] FeeSetModeSupported [/cover] -->
+                    <v:var name="FeeSetModeSupported" type="BOOLEAN">
+                      <a:a name="DESC"
+                           value="EN: Compiler switch to enable/disable the &apos;SetMode&apos; functionality of the FEE module."/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID"
+                           value="ECUC:f064e794-edd8-4288-b518-84c07839383d"/>
+                      <a:da name="DEFAULT" value="false"/>
+              <a:da name="EDITABLE" type="XPath">
+                        <a:tst expr="../../FeeGeneral/FeeBlockTypeConfigured != 'FEE_QUASI_STATIC_DATA_ONLY'"/>
+                      </a:da>
+                    </v:var>
+					<!-- [cover parentID={E66783A5-0BB8-4060-83ED-985D387AF3A5}] FeeVersionInfoApi [/cover] -->
+                    <v:var name="FeeVersionInfoApi" type="BOOLEAN">
+                      <a:a name="DESC"
+                           value="EN: Pre-processor switch to enable / disable the API to read out the modules version information."/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID"
+                           value="ECUC:e66783a5-0bb8-4060-83ed-985d387af3a5"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+					<!-- [cover parentID={CFC06841-4637-4082-9F2E-57DE66655C6F}] FeeVirtualPageSize [/cover] -->
+                    <v:var name="FeeVirtualPageSize" type="INTEGER_LABEL">
+                      <a:a name="DESC"
+                           value="EN: The size in bytes to which logical blocks shall be aligned."/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID"
+                           value="ECUC:cfc06841-4637-4082-9f2e-57de66655c6f"/>
+                      <a:da name="DEFAULT" value="8"/>
+                      <a:da name="EDITABLE" value="false"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=8"/>
+                        <a:tst expr="&gt;=8"/>
+                      </a:da>
+                    </v:var>
+					<!-- [cover parentID={6A9DECA8-4B23-4c92-9B45-46F5BD90F08D}] FeeBlockTypeConfigured [/cover] -->
+                    <v:var name="FeeBlockTypeConfigured" type="ENUMERATION">
+                      <a:a name="DESC"
+                           value="EN: This parameter is used to configure the type of Blocks configured"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="87cc1eb8-09f0-401c-92ff-abb71996004d"/>
+                      <a:da name="DEFAULT" value="FEE_DOUBLE_SECTOR_DATA_ONLY"/>
+                      <a:da name="RANGE">
+                        <a:v>FEE_DOUBLE_SECTOR_DATA_ONLY</a:v>
+                        <a:v>FEE_DOUBLE_SECTOR_AND_QUASI_STATIC_DATA</a:v>
+                        <a:v>FEE_QUASI_STATIC_DATA_ONLY</a:v>
+                      </a:da>
+                    </v:var>
+                  </v:ctr>
+				  <!-- [cover parentID={C99D74B3-E634-4c09-B512-87583D22C249}] FeePublishedInformation [/cover] -->
+                  <v:ctr name="FeePublishedInformation" type="IDENTIFIABLE">
+                    <a:a name="DESC"
+                         value="EN: Additional published parameters not covered by CommonPublishedInformation container."/>
+                    <a:a name="UUID"
+                         value="ECUC:c99d74b3-e634-4c09-b512-87583d22c249"/>
+					<!-- [cover parentID={05F4FDFA-6B05-4960-973E-F62746494B3D}] FeeBlockOverhead [/cover] -->
+                    <v:var name="FeeBlockOverhead" type="INTEGER_LABEL">
+                      <a:a name="DESC"
+                           value="EN: Management overhead per logical block in bytes. The actual overhead per block is calculated as:
+    (i) If ((FeeBlockSize % 7) == 0): FeeBlockOverhead = ((FeeBlockSize / 7) * 8) + 16 - FeeBlockSize.
+    (ii)If ((FeeBlockSize % 7) != 0): FeeBlockOverhead = (((FeeBlockSize / 7) + 1) * 8) + 16 - FeeBlockSize.
+    Note: Integer arithmetic is used in the above calculation."/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SCOPE" value="LOCAL"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="ECUC:05f4fdfa-6b05-4960-973e-f62746494b3e"/>
+                      <a:da name="DEFAULT" value="17"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=17"/>
+                        <a:tst expr="&gt;=17"/>
+                      </a:da>
+                    </v:var>
+					<!-- [cover parentID={FF042C2B-4EA3-4cc9-B210-6B4956DA10D9}] FeePageOverhead [/cover] -->
+                    <v:var name="FeePageOverhead" type="INTEGER_LABEL">
+                      <a:a name="DESC"
+                           value="EN: Block management overhead per page in bytes.
+    Note: This value is applicable only for the pages containing logical block data bytes (i.e., it is not applicable for the pages which contain only implementation specific management data)."/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="AUTOSAR_ECUC"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="ECUC:ff042c2b-4ea3-4cc9-b210-6b4956da10da"/>
+                      <a:da name="DEFAULT" value="1"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=1"/>
+                        <a:tst expr="&gt;=1"/>
+                      </a:da>
+                    </v:var>
+                  </v:ctr>
+                  <v:ctr name="FeeIfxSpecificConfig" type="IDENTIFIABLE">
+                    <a:a name="DESC" value="This container has IFX specific parameters required for the working of FEE"/>
+                    <a:a name="UUID"
+                         value="02f948d0-42c6-6e44-af25-89cd4d729345"/>
+                    <v:var name="FeeThresholdValue" type="INTEGER">
+                      <a:a name="DESC"
+                           value="EN: This parameter describes the threshold value (in bytes from the end of FEE sector) for triggering garbage collection/sector change."/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="fb7ccac3-78f4-49ae-92ec-8c3332ee39f2"/>
+                      <a:da name="DEFAULT" value="200"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=ecu:get('Fee.ThresholdSize')"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="EDITABLE" type="XPath">
+                        <a:tst expr="../../FeeGeneral/FeeBlockTypeConfigured != 'FEE_QUASI_STATIC_DATA_ONLY'"/>
+                      </a:da>
+                    </v:var>
+					<!-- [cover parentID={B7008EE8-EF41-4a6d-8350-F7E1E5F4332B}] FeeMaxBlockCount [/cover] -->
+                    <v:var name="FeeMaxBlockCount" type="INTEGER">
+                      <a:a name="DESC"
+                           value="EN: This configuration parameter specifies the total number of blocks throughout all configurations; Note that the blocks which are shared across configurations are counted only once.
+    This parameter decides the cache table size at pre-compile time. The cache table holds the information of both configured and un-configured blocks.
+    Configuration of this parameter shall be carefully done. Higher value implies higher RAM area consumption for cache table. Lower value would result in loss of un-configured block(s) during GC (if FeeUnConfigBlkOverflowHandle is FEE_CONTINUE) or illegal state of FEE (if FeeUnConfigBlkOverflowHandle is FEE_STOP_AT_GC).
+
+    Example 1: Configuration sets having mutually exclusive blocks:
+    Configuration A: Number of blocks configured is 10.
+    Configuration B: Number of blocks configured is 25.
+    Then, FeeMaxBlockCount = 35.
+
+    Example 2: 5 blocks are shared/used by both Configuration A and Configuration B:
+    Configuration A: Number of blocks configured is 10.
+    Configuration B: Number of blocks configured is 25.
+    Then, FeeMaxBlockCount = 30 (i.e., shared blocks are counted only once)."/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="4a2531c3-429a-4527-8cd6-4fbe7bc6c4e1"/>
+                      <a:da name="DEFAULT" value="1"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=ecu:get('Fee.NumberOfBlocks')" true="FeeMaxBlockCount exceeded the allowed limit"/>
+                        <a:tst expr="&gt;=1" true="FeeMaxBlockCount should not be less than 1"/>
+                      </a:da>
+                    </v:var>
+					<!-- [cover parentID={2AFDE015-0251-4fff-8322-E82A54115CD0}] FeeUseEraseSuspend [/cover] -->
+                    <v:var name="FeeUseEraseSuspend" type="BOOLEAN">
+                      <a:a name="DESC"
+                           value="EN: This parameter specifies the usage of the erase suspend feature provided by the DFLASH hardware.
+    If it is configured as TRUE, then the read/write requests from the user are serviced during the erase operation of the GC.
+    If it is configured as FALSE, then the user request is kept pending till the erase operation is completed.
+    Note: This parameter can be true only if FlsUseEraseSuspend is true."/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="a4e7e16f-97ac-4db0-aeea-76aed97f9998"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                    <v:var name="FeeStateVarStructure" type="STRING">
+                      <a:a name="DESC"
+                           value="EN: This parameter is the name of the structure, which would contain all the global variables of FEE. Using this user can allocate the space for the variables at his behest to avoid any possible linking problems."/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="true"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PostBuild">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="51030966-6cef-4965-98c6-09d2163e46ff"/>
+                      <a:da name="DEFAULT" value="Fee_StateVar"/>
+                      <a:da name="INVALID" type="XPath">
+                          <a:tst expr="((. = 'NULL')or(. = '') or (.=' '))" true="EN: FEE - Invalid Configuration. Value of NULL or empty field is not allowed for this parameter."/>
+                      </a:da>
+                    </v:var>
+					            <v:var name="FeeUnConfigBlock" type="ENUMERATION">
+                      <a:a name="DESC"
+                           value="EN: This parameter is used to configure if unconfigured blocks should be copied or not during GC operation"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="87cc1e67-09f0-401c-92ff-abb71996004d"/>
+                      <a:da name="DEFAULT" value="FEE_UNCONFIG_BLOCK_IGNORE"/>
+                      <a:da name="RANGE">
+                        <a:v>FEE_UNCONFIG_BLOCK_IGNORE</a:v>
+                        <a:v>FEE_UNCONFIG_BLOCK_KEEP</a:v>
+                      </a:da>
+                      <a:da name="EDITABLE" type="XPath">
+                        <a:tst expr="../../FeeGeneral/FeeBlockTypeConfigured != 'FEE_QUASI_STATIC_DATA_ONLY'"/>
+                      </a:da>
+                    </v:var>
+					<!-- [cover parentID={D4FEF6BC-6253-4330-96BE-76C2116853E8}] FeeUnConfigBlkOverflowHandle [/cover] -->
+                    <v:var name="FeeUnConfigBlkOverflowHandle" type="ENUMERATION">
+                      <a:a name="DESC"
+                           value="EN: This parameter is used to configure the behavior of FEE upon detection of overflow of number of unconfigured blocks.
+    FEE_CONTINUE: Un-configured blocks which could not be accommodated in the cache table, will be lost after the GC. FEE will continue as expected for the currently active configuration.
+    FEE_STOP_AT_GC: During GC, FEE will enter a pseudo illegal state where only read is allowed but write is not allowed."/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="87cc1eb8-09f0-401c-92ff-abb71996004f"/>
+                      <a:da name="DEFAULT" value="FEE_CONTINUE"/>
+                      <a:da name="RANGE">
+                        <a:v>FEE_CONTINUE</a:v>
+                        <a:v>FEE_STOP_AT_GC</a:v>
+                      </a:da>
+                      <a:da name="EDITABLE" type="XPath">
+                        <a:tst expr="../../FeeGeneral/FeeBlockTypeConfigured != 'FEE_QUASI_STATIC_DATA_ONLY'"/>
+                      </a:da>
+                    </v:var>
+					<!-- [cover parentID={578EB3CB-78B9-47b1-A0D9-79D2EE25E463}] FeeGcRestart [/cover] -->
+                    <v:var name="FeeGcRestart" type="ENUMERATION">
+                      <a:a name="DESC"
+                           value="EN: This parameter is used to configure Garbage Collection restarting point.
+    FEE_GC_RESTART_INIT: (if GC was interrupted in previous run) Restart GC after FEE Initialization. Hence, internal activities like repairing state pages, building lookup table are done after Fee_Init is called.
+    FEE_GC_RESTART_WRITE: (if GC was interrupted in previous run) Restart GC when the first read/write/invalidate request is issued. Also, other internal activities like repairing state pages, building lookup table are done only after the first Read/write/invalidate request is issued"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="ccb0731b-222b-4118-8c48-f7046b8328c1"/>
+                      <a:da name="DEFAULT" value="FEE_GC_RESTART_INIT"/>
+                      <a:da name="RANGE">
+                        <a:v>FEE_GC_RESTART_INIT</a:v>
+                        <a:v>FEE_GC_RESTART_WRITE</a:v>
+                      </a:da>
+                      <a:da name="EDITABLE" type="XPath">
+                        <a:tst expr="../../FeeGeneral/FeeBlockTypeConfigured != 'FEE_QUASI_STATIC_DATA_ONLY'"/>
+                      </a:da>
+                    </v:var>
+					<!-- [cover parentID={BCB2AD2B-0787-4ca5-9E82-A17861574B06}] FeeGetCycleCountApi [/cover] -->
+                    <v:var name="FeeGetCycleCountApi" type="BOOLEAN">
+                      <a:a name="DESC"
+                           value="EN: Pre-processor switch to enable / disable the API to get the block cycle count and erase cycle count."/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="8b82d416-42ea-4413-a123-a1f7b0c503b0"/>
+                      <a:da name="DEFAULT" value="false"/>
+                      <a:da name="EDITABLE" type="XPath">
+                        <a:tst expr="../../FeeGeneral/FeeBlockTypeConfigured != 'FEE_QUASI_STATIC_DATA_ONLY'"/>
+                      </a:da>
+                    </v:var>
+                    <v:var name="FeeEraseAllEnable" type="BOOLEAN">
+                      <a:a name="DESC"
+                           value="EN: This parameter allows the user to configure if the sectors should be erased when FEE reaches an illegal state.
+    TRUE: An erase all (DF_EEPROM Erase and Format) is performed. In such a case FEE shall resume back to normal state but previous data (if any) cannot be recovered.
+    FALSE: FEE settles in the illegal state and cannot continue normally. However, data is kept intact in DF_EEPROM and may be recovered."/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="20632ea9-0cad-4426-a0f4-e236e9c507eb"/>
+                      <a:da name="DEFAULT" value="false"/>
+                      <a:da name="EDITABLE" type="XPath">
+                        <a:tst expr="../../FeeGeneral/FeeBlockTypeConfigured != 'FEE_QUASI_STATIC_DATA_ONLY'"/>
+                      </a:da>
+                    </v:var>
+					<!-- [cover parentID={770CE0E6-8CF7-419e-9CD0-18F6E1DBB200}] FeeGetPrevDataApi [/cover] -->
+                    <v:var name="FeeGetPrevDataApi" type="BOOLEAN">
+                      <a:a name="DESC"
+                           value="EN: This parameter allows the user to read old copy (one instance old) of the required block."/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="20632ea9-0cad-4426-a0f4-e236e9c507ec"/>
+                      <a:da name="DEFAULT" value="false"/>
+                      <a:da name="EDITABLE" type="XPath">
+                        <a:tst expr="../../FeeGeneral/FeeBlockTypeConfigured != 'FEE_QUASI_STATIC_DATA_ONLY'"/>
+                      </a:da>
+                    </v:var>
+					<!-- [cover parentID={E493A0DD-FA1F-4363-9AF0-CECE190D1210}] FeeCancelAllApi [/cover] -->
+                    <v:var name="FeeCancelAllApi" type="BOOLEAN">
+                      <a:a name="DESC"
+                           value="EN: This parameter allows the user to enable cancelling ongoing operation to write high priority quasi static data."/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="20632ea9-0cad-4426-a0f4-e244e9c507ec"/>
+                      <a:da name="DEFAULT" value="false"/>
+                      <a:da name="EDITABLE" type="XPath">
+                        <a:tst expr="../../FeeGeneral/FeeBlockTypeConfigured != 'FEE_DOUBLE_SECTOR_DATA_ONLY'"/>
+                      </a:da>
+                    </v:var>
+                    <v:var name="FeeMaxBytesPerCycle" type="ENUMERATION">
+                      <a:a name="DESC"
+                           value="EN: This parameter allows user to configure maximum number of bytes to be processed in one FEE MAIN Function cycle.
+                      The value is including the extra FEE overhead like header, consecutive page id etc "/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="20632ea9-0acd-4426-4f0a-e236e9c507ec"/>
+                      <a:da name="DEFAULT" value="FEE_MAX_BYTES_512"/>
+                      <a:da name="RANGE">
+                        <a:v>FEE_MAX_BYTES_64</a:v>
+                        <a:v>FEE_MAX_BYTES_128</a:v>
+                        <a:v>FEE_MAX_BYTES_256</a:v>
+                        <a:v>FEE_MAX_BYTES_512</a:v>
+                      </a:da>
+                      <a:da name="EDITABLE" type="XPath">
+                        <a:tst expr="../../FeeGeneral/FeeBlockTypeConfigured != 'FEE_QUASI_STATIC_DATA_ONLY'"/>
+                      </a:da>
+                    </v:var>
+					<!-- [cover parentID={E68960EB-A1C3-49aa-A26D-612C2D9E6C3F}] FeeIllegalStateNotification [/cover] -->
+                    <v:var name="FeeNvmIllegalStateNotification" type="FUNCTION-NAME">
+                      <a:a name="DESC"
+                           value="EN: This parameter is a pointer to a notification API which is called when Fee (NVM part) reaches an Illegal state. Illegal state here means that FEE is not able to proceed and user should do a power-on reset.
+                Illegal notification can also be raised due to HW errors during FEE's internal activities like GC, Initialisation of GC"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="6a28daf7-b174-4e5c-a3fd-e10e22a84bce"/>
+                      <a:da name="DEFAULT" value="NULL_PTR"/>
+                      <a:da name="EDITABLE" type="XPath">
+                        <a:tst expr="../../FeeGeneral/FeeBlockTypeConfigured != 'FEE_QUASI_STATIC_DATA_ONLY'"/>
+                      </a:da>
+                    </v:var>
+                      <v:var name="FeeQsIllegalStateNotification" type="FUNCTION-NAME">
+                      <a:a name="DESC"
+                           value="EN: This parameter is a pointer to a notification API which is called when Fee (QS part) reaches an Illegal state.
+                Illegal notification is raised If QS area happens to be in virgin state and FeeVirginFlashIllegalState is not set"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="6a28daf7-b274-4e5c-a4fd-e10e22a64bce"/>
+                      <a:da name="DEFAULT" value="NULL_PTR"/>
+                      <a:da name="EDITABLE" type="XPath">
+                        <a:tst expr="../../FeeGeneral/FeeBlockTypeConfigured != 'FEE_DOUBLE_SECTOR_DATA_ONLY'"/>
+                      </a:da>
+                    </v:var>     
+                    <!-- [cover parentID={C72C5DE3-E847-45db-9396-80E9B7D6DACE}] FeeQsHardenErrorNotification [/cover] -->               
+                    <v:var name="FeeQsHardenErrorNotification" type="FUNCTION-NAME">
+                      <a:a name="DESC"
+                           value="EN: This is a pointer to a notification API which is called by Fee when an error is encountered while performing hardening operation."/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="6a29daf7-b154-4e5c-a3fd-e10b22a84ace"/>
+                      <a:da name="DEFAULT" value="NULL_PTR"/>
+                      <a:da name="EDITABLE" type="XPath">
+                        <a:tst expr="../../FeeGeneral/FeeBlockTypeConfigured = 'FEE_DOUBLE_SECTOR_AND_QUASI_STATIC_DATA'"/>
+                      </a:da>
+                    </v:var>                    
+					<!-- [cover parentID={74BB79EB-475D-4311-BF6C-0295950A184F}] FeeVirginFlashIllegalState [/cover] -->
+                    <v:var name="FeeVirginFlashIllegalState" type="BOOLEAN">
+                      <a:a name="DESC"
+                        value="EN: This parameter enables FEE to reach illegal state upon detection of virgin flash (DF_EEPROM).
+              TRUE: Upon detection of virgin flash (DF_EEPROM) - FEE reaches illegal state and calls the configured illegal state notification function.
+              FALSE: Upon detection of virgin flash (DF_EEPROM) - FEE programs the initial state pages and will be available for user requests."/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="20632ea9-0cad-4426-a0f4-e236e9c507ed"/>
+                      <a:da name="DEFAULT" value="false"/>
+                    </v:var>
+                  </v:ctr>
+                  <v:lst name="FeeDemEventParameterRefs" type="MAP">
+                        <a:da name="MAX" type="XPath" expr="node:fallback(../FeeGeneral/FeeBlockTypeConfigured,'A') = 'FEE_QUASI_STATIC_DATA_ONLY'" true="0" false="1"/>
+                        <a:da name="MIN" type="XPath" expr="node:fallback(../FeeGeneral/FeeSafetyEnable,'false') = 'true' and node:fallback(../FeeGeneral/FeeBlockTypeConfigured,'A') != 'FEE_QUASI_STATIC_DATA_ONLY'" true="1" false="0"/>
+                    <v:ctr name="FeeDemEventParameterRefs" type="IDENTIFIABLE">
+                      <a:a name="DESC"
+                          value="EN: This container contains the references to DemEventParameter elements. "/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                      </a:a>
+                          
+                      <a:a name="UUID"
+                          value="ECUC:ff042c2b-4ea3-4cc9-b210-6b4956da10d9"/>
+						  <!-- [cover parentID={E5EAEC88-C454-4b1c-9F6E-903720539716}] FEE_E_GC_INIT [/cover] -->
+                      <v:lst name="FEE_E_GC_INIT">
+                        <a:da name="MAX" type="XPath" expr="node:fallback(../../../FeeGeneral/FeeBlockTypeConfigured,'A') = 'FEE_QUASI_STATIC_DATA_ONLY'" true="0" false="1"/>
+                        <a:da name="MIN" type="XPath" expr="node:fallback(../../../FeeGeneral/FeeSafetyEnable,'false') = 'true' and node:fallback(../../../FeeGeneral/FeeBlockTypeConfigured,'A') != 'FEE_QUASI_STATIC_DATA_ONLY'" true="1" false="0"/>
+                        <v:ref name="FEE_E_GC_INIT"
+                               type="SYMBOLIC-NAME-REFERENCE">
+                          <a:a name="DESC"
+                               value="EN:Reference to DemEventParameter for the production error FEE_E_GC_INIT."/>
+                          <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="UUID"
+                               value="8dad21b3-69a0-49d9-8e35-ae145a074f38"/>
+                          <a:da name="REF"
+                                value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Dem/DemConfigSet/DemEventParameter"/>
+                          <a:da name="INVALID" type="XPath">
+                            <a:tst expr="node:refvalid(.)" false="EN: FEE - The configured node does not exist or may not be referenced."/>
+                          </a:da>
+                        </v:ref>
+                      </v:lst>
+					  <!-- [cover parentID={BFD453B8-551B-4e4a-9407-97CBC2F48CFB}] FEE_E_WRITE [/cover] -->
+                      <v:lst name="FEE_E_WRITE">
+                        <a:da name="MAX" type="XPath" expr="node:fallback(../../../FeeGeneral/FeeBlockTypeConfigured,'A') = 'FEE_QUASI_STATIC_DATA_ONLY'" true="0" false="1"/>
+                        <a:da name="MIN" type="XPath" expr="node:fallback(../../../FeeGeneral/FeeSafetyEnable,'false') = 'true' and node:fallback(../../../FeeGeneral/FeeBlockTypeConfigured,'A') != 'FEE_QUASI_STATIC_DATA_ONLY'" true="1" false="0"/>
+                        <v:ref name="FEE_E_WRITE"
+                               type="SYMBOLIC-NAME-REFERENCE">
+                          <a:a name="DESC"
+                               value="EN:Reference to DemEventParameter for the production error FEE_E_WRITE."/>
+                          <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="UUID"
+                               value="8dad21b3-69a0-49d9-8e35-ae135a074f38"/>
+                          <a:da name="REF"
+                                value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Dem/DemConfigSet/DemEventParameter"/>
+                          <a:da name="INVALID" type="XPath">
+                          <a:tst expr="node:refvalid(.)" false="EN: FEE - The configured node does not exist or may not be referenced."/>
+                          </a:da>
+                        </v:ref>
+                      </v:lst>
+					  <!-- [cover parentID={735ACBB2-7D1B-4f16-847B-853A90F50454}] FEE_E_READ [/cover] -->
+					  <!-- [cover parentID={BF90F199-1DF4-4b47-806D-4E137459159F}] FeeSafetyEnable [/cover] -->
+                      <v:lst name="FEE_E_READ">
+                        <a:da name="MAX" type="XPath" expr="node:fallback(../../../FeeGeneral/FeeBlockTypeConfigured,'A') = 'FEE_QUASI_STATIC_DATA_ONLY'" true="0" false="1"/>
+                        <a:da name="MIN" type="XPath" expr="node:fallback(../../../FeeGeneral/FeeSafetyEnable,'false') = 'true' and node:fallback(../../../FeeGeneral/FeeBlockTypeConfigured,'A') != 'FEE_QUASI_STATIC_DATA_ONLY'" true="1" false="0"/>
+                        <v:ref name="FEE_E_READ"
+                               type="SYMBOLIC-NAME-REFERENCE">
+                          <a:a name="DESC"
+                               value="EN:Reference to DemEventParameter for the production error FEE_E_READ."/>
+                          <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="UUID"
+                               value="93cbda9d-85f7-46a2-a76f-98a6e718f5f4"/>
+                          <a:da name="REF"
+                                value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Dem/DemConfigSet/DemEventParameter"/>
+                          <a:da name="INVALID" type="XPath">
+                          <a:tst expr="node:refvalid(.)" false="EN: FEE - The configured node does not exist or may not be referenced."/>
+                          </a:da>
+                        </v:ref>
+                      </v:lst>
+					  <!-- [cover parentID={8A49BC31-AE03-4d37-A60B-25F3D6C45FB7}] FEE_E_GC_READ [/cover] -->
+                      <v:lst name="FEE_E_GC_READ">
+                        <a:da name="MAX" type="XPath" expr="node:fallback(../../../FeeGeneral/FeeBlockTypeConfigured,'A') = 'FEE_QUASI_STATIC_DATA_ONLY'" true="0" false="1"/>
+                        <a:da name="MIN" type="XPath" expr="node:fallback(../../../FeeGeneral/FeeSafetyEnable,'false') = 'true' and node:fallback(../../../FeeGeneral/FeeBlockTypeConfigured,'A') != 'FEE_QUASI_STATIC_DATA_ONLY'" true="1" false="0"/>
+                        <v:ref name="FEE_E_GC_READ"
+                               type="SYMBOLIC-NAME-REFERENCE">
+                          <a:a name="DESC"
+                               value="EN:Reference to DemEventParameter for the production error FEE_E_GC_READ."/>
+                          <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="UUID"
+                               value="93cbda9d-85f7-46a2-a76f-98a6e718f5f5"/>
+                          <a:da name="REF"
+                                value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Dem/DemConfigSet/DemEventParameter"/>
+                          <a:da name="INVALID" type="XPath">
+                          <a:tst expr="node:refvalid(.)" false="EN: FEE - The configured node does not exist or may not be referenced."/>
+                          </a:da>
+                        </v:ref>
+                      </v:lst>
+					  <!-- [cover parentID={741EB107-4C0C-4ae2-8596-3E84C938F176}] FEE_E_GC_WRITE [/cover] -->
+                      <v:lst name="FEE_E_GC_WRITE">
+                        <a:da name="MAX" type="XPath" expr="node:fallback(../../../FeeGeneral/FeeBlockTypeConfigured,'A') = 'FEE_QUASI_STATIC_DATA_ONLY'" true="0" false="1"/>
+                        <a:da name="MIN" type="XPath" expr="node:fallback(../../../FeeGeneral/FeeSafetyEnable,'false') = 'true' and node:fallback(../../../FeeGeneral/FeeBlockTypeConfigured,'A') != 'FEE_QUASI_STATIC_DATA_ONLY'" true="1" false="0"/>
+                        <v:ref name="FEE_E_GC_WRITE"
+                               type="SYMBOLIC-NAME-REFERENCE">
+                          <a:a name="DESC"
+                               value="EN:Reference to DemEventParameter for the production error FEE_E_GC_WRITE."/>
+                          <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="UUID"
+                               value="8dad21b3-69a0-49d9-8e35-ae145a174f38"/>
+                          <a:da name="REF"
+                                value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Dem/DemConfigSet/DemEventParameter"/>
+                          <a:da name="INVALID" type="XPath">
+                          <a:tst expr="node:refvalid(.)" false="EN: FEE - The configured node does not exist or may not be referenced."/>
+                          </a:da>
+                        </v:ref>
+                      </v:lst>
+					  <!-- [cover parentID={9D35C475-80FF-4abb-AF70-DCD64B02F398}] FEE_E_GC_ERASE [/cover] -->
+                      <v:lst name="FEE_E_GC_ERASE">
+                        <a:da name="MAX" type="XPath" expr="node:fallback(../../../FeeGeneral/FeeBlockTypeConfigured,'A') = 'FEE_QUASI_STATIC_DATA_ONLY'" true="0" false="1"/>
+                        <a:da name="MIN" type="XPath" expr="node:fallback(../../../FeeGeneral/FeeSafetyEnable,'false') = 'true' and node:fallback(../../../FeeGeneral/FeeBlockTypeConfigured,'A') != 'FEE_QUASI_STATIC_DATA_ONLY'" true="1" false="0"/>
+                        <v:ref name="FEE_E_GC_ERASE"
+                               type="SYMBOLIC-NAME-REFERENCE">
+                          <a:a name="DESC"
+                               value="EN:Reference to DemEventParameter for the production error FEE_E_GC_ERASE."/>
+                          <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="UUID"
+                               value="8dad21b3-69a0-49d9-8e35-ae145a064f38"/>
+                          <a:da name="REF"
+                                value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Dem/DemConfigSet/DemEventParameter"/>
+                          <a:da name="INVALID" type="XPath">
+                          <a:tst expr="node:refvalid(.)" false="EN: FEE - The configured node does not exist or may not be referenced."/>
+                          </a:da>
+                        </v:ref>
+                      </v:lst>
+					  <!-- [cover parentID={DA764796-0FB7-499e-82DA-503E1613DA08}] FEE_E_INVALIDATE [/cover] -->
+                      <v:lst name="FEE_E_INVALIDATE">
+                        <a:da name="MAX" type="XPath" expr="node:fallback(../../../FeeGeneral/FeeBlockTypeConfigured,'A') = 'FEE_QUASI_STATIC_DATA_ONLY'" true="0" false="1"/>
+                        <a:da name="MIN" type="XPath" expr="node:fallback(../../../FeeGeneral/FeeSafetyEnable,'false') = 'true' and node:fallback(../../../FeeGeneral/FeeBlockTypeConfigured,'A') != 'FEE_QUASI_STATIC_DATA_ONLY'" true="1" false="0"/>
+                        <v:ref name="FEE_E_INVALIDATE"
+                               type="SYMBOLIC-NAME-REFERENCE">
+                          <a:a name="DESC"
+                               value="EN:Reference to DemEventParameter for the production error FEE_E_INVALIDATE."/>
+                          <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="UUID"
+                               value="8dad21b3-69a0-49d9-8e35-ae145a074f98"/>
+                          <a:da name="REF"
+                                value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Dem/DemConfigSet/DemEventParameter"/>
+                <a:da name="INVALID" type="XPath">
+                            <a:tst expr="node:refvalid(.)" false="EN: FEE - The configured node does not exist or may not be referenced."/>
+                          </a:da>
+                        </v:ref>
+                      </v:lst>
+					  <!-- [cover parentID={D4AB257F-22FD-46ae-B333-D6DFA582569C}] FEE_E_WRITE_CYCLES_EXHAUSTED [/cover] -->
+                      <v:lst name="FEE_E_WRITE_CYCLES_EXHAUSTED">
+                       <a:da name="MAX" type="XPath" expr="node:fallback(../../../FeeGeneral/FeeBlockTypeConfigured,'A') = 'FEE_QUASI_STATIC_DATA_ONLY'" true="0" false="1"/>
+                       <a:da name="MIN" type="XPath" expr="node:fallback(../../../FeeGeneral/FeeSafetyEnable,'false') = 'true' and node:fallback(../../../FeeGeneral/FeeBlockTypeConfigured,'A') != 'FEE_QUASI_STATIC_DATA_ONLY'" true="1" false="0"/>
+                       <v:ref name="FEE_E_WRITE_CYCLES_EXHAUSTED"
+                              type="SYMBOLIC-NAME-REFERENCE">
+                         <a:a name="DESC"
+                              value="EN:Reference to DemEventParameter for the production error FEE_E_WRITE_CYCLES_EXHAUSTED."/>
+                         <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                         <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                         <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                              type="IMPLEMENTATIONCONFIGCLASS">
+                           <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                           <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                         </a:a>
+                         <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                         <a:a name="UUID"
+                              value="8dad21b3-69a0-49d9-8e35-ae145a074e38"/>
+                         <a:da name="REF"
+                               value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Dem/DemConfigSet/DemEventParameter"/>
+              <a:da name="INVALID" type="XPath">
+                            <a:tst expr="node:refvalid(.)" false="EN: FEE - The configured node does not exist or may not be referenced."/>
+                        </a:da>
+                       </v:ref>
+                     </v:lst>
+					 <!-- [cover parentID={CE47DB72-4A0E-4a37-A8E6-02475987489B}] FEE_E_GC_TRIG [/cover] -->
+                      <v:lst name="FEE_E_GC_TRIG">
+                        <a:da name="MAX" type="XPath" expr="node:fallback(../../../FeeGeneral/FeeBlockTypeConfigured,'A') = 'FEE_QUASI_STATIC_DATA_ONLY'" true="0" false="1"/>
+                        <a:da name="MIN" type="XPath" expr="node:fallback(../../../FeeGeneral/FeeSafetyEnable,'false') = 'true' and node:fallback(../../../FeeGeneral/FeeBlockTypeConfigured,'A') != 'FEE_QUASI_STATIC_DATA_ONLY'" true="1" false="0"/>
+                        <v:ref name="FEE_E_GC_TRIG"
+                               type="SYMBOLIC-NAME-REFERENCE">
+                          <a:a name="DESC"
+                               value="EN:Reference to DemEventParameter for the production error FEE_E_GC_TRIG."/>
+                          <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="UUID"
+                               value="8dad21b3-69a0-49d9-8e35-ae145a074e9a"/>
+                          <a:da name="REF"
+                                value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Dem/DemConfigSet/DemEventParameter"/>
+                <a:da name="INVALID" type="XPath">
+                            <a:tst expr="node:refvalid(.)" false="EN: FEE - The configured node does not exist or may not be referenced."/>
+                          </a:da>
+                        </v:ref>
+                      </v:lst>
+					  <!-- [cover parentID={54A46BAA-FA3D-4d54-92E2-474A4CED967A}] FEE_E_UNCONFIG_BLK_EXCEEDED [/cover] -->
+                      <v:lst name="FEE_E_UNCONFIG_BLK_EXCEEDED">
+                        <a:da name="MAX" type="XPath" expr="node:fallback(../../../FeeGeneral/FeeBlockTypeConfigured,'A') = 'FEE_QUASI_STATIC_DATA_ONLY'" true="0" false="1"/>
+                        <a:da name="MIN" type="XPath" expr="node:fallback(../../../FeeGeneral/FeeSafetyEnable,'false') = 'true' and node:fallback(../../../FeeGeneral/FeeBlockTypeConfigured,'A') != 'FEE_QUASI_STATIC_DATA_ONLY'" true="1" false="0"/>
+                        <v:ref name="FEE_E_UNCONFIG_BLK_EXCEEDED"
+                               type="SYMBOLIC-NAME-REFERENCE">
+                          <a:a name="DESC"
+                               value="EN:Reference to DemEventParameter for the production error FEE_E_UNCONFIG_BLK_EXCEEDED."/>
+                          <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+                          <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                          <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                               type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v mclass="PreCompile">VariantPostBuild</icc:v>
+                            <icc:v vclass="PreCompile">VariantPostBuild</icc:v>
+                          </a:a>
+                          <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                          <a:a name="UUID"
+                               value="8dad21b3-69a0-49d9-8e35-ae145a074e99"/>
+                          <a:da name="REF"
+                                value="ASPathDataOfSchema:/AUTOSAR/EcucDefs/Dem/DemConfigSet/DemEventParameter"/>
+                <a:da name="INVALID" type="XPath">
+                            <a:tst expr="node:refvalid(.)" false="EN: FEE - The configured node does not exist or may not be referenced."/>
+                          </a:da>
+                        </v:ref>
+                      </v:lst>
+                    </v:ctr>
+                    <a:da name="EDITABLE" type="XPath">
+                        <a:tst expr="../../FeeBlockTypeConfigured != 'FEE_QUASI_STATIC_DATA_ONLY'"/>
+                    </a:da>
+                  </v:lst>
+				  <!-- [cover parentID={B2A3C199-ED36-4c03-B9CD-413FE857A338}] CommonPublished Information [/cover] -->
+                  <v:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                    <a:a name="DESC" value="EN: Common container, aggregated by all modules. It contains published information about vendor and versions."/>
+                    <a:a name="UUID" value="492f8482-3e2c-4bf1-b27f-01fd7a235788"/>
+                    <!-- [cover parentID={A8B779FC-67ED-4b4e-8D69-1B773C01C21E}] ArMajorVersion [/cover] -->
+                    <v:var name="ArMajorVersion" type="INTEGER_LABEL">
+                      <a:a name="DESC" value="EN: Major version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="bd0a8d38-4d8c-4ee9-88fe-1166b258bb8a"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=255"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="DEFAULT" value="4"/>
+                    </v:var>
+					<!-- [cover parentID={708D9E9D-AA37-4586-85CE-A80C3DE221F6}] ArMinorVersion [/cover] -->
+                    <v:var name="ArMinorVersion" type="INTEGER_LABEL">
+                      <a:a name="DESC" value="EN: Minor version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="73f87c7f-e230-4178-bff0-ea2704aae656"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=255"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="DEFAULT" value="2"/>
+                    </v:var>
+					<!-- [cover parentID={0F649B3A-A380-4bd1-9C69-F3B668EC4DC7}] ArPatchVersion [/cover] -->
+                    <v:var name="ArPatchVersion" type="INTEGER_LABEL">
+                      <a:a name="DESC" value="EN: Patch level version number of AUTOSAR specification on which the appropriate implementation is based on."/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="2380135d-6778-417a-a34b-e100aad4dd54"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=255"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="DEFAULT" value="2"/>
+                    </v:var>
+					<!-- [cover parentID={5E52B714-1D21-4e97-9243-4BD5A105CC78}] SwMajorVersion [/cover] -->
+					<!-- [cover parentID={47A7CC71-5933-4881-BF29-3907F43DD604}][/cover] -->
+                    <v:var name="SwMajorVersion" type="INTEGER_LABEL">
+                      <a:a name="DESC" value="EN: Major version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="fca015e3-5f28-4cbe-8949-8fab87d86827"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=255"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="DEFAULT" value="3"/>
+                    </v:var>
+					<!-- [cover parentID={5F9102A9-D092-474b-B946-8567DB29CEE0}] SwMinorVersion [/cover] -->
+                    <v:var name="SwMinorVersion" type="INTEGER_LABEL">
+                      <a:a name="DESC" value="EN: Minor version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="14ab81e0-3d80-43dc-8b92-2a7e5a542df9"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=255"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="DEFAULT" value="0"/>
+                    </v:var>
+					<!-- [cover parentID={DB0FDE29-ED54-40c3-9D2A-1821C6835F26}] SwPatchVersion [/cover] -->
+                    <v:var name="SwPatchVersion" type="INTEGER_LABEL">
+                      <a:a name="DESC" value="EN: Patch level version number of the vendor specific implementation of the module. The numbering is vendor specific."/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="32e37bfd-18b6-41d1-9248-a81dae0fe4c5"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=255"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="DEFAULT" value="0"/>
+                    </v:var>
+					<!-- [cover parentID={03F6162C-BC70-4342-911C-DB1594B27000}] ModuleId [/cover] -->
+                    <v:var name="ModuleId" type="INTEGER_LABEL">
+                      <a:a name="DESC" value="EN: Module ID of this module from Module List"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="3b407478-6902-4f80-b7cf-f33b0854e638"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=65535"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="DEFAULT" value="21"/>
+                    </v:var>
+					<!-- [cover parentID={13FC0819-8266-4310-B101-76185A965352}] VendorId [/cover] -->
+                    <v:var name="VendorId" type="INTEGER_LABEL">
+                      <a:a name="DESC" value="EN: Vendor ID of the dedicated implementation of this module according to the AUTOSAR vendor list"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS"
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="7d650b2d-4adb-41f0-aa8e-5f0c416501d1"/>
+                      <a:da name="INVALID" type="Range">
+                        <a:tst expr="&lt;=65535"/>
+                        <a:tst expr="&gt;=0"/>
+                      </a:da>
+                      <a:da name="DEFAULT" value="17"/>
+                    </v:var>
+                    <v:var name="Release" type="STRING_LABEL">
+                      <a:a name="DESC" value="EN: Aurix2G derivative used for the implementation"/>
+                      <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                      <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                           type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PublishedInformation">VariantPostBuild</icc:v>
+                      </a:a>
+                      <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                      <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                      <a:a name="UUID" value="3b407478-6902-4f40-a715-f32b0854e753"/>
+                      <a:da name="DEFAULT" type="XPath" expr="ecu:get('Rel.Derivate')"/>
+                    </v:var>
+                  </v:ctr>
+                </v:ctr>
+              </d:chc>
+            </d:lst>
+          </d:ctr>
+        </d:lst>  
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

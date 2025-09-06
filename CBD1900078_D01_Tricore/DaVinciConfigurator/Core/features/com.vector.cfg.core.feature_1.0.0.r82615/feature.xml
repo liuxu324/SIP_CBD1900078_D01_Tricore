@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.vector.cfg.core.feature"
+      label="DaVinci Products Core"
+      version="1.0.0.r82615"
+      provider-name="Vector Informatik GmbH">
+
+   <description>
+      DaVinci products core.
+   </description>
+
+   <copyright>
+      (c) Copyright Vector Informatik GmbH. All Rights Reserved.
+   </copyright>
+
+   <license url="http://www.vector.com">
+      Vector Group License Agreement
+
+This software is licensed under the terms and conditions of „Delivery and maintenance of software products” of Vector Group, see www.vector.com
+   </license>
+
+   <includes
+         id="com.vector.cfg.core.model.feature"
+         version="1.0.0.r82615"/>
+
+   <includes
+         id="com.vector.cfg.reporting.feature"
+         version="1.4.0.r82615"/>
+
+   <plugin
+         id="com.vector.cfg.project"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.business"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.consistency"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.util.win32.win32.x86"
+         os="win32"
+         ws="win32"
+         arch="x86"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         fragment="true"/>
+
+   <plugin
+         id="com.vector.cfg.util.win32.win32.x86_64"
+         os="win32"
+         ws="win32"
+         arch="x86_64"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         fragment="true"/>
+
+   <plugin
+         id="com.vector.cfg.util.activity"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.project.activity"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.project.loader"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.core"
+         download-size="0"
+         install-size="0"
+         version="5.14.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.core.tooldefinition"
+         download-size="0"
+         install-size="0"
+         version="5.18.42.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.core.operation"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.severities"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.util.platform"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.util.jna"
+         download-size="0"
+         install-size="0"
+         version="4.5.1.r82615"/>
+
+   <plugin
+         id="com.vector.cfg.core.sip"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.core.sip.msr"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.util.platform.win32.win32"
+         os="win32"
+         ws="win32"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.util.platform.linux.gtk"
+         os="linux"
+         ws="gtk"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.util.feature.dev"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.util.args"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.business.msr"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.business.vtt"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.validation.basicrules"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.cfg.license"
+         download-size="0"
+         install-size="0"
+         version="1.1.0.r82615"
+         unpack="false"/>
+
+   <plugin
+         id="com.vector.licensing.vlal"
+         download-size="0"
+         install-size="0"
+         version="1.0.1.201806200755"
+         unpack="false"/>
+
+</feature>

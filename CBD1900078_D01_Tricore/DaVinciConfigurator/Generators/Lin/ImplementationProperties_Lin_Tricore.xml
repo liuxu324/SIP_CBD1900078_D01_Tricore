@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Settings Name="com.vector.cfg.core.sip.ISIPService">
+    <Settings Name="ModuleList">
+      <Settings Name="Lin">
+        <Settings Name="LIN_GROUP_TC2XX">
+          <Setting Name="Compiler" Value="Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+        </Settings>
+        <Settings Name="LIN_GROUP_TC27X">
+          <Setting Name="Compiler" Value="Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+        </Settings>
+        <Settings Name="LIN_GROUP_TC3XX">
+          <Setting Name="Compiler" Value="Gnu[0BC31EDC-4673-4734-8DCA-5E741868A5A4];Tasking[8DB6C5C5-6807-4601-B7B7-68A4A5B277F6]" />
+        </Settings>
+      </Settings>
+    </Settings>
+  </Settings>
+</Settings>

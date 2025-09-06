@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2018)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**  FILENAME  : plugin.xml                                                    **
+**                                                                            **
+**  VERSION   : 3.0.2                                                         **
+**                                                                            **
+**  DATE      : 2018-07-04                                                    **
+**                                                                            **
+**  VARIANT   : Variant PC                                                    **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX2G                                              **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY : NA                                                         **
+**                                                                            **
+**  DESCRIPTION  : Tresos plugin for Irq Driver                               **
+**                                                                            **
+**  SPECIFICATION(S) : No                                                     **
+**                                                                            **
+**  MAY BE CHANGED BY USER : yes                                              **
+**                                                                            **
+*******************************************************************************/
+-->
+
+<plugin>
+    <extension point="dreisoft.tresos.launcher2.plugin.module"
+         id="Irq_Aurix2GAS422_ModuleExt"
+         name="Irq Module with code template generator">
+      <module id="Irq_Aurix2GAS422" 
+              label="%ModuleLabel"
+              mandatory="false"
+              allowMultiple="true"
+              description="%ModuleDesc"
+              copyright="(c) 2018 Infineon Technologies"
+              swVersionMajor="2"
+              swVersionMinor="2"
+              swVersionPatch="0"
+              specVersionMajor="4"
+              specVersionMinor="2"
+              specVersionPatch="2"
+              relVersionMajor="4"
+              relVersionMinor="2"
+              relVersionPatch="2"
+              relVersionSuffix=""
+              categoryType="%ModuleName"
+              categoryLayer="MCAL"
+              categoryCategory="ECU Firmware"
+              categoryComponent="ECUC">
+        <cluster name="MCAL"/>
+        <ecuType target="AURIX2G" derivate="TC387"/>
+        <ecuType target="AURIX2G" derivate="TC389"/>
+        <ecuType target="AURIX2G" derivate="TC397"/>
+        <ecuType target="AURIX2G" derivate="TC397_ADAS"/>
+        <ecuType target="AURIX2G" derivate="TC399"/>        
+      </module>                 
+    </extension>
+
+    <extension point="dreisoft.tresos.launcher2.plugin.configuration"  
+               id="Irq_Aurix2GAS422_ConfigExt"
+               name="Irq_Aurix2G Configuration">
+      <configuration moduleId="Irq_Aurix2GAS422">
+        <schema>
+          <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+          <resource value="config/Irq.xdm" type="xdm"/>
+        </schema>
+        <data>
+          <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+          <schemaNode path="ASPath:/AURIX2G/EcucDefs/Irq"/>
+        </data>
+        <editor id="Irq_Aurix2GAS422_Edit" 
+                label="%ModuleName"
+                tooltip="%ModuleDesc">
+          <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+            <parameter name="schema" value="ASPath:/AURIX2G/EcucDefs/Irq"/>
+            <parameter name="title" value="Irq"/>
+            <parameter name="noTabs" value="false"/>
+            <parameter name="noLinks" value="true"/>
+            <parameter name="groupLinks" value="false"/>
+            <parameter name="groupContainers" value="false"/>
+            <parameter name="groupTables" value="true"/>
+            <parameter name="optionalGeneralTab" value="true"/>
+          </class>
+        </editor>   
+      </configuration>
+    </extension>
+
+    <extension point="dreisoft.tresos.launcher2.plugin.generator"
+               id="Irq_Aurix2GAS422_GenExt"
+               name="Irq_Aurix2G Generator">
+      <generator moduleId="Irq_Aurix2GAS422"
+                 class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+        <!-- common template path parameters -->
+        <parameter name="templates"
+                   mode="generate,verify" value="generate/template"/>
+        <!-- swcd modes and template path parameters -->
+        <parameter name="mode_type"
+                   mode="generate_swcd" value="generate/template"/>
+        <parameter name="mode_type"
+                   mode="verify_swcd" value="verify"/>
+        <parameter name="templates"
+                   mode="generate_swcd,verify_swcd" value="generate_swcd"/>
+      </generator>
+    </extension>
+</plugin>

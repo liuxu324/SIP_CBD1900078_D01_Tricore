@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2018)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**  FILENAME  : plugin.xml                                                    **
+**                                                                            **
+**  VERSION   : 7.0.0                                                         **
+**                                                                            **
+**  DATE      : 2018-08-09                                                    **
+**                                                                            **
+**  VARIANT   : Variant PB                                                    **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX2G                                              **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+** Traceability   : [cover parentID={7BA78D27-9A7E-4e94-9534-0C7D10523B52}]   **
+**                                                                            **
+**  DESCRIPTION  : Tresos plugin for Adc Driver                               **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) : Specification of Mcal Library                          **
+**                                                                            **
+**  MAY BE CHANGED BY USER : no                                               **
+**                                                                            **
+*******************************************************************************/
+-->
+<!--[cover parentID={39FB5A4C-CEB3-446e-8D4A-896A9C02EFCD}][/cover]-->
+<!--[cover parentID={2706382B-9A7F-4461-A2B0-C87D949272B8}][/cover]-->
+<!--[cover parentID={C52C10F1-166F-45ea-8F49-1375ADF6492D}][/cover]-->
+<plugin>
+
+ <extension point="dreisoft.tresos.launcher2.plugin.module"
+             id="McalLib_Aurix2GAS422_ModuleExt"
+             name="Mcal Library with code template generator">
+
+    <module id="McalLib_Aurix2GAS422"
+            label="%ModuleLabel"
+            mandatory="false"
+            allowMultiple="true"
+            description="%ModuleDesc"
+            copyright="(c) 2018 Infineon Technologies"
+            swVersionMajor="3"
+            swVersionMinor="0"
+            swVersionPatch="0"
+            specVersionMajor="4"
+            specVersionMinor="2"
+            specVersionPatch="2"
+            relVersionMajor="4"
+            relVersionMinor="2"
+            relVersionPatch="2"
+            categoryType="%ModuleName"
+            categoryLayer="MCAL"
+            categoryCategory="ECU Firmware"
+            categoryComponent="ECUC">
+      <cluster name="MCAL"/>
+      <ecuType target="AURIX2G" derivate="TC387"/>
+      <ecuType target="AURIX2G" derivate="TC389"/>
+      <ecuType target="AURIX2G" derivate="TC397"/>
+      <ecuType target="AURIX2G" derivate="TC397_ADAS"/>
+      <ecuType target="AURIX2G" derivate="TC399"/>
+    </module>
+  </extension>
+
+    <extension point="dreisoft.tresos.launcher2.plugin.configuration"
+             id="McalLib_Aurix2GAS422_ConfigExt"
+             name="McalLib_Aurix2G Configuration">
+    <configuration moduleId="McalLib_Aurix2GAS422">
+      <schema>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarSchemaManager"/>
+        <resource value="config/McalLib.xdm" type="xdm"/>
+      </schema>
+
+      <data>
+        <manager class="dreisoft.tresos.autosar2.resourcehandling.AutosarConfigManager"/>
+        <schemaNode path="ASPath:/AURIX2G/EcucDefs/McalLib"/>
+      </data>
+
+      <editor id="McalLib_Aurix2GAS422_Edit"
+              label="%ModuleName"
+              tooltip="%ModuleDesc">
+        <class class="dreisoft.tresos.launcher2.editor.GenericConfigEditor">
+          <parameter name="schema" value="ASPath:/AURIX2G/EcucDefs/McalLib"/>
+          <parameter name="title" value="McalLib"/>
+          <parameter name="noTabs" value="false"/>
+          <parameter name="noLinks" value="true"/>
+          <parameter name="groupLinks" value="false"/>
+          <parameter name="groupContainers" value="false"/>
+          <parameter name="groupTables" value="true"/>
+          <parameter name="optionalGeneralTab" value="true"/>
+        </class>
+      </editor>
+    </configuration>
+  </extension>
+
+
+  <extension point="dreisoft.tresos.launcher2.plugin.generator"
+              id="McalLib_Aurix2GAS422_GenExt"
+              name="McalLib_Aurix2G Generator">
+    <generator moduleId="McalLib_Aurix2GAS422"
+               class="dreisoft.tresos.launcher2.generator.TemplateBasedCodeGenerator">
+
+      <!-- common template path parameters -->
+      <parameter name="templates"
+                 mode="generate,verify" value="generate/template"/>
+                 
+
+      <!-- swcd modes and template path parameters -->
+      <parameter name="mode_type"
+                 mode="generate_swcd" value="generate/template"/>
+                 
+    
+      <parameter name="mode_type"
+                 mode="verify_swcd" value="verify"/>
+
+      <parameter name="templates"
+                 mode="generate_swcd,verify_swcd" value="generate_swcd"/>
+         
+    <!-- only having this parameter set to true, a generator is called once for each variant! -->
+      <parameter name="variantAware" value="true"/>
+
+    </generator>
+    
+    </extension>
+
+    
+
+</plugin>
+

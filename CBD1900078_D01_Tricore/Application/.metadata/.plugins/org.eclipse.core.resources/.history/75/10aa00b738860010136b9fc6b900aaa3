@@ -1,0 +1,69 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+PROJ 	= TC397_AUTOSAR_START
+PRODDIR = C:\Program Files\TASKING\TriCore\ctc
+
+-include "..\makefile.init"
+
+all :
+
+-include "subdir.mk"
+-include "Appl\GenData\subdir.mk"
+-include "Appl\GenData\src\subdir.mk"
+-include "Appl\Source\subdir.mk"
+-include "BSW\BswM\subdir.mk"
+-include "BSW\Can\subdir.mk"
+-include "BSW\CanIf\subdir.mk"
+-include "BSW\CanNm\subdir.mk"
+-include "BSW\CanSM\subdir.mk"
+-include "BSW\CanTp\subdir.mk"
+-include "BSW\Com\subdir.mk"
+-include "BSW\ComM\subdir.mk"
+-include "BSW\Dcm\subdir.mk"
+-include "BSW\Dem\subdir.mk"
+-include "BSW\Det\subdir.mk"
+-include "BSW\EcuM\subdir.mk"
+-include "BSW\Nm\subdir.mk"
+-include "BSW\Os\subdir.mk"
+-include "BSW\PduR\subdir.mk"
+-include "BSW\VStdLib\subdir.mk"
+-include "MCAL\Mcal\Tricore\Dio\ssc\src\subdir.mk"
+-include "MCAL\Mcal\Tricore\McalLib\ssc\src\subdir.mk"
+-include "MCAL\Mcal\Tricore\Mcu\ssc\src\subdir.mk"
+-include "MCAL\Mcal\Tricore\Port\ssc\src\subdir.mk"
+-include "..\makefile.defs"
+
+PCP_FILES :=
+EXT_LIBRARIES =
+
+all : "TC397_AUTOSAR_START.elf"
+
+"TC397_AUTOSAR_START.elf" : $(OBJ_FILES) $(EXT_LIBRARIES) ".TC397_AUTOSAR_START.elf.opt"
+	@echo Linking to ${@F}
+	@"${PRODDIR}\bin\cctc" -f ".TC397_AUTOSAR_START.elf.opt"
+
+".TC397_AUTOSAR_START.elf.opt" : .refresh
+	@argfile ".TC397_AUTOSAR_START.elf.opt" -o "TC397_AUTOSAR_START.elf" $(OBJ_FILES) $(EXT_LIBRARIES) $(PCP_FILES)  -Ctc39xb --lsl-core=vtc -t -I"C:\Vector\CBD1900078_D01_Tricore\Application\DEMO_0314\AUTOSAR" -Wl-o"${PROJ}.hex":IHEX:4 --hex-format=s ""../TC397_asr_link.lsl"" -Wl-OtxycL -Wl--map-file="${PROJ}.mapxml":XML -Wl-mcrfiklSmNOduQ -Wl--error-limit=42 -g --fp-model=3 --c++=14 -Wl--dep-file=".TC397_AUTOSAR_START.elf.d" -Wl--make-target="TC397_AUTOSAR_START.elf"
+DEPENDENCY_FILES += ".TC397_AUTOSAR_START.elf.d"
+-include $(DEPENDENCY_FILES)
+
+$(EXT_LIBRARIES) : .dummy
+
+GENERATED_FILES += "TC397_AUTOSAR_START.elf" "TC397_AUTOSAR_START*.sre" "TC397_AUTOSAR_START*.hex" "TC397_AUTOSAR_START.map*" "TC397_AUTOSAR_START.mdf" ".TC397_AUTOSAR_START.elf.opt" ".TC397_AUTOSAR_START.elf.d"
+-include "..\makefile.targets"
+
+
+clean : ".clean.opt"
+	@echo Cleaning
+	@rm -f -m ".clean.opt"
+
+".clean.opt" : .refresh
+	@argfile ".clean.opt" $(GENERATED_FILES) $(OPTIONAL_FILES)
+
+GENERATED_FILES += ".clean.opt"
+OPTIONAL_FILES +=  "*.pre" "*.lst" "*.p.o" "*.p.a"
+
+
+.PHONY : .dummy .refresh

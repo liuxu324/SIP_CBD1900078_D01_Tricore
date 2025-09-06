@@ -1,0 +1,43 @@
+
+Name: generate/template/Icu_17_TimerIp.m
+SignatureKeyID: Infineon
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377425460678521321317982487015746516603441677617044097
+ 6185838298048395763928709592912435274574934334960052
+
+Name: generate/template/inc/Icu_17_TimerIp_Cfg.h
+SignatureKeyID: Infineon
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423643607219593484372908702660252828933277747239684
+ 5794070261639168575889529630750803545294830852607880
+
+Name: generate/template/Icu_17_TimerIp_Bswmd.arxml
+SignatureKeyID: Infineon
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377422541508964602477151391349817950967785738184004398
+ 8670307521799857993269691267034965859930195092512983
+
+Name: generate/template/inc/Icu_17_TimerIp_PBcfg.h
+SignatureKeyID: Infineon
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420317614644479057336853323502838566415114370979437
+ 8541933693094585378001643162703106259611786372882070
+
+Name: generate/template/src/Icu_17_TimerIp_PBcfg.c
+SignatureKeyID: Infineon
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377423009230506733118173738971299673562111336695065679
+ 7659961527638687089715907189638986226118494825850761
+
+Name: config/Icu_17_TimerIp.xdm
+SignatureKeyID: Infineon
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377420324405365698293577710431696333664946954159571432
+ 6002983013166585137280056780622283756085007770883946
+

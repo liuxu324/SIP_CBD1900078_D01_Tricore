@@ -1,0 +1,379 @@
+<html>
+<body>
+<h2>Query data from the model</h2>
+<h3>Generic Access and Kind specific access</h3>
+
+<p>
+    The DCtxt API allows to access the configuration in different ways.
+</p>
+
+<p>
+    <ul>
+        <li>
+            The class <a href="../../model/DCtxt.html">DCtxt</a> provides generic access.
+        </li>
+        <li>
+            The class <a href="../../model/Any.html">Any</a> provides list node and optional node abstraction
+            (see <a href="ListAndOptional.html">List nodes and optional nodes</a>).
+        </li>
+        <li>
+            Node kind specific access is provided by the classes: <a href="../../model/Var.html">Var</a>, and
+            <a href="../../model/Ref.html">Ref</a>, <a href="../../model/Chc.html">Chc</a> and
+            <a href="../../model/Ctr.html">Ctr</a>.
+        </li>
+    </ul>
+</p>
+
+
+<h3>Query Type information</h3>
+
+<p>
+    As described in <a href="KindAndType.html">Kind&amp;Type</a> each node is of a specific kind (variable,
+    reference, container, choice). The kind can be queried by:
+</p>
+
+<p>
+    <code>
+        int kind = ctxt.any.getKind();
+    </code>
+</p>
+
+<p>
+    In addition to that each kind specific class (<a href="../../model/Var.html">Var</a>,
+    <a href="../../model/Ref.html">Ref</a>, <a href="../../model/Ctr.html">Ctr</a>,
+    <a href="../../model/Chc.html">Chc</a>) has methods to check if a node is of the respective kind:
+</p>
+
+<p>
+    <code>
+        boolean isVar = ctxt.var.isVar();<br>
+        boolean isRef = ctxt.ref.isRef();<br>
+        ...
+    </code>
+</p>
+
+<p>
+    The type of a node can be queried with:
+</p>
+
+<p>
+    <code>
+        String type = ctxt.any.getType();
+    </code>
+</p>
+
+<p>
+    As variables have some predefined types (String, Bool, Int, Float) the <a href="../../model/Var.html">Var</a>
+    class provides the method:
+</p>
+
+<p>
+    <code>
+        int type = ctxt.var.getVarType();
+    </code>
+</p>
+
+<h3>Query Node names</h3>
+
+<p>
+    The name of a node can be queried by:
+</p>
+
+<p>
+    <code>
+        String name = ctxt.any.getName();<br>
+        String name = ctxt.var.getName();<br>
+        ...
+    </code>
+</p>
+
+<p>
+    Notice that the kind specific <code>getName()</code> method may return other values as the
+    <code>getName()</code> method of the <code>DCtxt</code> class. The <code>getName()</code> method of the
+    <code>DCtxt</code> class always returns the name of the referenced node whereas the kind specific methods
+    try to get the "intended" name of the node. If for example the referenced node is a variable in a list
+    the name of the list is returned as the variable itself has no name. In case of a choice the name of
+    the choice node is returned instead of the container name.
+</p>
+<p>
+    If you want to query the SHORT-NAME then please use <code>getShortName()</code>. The result might be different from
+    the result of <code>getName()</code>. This might happen when the user manually
+    changed the SHORT-NAME or the node has been imported
+    with another SHORT-NAME. But also note that there are some nodes
+    which do not have a SHORT-NAME at all (e.g. lists and variable data nodes).
+</p>
+
+
+<h3>Query state information</h3>
+
+<p>
+    Each node in the model is associated with certain state information which is in most cases represented by DataModel2
+    attribute (<code>&lt;a:a...&gt; and &lt;a:da...&gt;</code> in a XDM file.
+</p>
+
+<p>
+    The node kind specific classes (<code>Var</code>, <code>Ref</code>, <code>Ctr</code>, <code>Chc</code>) give
+    access to the following state informations:
+</p>
+
+<p>
+    <table border="1">
+        <tr>
+            <th>Method</th><th>Description</th>
+        </tr>
+        <tr>
+            <td>isValid(...)</td>
+            <td>
+                If this method returns true the corresponding node is at least a configuration node and is
+                bound to a schema node if requested by <a href="../../model/Opt.html#setNoSchema">setNoSchema(false)</a>.
+            </td>
+        </tr>
+        <tr>
+            <td>isExisting(...)</td>
+            <td>
+                If the node is valid, present in the model and is not disabled via the <code>ENABLE</code> attribute
+                this method returns true.
+            </td>
+        </tr>
+        <tr>
+            <td>isEnabled(...)</td>
+            <td>
+                Allows to query if an optional node is enabled via the <code>ENABLE</code> attribute or not.
+            </td>
+        </tr>
+        <tr>
+            <td>isReadonly(...)</td>
+            <td>
+                If the node is valid but set readonly via the <code>READONLY</code> attribute this method returns
+                true.
+            </td>
+        </tr>
+    </table>
+</p>
+
+<h3>Query single nodes</h3>
+
+<p>
+    The context API gives access to single nodes in different modes where each mode is represented by a corresponding
+    method signature:
+</p>
+
+<p>
+    <ul>
+        <li><b>Access the context node:</b><br>
+
+            <p>
+                The simplest way to access is accessing the context node of the <code>DCtxt</code> object. All access
+                modes which do not have a parameter access the context node.
+            </p>
+
+            <p>
+                E.g. <code>ctxt.var.getInt()</code>
+                returns the integer value of the variable pointed to by the current context node.
+            </p>
+        </li>
+        <li><b>Access via index:</b><br>
+
+            <p>
+                The datamodel2 Public API does not explicitly model lists. To access list elements the API therefore
+                provides method that take a list index. Keep in mind that list indices are counted from 1 like in XPath
+                expressions:
+            </p>
+
+            <p>
+                <code>ctxt.var.getInt( 1 )</code> accesses the first list entry.
+            </p>
+        </li>
+        <li><b>Access via path:</b><br>
+
+            <p>
+                If the context does not point to the node in charge the node can be accessed via path. The corresponding
+                methods all have a path parameter.
+            </p>
+
+            <p>
+                E.g. <code>ctxt.var.getBool( "DetGeneral/KeepFirst" )</code>.
+            </p>
+
+            <p>
+                If the
+                path has no path-type it is interpreted as an XPath path. To access nodes via AUTOSAR paths use the
+                "ASPath" prefix.
+            </p>
+
+            <p>
+                E.g. <code>ctxt.ctr.getName( "ASPath:/MyProject/Det/DetGeneral")</code>.
+            </p>
+        </li>
+        <li><b>Access via path+index:</b><br>
+
+            <p>
+                Path and list access can be combined. When a path references a list an index parameter can be used to
+                access a list element:
+            </p>
+
+            <p>
+                <code>ctxt.var.getInt( "PduRDefaultValue/DefaultValueElement", 5 )</code>
+            </p>
+
+            <p>
+                accesses the fifth entry in the DefaultValueElement list of the PduRDefaultValue container.
+            </p>
+        </li>
+    </ul>
+</p>
+
+<p>
+    The single node access methods provide an abstraction for the representation of optional nodes and nodes that
+    are specified with lowerMultiplicity != upperMultiplicity by AUTOSAR but must be interpreted as non list
+    elements. When a single node access method encounters a list node the method does not query the list node
+    but always fetches the first list item if it is of a fitting type.
+</p>
+
+<p>
+    Imaging <code>PduRDefaultValue/DefaultValueElement</code> is defined as a list by AUTOSAR but should be
+    interpreted as a single value integer the following code does the trick:
+</p>
+
+<p>
+    <code>
+        int value = ctxt.var.getInt( "PduRDefaultValue/DefaultValueElement" );
+    </code>
+</p>
+
+<h3>Query multiple nodes</h3>
+
+<p>
+    The datamodel2 Public API provides two mechanisms for accessing multiple nodes:
+</p>
+
+<p>
+    <ul>
+        <li><b>List Items</b>:<br>
+
+            <p>
+                The API allows to query the items of lists in a model in a convenient way
+            </p>
+        </li>
+        <li><b>Node Sets</b>:
+            <p>
+                The API allows to collect a list of nodes and query data from them via search expressions.
+            </p>
+        </li>
+    </ul>
+</p>
+
+<p>
+    The later approach uses an expression model to collect a set of nodes. XPath expressions can be used for
+    this. The API provides some primitive operations on node-sets. Also the user can define new node collection
+    methods to query data in a more functional way. The Note Set approach is described in
+    <a href="../../expr/package-summary.html">dreisoft.tresos.datamodel2.api.expr</a>.
+</p>
+
+<p>
+    List access is provided by methods that have a name ending in <b>s</b>. E.g.:
+</p>
+
+<p>
+    <code>
+        long[] values = ctxt.var.getInts();
+    </code>
+</p>
+
+<p>
+    The above method queries the values of a list containing integer variables.
+</p>
+
+<p>
+    To get all list items as <code>DCtxt</code> instances the methods:
+</p>
+
+<p>
+    <code>
+        DCtxt.var.getEntries(...)<br>
+        DCtxt.ref.getEntries(...)<br>
+        DCtxt.ctr.getEntries(...)<br>
+        DCtxt.chc.getEntries(...)<br>
+    </code>
+</p>
+
+<p>
+    can be used.
+</p>
+
+<p>
+    The list access API comes in two modes which can be distinguished by the parameters that the method takes:
+</p>
+
+<p>
+    <ul>
+        <li><b>Access the context node:</b>:<br>
+
+            <p>
+                If the method does not have any parameters it operates on the context node. If the node is a list
+                node the items of the list are queried. If the node is a list item all elements of the list
+                are operated on. If the node is no list item the node itself is operated on.
+            </p>
+        </li>
+        <li><b>Access via path:</b>:<br>
+
+            <p>
+                If the method receives a path as a parameter it operates on the node referenced by this path.
+                If the node is a list node the items of the list are queried. If the node is a list item all elements
+                of the list are operated on. If the node is no list item the node itself is operated on.
+            </p>
+        </li>
+    </ul>
+</p>
+
+
+<h3>List access</h3>
+
+<p>
+    The datamodel2 Public API does not model lists as an explicit node type instead lists are handled transparently.
+    The methods give direct access to the list items. This approach was taken as AUTOSAR intermixes lists and
+    none list constructs. E.g. optional parameters are elements with lowerMultiplicity == 0 and upperMultiplicity == 1
+    and therefore could also be seen as lists that only accept one entry. Furthermore the standard may define that
+    a parameter can store multiple values and in a vendor specific configuration the parameter is then re-transformed
+    to a single value parameter.
+</p>
+
+<p>
+    Nevertheless it must be possible to query list properties (size, type). All list related functionality is gathered in
+    the class <a href="../../model/Any.html">Any</a>. The Any class provides the following functionality to
+    access lists:
+</p>
+
+<p>
+    <ul>
+        <li><b>isLst(...)</b>:<br>
+
+            <p>
+                Returns true if the referenced or context node is a list.
+            </p>
+        </li>
+        <li><b>isMap(...)</b>:<br>
+
+            <p>
+                Returns true if the referenced or context node is a map. A map is a list in which the entries have
+                unique names.
+            </p>
+        </li>
+        <li><b>getSize(...)</b>:<br>
+
+            <p>
+                Returns the number of children beneath the referenced or context node.
+            </p>
+        </li>
+        <li><b>getListSize(...)</b>:<br>
+
+            <p>
+                Returns the number of children in the referenced or context list. If the referenced node is no list
+                but a list member the number of items in that list are returned.
+            </p>
+        </li>
+    </ul>
+</p>
+
+</body>
+</html>

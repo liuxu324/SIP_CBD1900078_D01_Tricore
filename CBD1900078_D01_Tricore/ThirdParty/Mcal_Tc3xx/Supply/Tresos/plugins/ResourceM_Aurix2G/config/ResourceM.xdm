@@ -1,0 +1,251 @@
+<?xml version='1.0'?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2018)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**  FILENAME  : ResourceM.xdm                                                 **
+**                                                                            **
+**  VERSION   :8.0.0                                                          **
+**                                                                            **
+**  DATE      : 2018-08-23                                                    **
+**                                                                            **
+**  VARIANT   : Variant PC                                                    **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX2G                                              **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY : [cover parentID]                                           **
+**                                                                            **
+**  DESCRIPTION  : XML Data Model for Resouce                                 **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) : NA                                                     **
+**                                                                            **
+**  MAY BE CHANGED BY USER : no                                               **
+**                                                                            **
+*******************************************************************************/
+-->
+<!-- [cover parentID={1665FEA0-408F-4f5d-9210-7A287301F032}] Tresos format XML data model schema file. [/cover] -->
+<!-- [cover parentID={7A602291-C91B-43c8-8970-33F13C3C7909}] AUTOSAR format XML data model schema file. [/cover] -->
+<datamodel version="5.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/12/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/12/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:cd="http://www.tresos.de/_projects/DataModel2/08/customdata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd"  
+         xmlns:variant="http://www.tresos.de/_projects/DataModel2/11/variant.xsd">
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="AURIX2G" type="AR-PACKAGE">
+        <a:a name="UUID" value="ECUC:AUTOSAR"/>
+        <d:lst type="TOP-LEVEL-PACKAGES">
+          <d:ctr name="EcucDefs" type="AR-PACKAGE">
+            <a:a name="UUID" value="ECUC:ECUCDEFS"/>
+        <d:lst type="ELEMENTS">
+        <!-- [cover parentID={5F017620-E68B-4911-8BCB-B7CEEC170F0B}] ResourceM [/cover] -->
+          <d:chc name="ResourceM" type="AR-ELEMENT" value="MODULE-DEF">
+            <v:ctr type="MODULE-DEF">
+              <a:a name="ADMIN-DATA" type="ADMIN-DATA">
+                <ad:ADMIN-DATA>
+                  <ad:DOC-REVISIONS>
+                    <ad:DOC-REVISION>
+                      <ad:REVISION-LABEL>4.2.2</ad:REVISION-LABEL>
+                      <ad:ISSUED-BY>AUTOSAR</ad:ISSUED-BY>
+                      <ad:DATE>2014-10-31</ad:DATE>
+                    </ad:DOC-REVISION>
+                  </ad:DOC-REVISIONS>
+                </ad:ADMIN-DATA>
+              </a:a>
+              <a:a name="DESC" 
+                   value="EN: Configuration of RM (Resource Manager) module."/>
+              <a:a name="LOWER-MULTIPLICITY" value="0"/>
+                  <a:a name="POSTBUILDVARIANTSUPPORT" value="false"/>
+              <a:a name="RELEASE" value="asc:4.2.2"/>
+              <a:a name="UPPER-MULTIPLICITY" value="*"/>
+                  <a:a name="UUID" 
+                       value="ECUC:13aa2440-e790-4121-9e12-3a380efb0d6b"/>
+                  <v:var name="IMPLEMENTATION_CONFIG_VARIANT" 
+                         type="ENUMERATION">
+                <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                     type="IMPLEMENTATIONCONFIGCLASS">
+                      <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                </a:a>
+                <a:a name="LABEL" value="Config Variant"/>
+                <a:da name="DEFAULT" value="VariantPreCompile"/>
+                <a:da name="RANGE">
+                  <a:v>VariantPreCompile</a:v>
+                </a:da>
+              </v:var>
+        <!-- [cover parentID={58209F42-DF33-4e36-BD1F-664E7BDFB2C3}] ResourceMGeneral [/cover] -->
+              <v:ctr name="ResourceMGeneral" type="IDENTIFIABLE">
+                <a:a name="DESC"
+                     value="EN: General container to select sub derivate."/>
+                <a:a name="UUID" value="4acbfb61-2a6a-4a90-a065-4ac83f20d9b1"/>
+        <!-- [cover parentID={FD49D011-4D80-48c7-9D94-363328DD675E}] ResourceMSubDerivative [/cover] -->
+                <v:var name="ResourceMSubDerivative" type="ENUMERATION">
+                  <a:a name="DESC"
+                       value="EN: Parameter to configure Sub derivates"/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:da name="RANGE" type="XPath" expr="ecu:list('Rel.SubDerivate')"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID"
+                       value="2b452b26-b1b5-4997-8a7f-b51e8d257ca4"/>
+                </v:var>
+              </v:ctr>
+        <!-- [cover parentID={7A15E8FD-1B9F-4cd2-B4C9-67D2F277D5A0}] ResourceMMcalConfig [/cover] -->
+              <v:lst name="ResourceMMcalConfig" type="MAP">
+                <a:da name="MIN" value="1"/>
+                <a:da name="MAX" value="1"/>
+                <v:ctr name="ResourceMMcalConfig" type="IDENTIFIABLE">
+                <a:a name="DESC"
+                     value="EN:General container to select Master Core and allocate resources"/>
+                <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+        <!-- [cover parentID={90108939-FA16-4f9b-A02F-3435AC6ADAD4}] ResourceMMasterCore [/cover] -->
+                <v:var name="ResourceMMasterCore" type="ENUMERATION">
+                    <a:a name="DESC" 
+                         value="EN: Select Master core."/>
+                  <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                      type="IMPLEMENTATIONCONFIGCLASS">
+                        <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                  </a:a>
+                  <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                  <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                  <a:a name="SCOPE" value="LOCAL"/>
+                  <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                  <a:a name="UUID" 
+                       value="ECUC:31505abb-2290-4c99-bdb7-d0909f0440f2"/>
+                  <a:da name="DEFAULT" value="CORE0"/>
+                  <a:da name="RANGE" type="XPath" expr="ecu:list('RM.AvailableCores')"/>
+                </v:var>
+          <!-- [cover parentID={240031A1-8600-4acd-9C0D-E398666EDF86}] ResourceMMcalCore [/cover] -->
+                  <v:lst name="ResourceMMcalCore" type="MAP">
+                    <a:da name="MIN" value="1"/>
+                    <a:da name="MAX" type="XPath" expr="ecu:get('Mcu.NoOfCoreAvailable')"/>
+                    <v:ctr name="ResourceMMcalCore" type="IDENTIFIABLE">
+                                      <a:a name="DESC"
+                     value="EN:General container to allocate Mcal resources to cores"/>
+                      <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                      <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+            <!-- [cover parentID={2C19E6BE-E106-4e50-B87D-B6E9F4C9964F}] ResourceMCoreID [/cover] -->
+                      <v:var name="ResourceMCoreID" type="ENUMERATION">
+                        <a:a name="DESC" 
+                          value="EN: Select Master core."/>
+                        <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                        type="IMPLEMENTATIONCONFIGCLASS">
+                         <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                        </a:a>
+                        <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                        <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                        <a:a name="SCOPE" value="LOCAL"/>
+                        <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                        <a:a name="UUID" 
+                            value="ECUC:31505abb-2290-4c00-bdb7-d0909f0440f2"/>
+                        <a:da name="DEFAULT" value="CORE0"/>
+                        <a:da name="RANGE" type="XPath" expr="ecu:list('RM.AvailableCores')"/>
+                        <a:da name="INVALID" type="XPath">
+                          <a:tst expr="text:uniq(../../*/ResourceMCoreID,.)"  false="Cores must be unique across all resource allocations."/>
+                        </a:da>
+                      </v:var>
+            <!-- [cover parentID={1D257A52-F5FA-401d-A387-1C48BD230B2B}] ResourceMAllocation [/cover] -->
+                      <v:lst name="ResourceMAllocation" type="MAP">
+                        <v:ctr name="ResourceMAllocation" type="IDENTIFIABLE">
+                             <a:a name="DESC" 
+                                  value="EN: Container to allocate module resources."/>
+                          <icc:v mclass="PreCompile">VariantPreCompile</icc:v>
+                          <a:a name="POSTBUILDVARIANTMULTIPLICITY" value="false"/>
+              <!-- [cover parentID={DD134811-D0F1-4217-9A05-C45777245AC9}] ResourceMModuleName [/cover] -->
+                           <v:var name="ResourceMModuleName" type="ENUMERATION">
+                               <a:a name="DESC" 
+                                    value="EN: Module name."/>
+                            <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                            type="IMPLEMENTATIONCONFIGCLASS">
+                            <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                            </a:a>
+                             <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                             <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                             <a:a name="SCOPE" value="LOCAL"/>
+                             <a:a name="SYMBOLICNAMEVALUE" value="false"/>
+                             <a:a name="UUID" 
+                                  value="ECUC:31505abb-2296-4c99-bdb7-d0909f0440f2"/>
+                              <a:da name="DEFAULT" value="ADC"/>
+                             <a:da name="RANGE" type="XPath" expr="ecu:list('RM.Modules')"/>
+                             <a:da name="INVALID" type="XPath">
+                                <a:tst expr="text:uniq(../../*/ResourceMModuleName,'STM')" false="For each core only one STM timer is allowed to configure."/>
+                             </a:da>
+                           </v:var>
+               <!-- [cover parentID={9DBC1F6E-9F7C-457e-A2DA-DDAD95D84BC2}] ResourceMResourceRef [/cover] -->
+                           <v:ref name="ResourceMResourceRef" type="CHOICE-REFERENCE">
+                             <a:a name="DESC" 
+                                  value="EN: This parameter contains reference to resource"/>
+                             <a:a name="IMPLEMENTATIONCONFIGCLASS" 
+                             type="IMPLEMENTATIONCONFIGCLASS">
+                             <icc:v vclass="PreCompile">VariantPreCompile</icc:v>
+                             </a:a>
+                             <a:a name="POSTBUILDVARIANTVALUE" value="false"/>
+                             <a:a name="ORIGIN" value="INFINEON_AURIX2G"/>
+                             <a:a name="SCOPE" value="ECU"/>
+                             <a:a name="UUID" 
+                                  value="ECUC:c945dd5e-1a5b-4bcc-a8ab-0a4d19ec3585"/>
+                               <a:da name="REF">
+                               <a:v>ASPathDataOfSchema:/AUTOSAR/EcucDefs/Gpt/GptChannelConfigSet/GptChannelConfiguration</a:v>
+                               <a:v>ASPathDataOfSchema:/AUTOSAR/EcucDefs/Pwm/PwmChannelConfigSet/PwmChannel</a:v>
+                               <a:v>ASPathDataOfSchema:/AUTOSAR/EcucDefs/Icu/IcuConfigSet/IcuChannel</a:v>
+                               <a:v>ASPathDataOfSchema:/AURIX2G/EcucDefs/Dma/DmaChannelConfig</a:v>
+                               <a:v>ASPathDataOfSchema:/AUTOSAR/EcucDefs/Can/CanConfigSet/CanController</a:v>
+                               <a:v>ASPathDataOfSchema:/AURIX2G/EcucDefs/Sent/SentConfigSet/SentChannelConfigSet</a:v>
+                               <a:v>ASPathDataOfSchema:/AUTOSAR/EcucDefs/Adc/AdcConfigSet/AdcHwUnit</a:v>
+                               <a:v>ASPathDataOfSchema:/AURIX2G/EcucDefs/Mcu/McuHardwareResourceAllocationConf/McuStmAllocationConf</a:v>
+                               <a:v>ASPathDataOfSchema:/AUTOSAR/EcucDefs/Spi/SpiHwConfiguration/SpiHwConfigurationQspi</a:v>
+                               </a:da>
+                               <a:da name="INVALID" type="XPath">
+                                 <a:tst expr="text:uniq(../../../../*/ResourceMAllocation/*/ResourceMResourceRef,.)" false="ResourceMResourceRef should be unique.Enter different reference"/>
+                                 <a:tst expr=" (../ResourceMModuleName='PWM') and not(contains(.,'/Pwm/'))" true="Incorrect reference choosen for PWM module"/>
+                                 <a:tst expr=" (../ResourceMModuleName='GPT') and not(contains(.,'/Gpt/'))" true="Incorrect reference choosen for GPT module"/>
+                                 <a:tst expr=" (../ResourceMModuleName='ICU') and not(contains(.,'/Icu/'))" true="Incorrect reference choosen for ICU module"/>
+                                 <a:tst expr=" (../ResourceMModuleName='DMA') and not(contains(.,'/Dma/'))" true="Incorrect reference choosen for DMA module"/>
+                                 <a:tst expr=" (../ResourceMModuleName='CAN') and not(contains(.,'/Can/'))" true="Incorrect reference choosen for CAN module"/>
+                                 <a:tst expr=" (../ResourceMModuleName='ADC') and not(contains(.,'/Adc/'))" true="Incorrect reference choosen for ADC module"/>
+                                 <a:tst expr=" (../ResourceMModuleName='STM') and not(contains(.,'/McuStmAllocationConf'))" true="Incorrect reference choosen for STM module"/>
+                                 <a:tst expr=" (../ResourceMModuleName='SPI') and not(contains(.,'/Spi/'))" true="Incorrect reference choosen for SPI module"/>
+                                 <a:tst expr=" (../ResourceMModuleName='SENT') and not(contains(.,'/Sent/'))" true="Incorrect reference choosen for SENT module"/>
+                                 <a:tst expr=" node:refvalid(.)" false="The configured node does not exist or may not be referenced."/>
+                               </a:da>
+                           </v:ref>
+                        </v:ctr>
+                      </v:lst>
+                    </v:ctr>
+                  </v:lst>
+                </v:ctr>
+              </v:lst>
+           </v:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+ </d:lst>
+ </d:ctr>
+</datamodel>

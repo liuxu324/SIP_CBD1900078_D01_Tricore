@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2017)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**  FILENAME  : Icu_17_TimerIp_Catalog.xml                                    **
+**                                                                            **
+**  VERSION   : 3.0.0                                                         **
+**                                                                            **
+**  DATE      : 2017-11-15                                                    **
+**                                                                            **
+**  VARIANT   : Variant PB                                                    **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX2G                                              **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY : [cover parentID= {965DDC40-A7AA-4289-A803-198ED7960C10}]   **
+**                                                                            **
+**  DESCRIPTION  : Catalog file for Icu Driver                                **
+**                                                                            **
+**  [/cover]                                                                  **
+**                                                                            **
+**  SPECIFICATION(S) : Specification of Icu Driver, AUTOSAR Release 4.2.2     **
+**                                                                            **
+**  MAY BE CHANGED BY USER : no                                               **
+**                                                                            **
+*******************************************************************************/
+-->
+<CATALOG xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="catalog_V3_0_0.ml.xsd">
+    <SHORT-NAME>Icu_17_TimerIpCatalog</SHORT-NAME>
+    <ABLOCKS>
+        <ABLOCK>
+            <SHORT-NAME>icu_17_timerip::ssc::src::Icu_17_TimerIp.c</SHORT-NAME>
+            <CATEGORY>SWSRC</CATEGORY>
+            <FILES>
+                <FILE>icu_17_timerip/ssc/src/Icu_17_TimerIp.c</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK>
+            <SHORT-NAME>icu_17_timerip::ssc::inc::Icu_17_TimerIp.h</SHORT-NAME>
+            <CATEGORY>SWHDR</CATEGORY>
+            <FILES>
+                <FILE>icu_17_timerip/ssc/inc/Icu_17_TimerIp.h</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK>
+            <SHORT-NAME>plugins::Icu_17_TimerIp_Aurix2G::generate::template::src::Icu_17_TimerIp_PBcfg.c</SHORT-NAME>
+            <CATEGORY>SWSRC</CATEGORY>
+            <FILES>
+                <FILE>plugins/Icu_17_TimerIp_Aurix2G/generate/template/src/Icu_17_TimerIp_PBcfg.c</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK>
+            <SHORT-NAME>plugins::Icu_17_TimerIp_Aurix2G::generate::template::inc::Icu_17_TimerIp_Cfg.h</SHORT-NAME>
+            <CATEGORY>SWHDR</CATEGORY>
+            <FILES>
+                <FILE>plugins/Icu_17_TimerIp_Aurix2G/generate/template/inc/Icu_17_TimerIp_Cfg.h</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK>
+            <SHORT-NAME>plugins::Icu_17_TimerIp_Aurix2G::generate::template::inc::Icu_17_TimerIp_PBcfg.h</SHORT-NAME>
+            <CATEGORY>SWHDR</CATEGORY>
+            <FILES>
+                <FILE>plugins/Icu_17_TimerIp_Aurix2G/generate/template/inc/Icu_17_TimerIp_PBcfg.h</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK>
+            <SHORT-NAME>plugins::Icu_17_TimerIp_Aurix2G::config::Icu_17_TimerIp.xdm</SHORT-NAME>
+            <CATEGORY>SWTOOL</CATEGORY>
+            <FILES>
+                <FILE>plugins/Icu_17_TimerIp_Aurix2G/config/Icu_17_TimerIp.xdm</FILE>
+            </FILES>
+        </ABLOCK>
+    </ABLOCKS>
+</CATALOG>

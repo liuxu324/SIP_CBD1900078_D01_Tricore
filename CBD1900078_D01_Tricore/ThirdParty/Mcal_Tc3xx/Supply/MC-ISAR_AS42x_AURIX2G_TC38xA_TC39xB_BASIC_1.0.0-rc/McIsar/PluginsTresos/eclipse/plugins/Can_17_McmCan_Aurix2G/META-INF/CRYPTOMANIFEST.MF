@@ -1,0 +1,43 @@
+
+Name: generate/template/inc/Can_17_McmCan_PBcfg.h
+SignatureKeyID: Infineon
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421434649042352864445547004174006741707033952847134
+ 9374978954308983569585774901676695490687599019942658
+
+Name: config/Can_17_McmCan.xdm
+SignatureKeyID: Infineon
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 28964594755636741373249016607069291703147382083147434357355
+ 820822798700474654904940916182337836858693767963941433
+
+Name: generate/template/src/Can_17_McmCan_PBcfg.c
+SignatureKeyID: Infineon
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377424523129423916091506856453333354784103123120525147
+ 3832601024025999143635084734489729055046394207383190
+
+Name: generate/template/Can_17_McmCan.m
+SignatureKeyID: Infineon
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377421183877946051402410054581167002075530035091649667
+ 3466677492945838055711801766187380227087611831984540
+
+Name: generate/template/inc/Can_17_McmCan_Cfg.h
+SignatureKeyID: Infineon
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377422672326036299261025848462704026502515792701813322
+ 2655388718118428995681346541626108650482557073064308
+
+Name: generate/template/Can_17_McmCan_Bswmd.arxml
+SignatureKeyID: Infineon
+SignatureKeyProviderID: dreisoft.tresos.launcher2.CryptoKeyProvider
+SignatureAlgorithmID: DSA
+Signature: 11313377426413975985685081987785365217707271390222135978403
+ 9602250208572789891539881667279291996337761397076391
+

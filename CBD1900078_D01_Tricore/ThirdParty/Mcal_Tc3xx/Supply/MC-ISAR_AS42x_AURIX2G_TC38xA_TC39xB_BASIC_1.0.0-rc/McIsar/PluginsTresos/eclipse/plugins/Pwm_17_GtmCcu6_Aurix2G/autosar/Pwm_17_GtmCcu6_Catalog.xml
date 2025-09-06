@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/*******************************************************************************
+**                                                                            **
+** Copyright (C) Infineon Technologies (2018)                                 **
+**                                                                            **
+** All rights reserved.                                                       **
+**                                                                            **
+** This document contains proprietary information belonging to Infineon       **
+** Technologies. Passing on and copying of this document, and communication   **
+** of its contents is not permitted without prior written authorization.      **
+**                                                                            **
+********************************************************************************
+**                                                                            **
+**  FILENAME  : Pwm_17_GtmCcu6_Catalog.xml                                    **
+**                                                                            **
+**  VERSION   : 2.0.0                                                         **
+**                                                                            **
+**  DATE      : 2018-03-29                                                    **
+**                                                                            **
+**  VARIANT   : Variant PB                                                    **
+**                                                                            **
+**  PLATFORM  : Infineon AURIX2G                                              **
+**                                                                            **
+**  AUTHOR    : DL-AUTOSAR-Engineering                                        **
+**                                                                            **
+**  VENDOR    : Infineon Technologies                                         **
+**                                                                            **
+**  TRACEABILITY : [cover parentID={EFAB1D29-139B-4ec4-89F7-D7BD1F677C26}]    **
+**                 Tresos format XML data model schema file. [/cover]         **
+**                                                                            **
+**  DESCRIPTION  : Catalog file for Pwm Driver                                **
+**                                                                            **
+**                                                                            **
+**                                                                            **
+**  SPECIFICATION(S) : Specification of Pwm Driver, AUTOSAR Release 4.2.2     **
+**                                                                            **
+**  MAY BE CHANGED BY USER : no                                               **
+**                                                                            **
+*******************************************************************************/
+-->
+<CATALOG xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="catalog_V3_0_0.ml.xsd">
+    <SHORT-NAME>PwmCatalog</SHORT-NAME>
+    <ABLOCKS>
+        <ABLOCK>
+            <SHORT-NAME>Pwm_17_GtmCcu6::ssc::src::Pwm_17_GtmCcu6.c</SHORT-NAME>
+            <CATEGORY>SWSRC</CATEGORY>
+            <FILES>
+                <FILE>Pwm_17_GtmCcu6/ssc/src/Pwm_17_GtmCcu6.c</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK>
+            <SHORT-NAME>Pwm_17_GtmCcu6::ssc::inc::Pwm_17_GtmCcu6.h</SHORT-NAME>
+            <CATEGORY>SWHDR</CATEGORY>
+            <FILES>
+                <FILE>Pwm_17_GtmCcu6/ssc/inc/Pwm_17_GtmCcu6.h</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK>
+            <SHORT-NAME>Pwm_17_GtmCcu6::ssc::inc::Pwm_17_GtmCcu6_Cbk.h</SHORT-NAME>
+            <CATEGORY>SWHDR</CATEGORY>
+            <FILES>
+                <FILE>Pwm_17_GtmCcu6/ssc/inc/Pwm_17_GtmCcu6_Cbk.h</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK>
+            <SHORT-NAME>plugins::Pwm_17_GtmCcu6_Aurix2G::generate::src::Pwm_17_GtmCcu6_PBcfg.c</SHORT-NAME>
+            <CATEGORY>SWSRC</CATEGORY>
+            <FILES>
+                <FILE>plugins/Pwm_17_GtmCcu6_Aurix2G/generate/src/Pwm_17_GtmCcu6_PBcfg.c</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK>
+            <SHORT-NAME>plugins::Pwm_17_GtmCcu6_Aurix2G::generate::inc::Pwm_17_GtmCcu6_Cfg.h</SHORT-NAME>
+            <CATEGORY>SWHDR</CATEGORY>
+            <FILES>
+                <FILE>plugins/Pwm_17_GtmCcu6_Aurix2G/generate/inc/Pwm_17_GtmCcu6_Cfg.h</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK>
+            <SHORT-NAME>plugins::Pwm_17_GtmCcu6_Aurix2G::generate::Pwm_17_GtmCcu6.m</SHORT-NAME>
+            <CATEGORY>SWTOOL</CATEGORY>
+            <FILES>
+                <FILE>plugins/Pwm_17_GtmCcu6_Aurix2G/generate/Pwm_17_GtmCcu6.m</FILE>
+            </FILES>
+        </ABLOCK>
+        <ABLOCK>
+            <SHORT-NAME>plugins::Pwm_17_GtmCcu6_Aurix2G::config::Pwm_17_GtmCcu6.xdm</SHORT-NAME>
+            <CATEGORY>SWTOOL</CATEGORY>
+            <FILES>
+                <FILE>plugins/Pwm_17_GtmCcu6_Aurix2G/config/Pwm_17_GtmCcu6.xdm</FILE>
+            </FILES>
+        </ABLOCK>
+    </ABLOCKS>
+</CATALOG>
